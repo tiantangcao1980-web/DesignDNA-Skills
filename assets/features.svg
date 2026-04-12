@@ -1,0 +1,254 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520">
+  <defs>
+    <linearGradient id="fbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="100%" stop-color="#0d0d1a"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="pink" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="flowline" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#6366f1" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0.6"/>
+    </linearGradient>
+    <filter id="fglow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="520" fill="url(#fbg)" rx="8"/>
+  <rect x="0.5" y="0.5" width="1199" height="519" fill="none" stroke="#27272a" stroke-width="1" rx="8"/>
+
+  <!-- Section Title -->
+  <text x="600" y="48" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" fill="#71717a" letter-spacing="4" font-weight="500">HOW DESIGNDNA WORKS</text>
+
+  <!-- ═══════ Flow Diagram ═══════ -->
+  <!-- Step 1: Brand Systems -->
+  <g transform="translate(110, 90)">
+    <rect x="-90" y="-20" width="180" height="72" rx="10" fill="#18181b" stroke="#10b981" stroke-opacity="0.3" stroke-width="1"/>
+    <text y="5" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="15" fill="#10b981" font-weight="600">58 Brand Systems</text>
+    <text y="28" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" fill="#71717a">Apple, Tesla, Stripe, Linear...</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <g transform="translate(240, 116)">
+    <line x1="0" y1="0" x2="80" y2="0" stroke="url(#flowline)" stroke-width="2" stroke-dasharray="4,4"/>
+    <polygon points="80,-5 90,0 80,5" fill="#6366f1" opacity="0.7"/>
+  </g>
+
+  <!-- Step 2: DesignDNA -->
+  <g transform="translate(420, 90)">
+    <rect x="-90" y="-20" width="180" height="72" rx="10" fill="#18181b" stroke="#6366f1" stroke-opacity="0.5" stroke-width="1.5"/>
+    <rect x="-90" y="-20" width="180" height="72" rx="10" fill="#6366f1" fill-opacity="0.05"/>
+    <text y="5" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="15" fill="#818cf8" font-weight="700">DesignDNA Skill</text>
+    <text y="28" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" fill="#a1a1aa">Rules + Resources + Archetypes</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <g transform="translate(550, 116)">
+    <line x1="0" y1="0" x2="80" y2="0" stroke="url(#flowline)" stroke-width="2" stroke-dasharray="4,4"/>
+    <polygon points="80,-5 90,0 80,5" fill="#6366f1" opacity="0.7"/>
+  </g>
+
+  <!-- Step 3: AI Agent -->
+  <g transform="translate(730, 90)">
+    <rect x="-90" y="-20" width="180" height="72" rx="10" fill="#18181b" stroke="#c084fc" stroke-opacity="0.3" stroke-width="1"/>
+    <text y="5" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="15" fill="#c084fc" font-weight="600">AI Coding Agent</text>
+    <text y="28" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" fill="#71717a">Claude, Cursor, Codex...</text>
+  </g>
+
+  <!-- Arrow 3 -->
+  <g transform="translate(860, 116)">
+    <line x1="0" y1="0" x2="80" y2="0" stroke="url(#flowline)" stroke-width="2" stroke-dasharray="4,4"/>
+    <polygon points="80,-5 90,0 80,5" fill="#ec4899" opacity="0.7"/>
+  </g>
+
+  <!-- Step 4: Result -->
+  <g transform="translate(1040, 90)">
+    <rect x="-90" y="-20" width="180" height="72" rx="10" fill="#18181b" stroke="#f472b6" stroke-opacity="0.3" stroke-width="1"/>
+    <text y="5" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="15" fill="#f472b6" font-weight="600">Production UI</text>
+    <text y="28" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" fill="#71717a">Distinctive, brand-quality</text>
+  </g>
+
+  <!-- ═══════ Divider ═══════ -->
+  <line x1="60" y1="195" x2="1140" y2="195" stroke="#27272a" stroke-width="1"/>
+
+  <!-- ═══════ 4 Feature Cards ═══════ -->
+
+  <!-- Card 1: 10 Universal Rules -->
+  <g transform="translate(60, 220)">
+    <rect width="255" height="270" rx="10" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+    <!-- Icon circle -->
+    <circle cx="36" cy="36" r="20" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="36" y="42" text-anchor="middle" font-size="18">10</text>
+    <text x="36" y="42" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="16" fill="#10b981" font-weight="700">10</text>
+    <!-- Title -->
+    <text x="68" y="32" font-family="'Segoe UI', system-ui, sans-serif" font-size="16" fill="#ffffff" font-weight="600">Universal Rules</text>
+    <text x="68" y="48" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" fill="#71717a">Meta-patterns from 58 brands</text>
+    <!-- Rule list -->
+    <g transform="translate(20, 72)" font-family="'SF Mono', monospace" font-size="11" fill="#a1a1aa">
+      <text y="0"><tspan fill="#10b981">01</tspan>  8px spacing system</text>
+      <text y="20"><tspan fill="#10b981">02</tspan>  Max 4 font weights</text>
+      <text y="40"><tspan fill="#10b981">03</tspan>  Tracking scales with size</text>
+      <text y="60"><tspan fill="#10b981">04</tspan>  Semantic color groups</text>
+      <text y="80"><tspan fill="#10b981">05</tspan>  Multi-layer shadows</text>
+      <text y="100"><tspan fill="#10b981">06</tspan>  Warm near-black text</text>
+      <text y="120"><tspan fill="#10b981">07</tspan>  Component radius scale</text>
+      <text y="140"><tspan fill="#10b981">08</tspan>  Icon stroke consistency</text>
+      <text y="160"><tspan fill="#10b981">09</tspan>  Motion curve standards</text>
+      <text y="180"><tspan fill="#10b981">10</tspan>  Responsive breakpoints</text>
+    </g>
+  </g>
+
+  <!-- Card 2: 5 Consistency Rules -->
+  <g transform="translate(340, 220)">
+    <rect width="255" height="270" rx="10" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+    <circle cx="36" cy="36" r="20" fill="#6366f1" fill-opacity="0.1" stroke="#6366f1" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="36" y="42" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="16" fill="#818cf8" font-weight="700">C</text>
+    <text x="68" y="32" font-family="'Segoe UI', system-ui, sans-serif" font-size="16" fill="#ffffff" font-weight="600">5 C-Rules</text>
+    <text x="68" y="48" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" fill="#71717a">Consistency enforcement</text>
+    <g transform="translate(20, 72)" font-family="'Segoe UI', system-ui, sans-serif" font-size="12">
+      <g>
+        <rect y="-12" width="215" height="32" rx="6" fill="#6366f1" fill-opacity="0.05"/>
+        <text x="10" y="5" fill="#818cf8" font-weight="600" font-size="11">C1</text>
+        <text x="34" y="5" fill="#a1a1aa" font-size="11">One icon library per project</text>
+      </g>
+      <g transform="translate(0, 40)">
+        <rect y="-12" width="215" height="32" rx="6" fill="#6366f1" fill-opacity="0.05"/>
+        <text x="10" y="5" fill="#818cf8" font-weight="600" font-size="11">C2</text>
+        <text x="34" y="5" fill="#a1a1aa" font-size="11">Single color source of truth</text>
+      </g>
+      <g transform="translate(0, 80)">
+        <rect y="-12" width="215" height="32" rx="6" fill="#6366f1" fill-opacity="0.05"/>
+        <text x="10" y="5" fill="#818cf8" font-weight="600" font-size="11">C3</text>
+        <text x="34" y="5" fill="#a1a1aa" font-size="11">Fonts via npm (no CDN)</text>
+      </g>
+      <g transform="translate(0, 120)">
+        <rect y="-12" width="215" height="32" rx="6" fill="#6366f1" fill-opacity="0.05"/>
+        <text x="10" y="5" fill="#818cf8" font-weight="600" font-size="11">C4</text>
+        <text x="34" y="5" fill="#a1a1aa" font-size="11">Illustration strategy defined</text>
+      </g>
+      <g transform="translate(0, 160)">
+        <rect y="-12" width="215" height="32" rx="6" fill="#6366f1" fill-opacity="0.05"/>
+        <text x="10" y="5" fill="#818cf8" font-weight="600" font-size="11">C5</text>
+        <text x="34" y="5" fill="#a1a1aa" font-size="11">Component library discipline</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Card 3: 10 Design Archetypes -->
+  <g transform="translate(620, 220)">
+    <rect width="255" height="270" rx="10" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+    <circle cx="36" cy="36" r="20" fill="#c084fc" fill-opacity="0.1" stroke="#c084fc" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="36" y="42" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="16" fill="#c084fc" font-weight="700">A</text>
+    <text x="68" y="32" font-family="'Segoe UI', system-ui, sans-serif" font-size="16" fill="#ffffff" font-weight="600">10 Archetypes</text>
+    <text x="68" y="48" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" fill="#71717a">Ready-to-use design patterns</text>
+    <g transform="translate(16, 72)" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" fill="#a1a1aa">
+      <g>
+        <circle cx="6" cy="-2" r="3" fill="#10b981" opacity="0.6"/>
+        <text x="16" y="2">Dark Instrument</text>
+        <text x="150" y="2" fill="#52525b" font-size="10">Linear, Raycast</text>
+      </g>
+      <g transform="translate(0, 20)">
+        <circle cx="6" cy="-2" r="3" fill="#a1a1aa" opacity="0.6"/>
+        <text x="16" y="2">Precision Mono</text>
+        <text x="150" y="2" fill="#52525b" font-size="10">Vercel, SpaceX</text>
+      </g>
+      <g transform="translate(0, 40)">
+        <circle cx="6" cy="-2" r="3" fill="#fbbf24" opacity="0.6"/>
+        <text x="16" y="2">Warm Editorial</text>
+        <text x="150" y="2" fill="#52525b" font-size="10">Airbnb, Notion</text>
+      </g>
+      <g transform="translate(0, 60)">
+        <circle cx="6" cy="-2" r="3" fill="#6366f1" opacity="0.6"/>
+        <text x="16" y="2">Enterprise Trust</text>
+        <text x="150" y="2" fill="#52525b" font-size="10">Stripe, Coinbase</text>
+      </g>
+      <g transform="translate(0, 80)">
+        <circle cx="6" cy="-2" r="3" fill="#ec4899" opacity="0.6"/>
+        <text x="16" y="2">Vibrant Gradient</text>
+        <text x="150" y="2" fill="#52525b" font-size="10">Figma, Framer</text>
+      </g>
+      <g transform="translate(0, 100)">
+        <circle cx="6" cy="-2" r="3" fill="#f97316" opacity="0.6"/>
+        <text x="16" y="2">Content Stage</text>
+        <text x="150" y="2" fill="#52525b" font-size="10">Spotify, Pinterest</text>
+      </g>
+      <g transform="translate(0, 120)">
+        <circle cx="6" cy="-2" r="3" fill="#f59e0b" opacity="0.6"/>
+        <text x="16" y="2">Friendly Warm</text>
+        <text x="150" y="2" fill="#52525b" font-size="10">Zapier, Miro</text>
+      </g>
+      <g transform="translate(0, 140)">
+        <circle cx="6" cy="-2" r="3" fill="#ef4444" opacity="0.6"/>
+        <text x="16" y="2">Premium Auto</text>
+        <text x="150" y="2" fill="#52525b" font-size="10">Tesla, BMW</text>
+      </g>
+      <g transform="translate(0, 160)">
+        <circle cx="6" cy="-2" r="3" fill="#22d3ee" opacity="0.6"/>
+        <text x="16" y="2">Developer Native</text>
+        <text x="150" y="2" fill="#52525b" font-size="10">Supabase, Resend</text>
+      </g>
+      <g transform="translate(0, 180)">
+        <circle cx="6" cy="-2" r="3" fill="#8b5cf6" opacity="0.6"/>
+        <text x="16" y="2">Cinematic Dark</text>
+        <text x="150" y="2" fill="#52525b" font-size="10">xAI, RunwayML</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Card 4: Resource Library + Multi-IDE -->
+  <g transform="translate(900, 220)">
+    <rect width="255" height="270" rx="10" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+    <circle cx="36" cy="36" r="20" fill="#f472b6" fill-opacity="0.1" stroke="#f472b6" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="36" y="42" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" fill="#f472b6" font-weight="700">R+</text>
+    <text x="68" y="32" font-family="'Segoe UI', system-ui, sans-serif" font-size="16" fill="#ffffff" font-weight="600">Resources</text>
+    <text x="68" y="48" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" fill="#71717a">Curated production toolkit</text>
+    <g transform="translate(20, 72)" font-family="'Segoe UI', system-ui, sans-serif" font-size="12">
+      <!-- Icons -->
+      <g>
+        <text y="2" fill="#f472b6" font-weight="600" font-size="11">Icons</text>
+        <text y="18" fill="#71717a" font-size="11">Lucide, Heroicons, Tabler +4</text>
+      </g>
+      <!-- Images -->
+      <g transform="translate(0, 36)">
+        <text y="2" fill="#f472b6" font-weight="600" font-size="11">Images</text>
+        <text y="18" fill="#71717a" font-size="11">Unsplash, Pexels, unDraw +12</text>
+      </g>
+      <!-- Components -->
+      <g transform="translate(0, 72)">
+        <text y="2" fill="#f472b6" font-weight="600" font-size="11">Components</text>
+        <text y="18" fill="#71717a" font-size="11">shadcn/ui, Radix, TDesign +17</text>
+      </g>
+      <!-- Fonts -->
+      <g transform="translate(0, 108)">
+        <text y="2" fill="#f472b6" font-weight="600" font-size="11">Typography</text>
+        <text y="18" fill="#71717a" font-size="11">Fontsource, font pairing guide</text>
+      </g>
+      <!-- Separator -->
+      <line x1="0" y1="142" x2="215" y2="142" stroke="#27272a" stroke-width="1"/>
+      <!-- Multi-IDE -->
+      <g transform="translate(0, 155)">
+        <text y="2" fill="#fbbf24" font-weight="600" font-size="11">Multi-IDE Support</text>
+        <text y="20" fill="#71717a" font-size="10">Claude Code | Cursor | Windsurf</text>
+        <text y="36" fill="#71717a" font-size="10">Codex | Stitch | Cline | Trae</text>
+      </g>
+    </g>
+  </g>
+</svg>

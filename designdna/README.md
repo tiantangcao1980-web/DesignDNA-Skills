@@ -3,7 +3,7 @@
 > **Extract. Apply. Enforce.** — AI design system skill for professional UI/UX.
 > Distilled from 58 world-class brand design systems.
 > Based on [Google Stitch](https://stitch.withgoogle.com/docs/design-md/overview/) DESIGN.md methodology.
-> Source data: [awesome-design-md](https://github.com/tiantangcao1980-web/DesignDNA-Skills)
+> Design data: [awesome-design-md](https://github.com/VoltAgent/awesome-design-md) by VoltAgent
 
 ## What is this?
 
@@ -18,7 +18,7 @@ This is a **portable AI skill** that teaches any AI coding agent to generate pro
 
 ### The Solution
 
-Google Stitch introduced **DESIGN.md** — a plain-text design system document that AI agents can directly read and implement. The [awesome-design-md](https://github.com/tiantangcao1980-web/DesignDNA-Skills) project collected DESIGN.md files from 58 top brands.
+Google Stitch introduced **DESIGN.md** — a plain-text design system document that AI agents can directly read and implement. The [awesome-design-md](https://github.com/VoltAgent/awesome-design-md) project by VoltAgent collected DESIGN.md files from 58 top brands.
 
 This skill **distills ALL 58 design systems** into an actionable AI skill, adds a **curated design resource library** (icons, images, illustrations, colors, components, fonts, animations), and provides a **smart tech stack matching matrix** — ensuring every generated UI is professional, consistent, and production-ready.
 
@@ -204,10 +204,10 @@ The knowledge in this skill was extracted from the design systems of these 58 br
 
 ## Credits
 
-- **Design data source**: [awesome-design-md](https://github.com/tiantangcao1980-web/DesignDNA-Skills) by VoltAgent
+- **Design data source**: [awesome-design-md](https://github.com/VoltAgent/awesome-design-md) by VoltAgent
 - **DESIGN.md concept**: [Google Stitch](https://stitch.withgoogle.com/docs/design-md/overview/)
-- **Skill compilation**: Distilled and structured for multi-IDE AI agent consumption
+- **Skill engineering**: Distilled and structured for multi-IDE AI agent consumption
 
 ## License
 
-MIT License — Same as the source [awesome-design-md](https://github.com/tiantangcao1980-web/DesignDNA-Skills) repository.
+MIT License — see [LICENSE](../LICENSE)

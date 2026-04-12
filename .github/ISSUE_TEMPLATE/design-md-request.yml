@@ -7,7 +7,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Fill out the form below to request a DESIGN.md generation for your website.
+        Fill out the form below to request a DESIGN.md generation for a website.
   - type: input
     id: website
     attributes:
@@ -17,30 +17,10 @@ body:
     validations:
       required: true
 
-  - type: input
-    id: email
-    attributes:
-      label: Delivery Email
-      description: Email address where we should send the generated DESIGN.md
-      placeholder: you@example.com
-    validations:
-      required: true
-
-  - type: dropdown
-    id: sponsor
-    attributes:
-      label: Do you want to prioritize your DESIGN.md generation request?
-      description: We receive many requests to generate DESIGN.md. As we maintain multiple open-source projects with limited bandwidth, sponsor-backed requests are prioritized. Select the "Priority DESIGN.md generation (awesome-design-md)" tier on [GitHub Sponsors](https://github.com/sponsors/tiantangcao1980-web).
-      options:
-        - "Yes, I am a GitHub Sponsor"
-        - "No, I am not a sponsor"
-    validations:
-      required: true
-
   - type: textarea
     id: details
     attributes:
       label: Additional Details (optional)
-      description: Anything else you'd like us to know about this request
+      description: Anything else you'd like us to know about this request (specific pages, dark mode, etc.)
     validations:
       required: false

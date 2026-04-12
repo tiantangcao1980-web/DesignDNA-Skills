@@ -1,7 +1,7 @@
 # DESIGN.md — [Project Name]
 
 > Design system for [Project Name]. Generated following the Google Stitch DESIGN.md standard.
-> Reference: [awesome-design-md](https://github.com/tiantangcao1980-web/DesignDNA-Skills)
+> Reference: [DesignDNA-Skills](https://github.com/tiantangcao1980-web/DesignDNA-Skills)
 
 ---
 

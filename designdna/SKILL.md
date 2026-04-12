@@ -85,7 +85,7 @@ It does NOT dictate:
 ---
 
 > Distilled from 58 world-class brand design systems following Google Stitch's DESIGN.md methodology.
-> Source: [awesome-design-md](https://github.com/tiantangcao1980-web/DesignDNA-Skills)
+> Source: [DesignDNA-Skills](https://github.com/tiantangcao1980-web/DesignDNA-Skills) | Design data: [awesome-design-md](https://github.com/VoltAgent/awesome-design-md)
 
 ## What is DESIGN.md?
 

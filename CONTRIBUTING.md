@@ -1,16 +1,14 @@
-# Contributing to Awesome Design MD
+# Contributing to DesignDNA Skills
 
 Thanks for contributing.
 
-This repository is a curated collection of DESIGN.md files extracted from popular websites. Each file captures a site's complete visual language in a format any AI agent can read.
+This repository provides DESIGN.md files extracted from popular websites and the DesignDNA AI skill that turns them into production-grade UI generation capability.
 
 ## How to Contribute
 
 ### Request a New Site
 
 To request a DESIGN.md for a website, [open an issue](https://github.com/tiantangcao1980-web/DesignDNA-Skills/issues/new?template=design-md-request.yml) with the website URL.
-
-We receive many requests, and maintainer bandwidth is limited. Sponsor-backed requests are prioritized, consider supporting the project via [GitHub Sponsors](https://github.com/sponsors/tiantangcao1980-web) if you'd like faster turnaround.
 
 ### Improve an Existing DESIGN.md
 
@@ -25,4 +23,4 @@ If you notice issues with an existing file:
 
 ## License
 
-By contributing, you agree your contributions are provided under the repository license terms.
+By contributing, you agree your contributions are provided under the MIT license terms of this repository.

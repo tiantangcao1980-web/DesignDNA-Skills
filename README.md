@@ -229,9 +229,14 @@ DesignDNA-Skills/
 
 ---
 
-## Credits
+## Acknowledgments
 
-Design system data originally extracted from public websites. Built on the [DESIGN.md format](https://stitch.withgoogle.com/docs/design-md/format/) introduced by Google Stitch. Inspired by [awesome-design-md](https://github.com/VoltAgent/awesome-design-md).
+This project stands on the shoulders of great work:
+
+- **[Awesome DESIGN.md](https://github.com/VoltAgent/awesome-design-md)** &mdash; The original curated collection of DESIGN.md files by the [VoltAgent](https://github.com/VoltAgent) team. They did the foundational work of extracting design systems from 58 world-class brand websites into structured DESIGN.md format. Without their effort, this project would not exist.
+- **[Google Stitch](https://stitch.withgoogle.com/docs/design-md/overview/)** &mdash; For introducing the [DESIGN.md format](https://stitch.withgoogle.com/docs/design-md/format/) that makes design systems readable by AI agents.
+
+**What DesignDNA adds:** The VoltAgent team provided excellent raw design system examples. DesignDNA builds on top of that foundation to bridge the gap from **UI design reference to engineering-ready, plug-and-play AI skill** &mdash; adding 10 universal design rules, 5 consistency enforcement rules, 10 design archetypes, a curated resource library, multi-IDE skill formats, and production workflow guidance. The goal is simple: copy it in, and your AI agent immediately produces brand-quality UI.
 
 ## Contributing
 

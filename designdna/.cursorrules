@@ -1,0 +1,233 @@
+# Awesome Design System Rules for Cursor
+# Distilled from 58 world-class brand design systems via Google Stitch DESIGN.md methodology
+# Source: https://github.com/VoltAgent/awesome-design-md
+
+## Scope: Design System, NOT General Frontend
+
+This rule file covers DESIGN decisions: colors, typography, spacing, shadows, component styling, design tokens, DESIGN.md, and design-driven tech stack recommendations.
+
+It does NOT cover: framework architecture, state management, build tools, deployment, code style, security, or accessibility implementation details. For those, follow your project's standard engineering rules.
+
+**When this rule's tech stack suggestion conflicts with engineering rules**:
+→ Engineering rules win on HOW to implement. This rule wins on WHAT visual direction to take.
+
+## Core Principle
+
+When generating ANY UI, follow these design rules extracted from 58 top brands (Apple, Tesla, Stripe, Vercel, Linear, Airbnb, Spotify, Notion, Figma, etc.).
+
+## Mandatory Design Workflow
+
+1. **Check for DESIGN.md** in the project root first. If it exists, follow it exactly.
+2. **If no DESIGN.md exists**, identify the closest design archetype and generate a DESIGN.md before writing UI code.
+3. **Never write generic AI-looking UI** — every interface must have a distinctive aesthetic direction.
+
+## The 10 Universal Design Rules
+
+These rules were present across ALL 58 world-class design systems analyzed:
+
+1. **8px Base Unit**: ALL spacing, padding, margins, and gaps must be multiples of 8px (with 4px half-step allowed for fine adjustments).
+
+2. **2-4 Font Weights Maximum**: Never use more than 4 font weights. Assign each weight ONE semantic purpose:
+   - 300: De-emphasis, secondary info
+   - 400: Body text, reading content
+   - 500: UI labels, interactive elements
+   - 600-700: Headings, display text
+
+3. **Letter-Spacing Scales with Font Size**:
+   - Display (48px+): negative (-0.03em to -0.05em)
+   - Heading (24-48px): slightly negative (-0.01em to -0.02em)
+   - Body (14-18px): 0 (normal)
+   - Caption (10-13px): slightly positive (+0.01em to +0.02em)
+
+4. **Semantic Color Organization**: Organize colors by purpose (brand, text, surface, interactive, semantic), NEVER as a flat list.
+
+5. **Multi-Layer Shadows**: Use 2-4 shadow layers for natural depth. Single-layer `box-shadow: 0 2px 4px rgba(0,0,0,0.1)` is forbidden.
+
+6. **Brand Accent Restraint**: Reserve the brand accent color for ONE primary semantic purpose (CTA, active state). Never use it decoratively on borders, backgrounds, or dividers.
+
+7. **Warm Near-Black for Text**: Use #222222, #1a1a1a, or rgba(0,0,0,0.95) for text — NEVER pure #000000 on light backgrounds.
+
+8. **8 Border-Radius Variants**: Define a scale from 0px (sharp) to 9999px (pill), with 6 intermediate steps for different element sizes.
+
+9. **4 Component States**: Every interactive element needs: default, hover, focus, disabled states.
+
+10. **Do's and Don'ts**: Every design system must have explicit guardrails preventing drift.
+
+## Design Archetype Reference
+
+When starting a new design, identify the closest archetype:
+
+| If the project is... | Archetype | Reference brands |
+|----------------------|-----------|-----------------|
+| Developer tool / CLI | Dark Instrument | Linear, Raycast, Warp |
+| SaaS / Productivity | Precision Monochrome | Vercel, HashiCorp |
+| Consumer / Marketplace | Warm Editorial | Airbnb, Notion |
+| Fintech / Data | Enterprise Trust | Stripe, Coinbase |
+| AI / ML product | Warm Editorial or Cinematic | Claude, xAI |
+| Creative tool | Vibrant Gradient | Figma, Framer |
+| Media / Content | Content Stage | Spotify, Pinterest |
+
+## Forbidden Patterns
+
+These patterns were ABSENT from all 58 world-class design systems:
+
+- Generic gradient backgrounds with centered layouts (default AI aesthetic)
+- Rainbow color palettes (>3 accent colors competing)
+- Uniform border-radius on every element
+- Single-layer shadows
+- Pure #000000 text on white backgrounds
+- Same letter-spacing at all font sizes
+- More than 4 font weights
+- Decorative use of brand colors
+- Everything centered and symmetrical
+- Light/thin fonts (<400 weight) on dark backgrounds
+
+## Typography Patterns from Top Brands
+
+### Weight Signatures
+- **Stripe**: weight 300 as signature ("whisper-weight authority")
+- **Vercel**: strict 400/500/600 only (three-weight discipline)
+- **Linear**: weight 510 as unique emphasis (micro-weight precision)
+- **Tesla**: 400/500 only (radical restraint)
+- **Claude**: 400/500 with serif/sans hierarchy split
+
+### OpenType Features (always include when specified)
+- Inter: `font-feature-settings: "cv01", "ss03", "calt", "kern", "liga";`
+- Stripe's Sohne: `font-feature-settings: "ss01";`
+- Tabular numbers for data: `font-variant-numeric: tabular-nums;`
+
+## Shadow Patterns from Top Brands
+
+### Multi-Layer Card Shadow (Notion style — warm, subtle):
+```css
+box-shadow:
+  rgba(0,0,0,0.04) 0px 4px 18px,
+  rgba(0,0,0,0.027) 0px 2.025px 7.85px,
+  rgba(0,0,0,0.02) 0px 0.8px 2.93px,
+  rgba(0,0,0,0.01) 0px 0.175px 1.04px;
+```
+
+### Ring Shadow (Claude/Vercel style — clean containment):
+```css
+box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.08);
+```
+
+### Chromatic Shadow (Stripe style — brand-tinted):
+```css
+box-shadow:
+  rgba(50,50,93,0.25) 0px 13px 27px -5px,
+  rgba(0,0,0,0.3) 0px 8px 16px -8px;
+```
+
+### Dark Mode Shadow (Linear style — luminance stacking):
+```css
+box-shadow:
+  rgba(0,0,0,0.5) 0px 16px 70px,
+  inset rgba(255,255,255,0.05) 0px 1px 0px;
+border: 1px solid rgba(255,255,255,0.06);
+```
+
+## Color Temperature Guide
+
+### Warm Neutrals (recommended for most projects):
+- Near-black: #222222 or #1a1a1a (NOT #000000)
+- Dark gray: #484848
+- Medium gray: #717171
+- Light gray: #b0b0b0
+- Border: rgba(0,0,0,0.08)
+- Background: #fafaf8 or #f5f4ed
+
+### Cool Neutrals (for developer/technical tools):
+- Near-black: #171717
+- Dark gray: #404040
+- Medium gray: #737373
+- Light gray: #a3a3a3
+- Border: rgba(0,0,0,0.06)
+- Background: #fafafa
+
+## Existing Project UI Optimization
+
+When asked to optimize/upgrade existing UI:
+
+1. **Extract** current design DNA: grep for all colors, font-weights, box-shadows, border-radius, font-sizes in the codebase
+2. **Audit** against the 10 Universal Rules above — score each as PASS/PARTIAL/FAIL
+3. **Identify** closest design archetype from the reference table
+4. **Generate** improvement DESIGN.md (preserve what works, fix violations, elevate toward archetype)
+5. **Refactor in phases** (this order — highest impact, lowest risk first):
+   - Phase 1: Color system (extract to CSS variables, warm near-black, semantic organization)
+   - Phase 2: Typography (consolidate weights, add letter-spacing scaling, line-height compression)
+   - Phase 3: Shadows (replace single-layer with multi-layer, choose shadow philosophy)
+   - Phase 4: Spacing & layout (align to 8px grid, create spacing scale, normalize border-radius)
+   - Phase 5: Component states (add missing hover, focus, disabled states)
+6. **Implement ONE phase at a time** — never mix phases in a single commit
+
+## Stitch Prototype → Full Project
+
+When the user provides HTML prototypes from Google Stitch (or any tool):
+
+1. **Read** all prototype HTML files, extract inline styles and `<style>` blocks
+2. **Extract** design tokens: list all colors, fonts, sizes, weights, spacing, shadows, radii
+3. **Match** to closest design archetype from the 10-archetype table
+4. **Generate** complete DESIGN.md:
+   - Use ACTUAL extracted values for colors, typography, components
+   - Fill GAPS from the matched archetype (missing states, missing responsive rules, missing elevation levels)
+   - Expand 5 colors → 15+ semantic colors using archetype patterns
+   - Expand 3 type sizes → 10+ role hierarchy
+5. **Build** component library: Atoms → Molecules → Organisms → Templates
+6. **Implement** full pages using DESIGN.md tokens (CSS variables, never hardcoded)
+7. **Polish**: responsive behavior, accessibility (44px touch targets, WCAG AA contrast, focus rings)
+
+## Tech Stack — User Choice Protocol
+
+**IMPORTANT**: Tech stack recommendations are SUGGESTIONS, not mandates.
+1. When user HAS NOT specified a stack → present 2-3 options, ask "Which would you prefer?"
+2. When user HAS chosen a stack → respect it, NEVER suggest switching. Adapt resources to match.
+3. When user's choice is suboptimal → briefly note the trade-off, then proceed without resistance.
+
+### Smart Recommendation (when user hasn't chosen):
+```
+Web SaaS / Tool        → Next.js + shadcn/ui + Tailwind + Lucide
+Web Admin / Dashboard   → Next.js + Ant Design (or TDesign/Element Plus for CN)
+Web Landing Page        → Astro or Next.js + Tailwind + Framer Motion
+Web Blog / Docs         → Astro + Tailwind (or VitePress for Vue teams)
+Vue Enterprise (CN)     → Vue 3 + Element Plus or TDesign or Naive UI
+Angular Enterprise      → Angular + Angular Material or PrimeNG or NG-ZORRO
+Svelte Web             → SvelteKit + shadcn-svelte + Tailwind
+Mobile (cross-platform) → Expo (React Native) + Paper or Flutter + Material 3
+Mobile (iOS only)       → SwiftUI native
+Mobile (Android only)   → Jetpack Compose native
+Mini Program (WeChat)   → Native + TDesign Mini or Vant Weapp
+Mini Program (multi)    → UniApp + uView or Taro + NutUI
+Desktop App            → Tauri + React/Vue + shadcn/ui + Tailwind
+Desktop (Go)           → Wails + Vue + Naive UI
+HarmonyOS              → ArkUI (ArkTS)
+Chrome Extension       → Plasmo + React + Tailwind
+Email Template         → React Email + Resend
+3D / WebGL             → React Three Fiber + Drei
+```
+
+### Auto-Pair (when user picks a framework, auto-select matching resources):
+| User Chooses | Icons | CSS | Animation |
+|-------------|-------|-----|-----------|
+| React / Next.js | Lucide React | Tailwind | Framer Motion |
+| Vue / Nuxt | Iconify Vue | UnoCSS or Tailwind | @vueuse/motion |
+| Angular | Material Icons | SCSS | Angular Animations |
+| Svelte / SvelteKit | Lucide Svelte | Tailwind | Svelte transitions |
+| Flutter | Material Icons | ThemeData | Flutter built-in |
+| React Native / Expo | Expo Vector Icons | StyleSheet | Reanimated |
+| Astro | astro-icon | Tailwind | View Transitions |
+| HTMX | Lucide SVG | Tailwind | CSS transitions |
+
+## DESIGN.md Generation
+
+When asked to create a design system, generate a DESIGN.md following the 9-section format:
+
+1. **Visual Theme & Atmosphere** — 200+ words of philosophical narrative
+2. **Color Palette & Roles** — 15+ colors organized by semantic purpose
+3. **Typography Rules** — Font families + hierarchy table (10+ roles)
+4. **Component Stylings** — Buttons, cards, inputs, nav with variant specs
+5. **Layout Principles** — 8px base, spacing scale, grid, border-radius scale
+6. **Depth & Elevation** — Shadow system with 3+ levels
+7. **Do's and Don'ts** — 10+ explicit rules with reasons
+8. **Responsive Behavior** — Breakpoints, touch targets, collapsing strategy
+9. **Agent Prompt Guide** — Quick color reference + 3+ example component prompts

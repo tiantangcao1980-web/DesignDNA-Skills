@@ -20,6 +20,7 @@ import { runList } from '../src/commands/list.js';
 import { runPreview } from '../src/commands/preview.js';
 import { runInstallSkill } from '../src/commands/install.js';
 import { runCraft } from '../src/commands/craft.js';
+import { runResources } from '../src/commands/resources.js';
 import { printHelp } from '../src/commands/help.js';
 import { logError } from '../src/utils/log.js';
 
@@ -69,6 +70,10 @@ async function main() {
       break;
     case 'craft':
       await runCraft({ flags });
+      break;
+    case 'resources':
+    case 'components':
+      await runResources({ positional, flags });
       break;
     case 'help':
     case '--help':

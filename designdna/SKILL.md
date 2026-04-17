@@ -1205,6 +1205,25 @@ npm i @radix-ui/themes                # or ant-design, etc.
 
 ## Part 10: Design-Driven Tech Stack Catalog & Recommendation
 
+> **📦 Fresh catalog (2026-04 audit):** The authoritative, regularly-updated inventory of 70+ component libraries lives in **[`designdna/components/`](./components/)** with health indicators (🟢 active / 🟡 maintenance / 🔴 deprecated), GitHub stars, last-commit dates, and migration paths:
+> - Master index: [components/INDEX.md](./components/INDEX.md)
+> - By ecosystem: [tencent](./components/by-ecosystem/tencent.md) · [alibaba](./components/by-ecosystem/alibaba.md) · [jd](./components/by-ecosystem/jd.md) · [google-material](./components/by-ecosystem/google-material.md) · [modern-web](./components/by-ecosystem/modern-web.md) · [miniprogram-native](./components/by-ecosystem/miniprogram-native.md)
+> - By platform: [web](./components/by-platform/web.md) · [mobile](./components/by-platform/mobile.md) · [miniprogram](./components/by-platform/miniprogram.md) · [cross-platform](./components/by-platform/cross-platform.md) · [desktop](./components/by-platform/desktop.md)
+> - What to avoid: [DEPRECATED.md](./components/DEPRECATED.md)
+>
+> **Load these files first when the user asks for a tech-stack recommendation** — they supersede any stale data in the tables below. The tables here are narrative guidance; the `components/` folder is the source of truth.
+>
+> **⚠️ Key 2026 audit findings (tell the user about these):**
+> - Google's `material-components-ios` is **archived** (2025-12). Use SwiftUI + Apple HIG for new iOS.
+> - `material-components-flutter` is **archived** (folded into Flutter SDK). Use `package:flutter/material`.
+> - `material-web` (Lit-based) is in **maintenance mode** — no active development.
+> - `@fluentui/react` v8 is **maintenance only** — use `@fluentui/react-components` v9 for new React projects.
+> - **iView Weapp**, **Wuss Weapp**, **TouchWX** are all **5-8 years dormant** — do not use for new MiniProgram projects. Use **Vant Weapp** or **TDesign MiniProgram**.
+> - **NutUI Bingo** (marketing gamification) is **3+ years dormant** — build custom with GSAP/Lottie instead.
+> - **Remax** (React → MiniProgram) **stopped in 2022** — use **Taro** instead.
+> - **Bootstrap v4** is security-only — upgrade to **v5.3**.
+> - **Chakra v2** still deployed but superseded by **v3** (Panda CSS).
+
 > **Scope**: This section recommends tech stacks from a **design expression** perspective — "which library best expresses this design intent?" For framework architecture, state management, build tools, and implementation patterns, defer to `frontend-patterns`, `web-development`, and `coding-standards` skills.
 >
 > **User Choice Protocol**:

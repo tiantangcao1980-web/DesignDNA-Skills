@@ -153,66 +153,137 @@ Color consistency checklist:
 
 ## 5. Component Library & UI Framework
 
-### 5.1 React Ecosystem
+> **Last audit: 2026-04**. Health legend: 🟢 active · 🟡 maintenance · 🔴 deprecated.
+> For the full breakdown with GitHub stars, commit dates, migration paths, and per-ecosystem analysis, see **[components/](./components/)**:
+> [INDEX](./components/INDEX.md) · [tencent](./components/by-ecosystem/tencent.md) · [alibaba](./components/by-ecosystem/alibaba.md) · [jd](./components/by-ecosystem/jd.md) · [google-material](./components/by-ecosystem/google-material.md) · [modern-web](./components/by-ecosystem/modern-web.md) · [miniprogram-native](./components/by-ecosystem/miniprogram-native.md) · [deprecated](./components/DEPRECATED.md)
 
-| Library | URL | GitHub | Style | Best For |
-|---------|-----|--------|-------|----------|
-| **Radix UI + Themes** | https://www.radix-ui.com/ | radix-ui/themes | Unstyled primitives + theme | Custom design systems, accessibility-first |
-| **shadcn/ui** | https://ui.shadcn.com/ | shadcn-ui/ui | Tailwind + Radix | Copy-paste components, full control |
-| **Ant Design** | https://ant.design/index-cn | ant-design/ant-design | Enterprise Chinese-friendly | Chinese enterprise apps, admin panels |
-| **Semi Design** | https://semi.design/zh-CN/ | DouyinFE/semi-design | Modern enterprise | ByteDance ecosystem, bilingual apps |
-| **Chakra UI** | https://chakra-ui.com/ | chakra-ui/chakra-ui | Accessible, themeable | Rapid prototyping, accessibility |
-| **Mantine** | https://mantine.dev/ | mantinedev/mantine | Modern, batteries-included | Full-featured apps, 100+ hooks |
-| **NextUI** | https://nextui.org/ | nextui-org/nextui | Modern, Tailwind-based | Next.js projects, sleek design |
-| **Headless UI** | https://headlessui.com/ | tailwindlabs/headlessui | Unstyled, Tailwind | Custom-styled Tailwind projects |
+### 5.1 React Ecosystem (Web)
 
-### 5.2 Vue Ecosystem
+| Library | NPM | Style | Health | Best For |
+|---------|-----|-------|--------|----------|
+| **Ant Design** | `antd` | Enterprise-dense | 🟢 | B2B admin / dashboard, largest React ecosystem (93k ⭐) |
+| **Ant Design X** | `@ant-design/x` | AI conversation | 🟢 | AI / LLM chat UI |
+| **MUI material-ui** | `@mui/material` | Material Design | 🟢 | Material feel, Figma kits, v7 (98k ⭐) |
+| **MUI X** | `@mui/x-*` | DataGrid / Charts / DatePicker | 🟢 | Heavy enterprise components, v9 |
+| **MUI Base UI** | `@base-ui-components/react` | Headless primitives | 🟢 | Alternative to Radix, v1.1 stable |
+| **TDesign React** | `tdesign-react` | Tencent, modern | 🟢 | Tencent-integrated / CN enterprise |
+| **Chakra UI v3** | `@chakra-ui/react` | Panda CSS (zero-runtime) | 🟢 | Modern product apps |
+| **Radix Themes** | `@radix-ui/themes` | Styled layer on Primitives | 🟢 | Quick styled output on Radix |
+| **Radix Primitives** | `@radix-ui/react-*` | Headless, a11y | 🟢 | Custom design system foundation (used by shadcn/ui) |
+| **shadcn/ui** | copy-in, not npm | Tailwind + Radix | 🟢 | Full-control, owned code |
+| **Fluent UI v9** | `@fluentui/react-components` | Microsoft Fluent 2 | 🟢 | Teams / M365 plugins |
+| **Semi Design** | `@douyinfe/semi-ui` | ByteDance, modern | 🟢 | Bilingual apps |
+| **Mantine** | `@mantine/core` | Batteries-included | 🟢 | 100+ hooks included |
+| **antd-mobile** | `antd-mobile` | Mobile H5 | 🟢 | React mobile web |
+| ~~`@fluentui/react` v8 (Fabric)~~ | — | — | 🟡 | Maintenance only — use v9 |
 
-| Library | URL | GitHub | Style | Best For |
-|---------|-----|--------|-------|----------|
-| **TDesign Vue** | https://tdesign.tencent.com/ | Tencent/tdesign | Tencent design language | Tencent ecosystem, enterprise apps |
-| **Element Plus** | https://element-plus.org/ | element-plus/element-plus | Enterprise Chinese-friendly | Vue 3 admin panels, forms |
-| **Naive UI** | https://www.naiveui.com/ | tusen-ai/naive-ui | Modern, TypeScript-first | Vue 3 modern apps, 90+ components |
-| **Vuetify** | https://vuetifyjs.com/ | vuetifyjs/vuetify | Material Design | Material Design Vue projects |
-| **PrimeVue** | https://primevue.org/ | primefaces/primevue | Enterprise, themeable | Large-scale Vue enterprise apps |
-| **Ant Design Vue** | https://antdv.com/ | vueComponent/ant-design-vue | Ant Design for Vue | Ant Design ecosystem in Vue |
+### 5.2 Vue 3 Ecosystem (Web)
+
+| Library | NPM | Style | Health | Best For |
+|---------|-----|-------|--------|----------|
+| **Ant Design Vue** | `ant-design-vue` | antd parity | 🟢 | Vue B2B admin |
+| **Element Plus** | `element-plus` | CN-localized | 🟢 | CN B2B admin, docs-friendly |
+| **Naive UI** | `naive-ui` | TS-first | 🟢 | Modern Vue 3 apps, Evan You endorsed |
+| **TDesign Vue Next** | `tdesign-vue-next` | Tencent | 🟢 | Multi-platform parity with TDesign React |
+| **TDesign Vue Next Chat** | `@tdesign-vue-next/chat` | AI chat | 🟢 | Streaming LLM conversation UI (new 2025) |
+| **Vuetify** | `vuetify` | Material Design | 🟢 | Material flavor |
+| **Quasar** | `quasar` | Multi-output | 🟢 | SPA/SSR/PWA/App from one codebase |
+| **PrimeVue** | `primevue` | Themeable enterprise | 🟢 | Large Vue enterprise |
+| **Arco Design Vue** | `@arco-design/web-vue` | ByteDance | 🟢 | Byte ecosystem, commercial visual |
 
 ### 5.3 CSS Framework
 
-| Library | URL | GitHub | Best For |
+| Library | NPM | Health | Best For |
 |---------|-----|--------|----------|
-| **Tailwind CSS** | https://tailwindcss.com/ | tailwindlabs/tailwindcss | Utility-first, any framework |
-| **Bootstrap** | https://getbootstrap.com/ | twbs/bootstrap | Traditional web, rapid prototyping |
-| **UnoCSS** | https://unocss.dev/ | unocss/unocss | High-performance atomic CSS |
+| **Tailwind v4** | `tailwindcss` | 🟢 | Utility-first, modern SaaS |
+| **Bootstrap v5.3** | `bootstrap` | 🟢 | Enterprise admin, marketing sites |
+| **UnoCSS** | `unocss` | 🟢 | On-demand atomic CSS (Vue/Nuxt) |
+| ~~Bootstrap v4~~ | — | 🔴 | Security-only — upgrade to v5 |
 
-### 5.4 Mobile & Cross-Platform
+### 5.4 Mobile (Native + H5)
 
-| Library | URL | Platform | Best For |
-|---------|-----|----------|----------|
-| **React Native Paper** | https://reactnativepaper.com/ | React Native | Material Design mobile apps |
-| **NativeBase** | https://nativebase.io/ | React Native | Cross-platform accessible components |
-| **Expo** | https://expo.dev/ | React Native | Full mobile dev platform |
-| **Flutter Material** | https://m3.material.io/ | Flutter | Material 3 design system |
-| **Vant** | https://vant-ui.github.io/ | Vue Mobile | Mobile-first Vue components |
-| **NutUI** | https://nutui.jd.com/ | Vue/React Mobile | JD ecosystem mobile components |
+| Library | Platform | Health | Best For |
+|---------|----------|--------|----------|
+| **Vant 4** | Vue 3 H5 | 🟢 | Most popular Vue mobile library (CN) |
+| **NutUI Vue 3** | Vue 3 H5 / Taro | 🟢 | JD e-commerce styled |
+| **NutUI React** | React H5 / Taro | 🟢 | React mobile for Taro projects |
+| **TDesign Mobile Vue** | Vue 3 H5 | 🟢 | Tencent-aligned mobile |
+| **TDesign Mobile React** | React H5 | 🟢 | Tencent-aligned, emerging |
+| **antd-mobile** | React H5 | 🟢 | Alibaba mobile |
+| **TDesign Flutter** | Flutter | 🟢 | Alternate flavor on Flutter SDK Material |
+| **React Native Paper** | React Native | 🟢 | Material feel for RN |
+| **Tamagui** | RN + Web universal | 🟢 | Same components on RN + web |
+| **Flutter `package:material`** | Flutter SDK | 🟢 | Built-in, Material 3 |
+| **`androidx.compose.material3`** | Android Compose | 🟢 | Native Android Material 3 |
+| **material-components-android** | Android View | 🟢 | Legacy View-system Android |
+| **SwiftUI + Apple HIG** | iOS native | 🟢 | **Recommended for new iOS** |
+| ~~material-components-ios~~ | iOS | 🔴 | Archived 2025-12 — use SwiftUI |
+| ~~material-components-flutter~~ | Flutter | 🔴 | Archived 2023-11 — use SDK built-in |
+| ~~NutUI React Native~~ | RN | 🟡 | Too early (v0.0.8) |
 
 ### 5.5 Mini Program
 
-| Library | URL | Platform | Best For |
-|---------|-----|----------|----------|
-| **TDesign Mini** | https://tdesign.tencent.com/miniprogram/ | WeChat Mini | Tencent ecosystem mini programs |
-| **Vant Weapp** | https://vant-ui.github.io/vant-weapp/ | WeChat Mini | E-commerce mini programs |
-| **WeUI** | https://weui.io/ | WeChat Mini | Official WeChat style |
-| **Lin UI** | https://doc.mini.talelin.com/ | WeChat Mini | Minimalist component library |
+**Native WeChat** (no compilation layer):
+
+| Library | Platform | Health | Best For |
+|---------|----------|--------|----------|
+| **Vant Weapp** | WeChat native | 🟢 | Most popular native option (18.4k ⭐) |
+| **TDesign MiniProgram** | WeChat native | 🟢 | Tencent-integrated |
+| ~~Wux Weapp~~ | WeChat native | 🟡 | Fallback only |
+| ~~iView Weapp~~ | WeChat native | 🔴 | 5+ years dormant |
+| ~~Wuss Weapp~~ | WeChat native | 🔴 | 6+ years dormant |
+| ~~TouchWX~~ | WeChat native | 🔴 | 8+ years dormant |
+| ~~WeUI~~ | WeChat H5 styles | 🟡 | Demoted — use for legacy H5 webviews only |
+
+**Cross-vendor MiniProgram** (compile from React/Vue):
+
+| Framework + UI | Vendors supported | Health | Best For |
+|----------------|-------------------|--------|----------|
+| **Taro + NutUI React** | 7 vendors + H5 + RN + Harmony | 🟢 | React dev, max coverage |
+| **Taro + NutUI Vue** | Same as above | 🟢 | Vue dev, max coverage |
+| **UniApp + uni-ui** | 9 vendors + H5 + App + Harmony | 🟢 | DCloud ecosystem |
+| **UniApp + nutui-uniapp** | Same | 🟢 | NutUI style in UniApp |
+| **UniApp X** | WeChat MP + Harmony + native | 🟢 | High-perf UniApp next-gen |
+| ~~Taro UI~~ | Taro 2/3 | 🟡 | Lags Taro 4.x support |
+| ~~Remax~~ | WeChat via React | 🔴 | Stopped 2022 — use Taro |
 
 ### 5.6 Desktop Application
 
-| Library | URL | Platform | Best For |
-|---------|-----|----------|----------|
-| **Radix UI** | https://www.radix-ui.com/ | Electron/Tauri (React) | Custom design system desktop apps |
-| **shadcn/ui** | https://ui.shadcn.com/ | Electron/Tauri (React) | Full control desktop apps |
-| **Wails + Vue** | https://wails.io/ | Go + Vue desktop | Go-based desktop with Vue UI |
-| **Tauri + any** | https://tauri.app/ | Rust + any web framework | Lightweight, secure desktop apps |
+| Shell | UI layer | Health | Best For |
+|-------|----------|--------|----------|
+| **Tauri** | any web UI | 🟢 | Lightweight (3-10 MB), Rust backend |
+| **Electron** | any web UI | 🟢 | Mature, heavier bundle, full Node |
+| **Wails** | any web UI | 🟢 | Go backend alternative |
+| **WinUI 3** | XAML + Fluent 2 | 🟢 | Windows 11 native |
+| **SwiftUI** | native | 🟢 | macOS native, Apple HIG |
+| **.NET MAUI** | XAML | 🟢 | Cross-platform Microsoft ecosystem |
+| **Flutter desktop** | Flutter material | 🟢 | Windows / macOS / Linux from Flutter |
+
+### 5.7 AI / LLM Conversation UI
+
+| Library | Framework | Health |
+|---------|-----------|--------|
+| **Ant Design X** | React | 🟢 |
+| **TDesign Vue Next Chat** | Vue 3 | 🟢 |
+| **ProChat** | React | 🟢 |
+
+### 5.8 Form Engines
+
+| Library | Framework | Health |
+|---------|-----------|--------|
+| **Formily** | React / Vue | 🟢 |
+| **React Hook Form** | React | 🟢 |
+| **VeeValidate** | Vue 3 | 🟢 |
+
+### 5.9 Data Viz
+
+| Library | Framework | Health |
+|---------|-----------|--------|
+| **AntV G2 / G6 / X6** | framework-agnostic | 🟢 |
+| **ECharts** | framework-agnostic | 🟢 |
+| **Ant Design Charts** | React | 🟢 |
+| **MUI X Charts** | React | 🟢 |
+| **Recharts** | React | 🟢 |
 
 ---
 

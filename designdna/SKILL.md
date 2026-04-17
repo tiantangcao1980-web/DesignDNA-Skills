@@ -87,6 +87,33 @@ It does NOT dictate:
 > Distilled from 58 world-class brand design systems following Google Stitch's DESIGN.md methodology.
 > Source: [DesignDNA-Skills](https://github.com/tiantangcao1980-web/DesignDNA-Skills) | Design data: [awesome-design-md](https://github.com/VoltAgent/awesome-design-md)
 
+## Library Sub-Skills
+
+For **library-specific implementation guidance** (Taro, NutUI Vue, NutUI React, NutUI UniApp, NutUI Icons, NutUI Templates, NutUI Biz, Taro UI), load the matching skill from [`designdna/skills/`](./skills/).
+
+Quick install:
+
+```bash
+# Browse available library skills
+npx designdna skills list
+
+# Install a complete stack (framework + UI + icons)
+npx designdna skills install-stack taro-react      # Taro + NutUI React + Icons
+npx designdna skills install-stack taro-vue        # Taro + NutUI Vue + Icons
+npx designdna skills install-stack uniapp          # nutui-uniapp + Icons
+npx designdna skills install-stack react           # NutUI React + Icons
+npx designdna skills install-stack vue             # NutUI Vue + Icons
+
+# Install a single skill
+npx designdna skills install nutui-react
+```
+
+These sub-skills teach an AI agent the **how** (installation, component usage, theme tokens, BANNED patterns, pre-flight) for each library. Combine with the brand DNAs in `design-md/` for full "what + how" coverage.
+
+See [skills/INDEX.md](./skills/INDEX.md) for the full skill catalog.
+
+---
+
 ## Pre-flight Checklist (MANDATORY)
 
 **Before emitting any UI code, self-audit with this checklist. Print each item as `[x]` (passed) or `[ ]` (failed) in your output reasoning.**

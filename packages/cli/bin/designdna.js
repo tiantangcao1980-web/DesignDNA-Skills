@@ -21,6 +21,7 @@ import { runPreview } from '../src/commands/preview.js';
 import { runInstallSkill } from '../src/commands/install.js';
 import { runCraft } from '../src/commands/craft.js';
 import { runResources } from '../src/commands/resources.js';
+import { runSkills } from '../src/commands/skills.js';
 import { printHelp } from '../src/commands/help.js';
 import { logError } from '../src/utils/log.js';
 
@@ -74,6 +75,10 @@ async function main() {
     case 'resources':
     case 'components':
       await runResources({ positional, flags });
+      break;
+    case 'skills':
+    case 'skill':
+      await runSkills({ positional, flags });
       break;
     case 'help':
     case '--help':

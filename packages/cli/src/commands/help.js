@@ -19,6 +19,7 @@ export function printHelp() {
   console.log(`    ${c.cyan('preview')} ${c.dim('<brand>')}     Open brand's preview catalog in browser`);
   console.log(`    ${c.cyan('install')}              Install the DesignDNA skill into your AI IDE`);
   console.log(`    ${c.cyan('resources')}            Browse the 2026 component library catalog`);
+  console.log(`    ${c.cyan('skills')}               Browse/install Taro + NutUI sub-skills`);
   console.log(`    ${c.cyan('version')}              Print version`);
   console.log(`    ${c.cyan('help')}                 Show this help`);
   console.log('');

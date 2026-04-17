@@ -1,0 +1,58 @@
+{
+  "brand": "lamborghini",
+  "version": "1.0.0",
+  "$schema": "https://designdna.dev/schemas/tokens-v1.json",
+  "colors": {
+    "lamborghini-gold": "#ffc000",
+    "pure-white": "#ffffff",
+    "dark-gold": "#917300",
+    "gold-text": "#ffce3e",
+    "cyan-pulse": "#29abe2",
+    "link-blue": "#3860be",
+    "absolute-black": "#000000",
+    "charcoal": "#202020",
+    "dark-iron": "#181818",
+    "near-white": "#f8f8f8",
+    "mist": "#e6e6e6",
+    "smoke": "#f5f5f5",
+    "graphite": "#494949",
+    "ash": "#7d7d7d",
+    "steel": "#969696",
+    "slate": "#666666",
+    "iron": "#555555",
+    "shadow": "#313131",
+    "teal-action": "#1eaedb"
+  },
+  "typography": {
+    "families": [
+      "created by Character Type and de",
+      "carries hexagonal geometric DNA",
+      "by Character Type for Lamborghin",
+      "itself is so distinctive it does"
+    ],
+    "sizes": {
+      "display": "120px",
+      "large": "18px",
+      "small": "13px",
+      "caption": "14px"
+    },
+    "weights": [
+      400
+    ]
+  },
+  "spacing": {
+    "space-1": "5px",
+    "space-2": "8px",
+    "space-3": "14px",
+    "space-4": "16px",
+    "space-5": "24px",
+    "space-6": "44px",
+    "space-7": "56px"
+  },
+  "radius": {
+    "radius-1": "0px",
+    "radius-2": "20px",
+    "radius-3": "2px"
+  },
+  "shadows": {}
+}

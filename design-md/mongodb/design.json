@@ -1,0 +1,49 @@
+{
+  "brand": "mongodb",
+  "version": "1.0.0",
+  "$schema": "https://designdna.dev/schemas/tokens-v1.json",
+  "colors": {
+    "forest-black": "#001e2b",
+    "mongodb-green": "#00ed64",
+    "dark-green": "#00684a",
+    "action-blue": "#006cfa",
+    "hover-blue": "#3860be",
+    "teal-active": "#1eaedb",
+    "deep-teal": "#1c2d38",
+    "teal-gray": "#3d4f58",
+    "dark-slate": "#21313c",
+    "cool-gray": "#5c6c75",
+    "silver-teal": "#b8c4c2",
+    "light-input": "#e8edeb",
+    "pure-white": "#ffffff",
+    "black": "#000000"
+  },
+  "typography": {
+    "families": [
+      "Black",
+      "Display Serif",
+      "Fallbacks"
+    ],
+    "sizes": {
+      "large": "24px",
+      "hero": "48px"
+    },
+    "weights": [
+      300,
+      400,
+      500
+    ]
+  },
+  "spacing": {
+    "space-1": "1px",
+    "space-2": "2px",
+    "space-3": "12px",
+    "space-4": "80px"
+  },
+  "radius": {
+    "radius-1": "100px",
+    "radius-2": "4px",
+    "radius-3": "16px"
+  },
+  "shadows": {}
+}

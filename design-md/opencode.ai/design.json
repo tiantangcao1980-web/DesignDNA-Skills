@@ -1,0 +1,53 @@
+{
+  "brand": "opencode.ai",
+  "version": "1.0.0",
+  "$schema": "https://designdna.dev/schemas/tokens-v1.json",
+  "colors": {
+    "opencode-dark": "#201d1d",
+    "opencode-light": "#fdfcfc",
+    "mid-gray": "#9a9898",
+    "dark-surface": "#302c2c",
+    "border-gray": "#646262",
+    "light-surface": "#f1eeee",
+    "accent-blue": "#007aff",
+    "accent-blue-hover": "#0056b3",
+    "accent-blue-active": "#004085",
+    "danger-red": "#ff3b30",
+    "danger-hover": "#d70015",
+    "danger-active": "#a50011",
+    "success-green": "#30d158",
+    "warning-orange": "#ff9f0a",
+    "warning-hover": "#cc7f08",
+    "warning-active": "#995f06",
+    "text-muted": "#6e6e73",
+    "text-secondary": "#424245",
+    "background": "#f8f7f7"
+  },
+  "typography": {
+    "families": [
+      "Berkeley Mono",
+      "Universal"
+    ],
+    "sizes": {
+      "body": "16px",
+      "caption": "14px"
+    },
+    "weights": [
+      400,
+      500,
+      700
+    ]
+  },
+  "spacing": {
+    "space-1": "4px",
+    "space-2": "6px",
+    "space-3": "8px",
+    "space-4": "20px",
+    "space-5": "96px"
+  },
+  "radius": {
+    "radius-1": "4px",
+    "radius-2": "6px"
+  },
+  "shadows": {}
+}

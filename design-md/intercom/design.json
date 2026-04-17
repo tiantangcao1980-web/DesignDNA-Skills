@@ -1,0 +1,47 @@
+{
+  "brand": "intercom",
+  "version": "1.0.0",
+  "$schema": "https://designdna.dev/schemas/tokens-v1.json",
+  "colors": {
+    "off-black": "#111111",
+    "pure-white": "#ffffff",
+    "warm-cream": "#faf9f6",
+    "fin-orange": "#ff5600",
+    "report-orange": "#fe4c02",
+    "report-blue": "#65b5ff",
+    "report-green": "#0bdf50",
+    "report-red": "#c41c1c",
+    "report-pink": "#ff2067",
+    "report-lime": "#b3e01c",
+    "green": "#00da00",
+    "deep-blue": "#0007cb",
+    "black-80": "#313130",
+    "black-60": "#626260",
+    "black-50": "#7b7b78",
+    "content-tertiary": "#9c9fa5",
+    "oat-border": "#dedbd6",
+    "warm-sand": "#d3cec6"
+  },
+  "typography": {
+    "families": [
+      "Green",
+      "Primary",
+      "Serif",
+      "Monospace"
+    ],
+    "sizes": {},
+    "weights": [
+      400
+    ]
+  },
+  "spacing": {
+    "space-1": "2.4px",
+    "space-2": "8px",
+    "space-3": "16px"
+  },
+  "radius": {
+    "radius-1": "4px",
+    "radius-2": "8px"
+  },
+  "shadows": {}
+}

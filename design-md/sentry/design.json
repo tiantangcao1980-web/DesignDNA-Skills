@@ -1,0 +1,49 @@
+{
+  "brand": "sentry",
+  "version": "1.0.0",
+  "$schema": "https://designdna.dev/schemas/tokens-v1.json",
+  "colors": {
+    "deep-purple": "#1f1633",
+    "darker-purple": "#150f23",
+    "border-purple": "#362d59",
+    "sentry-purple": "#6a5fc1",
+    "muted-purple": "#79628c",
+    "deep-violet": "#422082",
+    "lime-green": "#c2ef4e",
+    "coral": "#ffb287",
+    "pink": "#fa7faa",
+    "pure-white": "#ffffff",
+    "light-gray": "#e5e7eb",
+    "code-yellow": "#dcdcaa",
+    "input-border": "#cfcfdb"
+  },
+  "typography": {
+    "families": [
+      "Coral",
+      "Pink",
+      "Display",
+      "Primary UI"
+    ],
+    "sizes": {},
+    "weights": [
+      400,
+      500,
+      700
+    ]
+  },
+  "spacing": {
+    "space-1": "0.2px",
+    "space-2": "2rem",
+    "space-3": "4rem",
+    "space-4": "8px",
+    "space-5": "12px",
+    "space-6": "64px"
+  },
+  "radius": {
+    "radius-1": "13px",
+    "radius-2": "12px",
+    "radius-3": "8px",
+    "radius-4": "6px"
+  },
+  "shadows": {}
+}

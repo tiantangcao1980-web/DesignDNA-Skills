@@ -1,0 +1,40 @@
+{
+  "brand": "x.ai",
+  "version": "1.0.0",
+  "$schema": "https://designdna.dev/schemas/tokens-v1.json",
+  "colors": {
+    "pure-dark-theme": "#1f2228",
+    "pure-white": "#ffffff",
+    "color-1": "#000000"
+  },
+  "typography": {
+    "families": [
+      "in uppercase with tracked-out le",
+      "GeistMono 14px weight 400",
+      "universalSans 16px weight 400",
+      "GeistMono 12px uppercase"
+    ],
+    "sizes": {},
+    "weights": [
+      300,
+      400
+    ]
+  },
+  "spacing": {
+    "space-1": "1px",
+    "space-2": "1.4px",
+    "space-3": "4px",
+    "space-4": "8px",
+    "space-5": "12px",
+    "space-6": "22px",
+    "space-7": "48px",
+    "space-8": "96px"
+  },
+  "radius": {
+    "radius-1": "0px"
+  },
+  "shadows": {
+    "shadow-1": "s anywhere on the site. Instead, depth is communicated through three mechanisms: (1) opacity-based borders that brighten on interaction, creating a sense of elements",
+    "shadow-2": "s -- xAI has zero shadow elevation"
+  }
+}

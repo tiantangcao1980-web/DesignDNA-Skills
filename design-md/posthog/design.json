@@ -1,0 +1,47 @@
+{
+  "brand": "posthog",
+  "version": "1.0.0",
+  "$schema": "https://designdna.dev/schemas/tokens-v1.json",
+  "colors": {
+    "olive-ink": "#4d4f46",
+    "deep-olive": "#23251d",
+    "posthog-orange": "#f54e00",
+    "amber-gold": "#f7a501",
+    "gold-border": "#b17816",
+    "focus-blue": "#3b82f6",
+    "warm-parchment": "#fdfdf8",
+    "sage-cream": "#eeefe9",
+    "light-sage": "#e5e7e0",
+    "warm-tan": "#d4c9b8",
+    "hover-white": "#f4f4f4",
+    "muted-olive": "#65675e",
+    "sage-placeholder": "#9ea096",
+    "sage-border": "#bfc1b7",
+    "light-border": "#b6b7af",
+    "dark-text": "#111827",
+    "dark-primary": "#1e1f23",
+    "text-color": "#374151"
+  },
+  "typography": {
+    "families": [
+      "Dark Text",
+      "Monospace",
+      "Code Display",
+      "Input-style"
+    ],
+    "sizes": {},
+    "weights": [
+      400,
+      600,
+      700,
+      800
+    ]
+  },
+  "spacing": {
+    "space-1": "0.75px",
+    "space-2": "4px",
+    "space-3": "32px"
+  },
+  "radius": {},
+  "shadows": {}
+}

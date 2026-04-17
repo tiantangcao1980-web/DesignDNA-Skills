@@ -1,0 +1,45 @@
+{
+  "brand": "cohere",
+  "version": "1.0.0",
+  "$schema": "https://designdna.dev/schemas/tokens-v1.json",
+  "colors": {
+    "cohere-black": "#000000",
+    "near-black": "#212121",
+    "deep-dark": "#17171c",
+    "interaction-blue": "#1863dc",
+    "ring-blue": "#4c6ee6",
+    "focus-purple": "#9b60aa",
+    "pure-white": "#ffffff",
+    "snow": "#fafafa",
+    "lightest-gray": "#f2f2f2",
+    "muted-slate": "#93939f",
+    "border-cool": "#d9d9dd",
+    "border-light": "#e5e7eb"
+  },
+  "typography": {
+    "families": [
+      "CohereText",
+      "Snow",
+      "Display",
+      "Code"
+    ],
+    "sizes": {
+      "large": "20px"
+    },
+    "weights": [
+      400,
+      500
+    ]
+  },
+  "spacing": {
+    "space-1": "0.28px",
+    "space-2": "0.32px",
+    "space-3": "1.44px",
+    "space-4": "32px",
+    "space-5": "40px",
+    "space-6": "60px",
+    "space-7": "72px"
+  },
+  "radius": {},
+  "shadows": {}
+}

@@ -1,0 +1,50 @@
+{
+  "brand": "webflow",
+  "version": "1.0.0",
+  "$schema": "https://designdna.dev/schemas/tokens-v1.json",
+  "colors": {
+    "near-black": "#080808",
+    "webflow-blue": "#146ef5",
+    "blue-400": "#3b89ff",
+    "blue-300": "#006acc",
+    "button-hover-blue": "#0055d4",
+    "purple": "#7a3dff",
+    "pink": "#ed52cb",
+    "green": "#00d722",
+    "orange": "#ff6b00",
+    "yellow": "#ffae13",
+    "red": "#ee1d36",
+    "gray-800": "#222222",
+    "gray-700": "#363636",
+    "gray-300": "#ababab",
+    "mid-gray": "#5a5a5a",
+    "border-gray": "#d8d8d8",
+    "border-hover": "#898989"
+  },
+  "typography": {
+    "families": [
+      "Purple",
+      "Pink",
+      "Green",
+      "Orange"
+    ],
+    "sizes": {
+      "hero": "80px",
+      "body": "20px",
+      "caption": "14px"
+    },
+    "weights": [
+      500,
+      550,
+      600
+    ]
+  },
+  "spacing": {
+    "space-1": "0.6px",
+    "space-2": "1px"
+  },
+  "radius": {
+    "radius-1": "2px"
+  },
+  "shadows": {}
+}

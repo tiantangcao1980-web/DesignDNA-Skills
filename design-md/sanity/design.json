@@ -1,0 +1,55 @@
+{
+  "brand": "sanity",
+  "version": "1.0.0",
+  "$schema": "https://designdna.dev/schemas/tokens-v1.json",
+  "colors": {
+    "sanity-black": "#0b0b0b",
+    "pure-black": "#000000",
+    "sanity-red": "#f36458",
+    "electric-blue": "#0052ef",
+    "light-blue": "#55beff",
+    "dark-gray": "#212121",
+    "medium-dark": "#353535",
+    "pure-white": "#ffffff",
+    "light-gray": "#ededed",
+    "silver": "#b9b9b9",
+    "medium-gray": "#797979",
+    "error-red": "#dd0000",
+    "gpc-green": "#37cd84"
+  },
+  "typography": {
+    "families": [
+      "White",
+      "Silver",
+      "Charcoal",
+      "Footer"
+    ],
+    "sizes": {},
+    "weights": [
+      400,
+      600
+    ]
+  },
+  "spacing": {
+    "space-1": "0.32px",
+    "space-2": "2px",
+    "space-3": "2.88px",
+    "space-4": "8px",
+    "space-5": "13px",
+    "space-6": "16px",
+    "space-7": "24px",
+    "space-8": "32px",
+    "space-9": "48px",
+    "space-10": "120px"
+  },
+  "radius": {
+    "radius-1": "99999px",
+    "radius-2": "5px",
+    "radius-3": "6px",
+    "radius-4": "12px",
+    "radius-5": "3px"
+  },
+  "shadows": {
+    "shadow-1": "s -- ring shadows (0 0 0 Npx) or border-based containment only"
+  }
+}

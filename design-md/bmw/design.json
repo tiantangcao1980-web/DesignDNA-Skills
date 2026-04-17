@@ -1,0 +1,32 @@
+{
+  "brand": "bmw",
+  "version": "1.0.0",
+  "$schema": "https://designdna.dev/schemas/tokens-v1.json",
+  "colors": {
+    "pure-white": "#ffffff",
+    "bmw-blue": "#1c69d4",
+    "bmw-focus-blue": "#0653b6",
+    "near-black": "#262626",
+    "meta-gray": "#757575",
+    "silver": "#bbbbbb"
+  },
+  "typography": {
+    "families": [
+      "in two variants",
+      "at different weights",
+      "Silver"
+    ],
+    "sizes": {
+      "hero": "60px"
+    },
+    "weights": [
+      300,
+      400,
+      700,
+      900
+    ]
+  },
+  "spacing": {},
+  "radius": {},
+  "shadows": {}
+}

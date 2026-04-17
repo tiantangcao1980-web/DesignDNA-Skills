@@ -1,0 +1,59 @@
+{
+  "brand": "raycast",
+  "version": "1.0.0",
+  "$schema": "https://designdna.dev/schemas/tokens-v1.json",
+  "colors": {
+    "near-black-blue": "#07080a",
+    "pure-white": "#ffffff",
+    "raycast-red": "#ff6363",
+    "raycast-blue": "#55b3ff",
+    "raycast-green": "#5fc992",
+    "raycast-yellow": "#ffbc33",
+    "surface-100": "#101111",
+    "key-start": "#121212",
+    "key-end": "#0d0d0d",
+    "card-surface": "#1b1c1e",
+    "button-foreground": "#18191a",
+    "near-white": "#f9f9f9",
+    "light-gray": "#cecece",
+    "silver": "#c0c0c0",
+    "medium-gray": "#9c9c9d",
+    "dim-gray": "#6a6b6c",
+    "dark-gray": "#434345",
+    "border": "#252829",
+    "dark-border": "#2f3031"
+  },
+  "typography": {
+    "families": [
+      "Silver",
+      "Border",
+      "Primary",
+      "System"
+    ],
+    "sizes": {
+      "hero": "64px",
+      "display": "56px",
+      "large": "18px",
+      "body": "16px",
+      "caption": "14px",
+      "small": "12px"
+    },
+    "weights": [
+      500,
+      600
+    ]
+  },
+  "spacing": {
+    "space-1": "0.2px",
+    "space-2": "8px",
+    "space-3": "16px",
+    "space-4": "44px",
+    "space-5": "80px"
+  },
+  "radius": {
+    "radius-1": "4px"
+  },
+  "shadows": {
+    "shadow-1": "s with inset highlights that simulate physical depth, as if cards and buttons are actual pressed or raised glass elements on a dark desk. Combined with Raycast Red ("
+  }
+}

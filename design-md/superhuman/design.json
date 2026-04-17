@@ -1,0 +1,39 @@
+{
+  "brand": "superhuman",
+  "version": "1.0.0",
+  "$schema": "https://designdna.dev/schemas/tokens-v1.json",
+  "colors": {
+    "mysteria-purple": "#1b1938",
+    "lavender-glow": "#cbb7fb",
+    "charcoal-ink": "#292827",
+    "amethyst-link": "#714cb6",
+    "pure-white": "#ffffff",
+    "warm-cream": "#e9e5dd",
+    "parchment-border": "#dcd7d3"
+  },
+  "typography": {
+    "families": [
+      "Product UI",
+      "Hover",
+      "Mobile",
+      "Scale"
+    ],
+    "sizes": {
+      "display": "48px"
+    },
+    "weights": [
+      460,
+      540,
+      700
+    ]
+  },
+  "spacing": {
+    "space-1": "0.63px",
+    "space-2": "1.32px",
+    "space-3": "8px",
+    "space-4": "16px",
+    "space-5": "48px"
+  },
+  "radius": {},
+  "shadows": {}
+}

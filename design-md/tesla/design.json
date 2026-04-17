@@ -1,0 +1,41 @@
+{
+  "brand": "tesla",
+  "version": "1.0.0",
+  "$schema": "https://designdna.dev/schemas/tokens-v1.json",
+  "colors": {
+    "electric-blue": "#3e6ae1",
+    "pure-white": "#ffffff",
+    "light-ash": "#f4f4f4",
+    "carbon-dark": "#171a20",
+    "graphite": "#393c41",
+    "pewter": "#5c5e62",
+    "silver-fog": "#8e8e8e",
+    "cloud-gray": "#eeeeee",
+    "pale-silver": "#d0d1d2"
+  },
+  "typography": {
+    "families": [
+      "should speak for itself without",
+      "at different sizes",
+      "Universal Sans Text",
+      "Graphite"
+    ],
+    "sizes": {},
+    "weights": [
+      400,
+      500
+    ]
+  },
+  "spacing": {
+    "space-1": "4px",
+    "space-2": "16px"
+  },
+  "radius": {
+    "radius-1": "4px"
+  },
+  "shadows": {
+    "shadow-1": "transition",
+    "shadow-2": "0.33s cubic-bezier(0.5, 0, 0, 0.75), color 0.33s",
+    "shadow-3": "s entirely in its primary interface. Depth is communicated through three alternative strategies:"
+  }
+}

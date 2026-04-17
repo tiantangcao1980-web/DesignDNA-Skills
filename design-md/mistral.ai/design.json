@@ -1,0 +1,41 @@
+{
+  "brand": "mistral.ai",
+  "version": "1.0.0",
+  "$schema": "https://designdna.dev/schemas/tokens-v1.json",
+  "colors": {
+    "mistral-orange": "#fa520f",
+    "mistral-flame": "#fb6424",
+    "block-orange": "#ff8105",
+    "sunshine-900": "#ff8a00",
+    "sunshine-700": "#ffa110",
+    "sunshine-500": "#ffb83e",
+    "sunshine-300": "#ffd06a",
+    "block-gold": "#ffe295",
+    "bright-yellow": "#ffd900",
+    "warm-ivory": "#fffaeb",
+    "cream": "#fff0c2",
+    "pure-white": "#ffffff",
+    "mistral-black": "#1f1f1f"
+  },
+  "typography": {
+    "families": [
+      "Cream",
+      "Primary",
+      "Navigation",
+      "Photography"
+    ],
+    "sizes": {},
+    "weights": [
+      400
+    ]
+  },
+  "spacing": {
+    "space-1": "2.05px",
+    "space-2": "8px",
+    "space-3": "12px",
+    "space-4": "80px",
+    "space-5": "82px"
+  },
+  "radius": {},
+  "shadows": {}
+}

@@ -1,0 +1,67 @@
+{
+  "brand": "hashicorp",
+  "version": "1.0.0",
+  "$schema": "https://designdna.dev/schemas/tokens-v1.json",
+  "colors": {
+    "black": "#000000",
+    "dark-charcoal": "#15181e",
+    "near-black": "#0d0e12",
+    "light-gray": "#f1f2f3",
+    "mid-gray": "#d5d7db",
+    "cool-gray": "#b2b6bd",
+    "dark-gray": "#656a76",
+    "charcoal": "#3b3d45",
+    "near-white": "#efeff1",
+    "terraform-purple": "#7b42bc",
+    "vault-yellow": "#ffcf25",
+    "waypoint-teal": "#14c6cb",
+    "waypoint-teal-hover": "#12b6bb",
+    "vagrant-blue": "#1868f2",
+    "purple-accent": "#911ced",
+    "visited-purple": "#a737ff",
+    "action-blue": "#1060ff",
+    "link-blue": "#2264d6",
+    "bright-blue": "#2b89ff",
+    "amber": "#bb5a00",
+    "amber-light": "#fbeabf",
+    "vault-faint-yellow": "#fff9cf",
+    "orange": "#a9722e",
+    "red": "#731e25",
+    "navy": "#101a59",
+    "background": "#ffffff"
+  },
+  "typography": {
+    "families": [
+      "Black",
+      "Charcoal",
+      "Amber",
+      "Orange"
+    ],
+    "sizes": {
+      "hero": "82px"
+    },
+    "weights": [
+      400,
+      500,
+      600,
+      700
+    ]
+  },
+  "spacing": {
+    "space-1": "1.3px",
+    "space-2": "3px",
+    "space-3": "4px",
+    "space-4": "8px",
+    "space-5": "9px",
+    "space-6": "11px",
+    "space-7": "48px"
+  },
+  "radius": {
+    "radius-1": "2px",
+    "radius-2": "5px",
+    "radius-3": "4px",
+    "radius-4": "3px",
+    "radius-5": "8px"
+  },
+  "shadows": {}
+}

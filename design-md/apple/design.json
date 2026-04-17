@@ -1,0 +1,54 @@
+{
+  "brand": "apple",
+  "version": "1.0.0",
+  "$schema": "https://designdna.dev/schemas/tokens-v1.json",
+  "colors": {
+    "pure-black": "#000000",
+    "light-gray": "#f5f5f7",
+    "near-black": "#1d1d1f",
+    "apple-blue": "#0071e3",
+    "link-blue": "#0066cc",
+    "bright-blue": "#2997ff",
+    "white": "#ffffff",
+    "dark-surface-1": "#272729",
+    "dark-surface-2": "#262628",
+    "dark-surface-3": "#28282a",
+    "dark-surface-4": "#2a2a2d",
+    "dark-surface-5": "#242426",
+    "button-active": "#ededf2",
+    "button-default-light": "#fafafc"
+  },
+  "typography": {
+    "families": [
+      "SF Pro Text",
+      "White",
+      "Overlay",
+      "Display"
+    ],
+    "sizes": {
+      "display": "56px",
+      "large": "12px"
+    },
+    "weights": [
+      300,
+      400,
+      600,
+      700,
+      800
+    ]
+  },
+  "spacing": {
+    "space-1": "0.196px",
+    "space-2": "0.28px",
+    "space-3": "0.374px",
+    "space-4": "8px",
+    "space-5": "44px"
+  },
+  "radius": {
+    "radius-1": "8px",
+    "radius-2": "980px",
+    "radius-3": "11px",
+    "radius-4": "5px"
+  },
+  "shadows": {}
+}

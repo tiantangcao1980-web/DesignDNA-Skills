@@ -1,0 +1,59 @@
+{
+  "brand": "resend",
+  "version": "1.0.0",
+  "$schema": "https://designdna.dev/schemas/tokens-v1.json",
+  "colors": {
+    "void-black": "#000000",
+    "near-white": "#f0f0f0",
+    "pure-white": "#ffffff",
+    "orange-4": "#ff5900",
+    "orange-10": "#ff801f",
+    "orange-11": "#ffa057",
+    "green-3": "#22ff99",
+    "green-4": "#11ff99",
+    "blue-4": "#0075ff",
+    "blue-5": "#0081fd",
+    "blue-10": "#3b9eff",
+    "yellow-9": "#ffc53d",
+    "red-5": "#ff2047",
+    "silver": "#a1a4a5",
+    "dark-gray": "#464a4d",
+    "mid-gray": "#5c5c5c",
+    "medium-gray": "#494949",
+    "light-gray": "#f8f8f8",
+    "border-gray": "#eaeaea",
+    "edge-gray": "#ececec",
+    "mist-gray": "#dedfdf",
+    "soft-gray": "#e5e6e6",
+    "frost-primary": "#fcfdff"
+  },
+  "typography": {
+    "families": [
+      "Silver",
+      "Display Serif",
+      "Display Sans",
+      "Monospace"
+    ],
+    "sizes": {
+      "large": "16px"
+    },
+    "weights": [
+      400,
+      500
+    ]
+  },
+  "spacing": {
+    "space-1": "0.35px",
+    "space-2": "0.96px",
+    "space-3": "2.8px",
+    "space-4": "5px",
+    "space-5": "76.8px",
+    "space-6": "80px"
+  },
+  "radius": {
+    "radius-1": "9999px",
+    "radius-2": "4px",
+    "radius-3": "16px"
+  },
+  "shadows": {}
+}

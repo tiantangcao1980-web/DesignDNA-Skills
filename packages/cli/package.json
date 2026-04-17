@@ -1,0 +1,49 @@
+{
+  "name": "designdna",
+  "version": "0.1.0",
+  "description": "Design systems as AI skills. Install brand design systems (Apple, Tesla, Stripe, Linear +54) into your AI-agent project with one command.",
+  "bin": {
+    "designdna": "bin/designdna.js"
+  },
+  "type": "module",
+  "keywords": [
+    "design-system",
+    "design-md",
+    "ai-agent",
+    "claude-code",
+    "cursor",
+    "windsurf",
+    "codex",
+    "stitch",
+    "cli",
+    "tailwind",
+    "tokens",
+    "brand",
+    "ui"
+  ],
+  "homepage": "https://github.com/tiantangcao1980-web/DesignDNA-Skills",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiantangcao1980-web/DesignDNA-Skills.git",
+    "directory": "packages/cli"
+  },
+  "bugs": "https://github.com/tiantangcao1980-web/DesignDNA-Skills/issues",
+  "license": "MIT",
+  "author": "tiantangcao1980-web",
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md"
+  ],
+  "dependencies": {
+    "kleur": "^4.1.5",
+    "prompts": "^2.4.2"
+  },
+  "scripts": {
+    "test": "node --test src/__tests__/*.test.js",
+    "start": "node bin/designdna.js"
+  }
+}

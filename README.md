@@ -1,29 +1,68 @@
 <div align="center">
-  <img src="assets/banner.svg" alt="DesignDNA - AI Design System Skill" width="100%" />
-</div>
-
-<br/>
-
-<div align="center">
-    <strong>Not just a collection of DESIGN.md files &mdash; a production system for AI-generated UI quality.</strong>
-    <br />
-    <br />
-    Drop a DESIGN.md into your project. Tell your AI agent &ldquo;build me a page that looks like this.&rdquo;<br/>
-    Get pixel-perfect, brand-quality UI instead of generic AI aesthetics.
+  <img src="assets/banner.svg" alt="DesignDNA - Design systems as AI skills" width="100%" />
 </div>
 
 <br/>
 
 <div align="center">
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-![Brands](https://img.shields.io/badge/brands-58-10b981?style=flat)
-![Rules](https://img.shields.io/badge/rules-10-818cf8?style=flat)
-![Archetypes](https://img.shields.io/badge/archetypes-10-c084fc?style=flat)
-[![License](https://img.shields.io/badge/license-MIT-f472b6?style=flat)](LICENSE)
-[![Last Update](https://img.shields.io/github/last-commit/tiantangcao1980-web/DesignDNA-Skills?label=updated&style=flat)](https://github.com/tiantangcao1980-web/DesignDNA-Skills)
+[![License: MIT](https://img.shields.io/badge/license-MIT-f472b6?style=flat-square)](LICENSE)
+![Brands](https://img.shields.io/badge/brands-58-10b981?style=flat-square)
+![Rules](https://img.shields.io/badge/rules-10-818cf8?style=flat-square)
+![Archetypes](https://img.shields.io/badge/archetypes-10-c084fc?style=flat-square)
+[![Last Update](https://img.shields.io/github/last-commit/tiantangcao1980-web/DesignDNA-Skills?label=updated&style=flat-square)](https://github.com/tiantangcao1980-web/DesignDNA-Skills)
+[![Stars](https://img.shields.io/github/stars/tiantangcao1980-web/DesignDNA-Skills?style=flat-square&color=fbbf24)](https://github.com/tiantangcao1980-web/DesignDNA-Skills/stargazers)
 
 </div>
+
+<br/>
+
+<h1 align="center">Design systems as AI skills</h1>
+
+<p align="center">
+  <strong>Teach your AI agent to build UI like Apple, Tesla, Stripe, Linear &mdash; in one command.</strong>
+</p>
+
+<br/>
+
+## Quick Install
+
+```bash
+# Add a brand design system to your project
+npx designdna add stripe
+
+# Or pick interactively from 58 brands
+npx designdna init
+
+# Or install the full skill into your AI IDE
+npx designdna install --ide=claude-code
+```
+
+<details>
+<summary><strong>Manual install (no CLI)</strong></summary>
+
+<br/>
+
+| AI Editor | File to copy | Destination |
+|---|---|---|
+| Claude Code | `designdna/SKILL.md` | `~/.claude/skills/designdna/` |
+| Cursor | `designdna/.cursorrules` | Project root as `.cursorrules` |
+| Windsurf | `designdna/.cursorrules` | Project root |
+| Codex / OpenAI | `designdna/AGENTS.md` | Project root as `AGENTS.md` |
+| Google Stitch | `design-md/{brand}/DESIGN.md` | Drop into Stitch project |
+| Any agent | `designdna/rules.md` | Project root |
+
+For brand-specific design systems, copy `design-md/{brand}/DESIGN.md` into your project root.
+
+</details>
+
+<br/>
+
+## Why DesignDNA?
+
+AI agents produce UI that all looks the same &mdash; safe colors, centered layouts, predictable spacing. The root cause: **agents lack design taste.**
+
+DesignDNA distills **58 world-class brand design systems** into structured AI skills that any coding agent can read and apply. Instead of generic AI aesthetics, you get Apple's precision, Stripe's trust, Linear's minimalism &mdash; on demand.
 
 <br/>
 
@@ -35,63 +74,163 @@
 
 ---
 
-## Why DesignDNA?
+## What you get
 
-AI agents generate UI that all looks the same &mdash; safe colors, centered layouts, predictable spacing. The root cause: **agents lack design knowledge.**
-
-DesignDNA solves this by distilling **58 world-class brand design systems** into a structured AI skill that any coding agent can read and apply. It goes far beyond raw DESIGN.md files:
-
-| Capability | Raw DESIGN.md Collection | DesignDNA Skill |
+| Capability | Raw DESIGN.md files | DesignDNA |
 |---|---|---|
-| Brand design systems | 58 files | 58 files |
+| Brand design systems | 58 markdown files | 58 × 5 formats (MD, JSON, CSS, Tailwind, TS) |
 | Universal design rules | &mdash; | 10 meta-patterns extracted across all brands |
 | Consistency enforcement | &mdash; | 5 C-Rules preventing design drift |
 | Resource library | &mdash; | Icons, images, components, fonts, animations |
 | Design archetypes | &mdash; | 10 ready-to-use reference patterns |
-| Multi-IDE support | GitHub only | Claude Code, Cursor, Windsurf, Codex, Stitch, Cline, Trae |
-| Agent prompt guide | Basic | Complete prompt templates per archetype |
+| Multi-IDE support | GitHub only | Claude Code, Cursor, Windsurf, Codex, Stitch |
+| CLI installation | &mdash; | `npx designdna add <brand>` |
+| Interactive Playground | Static gallery | Parameter sliders + live code export |
 
 ---
 
-## Quick Start
+## 30-second tour
 
-**Option 1 &mdash; Use a brand's design system directly:**
+**1. Pick a brand** &mdash; run `npx designdna list` or browse the [Playground](https://tiantangcao1980-web.github.io/DesignDNA-Skills/).
+
+**2. Install into your project:**
 
 ```bash
-# Copy any brand's DESIGN.md into your project
-cp design-md/stripe/DESIGN.md ./DESIGN.md
-
-# Tell your AI agent
-> "Build me a dashboard page following DESIGN.md"
+npx designdna add stripe --format=tailwind
+# ✓ Created DESIGN.md
+# ✓ Created tailwind.config.js
+# ✓ Created variables.css
+# ✓ Installed skill into .cursorrules
 ```
 
-**Option 2 &mdash; Install the full DesignDNA skill:**
+**3. Tell your AI agent:**
 
-| AI Editor | File to use | Install |
-|---|---|---|
-| Claude Code | `designdna/SKILL.md` | Copy to `~/.claude/skills/designdna/` |
-| Cursor | `designdna/.cursorrules` | Copy to project root as `.cursorrules` |
-| Windsurf | `designdna/.cursorrules` | Copy to project root |
-| Codex / OpenAI | `designdna/AGENTS.md` | Copy to project root as `AGENTS.md` |
-| Google Stitch | `design-md/*/DESIGN.md` | Drop into Stitch project |
-| Other agents | `designdna/rules.md` | Copy to project root |
+> "Build me a pricing page following DESIGN.md"
+
+Your agent now generates UI with Stripe's signature purple gradients, weight-300 elegance, and proper spacing &mdash; not a generic centered card.
 
 ---
 
-## What is DESIGN.md?
+## Brand catalog (58)
 
-[DESIGN.md](https://stitch.withgoogle.com/docs/design-md/overview/) is a concept introduced by Google Stitch &mdash; a plain-text design system document that AI agents read to generate consistent UI.
+| Category | Brands |
+|---|---|
+| **AI & ML** | Claude, Cohere, ElevenLabs, Minimax, Mistral AI, Ollama, OpenCode AI, Replicate, RunwayML, Together AI, VoltAgent, xAI |
+| **Dev Tools** | Cursor, Expo, Linear, Lovable, Mintlify, PostHog, Raycast, Resend, Sentry, Supabase, Superhuman, Vercel, Warp, Zapier |
+| **Infra & Cloud** | ClickHouse, Composio, HashiCorp, MongoDB, Sanity, Stripe |
+| **Design & Productivity** | Airtable, Cal.com, Clay, Figma, Framer, Intercom, Miro, Notion, Pinterest, Webflow |
+| **Fintech & Crypto** | Coinbase, Kraken, Revolut, Wise |
+| **Consumer & Enterprise** | Airbnb, Apple, IBM, NVIDIA, SpaceX, Spotify, Uber |
+| **Automotive** | BMW, Ferrari, Lamborghini, Renault, Tesla |
 
-No Figma exports, no JSON schemas, no special tooling. Just a markdown file in your project root.
+Browse the full interactive gallery at **[Playground](https://tiantangcao1980-web.github.io/DesignDNA-Skills/)** or explore the [`design-md/`](./design-md/) directory.
 
-| File | Who reads it | What it defines |
-|------|-------------|-----------------|
-| `AGENTS.md` | Coding agents | How to build the project |
-| `DESIGN.md` | Design agents | How the project should look and feel |
+<details>
+<summary><strong>Full brand list with descriptions</strong></summary>
 
-### The 9-Section Standard
+<br/>
 
-Every DESIGN.md in this collection follows an extended format:
+### AI & Machine Learning
+
+- [**Claude**](design-md/claude/) &mdash; Anthropic's AI assistant. Warm terracotta accent, clean editorial layout
+- [**Cohere**](design-md/cohere/) &mdash; Enterprise AI platform. Vibrant gradients, data-rich dashboard aesthetic
+- [**ElevenLabs**](design-md/elevenlabs/) &mdash; AI voice platform. Dark cinematic UI, audio-waveform aesthetics
+- [**Minimax**](design-md/minimax/) &mdash; AI model provider. Bold dark interface with neon accents
+- [**Mistral AI**](design-md/mistral.ai/) &mdash; Open-weight LLM provider. French-engineered minimalism, purple-toned
+- [**Ollama**](design-md/ollama/) &mdash; Run LLMs locally. Terminal-first, monochrome simplicity
+- [**OpenCode AI**](design-md/opencode.ai/) &mdash; AI coding platform. Developer-centric dark theme
+- [**Replicate**](design-md/replicate/) &mdash; Run ML models via API. Clean white canvas, code-forward
+- [**RunwayML**](design-md/runwayml/) &mdash; AI video generation. Cinematic dark UI, media-rich layout
+- [**Together AI**](design-md/together.ai/) &mdash; Open-source AI infrastructure. Technical, blueprint-style design
+- [**VoltAgent**](design-md/voltagent/) &mdash; AI agent framework. Void-black canvas, emerald accent, terminal-native
+- [**xAI**](design-md/x.ai/) &mdash; Elon Musk's AI lab. Stark monochrome, futuristic minimalism
+
+### Developer Tools & Platforms
+
+- [**Cursor**](design-md/cursor/) &mdash; AI-first code editor. Sleek dark interface, gradient accents
+- [**Expo**](design-md/expo/) &mdash; React Native platform. Dark theme, tight letter-spacing, code-centric
+- [**Linear**](design-md/linear.app/) &mdash; Project management for engineers. Ultra-minimal, precise, purple accent
+- [**Lovable**](design-md/lovable/) &mdash; AI full-stack builder. Playful gradients, friendly dev aesthetic
+- [**Mintlify**](design-md/mintlify/) &mdash; Documentation platform. Clean, green-accented, reading-optimized
+- [**PostHog**](design-md/posthog/) &mdash; Product analytics. Playful hedgehog branding, developer-friendly dark UI
+- [**Raycast**](design-md/raycast/) &mdash; Productivity launcher. Sleek dark chrome, vibrant gradient accents
+- [**Resend**](design-md/resend/) &mdash; Email API for developers. Minimal dark theme, monospace accents
+- [**Sentry**](design-md/sentry/) &mdash; Error monitoring. Dark dashboard, data-dense, pink-purple accent
+- [**Supabase**](design-md/supabase/) &mdash; Open-source Firebase alternative. Dark emerald theme, code-first
+- [**Superhuman**](design-md/superhuman/) &mdash; Fast email client. Premium dark UI, keyboard-first, purple glow
+- [**Vercel**](design-md/vercel/) &mdash; Frontend deployment platform. Black and white precision, Geist font
+- [**Warp**](design-md/warp/) &mdash; Modern terminal. Dark IDE-like interface, block-based command UI
+- [**Zapier**](design-md/zapier/) &mdash; Automation platform. Warm orange, friendly illustration-driven
+
+### Infrastructure & Cloud
+
+- [**ClickHouse**](design-md/clickhouse/) &mdash; Fast analytics database. Yellow-accented, technical documentation style
+- [**Composio**](design-md/composio/) &mdash; Tool integration platform. Modern dark with colorful integration icons
+- [**HashiCorp**](design-md/hashicorp/) &mdash; Infrastructure automation. Enterprise-clean, black and white
+- [**MongoDB**](design-md/mongodb/) &mdash; Document database. Green leaf branding, developer documentation focus
+- [**Sanity**](design-md/sanity/) &mdash; Headless CMS. Red accent, content-first editorial layout
+- [**Stripe**](design-md/stripe/) &mdash; Payment infrastructure. Signature purple gradients, weight-300 elegance
+
+### Design & Productivity
+
+- [**Airtable**](design-md/airtable/) &mdash; Spreadsheet-database hybrid. Colorful, friendly, structured data aesthetic
+- [**Cal.com**](design-md/cal/) &mdash; Open-source scheduling. Clean neutral UI, developer-oriented simplicity
+- [**Clay**](design-md/clay/) &mdash; Creative agency. Organic shapes, soft gradients, art-directed layout
+- [**Figma**](design-md/figma/) &mdash; Collaborative design tool. Vibrant multi-color, playful yet professional
+- [**Framer**](design-md/framer/) &mdash; Website builder. Bold black and blue, motion-first, design-forward
+- [**Intercom**](design-md/intercom/) &mdash; Customer messaging. Friendly blue palette, conversational UI patterns
+- [**Miro**](design-md/miro/) &mdash; Visual collaboration. Bright yellow accent, infinite canvas aesthetic
+- [**Notion**](design-md/notion/) &mdash; All-in-one workspace. Warm minimalism, serif headings, soft surfaces
+- [**Pinterest**](design-md/pinterest/) &mdash; Visual discovery platform. Red accent, masonry grid, image-first
+- [**Webflow**](design-md/webflow/) &mdash; Visual web builder. Blue-accented, polished marketing site aesthetic
+
+### Fintech & Crypto
+
+- [**Coinbase**](design-md/coinbase/) &mdash; Crypto exchange. Clean blue identity, trust-focused, institutional feel
+- [**Kraken**](design-md/kraken/) &mdash; Crypto trading platform. Purple-accented dark UI, data-dense dashboards
+- [**Revolut**](design-md/revolut/) &mdash; Digital banking. Sleek dark interface, gradient cards, fintech precision
+- [**Wise**](design-md/wise/) &mdash; International money transfer. Bright green accent, friendly and clear
+
+### Enterprise & Consumer
+
+- [**Airbnb**](design-md/airbnb/) &mdash; Travel marketplace. Warm coral accent, photography-driven, rounded UI
+- [**Apple**](design-md/apple/) &mdash; Consumer electronics. Premium white space, SF Pro, cinematic imagery
+- [**IBM**](design-md/ibm/) &mdash; Enterprise technology. Carbon design system, structured blue palette
+- [**NVIDIA**](design-md/nvidia/) &mdash; GPU computing. Green-black energy, technical power aesthetic
+- [**SpaceX**](design-md/spacex/) &mdash; Space technology. Stark black and white, full-bleed imagery, futuristic
+- [**Spotify**](design-md/spotify/) &mdash; Music streaming. Vibrant green on dark, bold type, album-art-driven
+- [**Uber**](design-md/uber/) &mdash; Mobility platform. Bold black and white, tight type, urban energy
+
+### Car Brands
+
+- [**BMW**](design-md/bmw/) &mdash; Luxury automotive. Dark premium surfaces, precise German engineering aesthetic
+- [**Ferrari**](design-md/ferrari/) &mdash; Luxury automotive. Chiaroscuro black-white editorial, Ferrari Red with extreme sparseness
+- [**Lamborghini**](design-md/lamborghini/) &mdash; Luxury automotive. True black cathedral, gold accent, LamboType custom Neo-Grotesk
+- [**Renault**](design-md/renault/) &mdash; French automotive. Vivid aurora gradients, NouvelR proprietary typeface, zero-radius buttons
+- [**Tesla**](design-md/tesla/) &mdash; Electric vehicles. Radical subtraction, cinematic full-viewport photography, Universal Sans
+
+</details>
+
+---
+
+## What's inside each brand
+
+Every brand directory provides **5 formats** so you can pick what your stack needs:
+
+```
+design-md/stripe/
+├── DESIGN.md           # Human-readable spec (what AI agents read)
+├── design.json         # Design tokens (machine-readable)
+├── tailwind.config.js  # Tailwind preset (drop-in)
+├── variables.css       # CSS custom properties (drop-in)
+├── tokens.ts           # TypeScript design tokens (type-safe)
+├── preview.html        # Visual catalog (light)
+└── preview-dark.html   # Visual catalog (dark)
+```
+
+### The 9-Section DESIGN.md standard
+
+Every DESIGN.md follows the [Stitch DESIGN.md format](https://stitch.withgoogle.com/docs/design-md/format/) extended with these sections:
 
 | # | Section | What it captures |
 |---|---------|-----------------|
@@ -105,127 +244,54 @@ Every DESIGN.md in this collection follows an extended format:
 | 8 | Responsive Behavior | Breakpoints, touch targets, collapsing strategy |
 | 9 | Agent Prompt Guide | Quick color reference, ready-to-use prompts |
 
-Each brand directory includes:
+---
 
-| File | Purpose |
-|------|---------|
-| `DESIGN.md` | The design system (what agents read) |
-| `preview.html` | Visual catalog &mdash; color swatches, type scale, buttons, cards |
-| `preview-dark.html` | Same catalog with dark surfaces |
+## Showcase
+
+> Built something with DesignDNA? [Open a PR](https://github.com/tiantangcao1980-web/DesignDNA-Skills/pulls) to add it here.
+
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <em>Your project here</em><br/>
+      <sub>Built with <code>npx designdna add stripe</code></sub>
+    </td>
+    <td align="center" width="33%">
+      <em>Your project here</em><br/>
+      <sub>Built with <code>npx designdna add linear</code></sub>
+    </td>
+    <td align="center" width="33%">
+      <em>Your project here</em><br/>
+      <sub>Built with <code>npx designdna add apple</code></sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
-## Project Structure
+## Project structure
 
 ```
 DesignDNA-Skills/
-  design-md/              # 58 brand DESIGN.md files
-    airbnb/
-    apple/
-    stripe/
-    ...
-  designdna/               # The AI skill (meta-layer)
-    SKILL.md               # Claude Code skill (most comprehensive)
-    AGENTS.md              # Codex / OpenAI agents format
-    .cursorrules           # Cursor / Windsurf format
-    rules.md               # Generic agent format
-    RESOURCES.md           # Curated resource library
-    README.md              # Skill documentation
-    assets/                # Font & icon indexes
-    examples/              # DESIGN.md templates
-    experience/            # Interaction patterns & references
-  assets/                  # Project banner & diagrams
-  index.html               # Visual preview of all 58 brands
+├── design-md/              # 58 brand design systems (5 formats each)
+├── designdna/              # The portable AI skill
+│   ├── SKILL.md            # Claude Code skill
+│   ├── AGENTS.md           # Codex / OpenAI format
+│   ├── .cursorrules        # Cursor / Windsurf format
+│   ├── rules.md            # Generic agent format
+│   ├── RESOURCES.md        # Curated resource library
+│   └── examples/           # DESIGN.md templates
+├── packages/
+│   └── cli/                # npx designdna CLI tool
+├── playground/             # Interactive brand explorer
+└── assets/                 # Banners & diagrams
 ```
 
 ---
 
-## Request a DESIGN.md
+## Request a brand
 
-[Open a GitHub issue with this template](https://github.com/tiantangcao1980-web/DesignDNA-Skills/issues/new?template=design-md-request.yml) to request a DESIGN.md generation for any website.
-
----
-
-## Collection
-
-### AI & Machine Learning
-
-- [**Claude**](design-md/claude/) - Anthropic's AI assistant. Warm terracotta accent, clean editorial layout
-- [**Cohere**](design-md/cohere/) - Enterprise AI platform. Vibrant gradients, data-rich dashboard aesthetic
-- [**ElevenLabs**](design-md/elevenlabs/) - AI voice platform. Dark cinematic UI, audio-waveform aesthetics
-- [**Minimax**](design-md/minimax/) - AI model provider. Bold dark interface with neon accents
-- [**Mistral AI**](design-md/mistral.ai/) - Open-weight LLM provider. French-engineered minimalism, purple-toned
-- [**Ollama**](design-md/ollama/) - Run LLMs locally. Terminal-first, monochrome simplicity
-- [**OpenCode AI**](design-md/opencode.ai/) - AI coding platform. Developer-centric dark theme
-- [**Replicate**](design-md/replicate/) - Run ML models via API. Clean white canvas, code-forward
-- [**RunwayML**](design-md/runwayml/) - AI video generation. Cinematic dark UI, media-rich layout
-- [**Together AI**](design-md/together.ai/) - Open-source AI infrastructure. Technical, blueprint-style design
-- [**VoltAgent**](design-md/voltagent/) - AI agent framework. Void-black canvas, emerald accent, terminal-native
-- [**xAI**](design-md/x.ai/) - Elon Musk's AI lab. Stark monochrome, futuristic minimalism
-
-### Developer Tools & Platforms
-
-- [**Cursor**](design-md/cursor/) - AI-first code editor. Sleek dark interface, gradient accents
-- [**Expo**](design-md/expo/) - React Native platform. Dark theme, tight letter-spacing, code-centric
-- [**Linear**](design-md/linear.app/) - Project management for engineers. Ultra-minimal, precise, purple accent
-- [**Lovable**](design-md/lovable/) - AI full-stack builder. Playful gradients, friendly dev aesthetic
-- [**Mintlify**](design-md/mintlify/) - Documentation platform. Clean, green-accented, reading-optimized
-- [**PostHog**](design-md/posthog/) - Product analytics. Playful hedgehog branding, developer-friendly dark UI
-- [**Raycast**](design-md/raycast/) - Productivity launcher. Sleek dark chrome, vibrant gradient accents
-- [**Resend**](design-md/resend/) - Email API for developers. Minimal dark theme, monospace accents
-- [**Sentry**](design-md/sentry/) - Error monitoring. Dark dashboard, data-dense, pink-purple accent
-- [**Supabase**](design-md/supabase/) - Open-source Firebase alternative. Dark emerald theme, code-first
-- [**Superhuman**](design-md/superhuman/) - Fast email client. Premium dark UI, keyboard-first, purple glow
-- [**Vercel**](design-md/vercel/) - Frontend deployment platform. Black and white precision, Geist font
-- [**Warp**](design-md/warp/) - Modern terminal. Dark IDE-like interface, block-based command UI
-- [**Zapier**](design-md/zapier/) - Automation platform. Warm orange, friendly illustration-driven
-
-### Infrastructure & Cloud
-
-- [**ClickHouse**](design-md/clickhouse/) - Fast analytics database. Yellow-accented, technical documentation style
-- [**Composio**](design-md/composio/) - Tool integration platform. Modern dark with colorful integration icons
-- [**HashiCorp**](design-md/hashicorp/) - Infrastructure automation. Enterprise-clean, black and white
-- [**MongoDB**](design-md/mongodb/) - Document database. Green leaf branding, developer documentation focus
-- [**Sanity**](design-md/sanity/) - Headless CMS. Red accent, content-first editorial layout
-- [**Stripe**](design-md/stripe/) - Payment infrastructure. Signature purple gradients, weight-300 elegance
-
-### Design & Productivity
-
-- [**Airtable**](design-md/airtable/) - Spreadsheet-database hybrid. Colorful, friendly, structured data aesthetic
-- [**Cal.com**](design-md/cal/) - Open-source scheduling. Clean neutral UI, developer-oriented simplicity
-- [**Clay**](design-md/clay/) - Creative agency. Organic shapes, soft gradients, art-directed layout
-- [**Figma**](design-md/figma/) - Collaborative design tool. Vibrant multi-color, playful yet professional
-- [**Framer**](design-md/framer/) - Website builder. Bold black and blue, motion-first, design-forward
-- [**Intercom**](design-md/intercom/) - Customer messaging. Friendly blue palette, conversational UI patterns
-- [**Miro**](design-md/miro/) - Visual collaboration. Bright yellow accent, infinite canvas aesthetic
-- [**Notion**](design-md/notion/) - All-in-one workspace. Warm minimalism, serif headings, soft surfaces
-- [**Pinterest**](design-md/pinterest/) - Visual discovery platform. Red accent, masonry grid, image-first
-- [**Webflow**](design-md/webflow/) - Visual web builder. Blue-accented, polished marketing site aesthetic
-
-### Fintech & Crypto
-
-- [**Coinbase**](design-md/coinbase/) - Crypto exchange. Clean blue identity, trust-focused, institutional feel
-- [**Kraken**](design-md/kraken/) - Crypto trading platform. Purple-accented dark UI, data-dense dashboards
-- [**Revolut**](design-md/revolut/) - Digital banking. Sleek dark interface, gradient cards, fintech precision
-- [**Wise**](design-md/wise/) - International money transfer. Bright green accent, friendly and clear
-
-### Enterprise & Consumer
-
-- [**Airbnb**](design-md/airbnb/) - Travel marketplace. Warm coral accent, photography-driven, rounded UI
-- [**Apple**](design-md/apple/) - Consumer electronics. Premium white space, SF Pro, cinematic imagery
-- [**IBM**](design-md/ibm/) - Enterprise technology. Carbon design system, structured blue palette
-- [**NVIDIA**](design-md/nvidia/) - GPU computing. Green-black energy, technical power aesthetic
-- [**SpaceX**](design-md/spacex/) - Space technology. Stark black and white, full-bleed imagery, futuristic
-- [**Spotify**](design-md/spotify/) - Music streaming. Vibrant green on dark, bold type, album-art-driven
-- [**Uber**](design-md/uber/) - Mobility platform. Bold black and white, tight type, urban energy
-
-### Car Brands
-
-- [**BMW**](design-md/bmw/) - Luxury automotive. Dark premium surfaces, precise German engineering aesthetic
-- [**Ferrari**](design-md/ferrari/) - Luxury automotive. Chiaroscuro black-white editorial, Ferrari Red with extreme sparseness
-- [**Lamborghini**](design-md/lamborghini/) - Luxury automotive. True black cathedral, gold accent, LamboType custom Neo-Grotesk
-- [**Renault**](design-md/renault/) - French automotive. Vivid aurora gradients, NouvelR proprietary typeface, zero-radius buttons
-- [**Tesla**](design-md/tesla/) - Electric vehicles. Radical subtraction, cinematic full-viewport photography, Universal Sans
+[Open an issue](https://github.com/tiantangcao1980-web/DesignDNA-Skills/issues/new?template=design-md-request.yml) with the website URL to request a new DESIGN.md.
 
 ---
 
@@ -233,22 +299,19 @@ DesignDNA-Skills/
 
 This project stands on the shoulders of great work:
 
-- **[Awesome DESIGN.md](https://github.com/VoltAgent/awesome-design-md)** &mdash; The original curated collection of DESIGN.md files by the [VoltAgent](https://github.com/VoltAgent) team. They did the foundational work of extracting design systems from 58 world-class brand websites into structured DESIGN.md format. Without their effort, this project would not exist.
+- **[Awesome DESIGN.md](https://github.com/VoltAgent/awesome-design-md)** &mdash; The original curated collection by the [VoltAgent](https://github.com/VoltAgent) team, which extracted design systems from 58 world-class brand websites into structured DESIGN.md format. Without their foundational work, this project would not exist.
 - **[Google Stitch](https://stitch.withgoogle.com/docs/design-md/overview/)** &mdash; For introducing the [DESIGN.md format](https://stitch.withgoogle.com/docs/design-md/format/) that makes design systems readable by AI agents.
+- **[React Bits](https://github.com/DavidHDev/react-bits)** &mdash; For showing how a curated, multi-variant component library can achieve developer delight.
+- **[Remotion](https://github.com/remotion-dev/remotion)** &mdash; For the inspiration on how to turn domain expertise into developer-native tooling.
 
-**What DesignDNA adds:** The VoltAgent team provided excellent raw design system examples. DesignDNA builds on top of that foundation to bridge the gap from **UI design reference to engineering-ready, plug-and-play AI skill** &mdash; adding 10 universal design rules, 5 consistency enforcement rules, 10 design archetypes, a curated resource library, multi-IDE skill formats, and production workflow guidance. The goal is simple: copy it in, and your AI agent immediately produces brand-quality UI.
+**What DesignDNA adds:** 10 universal rules, 5 C-Rules, 10 archetypes, multi-format variants (MD/JSON/CSS/Tailwind/TS), CLI scaffolding, and multi-IDE skill distribution &mdash; turning a design reference collection into a plug-and-play AI skill.
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-- **Improve existing files**: Fix wrong colors, missing tokens, weak descriptions
-- **Report issues**: Let us know if something looks off
-
-Before opening a PR, please [open an issue](https://github.com/tiantangcao1980-web/DesignDNA-Skills/issues) first to discuss.
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
-MIT License - see [LICENSE](LICENSE)
+MIT &mdash; see [LICENSE](LICENSE).
 
-This repository provides design system documents extracted from public websites. All DESIGN.md files are provided "as is" without warranty. The extracted design tokens represent publicly visible CSS values. We do not claim ownership of any site's visual identity. These documents exist to help AI agents generate consistent UI.
+Design system data represents publicly visible CSS values from brand websites. No claim of ownership over any brand's visual identity.

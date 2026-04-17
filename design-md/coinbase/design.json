@@ -1,0 +1,33 @@
+{
+  "brand": "coinbase",
+  "version": "1.0.0",
+  "$schema": "https://designdna.dev/schemas/tokens-v1.json",
+  "colors": {
+    "coinbase-blue": "#0052ff",
+    "pure-white": "#ffffff",
+    "near-black": "#0a0b0d",
+    "cool-gray-surface": "#eef0f3",
+    "hover-blue": "#578bfa",
+    "link-blue": "#0667d0",
+    "muted-blue": "#5b616e",
+    "dark-card": "#282b31"
+  },
+  "typography": {
+    "families": [
+      "Display",
+      "Body",
+      "Icons"
+    ],
+    "sizes": {
+      "large": "24px",
+      "xl": "40px"
+    },
+    "weights": []
+  },
+  "spacing": {},
+  "radius": {
+    "radius-1": "56px",
+    "radius-2": "8px"
+  },
+  "shadows": {}
+}

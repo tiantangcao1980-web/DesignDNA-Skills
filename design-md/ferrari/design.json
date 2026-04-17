@@ -53,5 +53,12 @@
   },
   "shadows": {
     "shadow-1": "s to cards or content containers — depth comes from surface color contrast and photography"
+  },
+  "dials": {
+    "formality": 9,
+    "motion": 4,
+    "density": 2,
+    "warmth": 5,
+    "contrast": 10
   }
 }

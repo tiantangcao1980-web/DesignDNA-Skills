@@ -18,6 +18,7 @@ import { toJson } from '../src/generators/json.js';
 import { toCss } from '../src/generators/css.js';
 import { toTailwind } from '../src/generators/tailwind.js';
 import { toTypeScript } from '../src/generators/typescript.js';
+import { DIALS } from '../src/data/dials.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, '..', '..', '..', 'design-md');
@@ -44,7 +45,7 @@ async function main() {
 
     try {
       const md = await readFile(mdPath, 'utf8');
-      const tokens = parseDesignMd(md, { brand });
+      const tokens = parseDesignMd(md, { brand, dials: DIALS[brand] });
 
       await writeFile(join(brandDir, 'design.json'), toJson(tokens));
       await writeFile(join(brandDir, 'variables.css'), toCss(tokens));

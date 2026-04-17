@@ -28,5 +28,12 @@
   },
   "spacing": {},
   "radius": {},
-  "shadows": {}
+  "shadows": {},
+  "dials": {
+    "formality": 9,
+    "motion": 5,
+    "density": 3,
+    "warmth": 3,
+    "contrast": 8
+  }
 }

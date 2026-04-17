@@ -42,6 +42,85 @@ const CATEGORIES = {
   'Automotive':    ['bmw','ferrari','lamborghini','renault','tesla'],
 };
 
+// Dials vector per brand. Must be kept in sync with packages/cli/src/data/dials.js.
+// (Duplicated here because the playground is static HTML with no build step.)
+const DIALS = {
+  claude:{formality:7,motion:3,density:3,warmth:9,contrast:5},
+  cohere:{formality:7,motion:5,density:6,warmth:4,contrast:7},
+  elevenlabs:{formality:6,motion:8,density:5,warmth:3,contrast:9},
+  minimax:{formality:6,motion:7,density:7,warmth:3,contrast:9},
+  'mistral.ai':{formality:8,motion:4,density:4,warmth:4,contrast:6},
+  ollama:{formality:8,motion:2,density:6,warmth:3,contrast:8},
+  'opencode.ai':{formality:6,motion:5,density:6,warmth:3,contrast:8},
+  replicate:{formality:5,motion:3,density:5,warmth:5,contrast:6},
+  runwayml:{formality:6,motion:9,density:6,warmth:4,contrast:9},
+  'together.ai':{formality:7,motion:4,density:5,warmth:4,contrast:7},
+  voltagent:{formality:7,motion:6,density:7,warmth:3,contrast:9},
+  'x.ai':{formality:10,motion:2,density:2,warmth:2,contrast:10},
+  cursor:{formality:6,motion:6,density:5,warmth:4,contrast:8},
+  expo:{formality:6,motion:4,density:6,warmth:4,contrast:7},
+  'linear.app':{formality:9,motion:4,density:4,warmth:4,contrast:8},
+  lovable:{formality:4,motion:7,density:5,warmth:7,contrast:6},
+  mintlify:{formality:7,motion:3,density:5,warmth:5,contrast:6},
+  posthog:{formality:5,motion:5,density:7,warmth:7,contrast:7},
+  raycast:{formality:7,motion:6,density:5,warmth:4,contrast:8},
+  resend:{formality:8,motion:3,density:4,warmth:4,contrast:8},
+  sentry:{formality:6,motion:5,density:7,warmth:4,contrast:8},
+  supabase:{formality:7,motion:4,density:6,warmth:4,contrast:8},
+  superhuman:{formality:8,motion:6,density:5,warmth:4,contrast:8},
+  vercel:{formality:10,motion:3,density:4,warmth:3,contrast:9},
+  warp:{formality:7,motion:5,density:7,warmth:3,contrast:9},
+  zapier:{formality:4,motion:5,density:5,warmth:8,contrast:6},
+  clickhouse:{formality:8,motion:3,density:7,warmth:4,contrast:7},
+  composio:{formality:6,motion:5,density:6,warmth:4,contrast:8},
+  hashicorp:{formality:9,motion:2,density:6,warmth:3,contrast:7},
+  mongodb:{formality:7,motion:3,density:6,warmth:5,contrast:6},
+  sanity:{formality:7,motion:4,density:5,warmth:5,contrast:7},
+  stripe:{formality:9,motion:4,density:3,warmth:5,contrast:5},
+  airtable:{formality:5,motion:5,density:7,warmth:7,contrast:6},
+  cal:{formality:6,motion:3,density:4,warmth:6,contrast:5},
+  clay:{formality:4,motion:8,density:4,warmth:8,contrast:5},
+  figma:{formality:4,motion:7,density:5,warmth:7,contrast:7},
+  framer:{formality:6,motion:9,density:5,warmth:5,contrast:8},
+  intercom:{formality:5,motion:4,density:5,warmth:7,contrast:5},
+  miro:{formality:5,motion:6,density:5,warmth:7,contrast:6},
+  notion:{formality:5,motion:3,density:3,warmth:8,contrast:4},
+  pinterest:{formality:4,motion:4,density:8,warmth:6,contrast:6},
+  webflow:{formality:6,motion:5,density:5,warmth:5,contrast:7},
+  coinbase:{formality:8,motion:3,density:5,warmth:4,contrast:7},
+  kraken:{formality:7,motion:4,density:7,warmth:3,contrast:8},
+  revolut:{formality:7,motion:6,density:6,warmth:4,contrast:8},
+  wise:{formality:6,motion:4,density:5,warmth:7,contrast:6},
+  airbnb:{formality:4,motion:5,density:5,warmth:9,contrast:5},
+  apple:{formality:9,motion:4,density:2,warmth:6,contrast:7},
+  ibm:{formality:10,motion:2,density:7,warmth:3,contrast:6},
+  nvidia:{formality:7,motion:6,density:6,warmth:3,contrast:9},
+  spacex:{formality:10,motion:4,density:2,warmth:2,contrast:10},
+  spotify:{formality:4,motion:7,density:6,warmth:6,contrast:9},
+  uber:{formality:8,motion:4,density:4,warmth:3,contrast:9},
+  bmw:{formality:9,motion:5,density:3,warmth:3,contrast:8},
+  ferrari:{formality:9,motion:4,density:2,warmth:5,contrast:10},
+  lamborghini:{formality:9,motion:6,density:3,warmth:3,contrast:10},
+  renault:{formality:7,motion:7,density:4,warmth:6,contrast:7},
+  tesla:{formality:10,motion:3,density:1,warmth:3,contrast:9},
+  cal:{formality:6,motion:3,density:4,warmth:6,contrast:5},
+};
+const DIAL_KEYS = ['formality', 'motion', 'density', 'warmth', 'contrast'];
+
+function dialDistance(a, b) {
+  let sum = 0;
+  for (const k of DIAL_KEYS) {
+    sum += ((a[k] ?? 5) - (b[k] ?? 5)) ** 2;
+  }
+  return Math.sqrt(sum);
+}
+function nearestBrands(target, k = 5) {
+  return Object.entries(DIALS)
+    .map(([brand, d]) => ({ brand, distance: dialDistance(d, target) }))
+    .sort((a, b) => a.distance - b.distance)
+    .slice(0, k);
+}
+
 // Brand → short description (for sidebar subtitle).
 const SUBTITLES = {
   apple: 'Premium white space, SF Pro',
@@ -207,6 +286,12 @@ async function selectBrand(brand) {
 
   // Prompt pane
   renderPrompt();
+
+  // Tune pane — resync dials to the newly selected brand
+  if (DIALS[brand]) {
+    state.dials = { ...DIALS[brand] };
+    renderTune();
+  }
 
   // Preview pane
   setPreviewTheme(state.theme);
@@ -396,6 +481,178 @@ $('#prompt-template').addEventListener('change', (e) => {
   state.promptType = e.target.value;
   renderPrompt();
 });
+
+/* ══════════════════════════════════════════════════════════════════
+   Tune tab — parametric dials
+═════════════════════════════════════════════════════════════════ */
+
+state.dials = { ...(DIALS.stripe || { formality: 5, motion: 5, density: 5, warmth: 5, contrast: 5 }) };
+
+function syncDialsToBrand() {
+  const brandDials = DIALS[state.current];
+  if (brandDials) {
+    state.dials = { ...brandDials };
+    renderTune();
+  }
+}
+
+function renderTune() {
+  // Update slider positions & value labels
+  for (const key of DIAL_KEYS) {
+    const slider = document.querySelector(`[data-dial="${key}"]`);
+    const label = document.querySelector(`[data-dial-value="${key}"]`);
+    if (slider) slider.value = state.dials[key];
+    if (label) label.textContent = state.dials[key];
+  }
+
+  // Nearest brands
+  const nearestListEl = $('#nearest-list');
+  if (nearestListEl) {
+    nearestListEl.innerHTML = '';
+    const nearest = nearestBrands(state.dials, 5);
+    for (const { brand, distance } of nearest) {
+      const row = document.createElement('div');
+      row.className = 'nearest-item';
+      row.innerHTML = `
+        <span class="nearest-name">${brand}</span>
+        <span class="nearest-distance">${distance.toFixed(2)}</span>
+      `;
+      row.addEventListener('click', () => selectBrand(brand));
+      nearestListEl.appendChild(row);
+    }
+  }
+
+  // Live style preview driven by dials
+  const preview = $('#mix-preview');
+  if (preview) {
+    const d = state.dials;
+    // Font choice by formality
+    const font = d.formality >= 8 ? 'Inter' : d.formality <= 4 ? 'Comic Sans MS' : 'Inter';
+    // Title size scales inversely with density (more density → smaller title)
+    const titleSize = Math.round(28 - d.density * 0.9);
+    // Title weight scales with contrast
+    const titleWeight = d.contrast >= 7 ? 700 : d.contrast >= 5 ? 500 : 300;
+    // Button padding scales with density inverse
+    const btnV = d.density >= 7 ? 6 : 10;
+    const btnH = d.density >= 7 ? 10 : 16;
+    // Radius by warmth (warm = rounder)
+    const radius = Math.round(2 + d.warmth * 1.2);
+    // Accent color by warmth
+    const accentMap = [
+      '#6366f1', '#6366f1', '#818cf8', '#818cf8',
+      '#10b981', '#10b981', '#f59e0b', '#f59e0b',
+      '#ec4899', '#ec4899', '#ec4899'
+    ];
+    const accent = accentMap[d.warmth] || '#10b981';
+
+    preview.style.setProperty('--mix-font', font);
+    preview.style.setProperty('--mix-title-size', `${titleSize}px`);
+    preview.style.setProperty('--mix-title-weight', titleWeight);
+    preview.style.setProperty('--mix-btn-padding', `${btnV}px ${btnH}px`);
+    preview.style.setProperty('--mix-radius', `${radius}px`);
+    preview.style.setProperty('--mix-accent', accent);
+
+    const meta = preview.querySelector('.mix-sample-meta');
+    if (meta) {
+      meta.textContent = `font:${font} · size:${titleSize}px · weight:${titleWeight} · radius:${radius}px`;
+    }
+  }
+
+  // Dial vector summary
+  const summary = $('#dial-vector');
+  if (summary) {
+    summary.textContent = DIAL_KEYS.map((k) => `${k.padEnd(10)} ${state.dials[k]}`).join('\n');
+  }
+}
+
+// Wire up sliders
+document.querySelectorAll('[data-dial]').forEach((slider) => {
+  slider.addEventListener('input', (e) => {
+    const key = e.target.dataset.dial;
+    state.dials[key] = Number(e.target.value);
+    renderTune();
+  });
+});
+
+// Reset button
+const resetBtn = $('#reset-dials');
+if (resetBtn) {
+  resetBtn.addEventListener('click', () => {
+    if (state.current && DIALS[state.current]) {
+      state.dials = { ...DIALS[state.current] };
+      renderTune();
+    }
+  });
+}
+
+// Export blended DESIGN.md
+const exportBtn = $('#export-design-md');
+if (exportBtn) {
+  exportBtn.addEventListener('click', async () => {
+    const data = cache.get(state.current);
+    if (!data) return;
+
+    const near = nearestBrands(state.dials, 3);
+    const primary = near[0].brand;
+    const blend = near[1]?.brand;
+
+    const doc = `<!--
+  DESIGN.md — crafted in DesignDNA Playground
+  Base brand: ${state.current}
+  Nearest in taste space: ${near.map((n) => n.brand).join(', ')}
+-->
+
+# Custom Design System
+
+> **Base DNA:** \`${primary}\`${blend ? ` blended with \`${blend}\`` : ''}
+> **Dials:** ${DIAL_KEYS.map((k) => `\`${k}=${state.dials[k]}\``).join(' · ')}
+
+## Dials (taste vector)
+
+\`\`\`
+FORMALITY         = ${state.dials.formality}
+MOTION_INTENSITY  = ${state.dials.motion}
+VISUAL_DENSITY    = ${state.dials.density}
+WARMTH            = ${state.dials.warmth}
+CONTRAST          = ${state.dials.contrast}
+\`\`\`
+
+## Pre-flight Checklist
+
+- [ ] No Inter unless specified below
+- [ ] No pure #000 / #FFF
+- [ ] No default AI purple
+- [ ] Hero is NOT a centered template
+- [ ] No 3-column icon card grid
+
+---
+
+## Base Brand DNA — ${primary}
+
+${data.md || '(not loaded)'}
+
+---
+
+## Generated by
+
+[DesignDNA Playground](https://github.com/tiantangcao1980-web/DesignDNA-Skills)
+CLI equivalent: \`npx designdna craft --brand=${primary}${blend ? ` --blend=${blend}` : ''} \\\n  ${DIAL_KEYS.map((k) => `--${k}=${state.dials[k]}`).join(' ')}\`
+`;
+
+    // Trigger download
+    const blob = new Blob([doc], { type: 'text/markdown' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'DESIGN.md';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    showToast('DESIGN.md downloaded');
+  });
+}
 
 /* ══════════════════════════════════════════════════════════════════
    Tabs

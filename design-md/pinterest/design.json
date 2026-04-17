@@ -49,5 +49,12 @@
   },
   "shadows": {
     "shadow-1": "on most cards"
+  },
+  "dials": {
+    "formality": 4,
+    "motion": 4,
+    "density": 8,
+    "warmth": 6,
+    "contrast": 6
   }
 }

@@ -36,5 +36,12 @@
   "shadows": {
     "shadow-1": "s anywhere on the site. Instead, depth is communicated through three mechanisms: (1) opacity-based borders that brighten on interaction, creating a sense of elements",
     "shadow-2": "s -- xAI has zero shadow elevation"
+  },
+  "dials": {
+    "formality": 10,
+    "motion": 2,
+    "density": 2,
+    "warmth": 2,
+    "contrast": 10
   }
 }

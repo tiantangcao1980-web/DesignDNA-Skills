@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stripe-styled Pricing — DesignDNA Showcase</title>
+  <meta name="description" content="A pricing page built following Stripe's DESIGN.md. Part of DesignDNA showcase." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ═══════════════════════════════════════════════════════════
+       Stripe DNA tokens
+    ═══════════════════════════════════════════════════════════ */
+    :root {
+      --stripe-purple: #635bff;
+      --stripe-purple-deep: #0a2540;
+      --stripe-navy: #061b31;
+      --bg: #ffffff;
+      --surface: #f6f9fc;
+      --text: #0a2540;
+      --text-mid: #425466;
+      --text-mute: #8898aa;
+      --border: #e6ebf1;
+      --border-soft: #d6d9fc;
+      --shadow: 0 20px 50px -10px rgba(5, 5, 93, 0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      font-weight: 400;
+    }
+
+    /* Navigation */
+    .nav {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 24px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-weight: 500;
+      font-size: 20px;
+      letter-spacing: -0.01em;
+    }
+    .logo::before {
+      content: "";
+      display: inline-block;
+      width: 28px;
+      height: 16px;
+      background: linear-gradient(135deg, #635bff, #a389ff);
+      border-radius: 2px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 400;
+    }
+    .nav-links a:hover { color: var(--stripe-purple); }
+
+    /* Hero */
+    .hero {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 120px 40px 80px;
+    }
+    .hero-eyebrow {
+      color: var(--stripe-purple);
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+    .hero h1 {
+      font-size: 64px;
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      max-width: 800px;
+      color: var(--stripe-purple-deep);
+    }
+    .hero p {
+      font-size: 20px;
+      color: var(--text-mid);
+      max-width: 640px;
+      margin-top: 24px;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    /* Pricing grid */
+    .pricing {
+      max-width: 1280px;
+      margin: 40px auto 120px;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 24px;
+    }
+    .plan {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 48px 40px;
+      transition: box-shadow 0.2s ease-out;
+    }
+    .plan:hover { box-shadow: var(--shadow); }
+    .plan-featured {
+      background: var(--stripe-purple-deep);
+      color: #fff;
+      border-color: transparent;
+      grid-row: 1;
+    }
+    .plan-featured .plan-price { color: #fff; }
+    .plan-featured .plan-desc { color: #a3b5d7; }
+    .plan-featured .plan-feature { color: #d4dced; }
+
+    .plan-name {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .plan-desc {
+      font-size: 15px;
+      color: var(--text-mid);
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+    .plan-price {
+      font-size: 56px;
+      font-weight: 300;
+      letter-spacing: -0.03em;
+      color: var(--stripe-purple-deep);
+      margin-bottom: 8px;
+    }
+    .plan-price-suffix {
+      font-size: 16px;
+      color: var(--text-mute);
+      font-weight: 400;
+    }
+    .plan-featured .plan-price-suffix { color: #a3b5d7; }
+    .plan-cta {
+      display: inline-block;
+      padding: 12px 24px;
+      background: var(--stripe-purple);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      margin: 32px 0;
+      transition: background 0.15s;
+    }
+    .plan-cta:hover { background: #4a3fff; }
+    .plan-featured .plan-cta {
+      background: #fff;
+      color: var(--stripe-purple-deep);
+    }
+    .plan-featured .plan-cta:hover { background: #f6f9fc; }
+    .plan-features {
+      list-style: none;
+      margin-top: 24px;
+    }
+    .plan-feature {
+      padding: 10px 0;
+      color: var(--text-mid);
+      font-size: 15px;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .plan-feature::before {
+      content: "✓";
+      color: var(--stripe-purple);
+      font-weight: 500;
+    }
+    .plan-featured .plan-feature::before { color: #fff; }
+
+    /* Footer */
+    .footer-note {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 40px;
+      text-align: center;
+      color: var(--text-mute);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+    }
+    .footer-note a { color: var(--stripe-purple); }
+
+    @media (max-width: 900px) {
+      .hero h1 { font-size: 40px; }
+      .hero { padding: 80px 24px 40px; }
+      .pricing { grid-template-columns: 1fr; padding: 0 24px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="logo">Ledger</div>
+    <ul class="nav-links">
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Developers</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">Sign in</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-eyebrow">Pricing</div>
+    <h1>Payment infrastructure priced for every stage of growth.</h1>
+    <p>Only pay for what you use. No fixed monthly fees, no setup costs, no hidden charges — just a small percentage of each successful transaction.</p>
+  </section>
+
+  <section class="pricing">
+    <div class="plan plan-featured">
+      <div class="plan-name">Integrated</div>
+      <div class="plan-desc">For fast-growing businesses building their full payments stack.</div>
+      <div class="plan-price">2.9%<span class="plan-price-suffix"> + 30¢ per transaction</span></div>
+      <a href="#" class="plan-cta">Start with Integrated</a>
+      <ul class="plan-features">
+        <li class="plan-feature">Global card acceptance, 135+ currencies</li>
+        <li class="plan-feature">Radar fraud prevention included</li>
+        <li class="plan-feature">Custom reporting and reconciliation</li>
+        <li class="plan-feature">24/7 phone, email, chat support</li>
+      </ul>
+    </div>
+
+    <div class="plan">
+      <div class="plan-name">Custom</div>
+      <div class="plan-desc">Volume pricing for businesses processing over $80K/month.</div>
+      <div class="plan-price">Talk<span class="plan-price-suffix"> to sales</span></div>
+      <a href="#" class="plan-cta">Contact sales</a>
+      <ul class="plan-features">
+        <li class="plan-feature">Custom interchange-plus rate</li>
+        <li class="plan-feature">Dedicated account manager</li>
+        <li class="plan-feature">Multi-region processing</li>
+      </ul>
+    </div>
+
+    <div class="plan">
+      <div class="plan-name">Starter</div>
+      <div class="plan-desc">Free to get started, pay as you grow.</div>
+      <div class="plan-price">Free<span class="plan-price-suffix"> to start</span></div>
+      <a href="#" class="plan-cta">Create account</a>
+      <ul class="plan-features">
+        <li class="plan-feature">No-code Checkout and Billing</li>
+        <li class="plan-feature">Up to $1M annual volume</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="footer-note">
+    Generated from <code>design-md/stripe/DESIGN.md</code> · Part of <a href="https://github.com/tiantangcao1980-web/DesignDNA-Skills">DesignDNA showcase</a>
+  </div>
+</body>
+</html>

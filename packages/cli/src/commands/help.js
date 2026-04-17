@@ -13,6 +13,7 @@ export function printHelp() {
   console.log('');
   console.log(`  ${c.bold('Commands')}`);
   console.log(`    ${c.cyan('add')} ${c.dim('<brand>')}         Install a brand design system`);
+  console.log(`    ${c.cyan('craft')}                Generate a tailored PROJECT-DESIGN.md (two-stage)`);
   console.log(`    ${c.cyan('init')}                 Interactive picker`);
   console.log(`    ${c.cyan('list')}                 List all 58 available brands`);
   console.log(`    ${c.cyan('preview')} ${c.dim('<brand>')}     Open brand's preview catalog in browser`);
@@ -32,6 +33,12 @@ export function printHelp() {
   console.log('');
   console.log(`    ${c.dim('# Install skill into Cursor')}`);
   console.log(`    $ npx designdna install --ide=cursor`);
+  console.log('');
+  console.log(`    ${c.dim('# Craft a PROJECT-DESIGN.md with Apple baseline + your tweaks')}`);
+  console.log(`    $ npx designdna craft --brand=apple --motion=6 --density=4 --name="My App"`);
+  console.log('');
+  console.log(`    ${c.dim('# Blend two brands into one design spec')}`);
+  console.log(`    $ npx designdna craft --brand=stripe --blend=vercel`);
   console.log('');
   console.log(`    ${c.dim('# List brands as JSON')}`);
   console.log(`    $ npx designdna list --json`);

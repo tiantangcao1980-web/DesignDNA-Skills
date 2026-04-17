@@ -41,5 +41,12 @@
     "space-7": "72px"
   },
   "radius": {},
-  "shadows": {}
+  "shadows": {},
+  "dials": {
+    "formality": 7,
+    "motion": 5,
+    "density": 6,
+    "warmth": 4,
+    "contrast": 7
+  }
 }

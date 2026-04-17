@@ -421,6 +421,191 @@
       color: var(--text);
     }
 
+    /* Tune pane */
+    .tune-layout {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 0;
+      overflow: hidden;
+    }
+    .tune-controls {
+      padding: 28px 32px;
+      overflow-y: auto;
+      border-right: 1px solid var(--border);
+    }
+    .tune-sidebar {
+      padding: 24px;
+      overflow-y: auto;
+      background: var(--bg-elev);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .tune-header h2 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .tune-header p {
+      color: var(--text-mid);
+      font-size: 13px;
+      max-width: 620px;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+    .tune-header code {
+      background: var(--surface);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 11px;
+    }
+    .slider-group {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .slider-row {
+      display: grid;
+      grid-template-columns: 240px 1fr 40px;
+      align-items: center;
+      gap: 16px;
+    }
+    .slider-row label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .slider-axis {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--mute-dim);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .slider-row input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      background: var(--border);
+      height: 4px;
+      border-radius: 2px;
+      outline: none;
+    }
+    .slider-row input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      background: var(--accent);
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid var(--bg);
+      box-shadow: 0 0 8px rgba(16,185,129,0.3);
+    }
+    .slider-row input[type="range"]::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+      background: var(--accent);
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid var(--bg);
+    }
+    .slider-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      color: var(--accent);
+      font-weight: 500;
+      text-align: right;
+    }
+    .tune-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+    .nearest-card, .mix-card, .dial-summary {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+    .nearest-card h3, .mix-card h3, .dial-summary h3 {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      color: var(--mute-dim);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .nearest-sub {
+      font-size: 11px;
+      color: var(--mute-dim);
+      margin-bottom: 14px;
+    }
+    .nearest-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-top: 1px solid var(--border);
+      cursor: pointer;
+      transition: color 0.15s;
+    }
+    .nearest-item:first-of-type { border-top: 0; }
+    .nearest-item:hover .nearest-name { color: var(--accent); }
+    .nearest-name {
+      font-size: 13px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .nearest-distance {
+      font-size: 11px;
+      color: var(--mute-dim);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .mix-preview {
+      padding: 14px;
+      border-radius: 6px;
+      background: var(--bg);
+      font-family: var(--mix-font, 'Inter'), sans-serif;
+      min-height: 90px;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .mix-sample-typography {
+      font-size: var(--mix-title-size, 20px);
+      font-weight: var(--mix-title-weight, 600);
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      color: var(--mix-text, var(--text));
+    }
+    .mix-sample-typography::before { content: "Cut the noise. Ship taste."; }
+    .mix-sample-button {
+      display: inline-block;
+      padding: var(--mix-btn-padding, 8px 14px);
+      background: var(--mix-accent, var(--accent));
+      color: #0a0a0f;
+      border-radius: var(--mix-radius, 6px);
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .mix-sample-button::before { content: "Primary action"; }
+    .mix-sample-meta {
+      margin-top: 10px;
+      font-size: 10px;
+      color: var(--mute-dim);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .dial-summary pre {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
     /* AI Prompt pane */
     .prompt-hero {
       padding: 24px;
@@ -547,6 +732,7 @@
         <div class="tabs" role="tablist">
           <button class="tab active" data-id="preview">Preview</button>
           <button class="tab" data-id="tokens">Tokens</button>
+          <button class="tab" data-id="tune">Tune</button>
           <button class="tab" data-id="md">DESIGN.md</button>
           <button class="tab" data-id="json">JSON</button>
           <button class="tab" data-id="css">CSS</button>
@@ -608,6 +794,73 @@
               <button class="btn primary" data-copy="ts">Copy</button>
             </div>
             <div class="code-container"><pre id="code-ts"></pre></div>
+          </div>
+
+          <!-- Tune pane -->
+          <div class="pane" data-pane="tune">
+            <div class="tune-layout">
+              <div class="tune-controls">
+                <div class="tune-header">
+                  <h2>Tune the taste vector</h2>
+                  <p>Drag the sliders to shift this brand's DNA. The playground finds the nearest real brands in the 58-brand space and lets you export a blended <code>DESIGN.md</code>.</p>
+                </div>
+
+                <div class="slider-group">
+                  <div class="slider-row">
+                    <label>Formality <span class="slider-axis">playful ↔ austere</span></label>
+                    <input type="range" min="1" max="10" step="1" data-dial="formality" />
+                    <span class="slider-value" data-dial-value="formality">5</span>
+                  </div>
+                  <div class="slider-row">
+                    <label>Motion <span class="slider-axis">static ↔ heavy</span></label>
+                    <input type="range" min="1" max="10" step="1" data-dial="motion" />
+                    <span class="slider-value" data-dial-value="motion">5</span>
+                  </div>
+                  <div class="slider-row">
+                    <label>Density <span class="slider-axis">breathy ↔ data-dense</span></label>
+                    <input type="range" min="1" max="10" step="1" data-dial="density" />
+                    <span class="slider-value" data-dial-value="density">5</span>
+                  </div>
+                  <div class="slider-row">
+                    <label>Warmth <span class="slider-axis">cold ↔ human</span></label>
+                    <input type="range" min="1" max="10" step="1" data-dial="warmth" />
+                    <span class="slider-value" data-dial-value="warmth">5</span>
+                  </div>
+                  <div class="slider-row">
+                    <label>Contrast <span class="slider-axis">muted ↔ stark</span></label>
+                    <input type="range" min="1" max="10" step="1" data-dial="contrast" />
+                    <span class="slider-value" data-dial-value="contrast">5</span>
+                  </div>
+                </div>
+
+                <div class="tune-actions">
+                  <button class="btn" id="reset-dials">Reset to brand defaults</button>
+                  <button class="btn primary" id="export-design-md">Export blended DESIGN.md</button>
+                </div>
+              </div>
+
+              <div class="tune-sidebar">
+                <div class="nearest-card">
+                  <h3>Nearest brands</h3>
+                  <p class="nearest-sub">In the 58-brand taste space</p>
+                  <div id="nearest-list"></div>
+                </div>
+
+                <div class="mix-card">
+                  <h3>Live preview style</h3>
+                  <div id="mix-preview" class="mix-preview">
+                    <div class="mix-sample-typography"></div>
+                    <div class="mix-sample-button"></div>
+                    <div class="mix-sample-meta"></div>
+                  </div>
+                </div>
+
+                <div class="dial-summary">
+                  <h3>Current vector</h3>
+                  <pre id="dial-vector"></pre>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- AI Prompt pane -->

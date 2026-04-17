@@ -28,14 +28,20 @@
 ## Quick Install
 
 ```bash
-# Add a brand design system to your project
-npx designdna add stripe
+# Generate a PROJECT-DESIGN.md tailored to your project (recommended)
+npx designdna craft --brand=stripe --motion=6 --name="My App"
 
-# Or pick interactively from 58 brands
-npx designdna init
+# Add a brand's design system files (DESIGN.md + CSS + Tailwind + tokens)
+npx designdna add stripe --format=all
 
-# Or install the full skill into your AI IDE
+# Blend two brands' DNA in one spec
+npx designdna craft --brand=stripe --blend=vercel
+
+# Install the full DesignDNA skill into your AI IDE
 npx designdna install --ide=claude-code
+
+# Or pick interactively
+npx designdna init
 ```
 
 <details>
@@ -60,9 +66,20 @@ For brand-specific design systems, copy `design-md/{brand}/DESIGN.md` into your 
 
 ## Why DesignDNA?
 
-AI agents produce UI that all looks the same &mdash; safe colors, centered layouts, predictable spacing. The root cause: **agents lack design taste.**
+AI agents produce UI that all looks the same &mdash; centered heroes, Inter font, 3-card grids, purple gradients, "John Doe" avatars. The root cause: **LLMs have statistical priors toward a small set of cliché patterns.** Left uncorrected, every AI-generated page collapses into the same shape.
 
-DesignDNA distills **58 world-class brand design systems** into structured AI skills that any coding agent can read and apply. Instead of generic AI aesthetics, you get Apple's precision, Stripe's trust, Linear's minimalism &mdash; on demand.
+DesignDNA is a **two-layer taste system** that fights this:
+
+1. **58 brand DNAs** (positive exemplars) &mdash; Apple's precision, Stripe's trust, Linear's minimalism, on demand.
+2. **Anti-slop skill** (negative enforcement) &mdash; BANNED lists + dial-driven rules + mandatory pre-flight checklist so the AI audits itself before output.
+
+Not a reference library. A **bias-correction layer**.
+
+<br/>
+
+<div align="center">
+  <img src="assets/terminal-demo.svg" alt="DesignDNA CLI in action" width="100%" />
+</div>
 
 <br/>
 
@@ -248,24 +265,29 @@ Every DESIGN.md follows the [Stitch DESIGN.md format](https://stitch.withgoogle.
 
 ## Showcase
 
-> Built something with DesignDNA? [Open a PR](https://github.com/tiantangcao1980-web/DesignDNA-Skills/pulls) to add it here.
+Three reference pages built from real brand DNA. Open the [Showcase Gallery](https://tiantangcao1980-web.github.io/DesignDNA-Skills/showcase/) to view live.
 
 <table>
   <tr>
     <td align="center" width="33%">
-      <em>Your project here</em><br/>
-      <sub>Built with <code>npx designdna add stripe</code></sub>
+      <a href="./showcase/stripe-pricing.html"><strong>Stripe Pricing</strong></a><br/>
+      <sub>Purple gradients, weight-300 elegance</sub><br/>
+      <sub><code>craft --brand=stripe</code></sub>
     </td>
     <td align="center" width="33%">
-      <em>Your project here</em><br/>
-      <sub>Built with <code>npx designdna add linear</code></sub>
+      <a href="./showcase/linear-landing.html"><strong>Linear Landing</strong></a><br/>
+      <sub>Ultra-minimal dark, 1px borders</sub><br/>
+      <sub><code>craft --brand=linear.app</code></sub>
     </td>
     <td align="center" width="33%">
-      <em>Your project here</em><br/>
-      <sub>Built with <code>npx designdna add apple</code></sub>
+      <a href="./showcase/notion-docs.html"><strong>Notion Docs</strong></a><br/>
+      <sub>Warm cream, serif editorial</sub><br/>
+      <sub><code>craft --brand=notion</code></sub>
     </td>
   </tr>
 </table>
+
+> Built something with DesignDNA? [Open a PR](https://github.com/tiantangcao1980-web/DesignDNA-Skills/pulls) to add it here.
 
 ---
 
@@ -299,12 +321,21 @@ DesignDNA-Skills/
 
 This project stands on the shoulders of great work:
 
-- **[Awesome DESIGN.md](https://github.com/VoltAgent/awesome-design-md)** &mdash; The original curated collection by the [VoltAgent](https://github.com/VoltAgent) team, which extracted design systems from 58 world-class brand websites into structured DESIGN.md format. Without their foundational work, this project would not exist.
-- **[Google Stitch](https://stitch.withgoogle.com/docs/design-md/overview/)** &mdash; For introducing the [DESIGN.md format](https://stitch.withgoogle.com/docs/design-md/format/) that makes design systems readable by AI agents.
-- **[React Bits](https://github.com/DavidHDev/react-bits)** &mdash; For showing how a curated, multi-variant component library can achieve developer delight.
-- **[Remotion](https://github.com/remotion-dev/remotion)** &mdash; For the inspiration on how to turn domain expertise into developer-native tooling.
+- **[Awesome DESIGN.md](https://github.com/VoltAgent/awesome-design-md)** (by [VoltAgent](https://github.com/VoltAgent)) &mdash; The original curated collection that extracted 58 world-class design systems into structured DESIGN.md format. Without their foundational work, this project would not exist.
+- **[taste-skill](https://github.com/Leonxlnx/taste-skill)** (by [Leon Lin](https://github.com/Leonxlnx)) &mdash; The original bias-correction skill that pioneered the BANNED-list + dials + pre-flight methodology. DesignDNA's entire anti-slop layer is modeled on it.
+- **[Google Stitch](https://stitch.withgoogle.com/docs/design-md/overview/)** &mdash; For introducing the [DESIGN.md format](https://stitch.withgoogle.com/docs/design-md/format/).
+- **[React Bits](https://github.com/DavidHDev/react-bits)** &mdash; For demonstrating the power of multi-variant libraries + interactive parameter tuning playgrounds.
+- **[Remotion](https://github.com/remotion-dev/remotion)** &mdash; For showing how to turn domain expertise into developer-native tooling via `npx`-first distribution and layered docs.
 
-**What DesignDNA adds:** 10 universal rules, 5 C-Rules, 10 archetypes, multi-format variants (MD/JSON/CSS/Tailwind/TS), CLI scaffolding, and multi-IDE skill distribution &mdash; turning a design reference collection into a plug-and-play AI skill.
+**What DesignDNA adds:**
+- 10 universal rules + 5 C-Rules + 10 design archetypes (from the 58-brand analysis)
+- Multi-format output (MD / JSON / CSS / Tailwind / TS) per brand
+- 5-dimensional dial space (formality / motion / density / warmth / contrast) &mdash; continuous taste interpolation between brands
+- Two-stage skill model: load methodology → generate per-project `PROJECT-DESIGN.md`
+- Interactive Playground with parameter sliders + nearest-brand explorer
+- BANNED pattern lists for 10 brands + anti-slop skill
+- Multi-IDE skill distribution (Claude / Cursor / Windsurf / Codex / Stitch)
+- `npx designdna` CLI with `add`, `craft`, `blend`, `install` commands
 
 ## Contributing
 

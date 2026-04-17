@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Linear-styled Landing — DesignDNA Showcase</title>
+  <style>
+    /* Linear DNA tokens */
+    :root {
+      --bg: #08090a;
+      --surface: #101113;
+      --surface-2: #141518;
+      --border: #2e2e33;
+      --text: #f7f8f8;
+      --text-mid: #b4bcd0;
+      --text-dim: #62667a;
+      --accent: #5e6ad2;
+      --accent-hover: #7170ff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter Display', 'Inter', -apple-system, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      font-size: 15px;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    nav {
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      font-weight: 500;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .logo::before {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: var(--text);
+      transform: rotate(45deg);
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-mid);
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .cta-btn {
+      background: var(--text);
+      color: var(--bg);
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .hero {
+      padding: 120px 0 80px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: 56px;
+      line-height: 1.0;
+      letter-spacing: -0.035em;
+      font-weight: 500;
+      max-width: 640px;
+    }
+    .hero p {
+      color: var(--text-mid);
+      font-size: 18px;
+      line-height: 1.5;
+      margin-top: 24px;
+      max-width: 540px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .btn-primary {
+      background: var(--text);
+      color: var(--bg);
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .btn-secondary {
+      color: var(--text);
+      text-decoration: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .product-preview {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      position: relative;
+    }
+    .product-preview::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, transparent 0%, rgba(94,106,210,0.08) 100%);
+    }
+
+    /* Fake app UI inside preview */
+    .app-topbar {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+      z-index: 1;
+    }
+    .app-topbar .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .app-topbar .title {
+      color: var(--text-mid);
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .app-list {
+      padding: 12px 0;
+      position: relative;
+      z-index: 1;
+    }
+    .app-row {
+      display: grid;
+      grid-template-columns: 24px 80px 1fr 40px;
+      gap: 12px;
+      padding: 10px 20px;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      font-size: 12px;
+    }
+    .app-row:last-child { border: 0; }
+    .app-row:hover { background: var(--surface-2); }
+    .app-issue-id { color: var(--text-dim); font-size: 11px; }
+    .app-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .tag-urgent { background: rgba(229,79,79,0.15); color: #f57a7a; }
+    .tag-high   { background: rgba(245,164,56,0.15); color: #f9b567; }
+    .tag-med    { background: rgba(94,106,210,0.15); color: #8a95ea; }
+
+    .features {
+      padding: 100px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      margin: 0 -24px;
+    }
+    .feature {
+      background: var(--bg);
+      padding: 40px 24px;
+    }
+    .feature-label {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+    .feature h3 {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+    .feature p {
+      color: var(--text-mid);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      color: var(--text-dim);
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+    }
+    footer a { color: var(--accent); }
+
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; padding: 60px 0 40px; }
+      .hero h1 { font-size: 36px; }
+      .features { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="logo">Ticketflow</div>
+      <ul class="nav-links">
+        <li><a href="#">Product</a></li>
+        <li><a href="#">Method</a></li>
+        <li><a href="#">Customers</a></li>
+        <li><a href="#">Pricing</a></li>
+      </ul>
+      <a href="#" class="cta-btn">Sign up</a>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <h1>Issue tracking for software teams that ship.</h1>
+        <p>Ticketflow is a purpose-built tool for modern software development. Streamline issues, sprints, and product roadmaps.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn-primary">Get started</a>
+          <a href="#" class="btn-secondary">See customer stories →</a>
+        </div>
+      </div>
+      <div class="product-preview">
+        <div class="app-topbar">
+          <span class="dot"></span>
+          <span class="title">Active cycle · 24 issues</span>
+        </div>
+        <div class="app-list">
+          <div class="app-row">
+            <span style="color: var(--text-dim)">☐</span>
+            <span class="app-issue-id">TCK-142</span>
+            <span>Optimize query planner for joins</span>
+            <span class="app-tag tag-urgent">Urg</span>
+          </div>
+          <div class="app-row">
+            <span style="color: var(--text-dim)">☐</span>
+            <span class="app-issue-id">TCK-143</span>
+            <span>Add keyboard shortcut hints in command menu</span>
+            <span class="app-tag tag-med">Med</span>
+          </div>
+          <div class="app-row">
+            <span style="color: var(--accent)">◐</span>
+            <span class="app-issue-id">TCK-144</span>
+            <span>Migrate billing to new tax engine</span>
+            <span class="app-tag tag-high">High</span>
+          </div>
+          <div class="app-row">
+            <span style="color: var(--text-dim)">☐</span>
+            <span class="app-issue-id">TCK-145</span>
+            <span>Dark mode contrast review for focus states</span>
+            <span class="app-tag tag-med">Med</span>
+          </div>
+          <div class="app-row">
+            <span style="color: var(--accent)">◐</span>
+            <span class="app-issue-id">TCK-146</span>
+            <span>Refactor subscription sync worker</span>
+            <span class="app-tag tag-high">High</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <div class="feature-label">Method</div>
+        <h3>Built for the next 100 years of software.</h3>
+        <p>A purpose-built tool for planning and building products. Meant for high-performance teams.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-label">Features</div>
+        <h3>Set the standard for modern software development.</h3>
+        <p>Streamline issues, sprints, and product roadmaps — all in one intuitive interface.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-label">Customers</div>
+        <h3>Powering the world's best product teams.</h3>
+        <p>From next-generation startups to established enterprises. Ticketflow is used by thousands of teams worldwide.</p>
+      </div>
+    </section>
+
+    <footer>
+      <div>© Ticketflow · DesignDNA Showcase</div>
+      <div>Generated from <a href="https://github.com/tiantangcao1980-web/DesignDNA-Skills/tree/main/design-md/linear.app">design-md/linear.app/DESIGN.md</a></div>
+    </footer>
+  </div>
+</body>
+</html>

@@ -37,5 +37,12 @@
     "shadow-1": "transition",
     "shadow-2": "0.33s cubic-bezier(0.5, 0, 0, 0.75), color 0.33s",
     "shadow-3": "s entirely in its primary interface. Depth is communicated through three alternative strategies:"
+  },
+  "dials": {
+    "formality": 10,
+    "motion": 3,
+    "density": 1,
+    "warmth": 3,
+    "contrast": 9
   }
 }

@@ -55,5 +55,12 @@
     "radius-2": "4px",
     "radius-3": "16px"
   },
-  "shadows": {}
+  "shadows": {},
+  "dials": {
+    "formality": 8,
+    "motion": 3,
+    "density": 4,
+    "warmth": 4,
+    "contrast": 8
+  }
 }

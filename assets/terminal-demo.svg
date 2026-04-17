@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img" aria-label="DesignDNA CLI terminal demo">
+  <defs>
+    <linearGradient id="winbg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e26"/>
+      <stop offset="100%" stop-color="#16161c"/>
+    </linearGradient>
+
+    <style type="text/css"><![CDATA[
+      /* Terminal colors */
+      :root {
+        --term-fg: #e4e4e7;
+        --term-dim: #71717a;
+        --term-prompt: #10b981;
+        --term-cmd: #f4f4f5;
+        --term-ok: #10b981;
+        --term-key: #c084fc;
+        --term-str: #34d399;
+        --term-num: #818cf8;
+      }
+
+      .term-line {
+        font-family: 'SF Mono', 'JetBrains Mono', 'Menlo', monospace;
+        font-size: 13px;
+        fill: var(--term-fg);
+        opacity: 0;
+      }
+      .line-1  { animation: appear 0.3s ease-out 0.3s forwards; }
+      .line-2  { animation: appear 0.3s ease-out 1.8s forwards; }
+      .line-3  { animation: appear 0.3s ease-out 2.3s forwards; }
+      .line-4  { animation: appear 0.3s ease-out 2.8s forwards; }
+      .line-5  { animation: appear 0.3s ease-out 3.3s forwards; }
+      .line-6  { animation: appear 0.3s ease-out 3.8s forwards; }
+      .line-7  { animation: appear 0.3s ease-out 4.3s forwards; }
+      .line-8  { animation: appear 0.3s ease-out 4.8s forwards; }
+      .line-9  { animation: appear 0.3s ease-out 5.3s forwards; }
+      .line-10 { animation: appear 0.3s ease-out 6.2s forwards; }
+      .line-11 { animation: appear 0.3s ease-out 6.5s forwards; }
+
+      @keyframes appear {
+        from { opacity: 0; transform: translateY(4px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Typing cursor for command line */
+      .cursor {
+        animation: blink 1s step-end infinite;
+      }
+      @keyframes blink {
+        50% { opacity: 0; }
+      }
+
+      /* Command text typing animation */
+      .typed-cmd {
+        opacity: 0;
+        animation: appear 0.3s ease-out 0.5s forwards;
+      }
+      .typing-bg {
+        opacity: 0;
+        animation: appear 0.1s linear 1.5s forwards;
+      }
+
+      /* Restart loop after ~7s */
+      .terminal-content {
+        animation: loop 8s linear infinite;
+      }
+      @keyframes loop {
+        0%, 90% { opacity: 1; }
+        97%, 100% { opacity: 0; }
+      }
+    ]]></style>
+  </defs>
+
+  <!-- Window background -->
+  <rect width="800" height="420" fill="#0a0a0f" rx="8"/>
+  <rect x="0.5" y="0.5" width="799" height="419" fill="none" stroke="#27272a" stroke-width="1" rx="8"/>
+
+  <!-- Window chrome -->
+  <rect width="800" height="36" fill="url(#winbg)" rx="8"/>
+  <rect y="28" width="800" height="8" fill="#16161c"/>
+  <circle cx="20" cy="18" r="6" fill="#ff5f57"/>
+  <circle cx="40" cy="18" r="6" fill="#febc2e"/>
+  <circle cx="60" cy="18" r="6" fill="#28c840"/>
+  <text x="400" y="22" text-anchor="middle" font-family="'SF Pro', system-ui" font-size="12" fill="#71717a">designdna — npx designdna</text>
+
+  <!-- Terminal content -->
+  <g class="terminal-content" transform="translate(24, 60)">
+    <!-- Line 1: command being typed -->
+    <g>
+      <text class="term-line line-1" x="0" y="0">
+        <tspan fill="#10b981">$</tspan>
+        <tspan class="typed-cmd" dx="6" fill="#f4f4f5">npx designdna craft --brand=stripe --motion=6 --name="Acme Pay"</tspan>
+      </text>
+    </g>
+
+    <!-- Line 2: banner -->
+    <text class="term-line line-2" x="0" y="38" font-weight="600" fill="#f4f4f5">
+      DesignDNA <tspan fill="#71717a">— design systems as AI skills</tspan>
+    </text>
+
+    <!-- Line 3: success -->
+    <text class="term-line line-3" x="0" y="68">
+      <tspan fill="#10b981">✓</tspan>
+      <tspan dx="6">Crafted </tspan>
+      <tspan font-weight="600">PROJECT-DESIGN.md</tspan>
+      <tspan dx="4"> for </tspan>
+      <tspan font-weight="600">Acme Pay</tspan>
+    </text>
+
+    <!-- Line 4 -->
+    <text class="term-line line-4" x="0" y="90">
+      <tspan fill="#52525b">→</tspan>
+      <tspan dx="6" fill="#a1a1aa">./PROJECT-DESIGN.md</tspan>
+    </text>
+
+    <!-- Line 5 -->
+    <text class="term-line line-5" x="0" y="120">
+      <tspan font-weight="600">Base brand:</tspan>
+      <tspan dx="6" fill="#10b981">stripe</tspan>
+    </text>
+
+    <!-- Line 6 -->
+    <text class="term-line line-6" x="0" y="142">
+      <tspan font-weight="600">Dials:</tspan>
+      <tspan dx="6" fill="#c084fc">formality:9</tspan>
+      <tspan dx="2" fill="#52525b">·</tspan>
+      <tspan dx="2" fill="#c084fc">motion:6</tspan>
+      <tspan dx="2" fill="#52525b">·</tspan>
+      <tspan dx="2" fill="#c084fc">density:3</tspan>
+      <tspan dx="2" fill="#52525b">·</tspan>
+      <tspan dx="2" fill="#c084fc">warmth:5</tspan>
+      <tspan dx="2" fill="#52525b">·</tspan>
+      <tspan dx="2" fill="#c084fc">contrast:5</tspan>
+    </text>
+
+    <!-- Line 7 -->
+    <text class="term-line line-7" x="0" y="164">
+      <tspan font-weight="600">Size:</tspan>
+      <tspan dx="6" fill="#818cf8">24.1 KB</tspan>
+    </text>
+
+    <!-- Line 8 -->
+    <text class="term-line line-8" x="0" y="196">
+      <tspan fill="#52525b">›</tspan>
+      <tspan dx="6" fill="#a1a1aa">Similar brands in taste space: </tspan>
+      <tspan fill="#34d399">linear</tspan>
+      <tspan fill="#a1a1aa">, </tspan>
+      <tspan fill="#34d399">vercel</tspan>
+    </text>
+
+    <!-- Line 9 -->
+    <text class="term-line line-9" x="0" y="218">
+      <tspan fill="#52525b">›</tspan>
+      <tspan dx="6" fill="#a1a1aa">Next: tell your AI agent — </tspan>
+      <tspan fill="#fbbf24">"Use PROJECT-DESIGN.md to build the UI"</tspan>
+    </text>
+
+    <!-- Line 10: new prompt with cursor -->
+    <text class="term-line line-10" x="0" y="258">
+      <tspan fill="#10b981">$</tspan>
+      <tspan dx="6" class="cursor" fill="#f4f4f5">▊</tspan>
+    </text>
+  </g>
+
+  <!-- Bottom status bar -->
+  <rect y="388" width="800" height="32" fill="#0d0d14"/>
+  <text x="400" y="408" text-anchor="middle" font-family="'SF Mono', monospace" font-size="10" fill="#52525b">
+    <tspan fill="#10b981">●</tspan> DesignDNA v0.1.0  ·  npx designdna help  ·  github.com/tiantangcao1980-web/DesignDNA-Skills
+  </text>
+</svg>

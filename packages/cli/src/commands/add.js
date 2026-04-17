@@ -3,7 +3,7 @@
 // (json / css / tailwind / ts).
 
 import { readFile, writeFile, mkdir, stat } from 'node:fs/promises';
-import { resolve, join } from 'node:path';
+import { resolve, join, isAbsolute } from 'node:path';
 import { resolveDesignMdRoot, joinCwd } from '../utils/paths.js';
 import { parseDesignMd } from '../utils/parser.js';
 import { toJson } from '../generators/json.js';
@@ -47,7 +47,9 @@ export async function runAdd({ brand, flags = {} } = {}) {
 
   // Decide output formats.
   const requestedFormats = parseFormats(flags.format);
-  const outDir = flags.out ? joinCwd(flags.out) : process.cwd();
+  const outDir = flags.out
+    ? (isAbsolute(flags.out) ? flags.out : joinCwd(flags.out))
+    : process.cwd();
   await mkdir(outDir, { recursive: true });
 
   // Parse tokens once — reused across format generators.

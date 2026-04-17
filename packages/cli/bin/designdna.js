@@ -19,6 +19,7 @@ import { runInit } from '../src/commands/init.js';
 import { runList } from '../src/commands/list.js';
 import { runPreview } from '../src/commands/preview.js';
 import { runInstallSkill } from '../src/commands/install.js';
+import { runCraft } from '../src/commands/craft.js';
 import { printHelp } from '../src/commands/help.js';
 import { logError } from '../src/utils/log.js';
 
@@ -65,6 +66,9 @@ async function main() {
       break;
     case 'install':
       await runInstallSkill({ flags });
+      break;
+    case 'craft':
+      await runCraft({ flags });
       break;
     case 'help':
     case '--help':

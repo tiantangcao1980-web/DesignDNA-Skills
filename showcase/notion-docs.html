@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notion-styled Docs — DesignDNA Showcase</title>
+  <style>
+    /* Notion DNA tokens */
+    :root {
+      --bg: #ffffff;
+      --surface: #f7f6f3;
+      --text: #37352f;
+      --text-mid: #6f6e69;
+      --text-dim: #9b9a97;
+      --border: #e9e9e7;
+      --accent: #37352f;
+      --yellow: #fbf3db;
+      --serif: 'Lyon Text', 'Iowan Old Style', 'Apple Garamond', 'Baskerville', 'Times New Roman', serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, 'SF Pro Text', ui-sans-serif, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .logo::before {
+      content: "📝";
+      margin-right: 6px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 14px;
+    }
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-links a:hover { text-decoration: underline; }
+    .hero {
+      max-width: 900px;
+      margin: 80px auto 40px;
+      padding: 0 48px;
+    }
+    .hero-eyebrow {
+      font-family: var(--serif);
+      font-style: italic;
+      color: var(--text-mid);
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+    }
+    .hero p {
+      font-size: 20px;
+      color: var(--text-mid);
+      line-height: 1.5;
+      max-width: 600px;
+    }
+    .hero-actions {
+      margin-top: 40px;
+      display: flex;
+      gap: 12px;
+    }
+    .btn-primary {
+      background: var(--text);
+      color: var(--bg);
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .btn-ghost {
+      color: var(--text);
+      background: transparent;
+      padding: 10px 20px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* Doc preview — the signature Notion canvas */
+    .canvas {
+      max-width: 900px;
+      margin: 60px auto 100px;
+      padding: 0 48px;
+    }
+    .doc {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 60px 80px;
+      font-family: -apple-system, 'SF Pro Text', sans-serif;
+    }
+    .doc-icon {
+      font-size: 56px;
+      margin-bottom: 8px;
+    }
+    .doc h2 {
+      font-family: var(--serif);
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    .doc-meta {
+      color: var(--text-dim);
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
+    .doc p {
+      margin: 12px 0;
+      color: var(--text);
+    }
+    .doc h3 {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 700;
+      margin: 40px 0 12px;
+    }
+    .doc ul {
+      margin: 12px 0 16px 24px;
+      color: var(--text);
+    }
+    .doc li { margin: 6px 0; }
+    .doc-callout {
+      background: var(--yellow);
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin: 24px 0;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .doc-callout::before {
+      content: "💡";
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    code {
+      background: var(--surface);
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'SF Mono', Menlo, monospace;
+      font-size: 14px;
+      color: #eb5757;
+    }
+
+    footer {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 48px;
+      color: var(--text-dim);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--text-mid); }
+
+    @media (max-width: 700px) {
+      .hero { margin: 40px auto 20px; }
+      .hero h1 { font-size: 40px; }
+      .doc { padding: 32px 24px; }
+      .doc h2 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Docsy</div>
+    <ul class="nav-links">
+      <li><a href="#">Product</a></li>
+      <li><a href="#">Templates</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Log in</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-eyebrow">The writing app built for focused work.</div>
+    <h1>All your notes, docs, and wikis — in one warm place.</h1>
+    <p>A space to write, plan, and share — designed for the way you actually think. No more scattered Google Docs, no more frozen Confluence pages.</p>
+    <div class="hero-actions">
+      <a href="#" class="btn-primary">Get Docsy free</a>
+      <a href="#" class="btn-ghost">Watch demo</a>
+    </div>
+  </section>
+
+  <section class="canvas">
+    <div class="doc">
+      <div class="doc-icon">📓</div>
+      <h2>Q2 Engineering Roadmap</h2>
+      <div class="doc-meta">Last edited by Sarah · 2 hours ago</div>
+
+      <p>This quarter we're focusing on three large initiatives: migrating the billing stack to the new tax engine, landing the collaborative editor, and reducing our p99 API latency below 150ms.</p>
+
+      <div class="doc-callout">
+        Each initiative has a named engineering lead and a target ship date. If your team is asked to contribute, ping the lead first.
+      </div>
+
+      <h3>Initiatives</h3>
+      <ul>
+        <li><strong>Billing migration.</strong> Lead: Priya. Target: end of May. Status: design review.</li>
+        <li><strong>Collaborative editor.</strong> Lead: Marcus. Target: mid-June. Status: in development.</li>
+        <li><strong>API latency.</strong> Lead: Chen. Target: rolling. Status: profiling complete.</li>
+      </ul>
+
+      <h3>Principles</h3>
+      <p>Ship small, measurable wins over large rewrites. Every week should produce something a customer would notice. When in doubt, write it down in <code>/roadmap</code> and share.</p>
+    </div>
+  </section>
+
+  <footer>
+    Generated from <a href="https://github.com/tiantangcao1980-web/DesignDNA-Skills/tree/main/design-md/notion">design-md/notion/DESIGN.md</a> · Part of <a href="https://github.com/tiantangcao1980-web/DesignDNA-Skills">DesignDNA showcase</a>
+  </footer>
+</body>
+</html>

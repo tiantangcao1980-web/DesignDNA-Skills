@@ -248,9 +248,10 @@ function extractShadows(md) {
 
 /**
  * Main parser: DESIGN.md text → token object.
+ * If a DIALS map is provided, the brand's dials are attached to the output.
  */
-export function parseDesignMd(md, { brand } = {}) {
-  return {
+export function parseDesignMd(md, { brand, dials } = {}) {
+  const out = {
     brand: brand || 'unknown',
     version: '1.0.0',
     $schema: 'https://designdna.dev/schemas/tokens-v1.json',
@@ -260,4 +261,6 @@ export function parseDesignMd(md, { brand } = {}) {
     radius: extractRadii(md),
     shadows: extractShadows(md),
   };
+  if (dials) out.dials = dials;
+  return out;
 }

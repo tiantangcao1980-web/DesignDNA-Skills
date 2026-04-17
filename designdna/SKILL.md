@@ -87,6 +87,114 @@ It does NOT dictate:
 > Distilled from 58 world-class brand design systems following Google Stitch's DESIGN.md methodology.
 > Source: [DesignDNA-Skills](https://github.com/tiantangcao1980-web/DesignDNA-Skills) | Design data: [awesome-design-md](https://github.com/VoltAgent/awesome-design-md)
 
+## Pre-flight Checklist (MANDATORY)
+
+**Before emitting any UI code, self-audit with this checklist. Print each item as `[x]` (passed) or `[ ]` (failed) in your output reasoning.**
+
+This is a bias-correction checklist inspired by [taste-skill](https://github.com/Leonxlnx/taste-skill). LLMs have strong statistical priors toward generic patterns — these rules fight the mean.
+
+### Typography
+- [ ] No Inter unless the brand DNA specifies it
+- [ ] ≤ 2 font families used on the page
+- [ ] ≤ 4 font weights used total
+- [ ] No all-caps headings > 16px
+- [ ] Font families match the brand DNA exactly
+
+### Color
+- [ ] No pure `#000000` (use warm near-black from brand DNA)
+- [ ] No pure `#FFFFFF` surfaces without a brand-specific off-white alternative
+- [ ] No default AI purple `#8B5CF6` family unless brand specifies purple
+- [ ] No rainbow blue→purple→pink gradient
+- [ ] Accent color explicitly from brand DNA palette
+
+### Layout
+- [ ] Hero is NOT the generic "centered headline + subhead + 2 buttons" template
+- [ ] No 3-column icon-card feature grid
+- [ ] No "Trusted by" fake-logo bar
+- [ ] At least one section breaks the symmetric 12-column grid
+- [ ] Vertical rhythm matches VISUAL_DENSITY dial (< 3 → breathy, > 7 → dense)
+
+### Copy & Content
+- [ ] No placeholder names: "John Doe", "Jane Smith", "Acme", "Nexus", "Velocity", "Apex"
+- [ ] No fake metrics: "99.99% uptime", "10x faster", "10,000+ users"
+- [ ] No AI marketing-speak: "Effortlessly", "Seamlessly", "Revolutionary"
+- [ ] No emoji in headings
+- [ ] Headlines follow the brand's voice guide (declarative / object-first / conversational / etc.)
+
+### Components
+- [ ] No frosted-glass `backdrop-blur` on every card
+- [ ] No animated mesh gradient hero background
+- [ ] No `ring-purple-500/50` glow on buttons/cards (unless brand specifies purple)
+- [ ] No generic stock imagery (brain circuits, chat bubbles, glowing networks)
+
+### Brand DNA Conformance
+- [ ] Loaded brand's `DESIGN.md`
+- [ ] Loaded brand's `BANNED.md` if present
+- [ ] Dial values declared (DESIGN_VARIANCE, MOTION_INTENSITY, VISUAL_DENSITY, WARMTH, CONTRAST)
+- [ ] Every component references a brand token, not a hardcoded hex or px
+
+**If any item is `[ ]`, revise before output. This checklist is not optional.**
+
+See also: `designdna/anti-slop/SKILL.md` for the full reasoning and replacement patterns.
+
+---
+
+## Two-Stage Skill Model (how DesignDNA is meant to be used)
+
+Inspired by [taste-skill's stitch-skill pattern](https://github.com/Leonxlnx/taste-skill), DesignDNA operates in two stages rather than as a single monolithic reference.
+
+### Stage 1 — Methodology load (this file)
+The AI editor loads this SKILL.md (~general methodology) once at session start. This teaches the agent:
+- How to read a brand DNA directory
+- How to apply the 9-section DESIGN.md standard
+- How to enforce anti-slop rules and pre-flight checks
+- How to pick a brand archetype for the user's project
+
+### Stage 2 — Project artifact generation (CLI-generated)
+Run `npx designdna craft --brand=<name>` from the user's project root. This generates a **`PROJECT-DESIGN.md`** file that:
+- Bundles the chosen brand's DNA + BANNED patterns
+- Declares the project's dial values (formality/motion/density/warmth/contrast)
+- Embeds the pre-flight checklist
+- Becomes the single source of truth for all future UI generations
+
+After Stage 2, every UI prompt the user types should reference `PROJECT-DESIGN.md` rather than re-explaining the design system.
+
+### Workflow summary
+
+```
+┌──────────────────┐      ┌─────────────────────┐      ┌────────────────────┐
+│  SKILL.md        │      │  npx designdna      │      │  PROJECT-DESIGN.md │
+│  (methodology)   │ ───► │  craft --brand=X    │ ───► │  (project artifact)│
+│  Loaded once     │      │  Run once per proj  │      │  Read per prompt   │
+└──────────────────┘      └─────────────────────┘      └────────────────────┘
+                                     │
+                                     ▼
+                          Optionally: --blend=Y
+                                     --motion=N
+                                     --density=N
+                                     ...dials overrides
+```
+
+### CLI craft examples
+
+```bash
+# Pure brand baseline
+npx designdna craft --brand=apple --name="Acme Studio"
+
+# Apple baseline, more motion, denser
+npx designdna craft --brand=apple --motion=7 --density=5
+
+# Blend two brands 50/50
+npx designdna craft --brand=stripe --blend=vercel --name="Modern SaaS"
+
+# 70/30 blend
+npx designdna craft --brand=linear --blend=notion --blend-ratio=7:3
+```
+
+The resulting `PROJECT-DESIGN.md` is committed to the user's repo and becomes the durable design contract. When the design evolves, they edit this file — everyone (humans and AI) reads from it.
+
+---
+
 ## What is DESIGN.md?
 
 DESIGN.md is a concept from [Google Stitch](https://stitch.withgoogle.com/docs/design-md/overview/) — a plain-text design system document that AI agents read to generate consistent, high-quality UI. Markdown is the format LLMs read best; no Figma exports, no JSON schemas, no special tooling required.

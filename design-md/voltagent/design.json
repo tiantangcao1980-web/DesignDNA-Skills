@@ -54,5 +54,12 @@
   "radius": {},
   "shadows": {
     "shadow-1": ". Shadows are reserved for Level 4–5 elevation only"
+  },
+  "dials": {
+    "formality": 7,
+    "motion": 6,
+    "density": 7,
+    "warmth": 3,
+    "contrast": 9
   }
 }

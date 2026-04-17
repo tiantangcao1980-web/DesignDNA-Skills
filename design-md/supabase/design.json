@@ -50,5 +50,12 @@
   },
   "shadows": {
     "shadow-1": "s. Focus states use"
+  },
+  "dials": {
+    "formality": 7,
+    "motion": 4,
+    "density": 6,
+    "warmth": 4,
+    "contrast": 8
   }
 }

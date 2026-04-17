@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DesignDNA Showcase — Real pages built with DesignDNA</title>
+  <meta name="description" content="A gallery of real pages built from DesignDNA brand skills. See how Stripe, Linear, and Notion DNA produce distinctive UI." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #18181f;
+      --border: #27272a;
+      --text: #f4f4f5;
+      --text-mid: #a1a1aa;
+      --muted: #71717a;
+      --accent: #10b981;
+      --accent-2: #6366f1;
+      --accent-3: #f472b6;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+    nav {
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 16px;
+    }
+    .logo .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2), var(--accent-3));
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    .logo .accent {
+      background: linear-gradient(90deg, var(--accent), var(--accent-3));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      font-size: 13px;
+    }
+    .nav-links a {
+      color: var(--text-mid);
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
+    .nav-links a:hover {
+      background: var(--surface);
+      color: var(--text);
+    }
+
+    header.hero {
+      padding: 80px 0 40px;
+      text-align: center;
+    }
+    .hero-label {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero p {
+      font-size: 17px;
+      color: var(--text-mid);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .hero code {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: 'SF Mono', 'JetBrains Mono', monospace;
+      font-size: 14px;
+      color: var(--accent);
+    }
+
+    .gallery {
+      padding: 40px 0 120px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #3f3f46;
+    }
+    .card-preview {
+      aspect-ratio: 16/10;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg);
+    }
+    .card-preview iframe {
+      border: 0;
+      pointer-events: none;
+      transform-origin: top left;
+    }
+    .card-body {
+      padding: 20px;
+    }
+    .card-brand {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 2px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .card-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .card-desc {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
+    .card-foot {
+      margin-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .card-foot code {
+      background: var(--bg);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: 'SF Mono', 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      border: 1px solid var(--border);
+    }
+
+    footer {
+      padding: 60px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--accent); }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 32px; }
+      .gallery { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="logo">
+        <span class="dot"></span>Design<span class="accent">DNA</span>
+        <span style="color: var(--muted); font-weight: 400; margin-left: 8px;">Showcase</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../">Home</a></li>
+        <li><a href="../playground.html">Playground</a></li>
+        <li><a href="https://github.com/tiantangcao1980-web/DesignDNA-Skills" target="_blank">GitHub</a></li>
+      </ul>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-label">SHOWCASE</div>
+      <h1>Real pages, real DNA, no AI slop.</h1>
+      <p>Each example below was built by applying one brand's DESIGN.md to a realistic UI. Run <code>npx designdna craft --brand=&lt;name&gt;</code> to generate your own.</p>
+    </header>
+
+    <section class="gallery">
+      <a href="./stripe-pricing.html" class="card" target="_blank">
+        <div class="card-preview">
+          <iframe src="./stripe-pricing.html" width="1280" height="800" style="width: 1280px; height: 800px; transform: scale(0.28);"></iframe>
+        </div>
+        <div class="card-body">
+          <div class="card-brand">STRIPE DNA</div>
+          <div class="card-title">SaaS Pricing Page</div>
+          <div class="card-desc">Weight-300 elegance, warm near-black headings, signature purple accent. Featured plan breaks the symmetric grid.</div>
+          <div class="card-foot">
+            <code>npx designdna craft --brand=stripe</code>
+            <span>→ stripe-pricing.html</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="./linear-landing.html" class="card" target="_blank">
+        <div class="card-preview">
+          <iframe src="./linear-landing.html" width="1280" height="800" style="width: 1280px; height: 800px; transform: scale(0.28);"></iframe>
+        </div>
+        <div class="card-body">
+          <div class="card-brand">LINEAR DNA</div>
+          <div class="card-title">Product Landing Page</div>
+          <div class="card-desc">Ultra-minimal dark theme, asymmetric hero with real product UI screenshot, 1px borders in place of shadows.</div>
+          <div class="card-foot">
+            <code>npx designdna craft --brand=linear.app</code>
+            <span>→ linear-landing.html</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="./notion-docs.html" class="card" target="_blank">
+        <div class="card-preview">
+          <iframe src="./notion-docs.html" width="1280" height="800" style="width: 1280px; height: 800px; transform: scale(0.28);"></iframe>
+        </div>
+        <div class="card-body">
+          <div class="card-brand">NOTION DNA</div>
+          <div class="card-title">Documentation Landing</div>
+          <div class="card-desc">Warm cream canvas, Lyon-style serif headings, emoji-forward identity, single-column long-form layout.</div>
+          <div class="card-foot">
+            <code>npx designdna craft --brand=notion</code>
+            <span>→ notion-docs.html</span>
+          </div>
+        </div>
+      </a>
+    </section>
+
+    <footer>
+      Want your project here? <a href="https://github.com/tiantangcao1980-web/DesignDNA-Skills/pulls" target="_blank">Open a PR</a>.
+      <br/>
+      <br/>
+      DesignDNA — design systems as AI skills.
+    </footer>
+  </div>
+</body>
+</html>

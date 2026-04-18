@@ -4,28 +4,48 @@
   "$schema": "https://designdna.dev/schemas/tokens-v1.json",
   "colors": {
     "pure-black": "#000000",
-    "pure-white": "#ffffff"
+    "pure-white": "#ffffff",
+    "glass-black": "rgba(0, 0, 0, 0.08)",
+    "glass-white": "rgba(255, 255, 255, 0.16)"
   },
   "typography": {
     "families": [
-      "Primary"
+      "figmaSans",
+      "figmaSans Fallback",
+      "figmaMono",
+      "figmaMono Fallback"
     ],
-    "sizes": {},
+    "sizes": {
+      "hero": "86px",
+      "section-heading": "64px",
+      "sub-heading": "26px",
+      "sub-heading-light": "26px",
+      "feature-title": "24px",
+      "body": "20px",
+      "label": "18px",
+      "small": "12px"
+    },
     "weights": [
       320,
       330,
+      340,
       400,
-      480,
+      450,
+      540,
       700
     ]
   },
   "spacing": {
-    "space-1": "0.1px",
-    "space-2": "0.14px",
-    "space-3": "0.54px",
-    "space-4": "0.96px",
-    "space-5": "1.72px",
-    "space-6": "8px"
+    "space-1": "2px",
+    "space-2": "4px",
+    "space-3": "4.5px",
+    "space-4": "8px",
+    "space-5": "10px",
+    "space-6": "12px",
+    "space-7": "16px",
+    "space-8": "18px",
+    "space-9": "24px",
+    "space-10": "32px"
   },
   "radius": {
     "radius-1": "6px"

@@ -20,12 +20,22 @@ export const tokens = {
   "typography": {
     "families": [
       "CohereText",
-      "Snow",
-      "Display",
-      "Code"
+      "Space Grotesk",
+      "Unica77 Cohere Web",
+      "Inter"
     ],
     "sizes": {
-      "large": "20px"
+      "hero": "72px",
+      "display": "60px",
+      "section-heading": "48px",
+      "sub-heading": "32px",
+      "feature-title": "24px",
+      "body": "18px",
+      "button": "14px",
+      "caption": "14px",
+      "label": "14px",
+      "small": "12px",
+      "code-micro": "8px"
     },
     "weights": [
       400,
@@ -33,16 +43,28 @@ export const tokens = {
     ]
   },
   "spacing": {
-    "space-1": "0.28px",
-    "space-2": "0.32px",
-    "space-3": "1.44px",
-    "space-4": "32px",
-    "space-5": "40px",
-    "space-6": "60px",
-    "space-7": "72px"
+    "space-1": "2px",
+    "space-2": "6px",
+    "space-3": "8px",
+    "space-4": "10px",
+    "space-5": "12px",
+    "space-6": "16px",
+    "space-7": "20px",
+    "space-8": "22px",
+    "space-9": "24px",
+    "space-10": "28px"
   },
   "radius": {},
-  "shadows": {}
+  "shadows": {
+    "shadow-1": "1px solid #f2f2f2"
+  },
+  "dials": {
+    "formality": 7,
+    "motion": 5,
+    "density": 6,
+    "warmth": 4,
+    "contrast": 7
+  }
 } as const;
 
 export type DesignTokens = typeof tokens;

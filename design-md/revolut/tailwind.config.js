@@ -22,33 +22,39 @@ module.exports = {
         "red-text": "#8b0000",
         "mid-slate": "#505a63",
         "cool-gray": "#8d969e",
-        "gray-tone": "#c9c9cd",
-        text: "#000000"
+        "gray-tone": "#c9c9cd"
       },
       fontFamily: {
         sans: [
-          "Blue Text",
+          "Aeonik Pro",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Yellow",
+          "Inter",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "Teal",
+          "Fallback",
           "system-ui",
           "sans-serif"
         ],
         "display-4": [
-          "Green Text",
+          "Arial",
           "system-ui",
           "sans-serif"
         ]
       },
       fontSize: {
-        small: "20px"
+        display: "136px",
+        hero: "80px",
+        "section-heading": "48px",
+        "sub-heading": "40px",
+        "card-title": "32px",
+        "feature-title": "24px",
+        "nav-ui": "20px",
+        body: "18px"
       },
       borderRadius: {
         "radius-1": "9999px",
@@ -56,11 +62,16 @@ module.exports = {
       },
       boxShadow: {},
       spacing: {
-        "space-1": "0.16px",
-        "space-2": "2.72px",
-        "space-3": "14px",
-        "space-4": "20px",
-        "space-5": "80px"
+        "space-1": "4px",
+        "space-2": "6px",
+        "space-3": "8px",
+        "space-4": "14px",
+        "space-5": "16px",
+        "space-6": "20px",
+        "space-7": "24px",
+        "space-8": "32px",
+        "space-9": "40px",
+        "space-10": "48px"
       }
     }
   }

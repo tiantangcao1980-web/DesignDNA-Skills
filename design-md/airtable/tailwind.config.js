@@ -7,46 +7,51 @@ module.exports = {
         "deep-navy": "#181d26",
         "airtable-blue": "#1b61c9",
         white: "#ffffff",
+        spotlight: "rgba(249, 252, 255, 0.97)",
         "success-green": "#006400",
+        "weak-text": "rgba(4, 14, 32, 0.69)",
+        "secondary-active": "rgba(7, 12, 20, 0.82)",
         "dark-gray": "#333333",
         "mid-blue": "#254fad",
         border: "#e0e2e6",
-        "light-surface": "#f8fafc"
+        "light-surface": "#f8fafc",
+        "blue-tinted": "rgba(0, 0, 0, 0.32)",
+        soft: "rgba(15, 48, 106, 0.05)"
       },
       fontFamily: {
         sans: [
-          "White",
+          "Haas",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Spotlight",
+          "Segoe UI",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "Weak Text",
-          "system-ui",
-          "sans-serif"
-        ],
-        "display-4": [
-          "Border",
+          "Haas Groot Disp",
           "system-ui",
           "sans-serif"
         ]
       },
       fontSize: {
-        small: "12px"
+        hero: "48px",
+        display: "48px",
+        "section-heading": "40px",
+        "sub-heading": "32px",
+        "card-title": "24px",
+        feature: "20px",
+        body: "18px",
+        button: "16px",
+        caption: "14px"
       },
-      borderRadius: {
-        "radius-1": "2px"
+      borderRadius: {},
+      boxShadow: {
+        "shadow-1": "rgba(0,0,0,0.32) 0px 0px 1px, rgba(0,0,0,0.08) 0px 0px 2px, rgba(45,127,249,0.28) 0px 1px 3px, rgba(0,0,0,0.06) 0px 0px 0px 0.5px inset",
+        "shadow-2": "rgba(15,48,106,0.05) 0px 0px 20px"
       },
-      boxShadow: {},
-      spacing: {
-        "space-1": "0.08px",
-        "space-2": "12px",
-        "space-3": "48px"
-      }
+      spacing: {}
     }
   }
 };

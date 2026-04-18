@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        "notion-black": "rgba(0, 0, 0, 0.95)",
         "pure-white": "#ffffff",
         "notion-blue": "#0075de",
         "deep-navy": "#213183",
@@ -21,52 +22,65 @@ module.exports = {
         "link-light-blue": "#62aef0",
         "focus-blue": "#097fe8",
         "badge-blue-bg": "#f2f9ff",
-        text: "#000000"
+        "card-shadow": "rgba(0, 0, 0, 0.04)",
+        "deep-shadow": "rgba(0, 0, 0, 0.01)",
+        "whisper-border": "rgba(0, 0, 0, 0.1)"
       },
       fontFamily: {
         sans: [
-          "Teal",
+          "NotionInter",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Green",
+          "Inter",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "Orange",
+          "OpenType Features",
           "system-ui",
           "sans-serif"
         ],
         "display-4": [
-          "Pink",
+          "lnum",
           "system-ui",
           "sans-serif"
         ]
       },
       fontSize: {
         body: "16px",
-        large: "16px",
-        hero: "64px"
+        hero: "64px",
+        display: "54px",
+        "section-heading": "48px",
+        large: "40px",
+        "sub-heading": "26px",
+        "card-title": "22px",
+        button: "15px",
+        caption: "14px",
+        badge: "12px",
+        label: "12px"
       },
       borderRadius: {
         "radius-1": "4px",
         "radius-2": "9999px",
         "radius-3": "12px"
       },
-      boxShadow: {},
+      boxShadow: {
+        "card-shadow": "rgba(0,0,0,0.04",
+        "deep-shadow": "rgba(0,0,0,0.01"
+      },
       spacing: {
-        "space-1": "0.125px",
-        "space-2": "0.25px",
-        "space-3": "1.5px",
-        "space-4": "2.125px",
-        "space-5": "4px",
+        "space-1": "2px",
+        "space-2": "3px",
+        "space-3": "4px",
+        "space-4": "5px",
+        "space-5": "5.6px",
         "space-6": "6px",
-        "space-7": "8px",
-        "space-8": "12px",
-        "space-9": "64px",
-        "space-10": "80px"
+        "space-7": "6.4px",
+        "space-8": "7px",
+        "space-9": "8px",
+        "space-10": "11px"
       }
     }
   }

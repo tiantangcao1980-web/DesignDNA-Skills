@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "pages/timer/index",
+    "pages/settings/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "FocusTimer",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f6f9fc"
+  },
+  "tabBar": {
+    "color": "#8898aa",
+    "selectedColor": "#533afd",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      { "pagePath": "pages/timer/index", "text": "Timer" },
+      { "pagePath": "pages/settings/index", "text": "Settings" }
+    ]
+  },
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-nav-bar": "@vant/weapp/nav-bar/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+  }
+}

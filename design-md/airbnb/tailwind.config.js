@@ -13,34 +13,72 @@ module.exports = {
         "near-black": "#222222",
         "focused-gray": "#3f3f3f",
         "secondary-gray": "#6a6a6a",
+        disabled: "rgba(0, 0, 0, 0.24)",
         "link-disabled": "#929292",
         "legal-blue": "#428bff",
         "border-gray": "#c1c1c1",
         "light-surface": "#f2f2f2",
-        "pure-white": "#ffffff"
+        "pure-white": "#ffffff",
+        "card-shadow": "rgba(0, 0, 0, 0.02)",
+        "hover-shadow": "rgba(0, 0, 0, 0.08)"
       },
       fontFamily: {
         sans: [
-          "Disabled",
+          "Airbnb Cereal VF",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Primary",
+          "Circular",
+          "system-ui",
+          "sans-serif"
+        ],
+        "display-3": [
+          "OpenType Features",
+          "system-ui",
+          "sans-serif"
+        ],
+        "display-4": [
+          "salt",
           "system-ui",
           "sans-serif"
         ]
       },
       fontSize: {
-        large: "32px"
+        "section-heading": "28px",
+        "card-heading": "22px",
+        "card-heading-medium": "22px",
+        "sub-heading": "21px",
+        "feature-title": "20px",
+        "ui-medium": "16px",
+        "ui-semibold": "16px",
+        button: "16px",
+        body: "14px",
+        caption: "14px",
+        small: "13px",
+        tag: "12px",
+        badge: "11px",
+        "micro-uppercase": "8px"
       },
       borderRadius: {
         "radius-1": "8px",
         "radius-2": "14px"
       },
-      boxShadow: {},
+      boxShadow: {
+        "card-shadow": "rgba(0,0,0,0.02",
+        "hover-shadow": "rgba(0,0,0,0.08"
+      },
       spacing: {
-        "space-1": "0.18px"
+        "space-1": "2px",
+        "space-2": "3px",
+        "space-3": "4px",
+        "space-4": "6px",
+        "space-5": "8px",
+        "space-6": "10px",
+        "space-7": "11px",
+        "space-8": "12px",
+        "space-9": "15px",
+        "space-10": "16px"
       }
     }
   }

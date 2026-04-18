@@ -12,7 +12,10 @@ module.exports = {
         "warm-gray": "#939084",
         sand: "#c5c0b1",
         "light-sand": "#eceae3",
-        "mid-warm": "#b5b2aa"
+        "mid-warm": "#b5b2aa",
+        "semi-transparent-dark": "rgba(45, 45, 46, 0.5)",
+        "inset-underline": "rgb(255, 79, 0)",
+        "hover-underline": "rgb(197, 192, 177)"
       },
       fontFamily: {
         sans: [
@@ -26,18 +29,31 @@ module.exports = {
           "sans-serif"
         ],
         "display-3": [
-          "Off-White",
+          "Helvetica",
           "system-ui",
           "sans-serif"
         ],
         "display-4": [
-          "Sand",
+          "Editorial",
           "system-ui",
           "sans-serif"
         ]
       },
       fontSize: {
-        display: "80px"
+        display: "80px",
+        hero: "80px",
+        "section-heading": "48px",
+        "editorial-heading": "48px",
+        "editorial-sub": "40px",
+        "sub-heading-lg": "36px",
+        "sub-heading": "32px",
+        "sub-heading-md": "28px",
+        "card-title": "24px",
+        body: "20px",
+        button: "16px",
+        caption: "14px",
+        micro: "12px",
+        "micro-sm": "13px"
       },
       borderRadius: {
         "radius-1": "4px",
@@ -45,16 +61,21 @@ module.exports = {
         "radius-3": "20px",
         "radius-4": "5px"
       },
-      boxShadow: {},
+      boxShadow: {
+        "shadow-1": "rgb(255, 79, 0) 0px -4px 0px 0px inset",
+        "shadow-2": "rgb(197, 192, 177) 0px -4px 0px 0px inset"
+      },
       spacing: {
-        "space-1": "0.48px",
-        "space-2": "1.6px",
+        "space-1": "4px",
+        "space-2": "6px",
         "space-3": "8px",
-        "space-4": "12px",
-        "space-5": "20px",
-        "space-6": "60px",
-        "space-7": "64px",
-        "space-8": "80px"
+        "space-4": "10px",
+        "space-5": "12px",
+        "space-6": "16px",
+        "space-7": "20px",
+        "space-8": "24px",
+        "space-9": "32px",
+        "space-10": "40px"
       }
     }
   }

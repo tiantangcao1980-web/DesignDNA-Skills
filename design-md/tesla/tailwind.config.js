@@ -8,6 +8,7 @@ module.exports = {
         "pure-white": "#ffffff",
         "light-ash": "#f4f4f4",
         "carbon-dark": "#171a20",
+        "frosted-glass": "rgba(255, 255, 255, 0.75)",
         graphite: "#393c41",
         pewter: "#5c5e62",
         "silver-fog": "#8e8e8e",
@@ -16,38 +17,36 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          "should speak for itself without",
+          "Universal Sans Display",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "at different sizes",
-          "system-ui",
-          "sans-serif"
-        ],
-        "display-3": [
           "Universal Sans Text",
-          "system-ui",
-          "sans-serif"
-        ],
-        "display-4": [
-          "Graphite",
           "system-ui",
           "sans-serif"
         ]
       },
-      fontSize: {},
+      fontSize: {
+        hero: "40px",
+        "product-name": "17px",
+        "nav-item": "14px",
+        body: "14px",
+        button: "14px",
+        "sub-link": "14px",
+        "promo-text": "22px",
+        label: "16px"
+      },
       borderRadius: {
         "radius-1": "4px"
       },
       boxShadow: {
-        "shadow-1": "transition",
-        "shadow-2": "0.33s cubic-bezier(0.5, 0, 0, 0.75), color 0.33s",
-        "shadow-3": "s entirely in its primary interface. Depth is communicated through three alternative strategies:"
+        "shadow-1": "s entirely in its primary interface. Depth is communicated through three alternative strategies:"
       },
       spacing: {
         "space-1": "4px",
-        "space-2": "16px"
+        "space-2": "8px",
+        "space-3": "16px"
       }
     }
   }

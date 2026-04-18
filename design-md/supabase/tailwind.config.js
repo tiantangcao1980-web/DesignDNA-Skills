@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         "supabase-green": "#3ecf8e",
         "green-link": "#00c573",
+        "green-border": "rgba(62, 207, 142, 0.3)",
         "near-black": "#0f0f0f",
         dark: "#171717",
         "dark-border": "#242424",
@@ -17,33 +18,45 @@ module.exports = {
         "mid-gray": "#898989",
         "light-gray": "#b4b4b4",
         "near-white": "#efefef",
-        "off-white": "#fafafa"
+        "off-white": "#fafafa",
+        violet: "hsl(251, 63.2%, 63.2%)",
+        "glass-dark": "rgba(41, 41, 41, 0.84)",
+        "slate-alpha": "hsla(210, 87.8%, 16.1%, 0.031)",
+        "fixed-scale-alpha": "hsla(200, 90.3%, 93.4%, 0.109)"
       },
       fontFamily: {
         sans: [
-          "almost no shadows",
+          "Circular",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Dark",
+          "custom-font",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "Charcoal",
+          "Source Code Pro",
           "system-ui",
           "sans-serif"
         ],
         "display-4": [
-          "Purple",
+          "Office Code Pro",
           "system-ui",
           "sans-serif"
         ]
       },
       fontSize: {
-        large: "16px",
-        hero: "72px"
+        hero: "72px",
+        "section-heading": "36px",
+        "card-title": "24px",
+        "sub-heading": "18px",
+        body: "16px",
+        "nav-link": "14px",
+        button: "14px",
+        caption: "14px",
+        small: "12px",
+        label: "12px"
       },
       borderRadius: {
         "radius-1": "9999px",
@@ -54,13 +67,16 @@ module.exports = {
         "shadow-1": "s. Focus states use"
       },
       spacing: {
-        "space-1": "0.16px",
-        "space-2": "1px",
-        "space-3": "1.2px",
-        "space-4": "8px",
+        "space-1": "4px",
+        "space-2": "6px",
+        "space-3": "8px",
+        "space-4": "12px",
         "space-5": "16px",
-        "space-6": "90px",
-        "space-7": "128px"
+        "space-6": "20px",
+        "space-7": "24px",
+        "space-8": "32px",
+        "space-9": "40px",
+        "space-10": "48px"
       }
     }
   }

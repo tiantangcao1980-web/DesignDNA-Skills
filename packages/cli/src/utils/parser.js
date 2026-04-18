@@ -10,19 +10,44 @@
 // Goal: ~90% extraction quality on typical DESIGN.md files.
 
 const HEX_CHAR = '[0-9a-fA-F]';
-const HEX_RE = new RegExp(`#(${HEX_CHAR}{6}|${HEX_CHAR}{3})(?!${HEX_CHAR})`, 'g');
+const HEX_RE = new RegExp(`#(${HEX_CHAR}{8}|${HEX_CHAR}{6}|${HEX_CHAR}{3})(?!${HEX_CHAR})`, 'g');
+const COLOR_LITERAL_RE = /((?:#[0-9a-fA-F]{8}|#[0-9a-fA-F]{6}|#[0-9a-fA-F]{3})|(?:(?:rgba?|hsla?|oklch|oklab)\([^)\n]+\)))/i;
 
 /**
- * Extract a section's body text by heading regex (case-insensitive).
- * Matches `# Heading`, `## 2. Heading`, `### Color Palette & Roles` etc.
+ * Extract a section body by matching a heading and keeping nested subheadings
+ * inside that section. We stop only when we hit a heading of the same or
+ * higher level, so `## Typography` still includes its `### Font Family`
+ * subsection contents.
  */
 function section(md, headingPattern) {
-  const re = new RegExp(
-    `^#{1,3}[^\\n]*?${headingPattern}[^\\n]*\\n([\\s\\S]*?)(?=\\n#{1,3}\\s|$)`,
-    'im'
-  );
-  const m = md.match(re);
-  return m ? m[1] : '';
+  const lines = md.split('\n');
+  const targetHeadingRe = new RegExp(`^(#{1,6})\\s+.*${headingPattern}.*$`, 'i');
+  const anyHeadingRe = /^(#{1,6})\s+/;
+
+  let start = -1;
+  let level = 0;
+
+  for (let i = 0; i < lines.length; i++) {
+    const match = lines[i].match(targetHeadingRe);
+    if (match) {
+      start = i + 1;
+      level = match[1].length;
+      break;
+    }
+  }
+
+  if (start === -1) return null;
+
+  let end = lines.length;
+  for (let i = start; i < lines.length; i++) {
+    const heading = lines[i].match(anyHeadingRe);
+    if (heading && heading[1].length <= level) {
+      end = i;
+      break;
+    }
+  }
+
+  return lines.slice(start, end).join('\n').trim();
 }
 
 /** Check if a string is a reasonable design-token label. */
@@ -47,6 +72,127 @@ function normalizeHex(hex) {
   return null;
 }
 
+function normalizeColor(value) {
+  if (!value) return null;
+  const trimmed = value.trim();
+  if (trimmed.startsWith('#')) return normalizeHex(trimmed);
+
+  const fn = trimmed.match(/^([a-z]+)\((.*)\)$/i);
+  if (!fn) return null;
+
+  const name = fn[1].toLowerCase();
+  if (!['rgb', 'rgba', 'hsl', 'hsla', 'oklch', 'oklab'].includes(name)) return null;
+
+  const args = fn[2]
+    .replace(/\s+/g, ' ')
+    .replace(/\s*,\s*/g, ', ')
+    .trim();
+
+  return `${name}(${args})`;
+}
+
+function pickFontCandidates(raw) {
+  return raw
+    .split(',')
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .map((part) => part.replace(/^['"`]+|['"`]+$/g, '').trim())
+    .filter(Boolean);
+}
+
+function firstUsefulFontCandidate(raw) {
+  for (const candidate of pickFontCandidates(raw)) {
+    if (isLikelyFontFamily(candidate)) return candidate;
+  }
+  return null;
+}
+
+function isGenericFontFamily(name) {
+  return /^(?:serif|sans-serif|monospace|system-ui|ui-monospace|-apple-system|inherit|initial|unset)$/i.test(name);
+}
+
+function isLikelyFontFamily(name) {
+  if (!name) return false;
+
+  const cleaned = name.replace(/^['"`]+|['"`]+$/g, '').trim();
+  if (!cleaned || cleaned.length < 2 || cleaned.length > 60) return false;
+  if (/^\d+$/.test(cleaned)) return false;
+  if (isGenericFontFamily(cleaned)) return false;
+
+  const lower = cleaned.toLowerCase();
+  const blockedExact = new Set([
+    'primary',
+    'secondary',
+    'family',
+    'families',
+    'heading',
+    'label',
+    'display',
+    'identity',
+    'disabled',
+    'overlay',
+    'text',
+    'primary text',
+    'secondary text',
+    'tertiary text',
+    'teal',
+    'green',
+    'orange',
+    'pink',
+    'purple',
+    'ruby',
+    'magenta',
+    'white',
+  ]);
+  if (blockedExact.has(lower)) return false;
+
+  return /^[A-Za-z0-9][A-Za-z0-9 .'+\-]*$/.test(cleaned);
+}
+
+function parseMarkdownTables(text) {
+  const lines = text.split('\n');
+  const tables = [];
+
+  for (let i = 0; i < lines.length - 1; i++) {
+    const headerLine = lines[i].trim();
+    const separatorLine = lines[i + 1].trim();
+    if (!headerLine.startsWith('|')) continue;
+    if (!/^\|?(?:\s*:?-{3,}:?\s*\|)+\s*:?-{3,}:?\s*\|?$/.test(separatorLine)) continue;
+
+    const header = headerLine.split('|').slice(1, -1).map((cell) => cell.trim().toLowerCase());
+    const rows = [];
+    i += 2;
+    while (i < lines.length && lines[i].trim().startsWith('|')) {
+      const cells = lines[i].split('|').slice(1, -1).map((cell) => cell.trim());
+      if (cells.length === header.length) {
+        rows.push(Object.fromEntries(header.map((key, idx) => [key, cells[idx]])));
+      }
+      i++;
+    }
+    i -= 1;
+    tables.push(rows);
+  }
+
+  return tables;
+}
+
+function canonicalTypeSizeKey(role) {
+  const lower = role.toLowerCase();
+  if (/\bhero\b/.test(lower)) return 'hero';
+  if (/\bdisplay\b/.test(lower)) return 'display';
+  if (/\bbody\b/.test(lower)) return 'body';
+  if (/\bcaption\b/.test(lower)) return 'caption';
+  if (/\bsmall\b/.test(lower)) return 'small';
+  if (/\blarge\b/.test(lower)) return 'large';
+  if (/\bh1\b|\bheading 1\b/.test(lower)) return 'h1';
+  if (/\bh2\b|\bheading 2\b/.test(lower)) return 'h2';
+  if (/\bh3\b|\bheading 3\b/.test(lower)) return 'h3';
+  if (/\bbutton\b/.test(lower)) return 'button';
+  if (/\blabel\b/.test(lower)) return 'label';
+  if (/\bmono\b/.test(lower)) return 'mono';
+  return slug(role).slice(0, 40);
+}
+
 /** Convert a label to a CSS-safe kebab-case key. */
 function slug(s) {
   return s
@@ -67,8 +213,8 @@ function slug(s) {
  */
 function extractColors(md) {
   const colorSection = section(md, '(?:color\\s*palette|color|palette)')
-                    || section(md, 'visual\\s*theme')
-                    || md;
+                    ?? section(md, 'visual\\s*theme')
+                    ?? md;
 
   const lines = colorSection.split('\n');
   const colors = {};
@@ -76,11 +222,11 @@ function extractColors(md) {
 
   const patterns = [
     // **Name** ... #hex  (name must NOT contain newline or start with digit only)
-    /\*\*([A-Za-z][A-Za-z0-9 \-/]{1,39})\*\*[^\n]{0,80}?(#[0-9a-fA-F]{6}|#[0-9a-fA-F]{3})(?![0-9a-fA-F])/,
-    // - Name: #hex
-    /^[\s\-*]+([A-Za-z][A-Za-z0-9 \-/]{1,39})\s*[:—-]\s*`?(#[0-9a-fA-F]{6}|#[0-9a-fA-F]{3})(?![0-9a-fA-F])/,
-    // `--var`: #hex
-    /`--([a-z][a-z0-9\-]{1,39})`\s*[:—-]?\s*`?(#[0-9a-fA-F]{6}|#[0-9a-fA-F]{3})(?![0-9a-fA-F])/,
+    new RegExp(`\\*\\*([A-Za-z][A-Za-z0-9 \\-/]{1,39})\\*\\*[^\\n]{0,80}?${COLOR_LITERAL_RE.source}`),
+    // - Name: color
+    new RegExp(`^[\\s\\-*]+([A-Za-z][A-Za-z0-9 \\-/]{1,39})\\s*[:—-]\\s*` + COLOR_LITERAL_RE.source),
+    // `--var`: color
+    new RegExp(String.raw`\`--([a-z][a-z0-9\-]{1,39})\`\s*[:—-]?\s*` + COLOR_LITERAL_RE.source),
   ];
 
   for (const line of lines) {
@@ -88,10 +234,10 @@ function extractColors(md) {
       const m = line.match(re);
       if (m && isGoodLabel(m[1])) {
         const key = slug(m[1]);
-        const hex = normalizeHex(m[2]);
-        if (key && hex && !seenHex.has(hex) && !colors[key]) {
-          colors[key] = hex;
-          seenHex.add(hex);
+        const color = normalizeColor(m[2]);
+        if (key && color && !seenHex.has(color) && !colors[key]) {
+          colors[key] = color;
+          seenHex.add(color);
           break;
         }
       }
@@ -122,49 +268,86 @@ function extractColors(md) {
  * "Sign in" or "Start now" that happen to be in quotes.
  */
 function extractFonts(md) {
-  const typoSection = section(md, '(?:typography|type|font)') || md;
+  const typoSection = section(md, '(?:typography|font)') ?? md;
+  const familySection = section(typoSection, 'font(?:\\s+family|\\s+families)?') || typoSection;
 
   const families = [];
   const seen = new Set();
+  const remember = (family) => {
+    const cleaned = family.trim();
+    const key = cleaned.toLowerCase();
+    if (!isLikelyFontFamily(cleaned) || seen.has(key)) return;
+    families.push(cleaned);
+    seen.add(key);
+  };
 
-  // Strong signals — regex look for explicit font-family / typeface / "Font:" lines
-  const signalRe = new RegExp(
-    // e.g. "font-family: 'Söhne', Inter, sans-serif"
-    // e.g. "Typeface: Söhne"
-    // e.g. "Headlines use **Söhne** weight 300"
-    '(?:font-family\\s*:?|typeface\\s*:?|primary\\s+font\\s*:?|font\\s*:\\s*|uses?\\s+\\*\\*)' +
-    '\\s*["\'\\*]*' +
-    '([A-Z][A-Za-z0-9][A-Za-z0-9 \\-]{1,30})',
-    'gi'
-  );
+  // Explicit `Primary` / `Monospace` lines usually provide the canonical font
+  // names before fallbacks. We keep only the first few non-generic families.
+  for (const line of familySection.split('\n')) {
+    const namedFontLine = line.match(/^\s*[-*]\s*\*\*([^*]+)\*\*:\s*(.+)$/);
+    if (namedFontLine) {
+      const label = namedFontLine[1].trim();
+      const rhs = namedFontLine[2];
+      if (!/^no\b/i.test(label) && isLikelyFontFamily(label)) {
+        remember(label);
+      }
+      const backtickGroups = [...rhs.matchAll(/`([^`]+)`/g)];
+      for (const group of backtickGroups) {
+        const candidate = firstUsefulFontCandidate(group[1]);
+        if (candidate) remember(candidate);
+      }
+    }
 
-  let m;
-  while ((m = signalRe.exec(typoSection)) !== null) {
-    const fam = m[1].trim().replace(/\s+/g, ' ');
-    // Reject obviously-generic or UI labels
-    if (['default', 'system', 'sans', 'serif', 'monospace', 'none'].includes(fam.toLowerCase())) continue;
-    if (/^(sign|start|contact|click|tap|get|try|view|open|close|learn|read|buy|join|free|new|more|all)\b/i.test(fam)) continue;
-    if (!seen.has(fam.toLowerCase()) && fam.length >= 3) {
-      families.push(fam);
-      seen.add(fam.toLowerCase());
+    const roleLine = line.match(/^\s*[-*]?\s*\*\*(?:Primary|Secondary|Display|Body|Monospace|Universal)\*\*:\s*(.+)$/i);
+    if (roleLine) {
+      const backtickGroups = [...roleLine[1].matchAll(/`([^`]+)`/g)];
+      for (const group of backtickGroups) {
+        const candidate = firstUsefulFontCandidate(group[1]);
+        if (candidate) remember(candidate);
+      }
+      continue;
+    }
+
+    const inlineDecl = line.match(/(?:^#{1,6}\s*)?(?:font(?:\s+family)?|typeface|primary\s+font)\s*:\s*(.+)$/i);
+    if (inlineDecl) {
+      const backtickGroups = [...inlineDecl[1].matchAll(/`([^`]+)`/g)];
+      if (backtickGroups.length > 0) {
+        for (const group of backtickGroups) {
+          const candidate = firstUsefulFontCandidate(group[1]);
+          if (candidate) remember(candidate);
+        }
+      } else {
+        const candidate = firstUsefulFontCandidate(inlineDecl[1]);
+        if (candidate) remember(candidate);
+      }
     }
   }
 
-  // Also accept the common pattern: **"Inter"** or **Inter**
-  const boldedRe = /\*\*["']?([A-Z][A-Za-z0-9][A-Za-z0-9 \-]{2,30})["']?\*\*/g;
-  while ((m = boldedRe.exec(typoSection)) !== null) {
-    const fam = m[1].trim();
-    // Require it to look like a font name: typically one capitalized word,
-    // maybe with " Mono" / " Sans" / " Serif" / " Display" suffix
-    if (!/^[A-Z][A-Za-z0-9\-]*(?:\s(?:Mono|Sans|Serif|Display|Text|Pro|Regular|Neue|UI))*$/.test(fam)) continue;
-    if (!seen.has(fam.toLowerCase())) {
-      families.push(fam);
-      seen.add(fam.toLowerCase());
+  for (const line of typoSection.split('\n')) {
+    const headingFontDecl = line.match(/^#{1,6}\s*(?:font(?:\s+family)?|typeface)\s*:\s*(.+)$/i);
+    if (!headingFontDecl) continue;
+    const backtickGroups = [...headingFontDecl[1].matchAll(/`([^`]+)`/g)];
+    for (const group of backtickGroups) {
+      const candidate = firstUsefulFontCandidate(group[1]);
+      if (candidate) remember(candidate);
+    }
+  }
+
+  // Fall back to the hierarchy table's Font column, which is typically the
+  // most reliable structured source in these DESIGN.md files.
+  const tables = parseMarkdownTables(typoSection);
+  for (const rows of tables) {
+    for (const row of rows) {
+      if (!row.font) continue;
+      for (const candidate of pickFontCandidates(row.font)) {
+        remember(candidate);
+      }
     }
   }
 
   // Font sizes via clear size-label pairings
   const sizes = {};
+  let m;
   const sizeRe = /\b(h[1-6]|hero|display|body|caption|small|large|xl)\b[^a-z\n]{0,20}?(\d+(?:\.\d+)?(?:px|rem))\b/gi;
   const sSeen = new Set();
   while ((m = sizeRe.exec(typoSection)) !== null) {
@@ -175,6 +358,18 @@ function extractFonts(md) {
       if (num >= 10 && num <= 200) {
         sizes[key] = m[2];
         sSeen.add(key);
+      }
+    }
+  }
+
+  for (const rows of tables) {
+    for (const row of rows) {
+      if (!row.role || !row.size) continue;
+      const match = row.size.match(/(\d+(?:\.\d+)?(?:px|rem))/i);
+      if (!match) continue;
+      const key = canonicalTypeSizeKey(row.role);
+      if (!(key in sizes)) {
+        sizes[key] = match[1];
       }
     }
   }
@@ -190,13 +385,27 @@ function extractFonts(md) {
       wSeen.add(w);
     }
   }
+
+  for (const rows of tables) {
+    for (const row of rows) {
+      if (!row.weight) continue;
+      const matches = row.weight.match(/\b(\d{3})\b/g) || [];
+      for (const match of matches) {
+        const w = Number(match);
+        if (w >= 100 && w <= 900 && !wSeen.has(w)) {
+          weights.push(w);
+          wSeen.add(w);
+        }
+      }
+    }
+  }
   weights.sort((a, b) => a - b);
 
   return { families: families.slice(0, 4), sizes, weights };
 }
 
 function extractRadii(md) {
-  const scope = section(md, '(?:component|layout|radius)') || md;
+  const scope = section(md, '(?:component|layout|radius)') ?? md;
   const radii = {};
   const re = /\b(?:border-?radius|radius|corner)\s*[:=]?\s*(\d+(?:\.\d+)?(?:px|rem))\b/gi;
   const seen = new Set();
@@ -213,14 +422,15 @@ function extractRadii(md) {
 }
 
 function extractSpacing(md) {
-  const scope = section(md, '(?:spacing|layout\\s*principles|grid)') || md;
-  // Only accept values that appear in an enumerated spacing scale context
-  const scaleRe = /(?:spacing|gap|padding|margin)[^\n]{0,80}?(\d+(?:\.\d+)?(?:px|rem))/gi;
+  const scope = section(md, '(?:spacing|layout\\s*principles|grid)') ?? md;
   const values = new Set();
-  let m;
-  while ((m = scaleRe.exec(scope)) !== null) {
-    const num = parseFloat(m[1]);
-    if (num > 0 && num <= 128) values.add(m[1]);
+  for (const line of scope.split('\n')) {
+    if (!/(?:spacing|scale|base unit|padding|margin|gap)/i.test(line)) continue;
+    for (const match of line.matchAll(/(\d+(?:\.\d+)?(?:px|rem))/gi)) {
+      const value = match[1];
+      const num = parseFloat(value);
+      if (num >= 2 && num <= 128) values.add(value);
+    }
   }
   const sorted = [...values].sort((a, b) => parseFloat(a) - parseFloat(b));
   const out = {};
@@ -231,7 +441,7 @@ function extractSpacing(md) {
 }
 
 function extractShadows(md) {
-  const scope = section(md, '(?:depth|elevation|shadow)') || md;
+  const scope = section(md, '(?:depth|elevation|shadow)') ?? md;
   const shadows = {};
   const re = /box-shadow\s*:?\s*(?:`|"|')?([^`"'\n]{10,200}?)(?:`|"|'|;|\n)/gi;
   let m;
@@ -243,6 +453,30 @@ function extractShadows(md) {
       i++;
     }
   }
+
+  if (Object.keys(shadows).length === 0) {
+    const lineValueRe = /^\s*[-*]?\s*\*\*([^*]+shadow[^*]*)\*\*\s*\(`?([^`]+?)`?\)/gim;
+    while ((m = lineValueRe.exec(scope)) !== null && i < 6) {
+      const key = slug(m[1]);
+      const value = m[2].trim();
+      if (key && value.length >= 10) {
+        shadows[key] = value;
+        i++;
+      }
+    }
+  }
+
+  if (Object.keys(shadows).length === 0) {
+    const fallbackValueRe = /`([^`\n]{10,200})`/g;
+    while ((m = fallbackValueRe.exec(scope)) !== null && i < 6) {
+      const value = m[1].trim();
+      if (/(?:rgba?|hsla?|oklch|oklab)\(/i.test(value) || /\b\d+px\b/.test(value)) {
+        shadows[`shadow-${i + 1}`] = value;
+        i++;
+      }
+    }
+  }
+
   return shadows;
 }
 

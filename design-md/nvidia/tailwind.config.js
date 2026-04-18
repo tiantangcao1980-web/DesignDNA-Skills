@@ -26,29 +26,61 @@ module.exports = {
         "link-hover": "#3860be",
         "button-hover": "#1eaedb",
         "button-active": "#007fff",
-        "muted-links": "#666666"
+        "card-shadow": "rgba(0, 0, 0, 0.3)"
       },
       fontFamily: {
         sans: [
-          "Primary",
+          "NVIDIA-EMEA",
+          "system-ui",
+          "sans-serif"
+        ],
+        "display-2": [
+          "Arial",
+          "system-ui",
+          "sans-serif"
+        ],
+        "display-3": [
+          "Icon Font",
+          "system-ui",
+          "sans-serif"
+        ],
+        "display-4": [
+          "Font Awesome 6 Pro",
           "system-ui",
           "sans-serif"
         ]
       },
       fontSize: {
         hero: "36px",
-        display: "36px"
+        "section-heading": "24px",
+        "sub-heading": "22px",
+        "card-title": "20px",
+        body: "18px",
+        large: "18px",
+        button: "16px",
+        link: "14px",
+        "link-uppercase": "14px",
+        caption: "14px",
+        label: "10px",
+        micro: "11px"
       },
       borderRadius: {
         "radius-1": "2px"
       },
-      boxShadow: {},
+      boxShadow: {
+        "card-shadow": "rgba(0, 0, 0, 0.3"
+      },
       spacing: {
-        "space-1": "0.144px",
-        "space-2": "8px",
-        "space-3": "11px",
-        "space-4": "24px",
-        "space-5": "80px"
+        "space-1": "2px",
+        "space-2": "3px",
+        "space-3": "4px",
+        "space-4": "5px",
+        "space-5": "6px",
+        "space-6": "7px",
+        "space-7": "8px",
+        "space-8": "9px",
+        "space-9": "10px",
+        "space-10": "11px"
       }
     }
   }

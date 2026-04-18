@@ -13,12 +13,17 @@ export const tokens = {
   },
   "typography": {
     "families": [
-      "in two variants",
-      "at different weights",
-      "Silver"
+      "Display Light",
+      "BMWTypeNextLatin Light",
+      "Helvetica",
+      "BMWTypeNextLatin"
     ],
     "sizes": {
-      "hero": "60px"
+      "hero": "60px",
+      "section-heading": "32px",
+      "nav-emphasis": "18px",
+      "body": "16px",
+      "button": "16px"
     },
     "weights": [
       300,
@@ -27,9 +32,27 @@ export const tokens = {
       900
     ]
   },
-  "spacing": {},
+  "spacing": {
+    "space-1": "5px",
+    "space-2": "8px",
+    "space-3": "10px",
+    "space-4": "12px",
+    "space-5": "15px",
+    "space-6": "16px",
+    "space-7": "20px",
+    "space-8": "24px",
+    "space-9": "30px",
+    "space-10": "32px"
+  },
   "radius": {},
-  "shadows": {}
+  "shadows": {},
+  "dials": {
+    "formality": 9,
+    "motion": 5,
+    "density": 3,
+    "warmth": 3,
+    "contrast": 8
+  }
 } as const;
 
 export type DesignTokens = typeof tokens;

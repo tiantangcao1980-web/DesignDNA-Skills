@@ -1,31 +1,42 @@
 # Deprecated & Legacy Component Libraries
 
-> Last audit: **2026-04**. Libraries listed here either: (a) received no commits for 2+ years, (b) are explicitly archived on GitHub, or (c) have been publicly superseded by a successor from the same team. **Do not start new projects on these.** If you are on an existing project using one of these, the "Migrate to" column shows the recommended successor.
+> Last audit: **2026-04**. Health threshold: ~3+ years dormant OR explicitly archived with no migration path. Libraries that are officially archived but consolidated into a successor (e.g., `material-components-flutter` folding into Flutter SDK) are **not** flagged deprecated — they're documented in the successor's skill file.
+>
+> **For new projects**: don't start on anything in this file. **For existing projects**: the "Migrate to" column shows the recommended successor.
 
-## Critical archived (avoid entirely)
+## Deprecated — avoid for new projects
 
-| Library | Last active | Archived | Why | Migrate to |
-|---|---|---|---|---|
-| [material-components-ios](https://github.com/material-components/material-components-ios) | 2025 | ✅ 2025-12 | Google ended support | SwiftUI + Apple HIG |
-| [material-components-flutter](https://github.com/material-components/material-components-flutter) | 2023 | ✅ 2023-11 | Folded into Flutter SDK | `package:flutter/material` (built-in) |
-| [material-components](https://github.com/material-components/material-components) | — | ✅ archived | Umbrella doc repo | See per-platform repos |
-| [remaxjs/remax](https://github.com/remaxjs/remax) | 2022 | — | MiniProgram-with-React superseded | Taro |
-| [iView Weapp](https://github.com/TalkingData/iview-weapp) | 2020-09 | — | 5+ years dormant, company pivoted | Vant Weapp or tdesign-miniprogram |
-| [Wuss Weapp](https://github.com/phonycode/wuss-weapp) | 2020-05 | — | 6+ years dormant | Vant Weapp |
-| [TouchWX](https://github.com/uileader/touchwx) | 2018-07 | — | 8+ years dormant, experimental | Vant Weapp or Taro |
-| [NutUI Bingo](https://github.com/jd-opensource/nutui-bingo) | 2023-02 | — | 3+ years dormant, built on NutUI Vue 1.x | Build custom with GSAP / Lottie |
+| Library | Last active | Why | Migrate to |
+|---|---|---|---|
+| [material-components](https://github.com/material-components/material-components) | — | Archived umbrella doc repo | See per-platform repos |
+| [remaxjs/remax](https://github.com/remaxjs/remax) | 2022 | MiniProgram-with-React superseded ~3+ years | Taro |
+| [iView Weapp](https://github.com/TalkingData/iview-weapp) | 2020-09 | 5+ years dormant, company pivoted | Vant Weapp or tdesign-miniprogram |
+| [Wuss Weapp](https://github.com/phonycode/wuss-weapp) | 2020-05 | 6+ years dormant | Vant Weapp |
+| [TouchWX](https://github.com/uileader/touchwx) | 2018-07 | 8+ years dormant, experimental | Vant Weapp or Taro |
 
-## Superseded (use successor)
+## Consolidated / superseded (still functional for existing projects)
+
+These are NOT deprecated — either archived with a clear successor from the same team, or maintenance-mode with predictable behavior. Safe to continue using; plan migration on your own schedule.
+
+| Library | Status | Successor / guidance |
+|---|---|---|
+| [material-components-ios](https://github.com/material-components/material-components-ios) | Archived 2025-12 (4 months old) | SwiftUI + Apple HIG — migrate on your cadence; library still works on supported iOS |
+| [material-components-flutter](https://github.com/material-components/material-components-flutter) | Consolidated into Flutter SDK 2023-11 | `package:flutter/material` is the continuation — just remove the standalone dep |
+| [material-web](https://github.com/material-components/material-web) | Maintenance mode (seeking maintainer) | Safe for existing projects; evaluate Shoelace or MUI for new React work |
+
+## Major-version superseded (use successor)
 
 | Library | Status | Successor |
 |---|---|---|
-| Bootstrap v4 | Security-only | Bootstrap v5.3 |
-| Chakra UI v2 | Still deployed, but plateau | Chakra UI v3 (Panda CSS) or shadcn/ui |
+| Bootstrap v4 | Security-only (2+ years of v5) | Bootstrap v5.3 |
+| Chakra UI v2 | Still deployed, v3 is the modern path | Chakra UI v3 (Panda CSS) or shadcn/ui |
 | `@fluentui/react` v8 (Fabric) | Maintenance | `@fluentui/react-components` v9 |
-| MWC (old `@material/*` Web Components) | Archived | material-web (Lit-based, in maintenance) |
+| MWC (old `@material/*` Web Components) | Archived | material-web (Lit-based, maintenance) |
 | Vant Vue 2 | Legacy | Vant 4 (Vue 3) |
 | Element UI (Vue 2) | Legacy | Element Plus (Vue 3) |
 | Ant Design v4 | End-of-maintenance | Ant Design v5+ |
+| NutUI Bingo | Low activity since 2023 | Source-reference or build custom with GSAP/Lottie |
+| Ant Design Landing | No update since 2023, still functional | Build marketing pages with Tailwind + shadcn |
 
 ## Maintenance mode (evaluate before adopting)
 

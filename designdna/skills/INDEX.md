@@ -7,8 +7,8 @@
 ## Health legend
 
 - 🟢 **active** — commits within last 6 months
-- 🟡 **maintenance** — 6-24 months since last meaningful commit
-- 🔴 **deprecated / archived** — 2+ years dormant or officially archived
+- 🟡 **maintenance** — 6 months to ~3 years since last meaningful commit, or officially archived with a same-team successor
+- 🔴 **deprecated** — ~3+ years dormant with no migration path
 
 ---
 
@@ -57,9 +57,9 @@
 | [mui-base](./mui-base/SKILL.md) | React headless primitives | 🟢 | 9.1k ⭐ |
 | [material-components-android](./material-components-android/SKILL.md) | Android XML/View | 🟢 | 17k ⭐ |
 | [flutter-material](./flutter-material/SKILL.md) | Flutter SDK built-in | 🟢 | Recommended Flutter path |
-| [material-web](./material-web/SKILL.md) | Web Components (Lit) | 🟡 | Seeking maintainer |
-| [material-components-ios](./material-components-ios/SKILL.md) | iOS UIKit | 🔴 | **Archived 2025-12** |
-| [material-components-flutter](./material-components-flutter/SKILL.md) | Flutter standalone | 🔴 | **Archived 2023-11** |
+| [material-web](./material-web/SKILL.md) | Web Components (Lit) | 🟡 | Maintenance mode |
+| [material-components-ios](./material-components-ios/SKILL.md) | iOS UIKit | 🟡 | Archived 2025-12, still usable; migrate to SwiftUI on your cadence |
+| [material-components-flutter](./material-components-flutter/SKILL.md) | Flutter standalone | 🟡 | Consolidated into Flutter SDK 2023-11 |
 
 ## Modern React/Web (5)
 

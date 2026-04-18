@@ -4,49 +4,59 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "pure-dark-theme": "#1f2228",
         "pure-white": "#ffffff",
-        "color-1": "#000000"
+        "dark-background": "#1f2228",
+        "white-muted": "rgba(255, 255, 255, 0.5)",
+        "white-subtle": "rgba(255, 255, 255, 0.2)",
+        "ring-blue": "rgb(59, 130, 246)",
+        "surface-elevated": "rgba(255, 255, 255, 0.05)",
+        "surface-hover": "rgba(255, 255, 255, 0.08)",
+        "border-default": "rgba(255, 255, 255, 0.1)",
+        "text-secondary": "rgba(255, 255, 255, 0.7)",
+        "text-quaternary": "rgba(255, 255, 255, 0.3)"
       },
       fontFamily: {
         sans: [
-          "in uppercase with tracked-out le",
+          "GeistMono",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "GeistMono 14px weight 400",
+          "SFMono-Regular",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "universalSans 16px weight 400",
+          "universalSans",
           "system-ui",
           "sans-serif"
         ],
         "display-4": [
-          "GeistMono 12px uppercase",
+          "universalSans Fallback",
           "system-ui",
           "sans-serif"
         ]
       },
-      fontSize: {},
+      fontSize: {
+        hero: "320px",
+        "section-heading": "30px",
+        body: "16px",
+        button: "14px",
+        caption: "14px",
+        small: "12px"
+      },
       borderRadius: {
         "radius-1": "0px"
       },
       boxShadow: {
-        "shadow-1": "s anywhere on the site. Instead, depth is communicated through three mechanisms: (1) opacity-based borders that brighten on interaction, creating a sense of elements",
-        "shadow-2": "s -- xAI has zero shadow elevation"
+        "shadow-1": "s anywhere on the site. Instead, depth is communicated through three mechanisms: (1) opacity-based borders that brighten on interaction, creating a sense of elements"
       },
       spacing: {
-        "space-1": "1px",
-        "space-2": "1.4px",
-        "space-3": "4px",
-        "space-4": "8px",
-        "space-5": "12px",
-        "space-6": "22px",
-        "space-7": "48px",
-        "space-8": "96px"
+        "space-1": "4px",
+        "space-2": "8px",
+        "space-3": "24px",
+        "space-4": "48px",
+        "space-5": "96px"
       }
     }
   }

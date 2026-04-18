@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <title>FocusTimer — Mobile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+  <style>
+    /* Same tokens as web/index.html — design parity across surfaces */
+    :root {
+      --color-brand:        #533afd;
+      --color-brand-hover:  #4434d4;
+      --color-navy:         #061b31;
+      --color-surface:      #ffffff;
+      --color-surface-soft: #f6f9fc;
+      --color-text:         #0a2540;
+      --color-text-mid:     #425466;
+      --color-text-mute:    #8898aa;
+      --color-border:       #e6ebf1;
+
+      --font-sans: 'Inter', -apple-system, system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+
+      --space-1: 4px; --space-2: 8px; --space-3: 12px;
+      --space-4: 16px; --space-5: 24px; --space-6: 32px;
+      --radius: 8px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--color-surface-soft);
+      color: var(--color-text);
+      overscroll-behavior: none;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    /* NavBar (NutUI/Vant-like) */
+    .nav-bar {
+      position: sticky;
+      top: 0;
+      height: 44px;
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--color-navy);
+      z-index: 10;
+    }
+
+    /* Hero timer */
+    .timer-screen {
+      padding: 48px var(--space-5) 120px;
+      text-align: center;
+    }
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--color-brand);
+      text-transform: uppercase;
+      margin-bottom: var(--space-3);
+    }
+    .task-name {
+      font-size: 18px;
+      color: var(--color-text-mid);
+      font-weight: 500;
+      margin-bottom: var(--space-6);
+    }
+
+    /* Timer visual */
+    .timer-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: var(--space-5) 0 var(--space-6);
+    }
+    .timer-ring-mobile {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: conic-gradient(
+        from -90deg,
+        var(--color-brand) 0deg,
+        var(--color-brand) var(--angle, 288deg),
+        var(--color-border) var(--angle, 288deg),
+        var(--color-border) 360deg
+      );
+      padding: 16px;
+      position: relative;
+      animation: ring-progress 4s ease-out infinite alternate;
+    }
+    @keyframes ring-progress {
+      from { --angle: 0deg; }
+      to   { --angle: 360deg; }
+    }
+    .timer-ring-mobile::before {
+      content: '';
+      position: absolute;
+      inset: 16px;
+      border-radius: 50%;
+      background: var(--color-surface);
+    }
+    .timer-display-mobile {
+      position: absolute;
+      inset: 32px;
+      border-radius: 50%;
+      background: var(--color-surface);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+    .timer-number-mobile {
+      font-family: var(--font-mono);
+      font-size: 56px;
+      font-weight: 400;
+      color: var(--color-navy);
+      letter-spacing: -0.02em;
+      font-variant-numeric: tabular-nums;
+    }
+    .timer-sub {
+      font-size: 12px;
+      color: var(--color-text-mute);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: var(--space-1);
+    }
+
+    /* Cell list — NutUI style */
+    .cell-group {
+      margin: var(--space-5);
+      border-radius: var(--radius);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      overflow: hidden;
+    }
+    .cell-group-title {
+      padding: var(--space-4) var(--space-4) var(--space-2);
+      font-size: 12px;
+      color: var(--color-text-mute);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: var(--color-surface-soft);
+    }
+    .cell {
+      display: flex;
+      align-items: center;
+      padding: 14px var(--space-4);
+      border-top: 1px solid var(--color-border);
+      font-size: 15px;
+    }
+    .cell:first-child { border-top: 0; }
+    .cell-title {
+      flex: 1;
+      color: var(--color-text);
+    }
+    .cell-value {
+      color: var(--color-text-mid);
+      font-family: var(--font-mono);
+      font-size: 14px;
+    }
+    .cell-arrow {
+      width: 16px;
+      height: 16px;
+      margin-left: var(--space-3);
+      color: var(--color-text-mute);
+    }
+
+    /* Fixed bottom action (with safe-area) */
+    .action-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      padding: var(--space-3) var(--space-5);
+      padding-bottom: calc(var(--space-3) + env(safe-area-inset-bottom));
+      display: flex;
+      gap: var(--space-3);
+    }
+    .btn {
+      flex: 1;
+      height: 48px;
+      border-radius: var(--radius);
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      color: var(--color-brand);
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .btn-filled {
+      background: var(--color-brand);
+      color: #fff;
+      border-color: var(--color-brand);
+    }
+    .btn-filled:active {
+      transform: scale(0.98);
+      background: var(--color-brand-hover);
+    }
+
+    /* Tabbar (bottom nav) */
+    .tabbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: calc(56px + env(safe-area-inset-bottom));
+      padding-bottom: env(safe-area-inset-bottom);
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      display: flex;
+      opacity: 0;  /* Hidden in this demo — replaced by action-bar */
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-bar">FocusTimer</div>
+
+  <main class="timer-screen">
+    <div class="eyebrow">Current focus</div>
+    <div class="task-name">Finish Q2 proposal</div>
+
+    <div class="timer-wrap">
+      <div class="timer-ring-mobile">
+        <div class="timer-display-mobile">
+          <div class="timer-number-mobile" id="mobile-timer">24:57</div>
+          <div class="timer-sub">Focus</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cell-group">
+      <div class="cell-group-title">Session details</div>
+      <div class="cell">
+        <span class="cell-title">Completed today</span>
+        <span class="cell-value">3 / 8</span>
+      </div>
+      <div class="cell">
+        <span class="cell-title">Total focus time</span>
+        <span class="cell-value">1h 15m</span>
+      </div>
+      <div class="cell">
+        <span class="cell-title">Streak</span>
+        <span class="cell-value">5 days</span>
+      </div>
+    </div>
+
+    <div class="cell-group">
+      <div class="cell-group-title">Today's focus list</div>
+      <div class="cell">
+        <span class="cell-title">Finish Q2 proposal</span>
+        <span class="cell-value" style="color: var(--color-brand)">Active</span>
+      </div>
+      <div class="cell">
+        <span class="cell-title">Review PRs</span>
+        <span class="cell-value">–</span>
+      </div>
+      <div class="cell">
+        <span class="cell-title">Write retro notes</span>
+        <span class="cell-value">–</span>
+      </div>
+    </div>
+  </main>
+
+  <div class="action-bar">
+    <button class="btn">Pause</button>
+    <button class="btn btn-filled">Finish session</button>
+  </div>
+
+  <script>
+    // Live countdown
+    (() => {
+      const t = document.getElementById('mobile-timer');
+      let total = 24 * 60 + 57;
+      setInterval(() => {
+        const m = String(Math.floor(total / 60)).padStart(2, '0');
+        const s = String(total % 60).padStart(2, '0');
+        t.textContent = `${m}:${s}`;
+        total = total > 0 ? total - 1 : 24 * 60 + 57;
+      }, 1000);
+    })();
+  </script>
+</body>
+</html>

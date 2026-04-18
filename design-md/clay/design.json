@@ -29,15 +29,33 @@
     "dark-border": "#525a69",
     "light-frost": "#eff1f3",
     "badge-blue-bg": "#f0f8ff",
-    "badge-blue-text": "#3859f9"
+    "badge-blue-text": "#3859f9",
+    "focus-ring": "rgb(20, 110, 245)",
+    "clay-shadow": "rgba(0, 0, 0, 0.1)",
+    "hard-offset": "rgb(0, 0, 0)"
   },
   "typography": {
     "families": [
-      "Primary",
-      "Monospace"
+      "Roobert",
+      "Arial",
+      "Space Mono",
+      "OpenType Features"
     ],
     "sizes": {
-      "hero": "80px"
+      "hero": "80px",
+      "display": "60px",
+      "section-heading": "44px",
+      "card-heading": "32px",
+      "feature-title": "20px",
+      "sub-heading": "20px",
+      "body": "20px",
+      "button": "16px",
+      "large": "24px",
+      "small": "12.8px",
+      "nav-link": "15px",
+      "caption": "14px",
+      "label": "12px",
+      "badge": "9.6px"
     },
     "weights": [
       400,
@@ -46,19 +64,24 @@
     ]
   },
   "spacing": {
-    "space-1": "0.64px",
-    "space-2": "1.08px",
-    "space-3": "1.32px",
-    "space-4": "3.2px",
-    "space-5": "6.4px",
-    "space-6": "8px"
+    "space-1": "2px",
+    "space-2": "4px",
+    "space-3": "6.4px",
+    "space-4": "8px",
+    "space-5": "12px",
+    "space-6": "12.8px",
+    "space-7": "16px",
+    "space-8": "18px",
+    "space-9": "20px",
+    "space-10": "24px"
   },
   "radius": {
-    "radius-1": "24px",
-    "radius-2": "4px",
-    "radius-3": "12px"
+    "radius-1": "4px",
+    "radius-2": "12px"
   },
-  "shadows": {},
+  "shadows": {
+    "clay-shadow": "rgba(0,0,0,0.1"
+  },
   "dials": {
     "formality": 4,
     "motion": 8,

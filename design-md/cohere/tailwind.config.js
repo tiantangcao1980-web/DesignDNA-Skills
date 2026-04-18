@@ -24,34 +24,49 @@ module.exports = {
           "sans-serif"
         ],
         "display-2": [
-          "Snow",
+          "Space Grotesk",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "Display",
+          "Unica77 Cohere Web",
           "system-ui",
           "sans-serif"
         ],
         "display-4": [
-          "Code",
+          "Inter",
           "system-ui",
           "sans-serif"
         ]
       },
       fontSize: {
-        large: "20px"
+        hero: "72px",
+        display: "60px",
+        "section-heading": "48px",
+        "sub-heading": "32px",
+        "feature-title": "24px",
+        body: "18px",
+        button: "14px",
+        caption: "14px",
+        label: "14px",
+        small: "12px",
+        "code-micro": "8px"
       },
       borderRadius: {},
-      boxShadow: {},
+      boxShadow: {
+        "shadow-1": "1px solid #f2f2f2"
+      },
       spacing: {
-        "space-1": "0.28px",
-        "space-2": "0.32px",
-        "space-3": "1.44px",
-        "space-4": "32px",
-        "space-5": "40px",
-        "space-6": "60px",
-        "space-7": "72px"
+        "space-1": "2px",
+        "space-2": "6px",
+        "space-3": "8px",
+        "space-4": "10px",
+        "space-5": "12px",
+        "space-6": "16px",
+        "space-7": "20px",
+        "space-8": "22px",
+        "space-9": "24px",
+        "space-10": "28px"
       }
     }
   }

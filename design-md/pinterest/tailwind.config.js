@@ -20,6 +20,7 @@ module.exports = {
         "pressed-blue": "#617bff",
         "sand-gray": "#e5e5e0",
         "warm-light": "#e0e0d9",
+        "warm-wash": "hsla(60, 20%, 98%, 0.5)",
         fog: "#f6f6f3",
         "border-disabled": "#c8c8c1",
         "hover-gray": "#bcbcb3",
@@ -28,34 +29,38 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          "Black",
+          "Pin Sans",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "White",
-          "system-ui",
-          "sans-serif"
-        ],
-        "display-3": [
-          "Primary",
+          "Segoe UI",
           "system-ui",
           "sans-serif"
         ]
       },
       fontSize: {
-        large: "28px",
-        hero: "40px"
+        hero: "70px",
+        "section-heading": "28px",
+        body: "16px",
+        caption: "14px",
+        button: "12px"
       },
       borderRadius: {
         "radius-1": "16px"
       },
-      boxShadow: {
-        "shadow-1": "on most cards"
-      },
+      boxShadow: {},
       spacing: {
-        "space-1": "6px",
-        "space-2": "16px"
+        "space-1": "4px",
+        "space-2": "6px",
+        "space-3": "7px",
+        "space-4": "8px",
+        "space-5": "10px",
+        "space-6": "11px",
+        "space-7": "12px",
+        "space-8": "16px",
+        "space-9": "18px",
+        "space-10": "20px"
       }
     }
   }

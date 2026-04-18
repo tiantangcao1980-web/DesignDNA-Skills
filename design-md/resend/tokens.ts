@@ -26,37 +26,69 @@ export const tokens = {
     "edge-gray": "#ececec",
     "mist-gray": "#dedfdf",
     "soft-gray": "#e5e6e6",
-    "frost-primary": "#fcfdff"
+    "frost-primary": "#fcfdff",
+    "white-hover": "rgba(255, 255, 255, 0.28)",
+    "frost-border": "rgba(214, 235, 253, 0.19)",
+    "frost-border-alt": "rgba(217, 237, 254, 0.145)",
+    "ring-shadow": "rgba(176, 199, 217, 0.145)",
+    "focus-ring": "rgb(0, 0, 0)",
+    "subtle-shadow": "rgba(0, 0, 0, 0.1)"
   },
   "typography": {
     "families": [
-      "Silver",
       "Display Serif",
+      "domaine",
       "Display Sans",
-      "Monospace"
+      "aBCFavorit"
     ],
     "sizes": {
-      "large": "16px"
+      "hero": "96px",
+      "section-heading": "56px",
+      "sub-heading": "20px",
+      "sub-heading-compact": "16px",
+      "feature-title": "24px",
+      "body": "18px",
+      "nav-link": "14px",
+      "button": "14px",
+      "caption": "14px",
+      "small": "12px",
+      "code-tiny": "12px",
+      "heading-helvetica": "24px"
     },
     "weights": [
       400,
-      500
+      500,
+      600
     ]
   },
   "spacing": {
-    "space-1": "0.35px",
-    "space-2": "0.96px",
-    "space-3": "2.8px",
-    "space-4": "5px",
-    "space-5": "76.8px",
-    "space-6": "80px"
+    "space-1": "2px",
+    "space-2": "4px",
+    "space-3": "5px",
+    "space-4": "6px",
+    "space-5": "7px",
+    "space-6": "8px",
+    "space-7": "10px",
+    "space-8": "12px",
+    "space-9": "16px",
+    "space-10": "20px"
   },
   "radius": {
     "radius-1": "9999px",
     "radius-2": "4px",
     "radius-3": "16px"
   },
-  "shadows": {}
+  "shadows": {
+    "ring-shadow": "rgba(176, 199, 217, 0.145",
+    "subtle-shadow": "rgba(0, 0, 0, 0.1"
+  },
+  "dials": {
+    "formality": 8,
+    "motion": 3,
+    "density": 4,
+    "warmth": 4,
+    "contrast": 8
+  }
 } as const;
 
 export type DesignTokens = typeof tokens;

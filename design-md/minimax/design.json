@@ -19,22 +19,34 @@
     "mid-gray": "#8e8e93",
     "light-gray": "#5f5f5f",
     "pure-white": "#ffffff",
+    "glass-white": "hsla(0, 0%, 100%, 0.4)",
     "border-light": "#f2f3f5",
     "border-gray": "#e5e7eb",
     "success-background": "#e8ffea",
-    "background": "#f0f0f0",
-    "text": "#333333"
+    "standard": "rgba(0, 0, 0, 0.08)",
+    "brand-purple": "rgba(44, 30, 116, 0.16)",
+    "brand-purple-offset": "rgba(44, 30, 116, 0.11)",
+    "card-elevation": "rgba(36, 36, 36, 0.08)"
   },
   "typography": {
     "families": [
-      "DM Sans serves as the primary UI",
-      "Dark",
-      "Charcoal",
-      "Standard"
+      "Primary UI",
+      "DM Sans",
+      "Helvetica Neue",
+      "Outfit"
     ],
     "sizes": {
-      "large": "22px",
-      "hero": "80px"
+      "hero": "80px",
+      "section-heading": "31px",
+      "section-heading-alt": "32px",
+      "card-title": "28px",
+      "sub-heading": "24px",
+      "label": "18px",
+      "body": "20px",
+      "navlink": "14px",
+      "small": "13px",
+      "caption": "13px",
+      "micro": "10px"
     },
     "weights": [
       400,
@@ -44,11 +56,16 @@
     ]
   },
   "spacing": {
-    "space-1": "11px",
-    "space-2": "16px",
-    "space-3": "40px",
-    "space-4": "64px",
-    "space-5": "80px"
+    "space-1": "2px",
+    "space-2": "4px",
+    "space-3": "6px",
+    "space-4": "8px",
+    "space-5": "10px",
+    "space-6": "11px",
+    "space-7": "14px",
+    "space-8": "16px",
+    "space-9": "24px",
+    "space-10": "32px"
   },
   "radius": {
     "radius-1": "8px",
@@ -56,7 +73,13 @@
     "radius-3": "20px",
     "radius-4": "13px"
   },
-  "shadows": {},
+  "shadows": {
+    "shadow-1": "rgba(0, 0, 0, 0.08) 0px 4px 6px",
+    "shadow-2": "rgba(0, 0, 0, 0.08) 0px 0px 22.576px",
+    "shadow-3": "rgba(44, 30, 116, 0.16) 0px 0px 15px",
+    "shadow-4": "rgba(44, 30, 116, 0.11) 6.5px 2px 17.5px",
+    "shadow-5": "rgba(36, 36, 36, 0.08) 0px 12px 16px -4px"
+  },
   "dials": {
     "formality": 6,
     "motion": 7,

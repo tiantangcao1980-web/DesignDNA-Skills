@@ -3,6 +3,9 @@ name: nutui-templates
 description: NutUI official page templates skill — JD-style Vue 3 and React page/layout templates for mobile H5 and Taro MiniProgram (152 stars, active). Covers template taxonomy (home / product / order / checkout / me), how to scaffold from a template, and integration with NutUI Vue / React.
 ---
 
+{% raw %}
+
+
 # NutUI Templates — E-commerce Page Templates
 
 > **Source**: [jdf2e/nutui-templates](https://github.com/jdf2e/nutui-templates) · 152 stars · 2026-04 active
@@ -178,3 +181,5 @@ Templates ship with **default JD visual language** (red accent, warm e-commerce 
 - **nutui-biz** (React only, maintenance mode): business-domain components (address picker, SKU selector, coupon, invoice). See `nutui-biz/SKILL.md`.
 
 Templates compose many nutui-biz components internally.
+
+{% endraw %}

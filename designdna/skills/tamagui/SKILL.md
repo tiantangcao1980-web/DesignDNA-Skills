@@ -3,6 +3,9 @@ name: tamagui
 description: Tamagui — universal React UI library that compiles to React Native + web from the same source (10k+ stars, active). Zero-runtime styles via compile-time optimization. Best for shared React + React Native codebases. Covers install, core components, theme tokens, and the compiler setup.
 ---
 
+{% raw %}
+
+
 # Tamagui — Universal React + React Native UI
 
 > **Source**: [tamagui/tamagui](https://github.com/tamagui/tamagui) · 10k+ ⭐ · v1.x · 🟢 active 2026
@@ -250,3 +253,5 @@ Depends on your tokens — Tamagui is a framework, dial fit is what you configur
 | Pure RN without web sharing | React Native Paper |
 | Web-only universal React | shadcn/ui + Tailwind |
 | Solid RN + Expo + simple needs | Dripsy (lightweight) |
+
+{% endraw %}

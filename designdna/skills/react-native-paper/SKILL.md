@@ -3,6 +3,9 @@ name: react-native-paper
 description: React Native Paper — Material Design for React Native (13k+ stars, v5.x, active). Cross-platform native iOS/Android Material 3 components. Use when building RN apps wanting Material aesthetics. Covers installation, component catalog, theme tokens, adaptive theme (light/dark/auto), and MD3 migration.
 ---
 
+{% raw %}
+
+
 # React Native Paper — Material Design for RN
 
 > **Source**: [callstack/react-native-paper](https://github.com/callstack/react-native-paper) · 13k+ ⭐ · v5.x · 🟢 active 2026
@@ -238,3 +241,5 @@ formality: 5 · motion: 5 · density: 4 · warmth: 5 · contrast: 6
 | Not wanting Material look | Ship plain RN + custom styles |
 | Paper isn't flexible enough | React Native Elements |
 | Design-first RN | Dripsy (theme UI-like) |
+
+{% endraw %}

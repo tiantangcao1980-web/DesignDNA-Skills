@@ -19,39 +19,62 @@ module.exports = {
         "sage-placeholder": "#9ea096",
         "sage-border": "#bfc1b7",
         "light-border": "#b6b7af",
-        "dark-text": "#111827",
-        "dark-primary": "#1e1f23",
-        "text-color": "#374151"
+        "dark-text": "#111827"
       },
       fontFamily: {
         sans: [
-          "Dark Text",
+          "IBM Plex Sans Variable",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Monospace",
+          "IBM Plex Sans",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "Code Display",
+          "SFMono-Regular",
           "system-ui",
           "sans-serif"
         ],
         "display-4": [
-          "Input-style",
+          "Code Display",
           "system-ui",
           "sans-serif"
         ]
       },
-      fontSize: {},
+      fontSize: {
+        hero: "30px",
+        "section-heading": "36px",
+        "feature-heading": "24px",
+        "card-heading": "21.4px",
+        "sub-heading": "20px",
+        "sub-heading-uppercase": "20px",
+        body: "19.3px",
+        label: "18px",
+        "nav-ui": "15px",
+        caption: "14px",
+        small: "13px",
+        micro: "12px",
+        code: "14px"
+      },
       borderRadius: {},
-      boxShadow: {},
+      boxShadow: {
+        "shadow-1": "1px solid #bfc1b7",
+        "shadow-2": "0px 25px 50px -12px rgba(0, 0, 0, 0.25)",
+        "shadow-3": "0 25px 50px -12px"
+      },
       spacing: {
-        "space-1": "0.75px",
+        "space-1": "2px",
         "space-2": "4px",
-        "space-3": "32px"
+        "space-3": "6px",
+        "space-4": "8px",
+        "space-5": "10px",
+        "space-6": "12px",
+        "space-7": "16px",
+        "space-8": "18px",
+        "space-9": "24px",
+        "space-10": "32px"
       }
     }
   }

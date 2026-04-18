@@ -28,33 +28,68 @@ export const tokens = {
     "danger-coral": "#fb565b",
     "danger-rose": "#fd9c9f",
     "info-teal": "#4cb3d4",
-    "dashed-border-slate": "#4f5d75"
+    "dashed-border-slate": "#4f5d75",
+    "warm-ambient-haze": "rgba(92, 88, 85, 0.2)",
+    "deep-dramatic-elevation": "rgba(0, 0, 0, 0.7)"
   },
   "typography": {
     "families": [
-      "Navigation",
-      "Cards"
+      "Segoe UI",
+      "Inter",
+      "calt",
+      "SFMono-Regular"
     ],
     "sizes": {
-      "hero": "60px"
+      "hero": "60px",
+      "section-heading": "36px",
+      "sub-heading": "24px",
+      "sub-heading-light": "24px",
+      "overline": "20px",
+      "feature-title": "20px",
+      "small": "18px",
+      "body": "16px",
+      "nav-link": "14.45px",
+      "caption": "14px",
+      "tag-overline-tiny": "14px",
+      "micro": "12px",
+      "button": "13px"
     },
     "weights": [
+      300,
+      400,
       500,
+      600,
+      686,
       700
     ]
   },
   "spacing": {
-    "space-1": "0.45px",
-    "space-2": "0.65px",
-    "space-3": "12px",
-    "space-4": "20px",
-    "space-5": "24px",
-    "space-6": "32px",
-    "space-7": "96px"
+    "space-1": "2px",
+    "space-2": "4px",
+    "space-3": "5px",
+    "space-4": "6px",
+    "space-5": "6.4px",
+    "space-6": "8px",
+    "space-7": "12px",
+    "space-8": "16px",
+    "space-9": "20px",
+    "space-10": "24px"
   },
   "radius": {},
   "shadows": {
-    "shadow-1": ". Shadows are reserved for Level 4–5 elevation only"
+    "shadow-1": "1px solid #3d3a39",
+    "shadow-2": "3px solid #3d3a39",
+    "shadow-3": "2px solid #00d992",
+    "shadow-4": "rgba(92, 88, 85, 0.2) 0px 0px 15px",
+    "shadow-5": "rgba(0, 0, 0, 0.7) 0px 20px 60px",
+    "shadow-6": "rgba(148, 163, 184, 0.1) 1px inset"
+  },
+  "dials": {
+    "formality": 7,
+    "motion": 6,
+    "density": 7,
+    "warmth": 3,
+    "contrast": 9
   }
 } as const;
 

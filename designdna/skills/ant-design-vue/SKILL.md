@@ -3,6 +3,9 @@ name: ant-design-vue
 description: Ant Design Vue (antdv) — community Vue 3 port of Ant Design (20k stars, v4.x, active). Visual and API parity with React antd. For Vue 3 B2B admin apps wanting antd's design language. Covers installation, component catalog, v3 → v4 migration, on-demand imports, and theme tokens.
 ---
 
+{% raw %}
+
+
 # Ant Design Vue (antdv) — Vue 3 Port
 
 > **Source**: [vueComponent/ant-design-vue](https://github.com/vueComponent/ant-design-vue) · 20k ⭐ · v4.x · 🟢 active 2026
@@ -201,3 +204,5 @@ import { ConfigProvider, theme } from 'ant-design-vue';
 ## 10. Dial fit
 
 Same as React antd: formality: 8-9 · motion: 3 · density: 6-7 · warmth: 4 · contrast: 6-7
+
+{% endraw %}

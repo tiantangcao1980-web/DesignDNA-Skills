@@ -15,35 +15,59 @@
     "success-green": "#8dc572",
     "error-rose": "#be6464",
     "warning-amber": "#f0ad4e",
-    "info-blue": "#337ab7"
+    "info-blue": "#337ab7",
+    "promocard-overlay": "rgba(0, 0, 0, 0.6)"
   },
   "typography": {
     "families": [
-      "features a distinctive",
-      "with 28-degree",
-      "NouvelR",
-      "besides NouvelR"
+      "NouvelR"
     ],
     "sizes": {
-      "large": "56px",
-      "caption": "12.8px"
+      "caption": "12.8px",
+      "hero": "56px",
+      "section-heading": "40px",
+      "card-heading": "32px",
+      "subheading": "24px",
+      "module-title": "21.92px",
+      "content-title": "20px",
+      "ui-heading": "19.2px",
+      "emphasis": "18px",
+      "body": "16px",
+      "button": "14.4px",
+      "nav-link": "13px",
+      "small": "12px",
+      "micro-text": "10px"
     },
     "weights": [
+      400,
+      600,
       700
     ]
   },
   "spacing": {
-    "space-1": "6px",
-    "space-2": "10px",
-    "space-3": "24px",
-    "space-4": "40px",
-    "space-5": "80px"
+    "space-1": "4px",
+    "space-2": "5px",
+    "space-3": "6px",
+    "space-4": "6.25px",
+    "space-5": "8px",
+    "space-6": "10px",
+    "space-7": "12px",
+    "space-8": "13px",
+    "space-9": "15px",
+    "space-10": "16px"
   },
   "radius": {
     "radius-1": "0px",
     "radius-2": "50px"
   },
-  "shadows": {},
+  "shadows": {
+    "shadow-1": "rgba(0,0,0,0.2) 0px 4px 8px",
+    "shadow-2": "rgba(0,0,0,0.2) 0px 0px 18px",
+    "shadow-3": "rgba(0,0,0,0) 0px 2px 4px, rgba(50,50,93,0.1) 0px 7px 14px",
+    "shadow-4": "rgba(0,0,0,0.15) 0px 40px 80px",
+    "shadow-5": "rgba(0,0,0,0.2) 5px 5px 8px",
+    "shadow-6": "rgb(199,197,199) 0px 0px 12px 2px"
+  },
   "dials": {
     "formality": 7,
     "motion": 7,

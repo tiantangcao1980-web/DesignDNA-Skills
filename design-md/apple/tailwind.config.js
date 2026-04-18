@@ -17,33 +17,49 @@ module.exports = {
         "dark-surface-4": "#2a2a2d",
         "dark-surface-5": "#242426",
         "button-active": "#ededf2",
-        "button-default-light": "#fafafc"
+        "button-default-light": "#fafafc",
+        overlay: "rgba(210, 210, 215, 0.64)",
+        "card-shadow": "rgba(0, 0, 0, 0.22)"
       },
       fontFamily: {
         sans: [
-          "SF Pro Text",
+          "SF Pro Display",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "White",
+          "SF Pro Icons",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "Overlay",
+          "Body",
           "system-ui",
           "sans-serif"
         ],
         "display-4": [
-          "Display",
+          "SF Pro Text",
           "system-ui",
           "sans-serif"
         ]
       },
       fontSize: {
         display: "56px",
-        large: "12px"
+        hero: "56px",
+        "section-heading": "40px",
+        "tile-heading": "28px",
+        "card-title": "21px",
+        "sub-heading": "21px",
+        "nav-heading": "34px",
+        "sub-nav": "24px",
+        body: "17px",
+        large: "18px",
+        button: "17px",
+        link: "14px",
+        caption: "14px",
+        micro: "12px",
+        "micro-bold": "12px",
+        nano: "10px"
       },
       borderRadius: {
         "radius-1": "8px",
@@ -51,13 +67,20 @@ module.exports = {
         "radius-3": "11px",
         "radius-4": "5px"
       },
-      boxShadow: {},
+      boxShadow: {
+        "card-shadow": "rgba(0, 0, 0, 0.22"
+      },
       spacing: {
-        "space-1": "0.196px",
-        "space-2": "0.28px",
-        "space-3": "0.374px",
-        "space-4": "8px",
-        "space-5": "44px"
+        "space-1": "2px",
+        "space-2": "4px",
+        "space-3": "5px",
+        "space-4": "6px",
+        "space-5": "7px",
+        "space-6": "8px",
+        "space-7": "9px",
+        "space-8": "10px",
+        "space-9": "11px",
+        "space-10": "14px"
       }
     }
   }

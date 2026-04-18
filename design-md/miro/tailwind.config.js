@@ -20,34 +20,44 @@ module.exports = {
         success: "#00b473",
         slate: "#555a6a",
         "input-placeholder": "#a5a8b5",
-        border: "#c7cad5"
+        border: "#c7cad5",
+        ring: "rgb(224, 226, 232)"
       },
       fontFamily: {
         sans: [
-          "White",
+          "Roobert PRO Medium",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Coral",
+          "blwf",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "Rose",
+          "Display Variants",
           "system-ui",
           "sans-serif"
         ],
         "display-4": [
-          "Teal",
+          "Roobert PRO SemiBold",
           "system-ui",
           "sans-serif"
         ]
       },
-      fontSize: {},
-      borderRadius: {
-        "radius-1": "8px"
+      fontSize: {
+        hero: "56px",
+        "section-heading": "48px",
+        "card-title": "24px",
+        "sub-heading": "22px",
+        feature: "18px",
+        body: "18px",
+        button: "17.5px",
+        caption: "14px",
+        small: "12px",
+        "micro-uppercase": "10.5px"
       },
+      borderRadius: {},
       boxShadow: {},
       spacing: {
         "space-1": "24px"

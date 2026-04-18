@@ -1,0 +1,40 @@
+<!-- FocusTimer MP — timer page -->
+<view class="page">
+  <view class="header">
+    <view class="eyebrow">Current focus</view>
+    <view class="task">{{ currentTask }}</view>
+  </view>
+
+  <view class="timer">
+    <view class="ring">
+      <view class="ring-inner">
+        <view class="time">{{ displayTime }}</view>
+        <view class="label">Focus</view>
+      </view>
+    </view>
+  </view>
+
+  <van-cell-group title="Session details" inset>
+    <van-cell title="Completed today" value="{{ completedToday }} / {{ goal }}" />
+    <van-cell title="Total focus time" value="{{ totalTime }}" />
+    <van-cell title="Streak" value="{{ streak }} days" />
+  </van-cell-group>
+
+  <van-cell-group title="Today's focus list" inset>
+    <van-cell
+      wx:for="{{ tasks }}"
+      wx:key="id"
+      title="{{ item.name }}"
+      value="{{ item.active ? 'Active' : '–' }}"
+      value-class="{{ item.active ? 'active-value' : '' }}"
+    />
+  </van-cell-group>
+
+  <view class="action-bar">
+    <van-button plain type="default" custom-class="btn" bind:click="onPause">Pause</van-button>
+    <van-button type="primary" block custom-class="btn btn-filled" bind:click="onFinish">Finish session</van-button>
+  </view>
+
+  <van-toast id="van-toast" />
+  <van-dialog id="van-dialog" />
+</view>

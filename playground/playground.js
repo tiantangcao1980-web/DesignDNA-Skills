@@ -106,6 +106,7 @@ const DIALS = {
   cal:{formality:6,motion:3,density:4,warmth:6,contrast:5},
 };
 const DIAL_KEYS = ['formality', 'motion', 'density', 'warmth', 'contrast'];
+const EMBEDDED_DATA = window.__DESIGNDNA_PLAYGROUND_DATA__ || null;
 
 function dialDistance(a, b) {
   let sum = 0;
@@ -214,6 +215,18 @@ search.addEventListener('input', (e) => renderSidebar(e.target.value));
 async function loadBrand(brand) {
   if (cache.has(brand)) return cache.get(brand);
 
+  if (EMBEDDED_DATA?.[brand]) {
+    const data = { ...EMBEDDED_DATA[brand] };
+    try { data.tokens = JSON.parse(data.json || '{}'); }
+    catch { data.tokens = {}; }
+    cache.set(brand, data);
+    return data;
+  }
+
+  if (window.location.protocol === 'file:') {
+    throw new Error('Offline playground data bundle is missing. Rebuild `playground/catalog-data.js` or open this page through a local HTTP server.');
+  }
+
   const base = `./design-md/${brand}`;
   const urls = {
     md:       `${base}/DESIGN.md`,
@@ -224,7 +237,7 @@ async function loadBrand(brand) {
   };
 
   const results = await Promise.allSettled(
-    Object.entries(urls).map(async ([k, u]) => [k, await (await fetch(u)).text()])
+    Object.entries(urls).map(async ([k, u]) => [k, await (await fetch(u, { cache: 'no-store' })).text()])
   );
 
   const data = {};
@@ -260,7 +273,18 @@ async function selectBrand(brand) {
     $(`#code-${k}`).textContent = 'Loading…';
   });
 
-  const data = await loadBrand(brand);
+  let data;
+  try {
+    data = await loadBrand(brand);
+  } catch (error) {
+    $('#d-meta').innerHTML = '';
+    $('#prompt-body').textContent = error.message;
+    $('#tokens-grid').innerHTML = `<div class="token-card"><h3>Load error</h3><div class="swatch-value">${error.message}</div></div>`;
+    ['md', 'json', 'css', 'tailwind', 'ts'].forEach((k) => {
+      $(`#code-${k}`).textContent = error.message;
+    });
+    return;
+  }
 
   // Meta pills
   const tokens = data.tokens || {};

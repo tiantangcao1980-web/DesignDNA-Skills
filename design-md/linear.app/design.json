@@ -3,8 +3,6 @@
   "version": "1.0.0",
   "$schema": "https://designdna.dev/schemas/tokens-v1.json",
   "colors": {
-    "dark-mode-native": "#08090a",
-    "brand-indigo-violet": "#5e6ad2",
     "marketing-black": "#010102",
     "panel-dark": "#0f1011",
     "level-3-surface": "#191a1b",
@@ -13,6 +11,7 @@
     "secondary-text": "#d0d6e0",
     "tertiary-text": "#8a8f98",
     "quaternary-text": "#62666d",
+    "brand-indigo": "#5e6ad2",
     "accent-violet": "#7170ff",
     "accent-hover": "#828fff",
     "security-lavender": "#7a7fad",
@@ -21,41 +20,54 @@
     "border-primary": "#23252a",
     "border-secondary": "#34343a",
     "border-tertiary": "#3e3e44",
+    "border-subtle": "rgba(255, 255, 255, 0.05)",
+    "border-standard": "rgba(255, 255, 255, 0.08)",
     "line-tint": "#141516",
     "line-tertiary": "#18191a",
     "light-surface": "#f3f4f5",
     "light-border-alt": "#e6e6e6",
     "pure-white": "#ffffff",
-    "text": "#e2e4e7"
+    "overlay-primary": "rgba(0, 0, 0, 0.85)"
   },
   "typography": {
     "families": [
-      "identity",
-      "Primary Text",
-      "Secondary Text",
-      "Tertiary Text"
+      "Inter Variable",
+      "SF Pro Display",
+      "Berkeley Mono",
+      "SF Mono"
     ],
     "sizes": {
-      "large": "22px",
-      "hero": "72px"
+      "display": "72px",
+      "h1": "32px",
+      "h2": "24px",
+      "h3": "20px",
+      "body": "18px",
+      "small": "15px",
+      "caption": "14px",
+      "label": "12px",
+      "micro": "11px",
+      "tiny": "10px",
+      "large": "16px",
+      "link-medium": "15px"
     },
     "weights": [
+      300,
       400,
       510,
-      590,
-      700
+      590
     ]
   },
   "spacing": {
-    "space-1": "0.165px",
-    "space-2": "0.24px",
-    "space-3": "1px",
-    "space-4": "1.056px",
-    "space-5": "1.584px",
-    "space-6": "6px",
-    "space-7": "8px",
-    "space-8": "12px",
-    "space-9": "80px"
+    "space-1": "4px",
+    "space-2": "7px",
+    "space-3": "8px",
+    "space-4": "11px",
+    "space-5": "12px",
+    "space-6": "16px",
+    "space-7": "19px",
+    "space-8": "20px",
+    "space-9": "22px",
+    "space-10": "24px"
   },
   "radius": {
     "radius-1": "6px",
@@ -64,7 +76,14 @@
     "radius-4": "8px",
     "radius-5": "5px"
   },
-  "shadows": {},
+  "shadows": {
+    "shadow-1": "rgba(0,0,0,0.03) 0px 1.2px 0px",
+    "shadow-2": "rgba(255,255,255,0.05)",
+    "shadow-3": "1px solid rgba(255,255,255,0.08)",
+    "shadow-4": "rgba(0,0,0,0.2) 0px 0px 12px 0px inset",
+    "shadow-5": "rgba(0,0,0,0.2) 0px 0px 0px 1px",
+    "shadow-6": "rgba(0,0,0,0.4) 0px 2px 4px"
+  },
   "dials": {
     "formality": 9,
     "motion": 4,

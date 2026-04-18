@@ -3,6 +3,9 @@ name: tdesign-react
 description: TDesign React desktop component library skill — Tencent's React 16-18 enterprise library (943 stars, active). Covers 60+ desktop components for B2B admin/dashboard. Includes installation, component catalog, theme customization via CSS variables, and Next.js SSR setup.
 ---
 
+{% raw %}
+
+
 # TDesign React — React Desktop Component Library
 
 > **Source**: [Tencent/tdesign-react](https://github.com/Tencent/tdesign-react) · 943 ⭐ · 🟢 active 2026-04
@@ -170,3 +173,5 @@ import enUS from 'tdesign-react/es/locale/en_US';
 ## 8. Dial fit
 
 formality: 7-8 · motion: 4 · density: 6 · warmth: 4 · contrast: 7
+
+{% endraw %}

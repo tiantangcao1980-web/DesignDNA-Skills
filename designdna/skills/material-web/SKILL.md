@@ -1,29 +1,26 @@
 ---
 name: material-web
-description: ⚠️ MAINTENANCE MODE. Material Web Components — Google's Lit-based Web Components implementation of Material 3 (~9k stars). No active development since 2024; Google is seeking a new maintainer. Safe for existing projects, RISKY for new ones. For new React projects, use MUI (see `mui-material` skill).
+description: Material Web — Google's framework-agnostic Lit-based Web Components implementation of Material 3 (~9k stars, currently in maintenance mode). Safe for existing projects. For new React projects, MUI is usually the stronger path (see `mui-material` skill).
 ---
 
-# Material Web (@material/web) — ⚠️ MAINTENANCE MODE
+# Material Web (@material/web)
 
 > **Source**: [material-components/material-web](https://github.com/material-components/material-web) · ~9k ⭐
-> **Status**: 🟡 **maintenance only** (no active development; [discussion #5642](https://github.com/material-components/material-web/discussions/5642))
+> **Status**: 🟡 maintenance mode — bug fixes only, new feature cadence has slowed; [community maintainer discussion](https://github.com/material-components/material-web/discussions/5642)
 > **Core tech**: Lit (Web Components)
 > **Install**: `npm install @material/web`
 
-## ⚠️ Status warning
+## Status context
 
-Material Web is Google's framework-agnostic Web Components library for Material 3. It **replaced** the older MWC (`@material/*` packages) but is itself now in **maintenance mode** as of late 2024:
+Material Web is Google's framework-agnostic Web Components library for Material 3. It replaced the older MWC (`@material/*` packages). Development pace has slowed since late 2024 and Google has opened a community discussion about long-term stewardship. The library is still functional and receives sporadic bug fixes.
 
-- Google is no longer actively developing new features
-- Public discussion asking the community for a new maintainer
-- Bug fixes are sporadic
-- No guarantee of long-term support
+**When it fits**:
+- Existing projects already on Material Web — continue, pin versions, monitor upstream.
+- Framework-agnostic Web Components contexts where you want Material aesthetics.
 
-**Recommendation**:
-
-- ✅ **Existing projects**: safe to continue using; pin versions and monitor the community maintainer discussion
-- 🟡 **New projects where you need framework-agnostic Material**: evaluate [Shoelace](https://shoelace.style/) or build components with [Lit](https://lit.dev/) + custom Material styling
-- ❌ **New React projects**: use **MUI material-ui** (see `mui-material` skill) instead — it's the de-facto React carrier of Material Design
+**When to pick something else**:
+- React-first projects → MUI `material-ui` is the more active path (see `mui-material` skill).
+- Framework-agnostic with broader component surface → Shoelace is worth evaluating.
 
 ## 1. When to use (if you decide to)
 

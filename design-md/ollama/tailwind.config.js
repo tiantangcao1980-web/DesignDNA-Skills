@@ -19,33 +19,50 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          "zero shadows",
+          "SF Pro Rounded",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Snow",
+          "ui-sans-serif",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "Stone",
+          "Apple Color Emoji",
           "system-ui",
           "sans-serif"
         ],
         "display-4": [
-          "Silver",
+          "SFMono-Regular",
           "system-ui",
           "sans-serif"
         ]
       },
-      fontSize: {},
+      fontSize: {
+        hero: "48px",
+        "section-heading": "36px",
+        "sub-heading": "30px",
+        "card-title": "24px",
+        body: "18px",
+        caption: "14px",
+        small: "12px"
+      },
       borderRadius: {},
-      boxShadow: {},
+      boxShadow: {
+        "shadow-1": "1px solid #e5e5e5"
+      },
       spacing: {
-        "space-1": "10px",
-        "space-2": "32px",
-        "space-3": "88px"
+        "space-1": "4px",
+        "space-2": "6px",
+        "space-3": "8px",
+        "space-4": "9px",
+        "space-5": "10px",
+        "space-6": "12px",
+        "space-7": "14px",
+        "space-8": "16px",
+        "space-9": "20px",
+        "space-10": "24px"
       }
     }
   }

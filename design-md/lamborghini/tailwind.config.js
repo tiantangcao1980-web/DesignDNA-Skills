@@ -13,6 +13,7 @@ module.exports = {
         "absolute-black": "#000000",
         charcoal: "#202020",
         "dark-iron": "#181818",
+        "overlay-black": "rgba(0, 0, 0, 0.7)",
         "near-white": "#f8f8f8",
         mist: "#e6e6e6",
         smoke: "#f5f5f5",
@@ -26,22 +27,12 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          "created by Character Type and de",
+          "LamboType",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "carries hexagonal geometric DNA",
-          "system-ui",
-          "sans-serif"
-        ],
-        "display-3": [
-          "by Character Type for Lamborghin",
-          "system-ui",
-          "sans-serif"
-        ],
-        "display-4": [
-          "itself is so distinctive it does",
+          "Open Sans",
           "system-ui",
           "sans-serif"
         ]
@@ -50,22 +41,38 @@ module.exports = {
         display: "120px",
         large: "18px",
         small: "13px",
-        caption: "14px"
+        caption: "14px",
+        hero: "120px",
+        "section-title": "54px",
+        "sub-section": "40px",
+        "feature-heading": "27px",
+        "card-title": "24px",
+        body: "18px",
+        button: "14.4px",
+        label: "12px",
+        micro: "10px"
       },
       borderRadius: {
         "radius-1": "0px",
         "radius-2": "20px",
         "radius-3": "2px"
       },
-      boxShadow: {},
+      boxShadow: {
+        "shadow-1": "rgba(0,0,0,0.7)",
+        "shadow-2": "rgba(0,0,0,0.5)",
+        "shadow-3": "rgba(0,0,0,0.25)"
+      },
       spacing: {
-        "space-1": "5px",
-        "space-2": "8px",
-        "space-3": "14px",
-        "space-4": "16px",
-        "space-5": "24px",
-        "space-6": "44px",
-        "space-7": "56px"
+        "space-1": "2px",
+        "space-2": "4px",
+        "space-3": "5px",
+        "space-4": "8px",
+        "space-5": "10px",
+        "space-6": "12px",
+        "space-7": "15px",
+        "space-8": "16px",
+        "space-9": "20px",
+        "space-10": "24px"
       }
     }
   }

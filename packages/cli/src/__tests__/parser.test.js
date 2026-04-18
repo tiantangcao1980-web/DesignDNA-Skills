@@ -2,6 +2,8 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { parseDesignMd } from '../utils/parser.js';
 
 test('parseDesignMd extracts colors from a bold-labeled list', () => {
@@ -64,4 +66,39 @@ test('parseDesignMd handles empty input without crashing', () => {
   const tokens = parseDesignMd('', { brand: 'empty' });
   assert.equal(tokens.brand, 'empty');
   assert.deepEqual(tokens.colors, {});
+});
+
+test('parseDesignMd keeps nested typography subsections instead of falling back to the whole doc', () => {
+  const md = readFileSync(resolve(process.cwd(), 'design-md/notion/DESIGN.md'), 'utf8');
+  const tokens = parseDesignMd(md, { brand: 'notion' });
+
+  assert.ok(tokens.typography.families.includes('NotionInter'));
+  assert.ok(tokens.typography.families.includes('Inter'));
+  assert.ok(!tokens.typography.families.includes('Teal'));
+  assert.ok(!tokens.typography.families.includes('Green'));
+  assert.ok(Object.values(tokens.spacing).every((value) => parseFloat(value) >= 2));
+});
+
+test('parseDesignMd extracts structured font families from real brand docs', () => {
+  const md = readFileSync(resolve(process.cwd(), 'design-md/stripe/DESIGN.md'), 'utf8');
+  const tokens = parseDesignMd(md, { brand: 'stripe' });
+
+  assert.ok(tokens.typography.families.includes('sohne-var'));
+  assert.ok(tokens.typography.families.includes('SF Pro Display'));
+  assert.ok(tokens.typography.families.includes('SourceCodePro'));
+  assert.ok(tokens.typography.families.includes('SFMono-Regular'));
+  assert.ok(!tokens.typography.families.includes('Ruby'));
+  assert.ok(!tokens.typography.families.includes('Magenta'));
+});
+
+test('parseDesignMd extracts rgba colors and typography table metadata', () => {
+  const md = readFileSync(resolve(process.cwd(), 'design-md/spacex/DESIGN.md'), 'utf8');
+  const tokens = parseDesignMd(md, { brand: 'spacex' });
+
+  assert.equal(tokens.colors['ghost-surface'], 'rgba(240, 240, 250, 0.1)');
+  assert.equal(tokens.colors['dark-overlay'], 'rgba(0, 0, 0, 0.5)');
+  assert.ok(tokens.typography.families.includes('D-DIN'));
+  assert.ok(tokens.typography.weights.includes(700));
+  assert.ok(tokens.typography.weights.includes(400));
+  assert.equal(tokens.typography.sizes.hero, '48px');
 });

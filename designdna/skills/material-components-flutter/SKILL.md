@@ -1,36 +1,31 @@
 ---
 name: material-components-flutter
-description: ⚠️ ARCHIVED / SUPERSEDED. Material Components for Flutter was a standalone repo but was archived on 2023-11-30 and all its work was folded into the Flutter SDK itself. Do NOT use for new projects. Use `package:flutter/material` (bundled with Flutter SDK) instead — see `flutter-material` skill. This file documents the archival and migration for historical reference.
+description: Material Components for Flutter — historically a standalone repo, now consolidated into the Flutter SDK itself. The `package:flutter/material` bundled with Flutter is the continuation of this work. See `flutter-material` skill for the current path.
 ---
 
-# Material Components for Flutter — ⚠️ ARCHIVED
+# Material Components for Flutter — now part of Flutter SDK
 
-> **Source**: [material-components/material-components-flutter](https://github.com/material-components/material-components-flutter) ⚠️ **archived 2023-11-30**
-> **Successor**: `package:flutter/material` bundled in Flutter SDK — see `flutter-material` skill
+> **Historical source**: [material-components/material-components-flutter](https://github.com/material-components/material-components-flutter) · archived 2023-11-30
+> **Current path**: `package:flutter/material` bundled in Flutter SDK — see `flutter-material` skill
 
-## ⚠️ DO NOT USE
+## Status context
 
-This library was archived on **2023-11-30**. All Material Design components for Flutter are now **built into the Flutter SDK itself** under `package:flutter/material`. There is no external dependency to install.
+This standalone library was consolidated into Flutter's main SDK on **2023-11-30**. Material Design components for Flutter now live in `package:flutter/material`, maintained as part of Flutter itself. No external dependency is needed.
 
-## Why archived?
-
-Google consolidated Material Design for Flutter into Flutter's core SDK:
+## Why consolidated?
 
 - Reduces external dependencies
-- Enables tighter integration with Flutter's rendering pipeline
+- Tighter integration with Flutter's rendering pipeline
 - Material 3 (Material You) adopted universally in the SDK
-- External repo was duplicating work
 
 ## Migration
 
-### If you had a dependency on this library
-
-Remove it. The components are already in Flutter:
+If your project still references this standalone package, remove it. The components are already in Flutter:
 
 ```bash
-# If you had this in pubspec.yaml, remove it
+# Remove from pubspec.yaml if present
 dependencies:
-  material_components_flutter: ^X.Y.Z   # ❌ REMOVE
+  material_components_flutter: ^X.Y.Z   # remove
 ```
 
 Flutter's built-in Material is already imported via:
@@ -58,11 +53,10 @@ Essentially the same components that are now in `package:flutter/material`:
 - Progress indicators, date/time pickers
 - Material 3 color system, typography, shape tokens
 
-## BANNED
+## Guidance
 
-- ❌ NEVER add `material_components_flutter` to pubspec.yaml — archived
-- ❌ NEVER trust any tutorial referencing this library — it's outdated
-- ❌ NEVER install its components from pub.dev
+- Don't add `material_components_flutter` to pubspec.yaml for new projects — use the SDK-bundled version
+- Tutorials referencing the standalone package are outdated; the APIs are the same but the import path differs
 
 ## Pre-flight checklist (for Flutter projects)
 

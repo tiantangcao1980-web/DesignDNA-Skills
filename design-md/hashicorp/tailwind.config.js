@@ -29,49 +29,62 @@ module.exports = {
         orange: "#a9722e",
         red: "#731e25",
         navy: "#101a59",
-        background: "#ffffff"
+        "micro-shadow": "rgba(97, 104, 117, 0.05)"
       },
       fontFamily: {
         sans: [
-          "Black",
+          "Primary Brand",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Charcoal",
+          "System UI",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "Amber",
+          "BlinkMacSystemFont",
           "system-ui",
           "sans-serif"
         ],
         "display-4": [
-          "Orange",
+          "HashiCorp Sans",
           "system-ui",
           "sans-serif"
         ]
       },
       fontSize: {
-        hero: "82px"
+        hero: "82px",
+        "section-heading": "52px",
+        "feature-heading": "42px",
+        "sub-heading": "34px",
+        "card-title": "26px",
+        small: "19px",
+        body: "17px",
+        "nav-link": "15px",
+        caption: "13px",
+        label: "13px"
       },
       borderRadius: {
-        "radius-1": "2px",
-        "radius-2": "5px",
-        "radius-3": "4px",
-        "radius-4": "3px",
-        "radius-5": "8px"
+        "radius-1": "5px",
+        "radius-2": "4px",
+        "radius-3": "3px",
+        "radius-4": "8px"
       },
-      boxShadow: {},
+      boxShadow: {
+        "micro-shadow": "rgba(97, 104, 117, 0.05"
+      },
       spacing: {
-        "space-1": "1.3px",
+        "space-1": "2px",
         "space-2": "3px",
         "space-3": "4px",
-        "space-4": "8px",
-        "space-5": "9px",
-        "space-6": "11px",
-        "space-7": "48px"
+        "space-4": "6px",
+        "space-5": "7px",
+        "space-6": "8px",
+        "space-7": "9px",
+        "space-8": "11px",
+        "space-9": "12px",
+        "space-10": "16px"
       }
     }
   }

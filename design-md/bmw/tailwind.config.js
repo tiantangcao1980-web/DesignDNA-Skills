@@ -13,27 +13,47 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          "in two variants",
+          "Display Light",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "at different weights",
+          "BMWTypeNextLatin Light",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "Silver",
+          "Helvetica",
+          "system-ui",
+          "sans-serif"
+        ],
+        "display-4": [
+          "BMWTypeNextLatin",
           "system-ui",
           "sans-serif"
         ]
       },
       fontSize: {
-        hero: "60px"
+        hero: "60px",
+        "section-heading": "32px",
+        "nav-emphasis": "18px",
+        body: "16px",
+        button: "16px"
       },
       borderRadius: {},
       boxShadow: {},
-      spacing: {}
+      spacing: {
+        "space-1": "5px",
+        "space-2": "8px",
+        "space-3": "10px",
+        "space-4": "12px",
+        "space-5": "15px",
+        "space-6": "16px",
+        "space-7": "20px",
+        "space-8": "24px",
+        "space-9": "30px",
+        "space-10": "32px"
+      }
     }
   }
 };

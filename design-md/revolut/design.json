@@ -21,29 +21,43 @@
     "red-text": "#8b0000",
     "mid-slate": "#505a63",
     "cool-gray": "#8d969e",
-    "gray-tone": "#c9c9cd",
-    "text": "#000000"
+    "gray-tone": "#c9c9cd"
   },
   "typography": {
     "families": [
-      "Blue Text",
-      "Yellow",
-      "Teal",
-      "Green Text"
+      "Aeonik Pro",
+      "Inter",
+      "Fallback",
+      "Arial"
     ],
     "sizes": {
-      "small": "20px"
+      "display": "136px",
+      "hero": "80px",
+      "section-heading": "48px",
+      "sub-heading": "40px",
+      "card-title": "32px",
+      "feature-title": "24px",
+      "nav-ui": "20px",
+      "body": "18px"
     },
     "weights": [
-      500
+      400,
+      500,
+      600,
+      700
     ]
   },
   "spacing": {
-    "space-1": "0.16px",
-    "space-2": "2.72px",
-    "space-3": "14px",
-    "space-4": "20px",
-    "space-5": "80px"
+    "space-1": "4px",
+    "space-2": "6px",
+    "space-3": "8px",
+    "space-4": "14px",
+    "space-5": "16px",
+    "space-6": "20px",
+    "space-7": "24px",
+    "space-8": "32px",
+    "space-9": "40px",
+    "space-10": "48px"
   },
   "radius": {
     "radius-1": "9999px",

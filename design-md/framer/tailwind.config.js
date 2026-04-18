@@ -9,44 +9,68 @@ module.exports = {
         "framer-blue": "#0099ff",
         "muted-silver": "#a6a6a6",
         "near-black": "#090909",
+        "frosted-white": "rgba(255, 255, 255, 0.1)",
+        "subtle-white": "rgba(255, 255, 255, 0.5)",
+        "ghost-white": "rgba(255, 255, 255, 0.6)",
+        "blue-glow": "rgba(0, 153, 255, 0.15)",
         "default-link-blue": "#0000ee"
       },
       fontFamily: {
         sans: [
-          "Display",
+          "GT Walsheim Framer Medium",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Accent",
+          "GT Walsheim Medium",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "Monospace",
+          "GT Walsheim Framer Medium Placeholder",
           "system-ui",
           "sans-serif"
         ],
         "display-4": [
-          "Rounded",
+          "Inter Variable",
           "system-ui",
           "sans-serif"
         ]
       },
       fontSize: {
-        display: "85px"
+        hero: "110px",
+        display: "85px",
+        "section-heading": "62px",
+        "feature-heading": "32px",
+        "card-title": "24px",
+        "feature-title": "22px",
+        "sub-heading": "20px",
+        body: "18px",
+        navui: "15px",
+        caption: "14px",
+        label: "13px",
+        "micro-code": "10.4px",
+        badge: "9px",
+        "micro-uppercase": "7px"
       },
       borderRadius: {},
-      boxShadow: {},
+      boxShadow: {
+        "shadow-1": "rgba(0, 153, 255, 0.15) 0px 0px 0px 1px",
+        "shadow-2": "rgb(9, 9, 9) 0px 0px 0px 2px",
+        "shadow-3": "rgba(255, 255, 255, 0.1) 0px 0.5px 0px 0.5px, rgba(0, 0, 0, 0.25) 0px 10px 30px",
+        "shadow-4": "rgba(0, 0, 0, 0.25)"
+      },
       spacing: {
-        "space-1": "3px",
-        "space-2": "5.5px",
-        "space-3": "8px",
-        "space-4": "10px",
-        "space-5": "15px",
-        "space-6": "44px",
-        "space-7": "80px",
-        "space-8": "120px"
+        "space-1": "2px",
+        "space-2": "3px",
+        "space-3": "4px",
+        "space-4": "5px",
+        "space-5": "6px",
+        "space-6": "8px",
+        "space-7": "10px",
+        "space-8": "12px",
+        "space-9": "15px",
+        "space-10": "20px"
       }
     }
   }

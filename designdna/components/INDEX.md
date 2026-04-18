@@ -10,9 +10,9 @@
 
 ## Health legend
 
-- 🟢 **active** — commits within last 6 months, recommended for new projects
-- 🟡 **maintenance** — commits 6-24 months ago, safe for existing projects, evaluate before adopting
-- 🔴 **deprecated** — 2+ years dormant, archived, or explicitly superseded — avoid for new projects
+- 🟢 **active** — commits within the last 6 months, recommended for new projects
+- 🟡 **maintenance** — commits 6 months to ~3 years ago, safe for existing projects, evaluate before adopting for new greenfield work
+- 🔴 **deprecated** — ~3+ years dormant, archived with no migration path, or explicitly superseded — avoid for new projects unless you own the fork
 
 ## Top-level picks by use case
 
@@ -67,17 +67,20 @@
 
 ### 🔴 Deprecated / archived
 
-See [DEPRECATED.md](./DEPRECATED.md) for the full list with evacuation guidance.
+Libraries with ~3+ years of dormancy or no migration path. See [DEPRECATED.md](./DEPRECATED.md) for the full list with evacuation guidance.
 
 - iView Weapp (5+ years dormant)
 - Wuss Weapp (6+ years dormant)
 - TouchWX (8+ years dormant)
-- material-components umbrella (archived)
-- material-components-ios (archived 2025-12)
-- material-components-flutter (archived 2023-11, merged into Flutter SDK)
+- material-components umbrella (archived, historical docs only)
 - Remax (stopped 2022 — use Taro)
-- NutUI Bingo (3+ years dormant)
-- Ant Design Landing (no update since 2023)
-- `@fluentui/react` v8 Fabric (maintenance only; use v9 for new projects)
 - Bootstrap v4 (security-only; superseded by v5)
-- Chakra v2 (superseded by v3, though still widely deployed)
+
+### Other "consolidated / superseded" (still functional)
+
+- `material-components-ios` — archived 2025-12; functional for existing projects, plan migration to SwiftUI + HIG on your own cadence
+- `material-components-flutter` — consolidated into Flutter SDK 2023-11; use `package:flutter/material`
+- `@fluentui/react` v8 (Fabric) — maintenance only; v9 `@fluentui/react-components` is the active path
+- NutUI Bingo — low activity; either use as source reference or build custom
+- Ant Design Landing — maintenance; still functional for marketing pages
+- Chakra v2 — still widely deployed; v3 is the modern path

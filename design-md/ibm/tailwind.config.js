@@ -22,51 +22,64 @@ module.exports = {
         "red-60": "#da1e28",
         "green-50": "#24a148",
         "yellow-30": "#f1c21b",
-        interactive: "#78a9ff",
-        hover: "#0353e9"
+        interactive: "#78a9ff"
       },
       fontFamily: {
         sans: [
-          "White",
+          "IBM Plex Sans",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Background",
+          "Helvetica Neue",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "Interactive",
+          "IBM Plex Mono",
           "system-ui",
           "sans-serif"
         ],
         "display-4": [
-          "Primary",
+          "Menlo",
           "system-ui",
           "sans-serif"
         ]
       },
       fontSize: {
-        hero: "60px",
-        display: "42px"
+        display: "60px",
+        "heading-01": "42px",
+        "heading-02": "32px",
+        "heading-03": "24px",
+        "heading-04": "20px",
+        "heading-05": "20px",
+        body: "16px",
+        caption: "12px",
+        "code-01": "14px",
+        "code-02": "16px"
       },
       borderRadius: {
         "radius-1": "0px",
         "radius-2": "24px"
       },
-      boxShadow: {},
+      boxShadow: {
+        "shadow-1": "0 2px 6px rgba(0,0,0,0.3)",
+        "shadow-2": "0 2px 6px rgba(0,0,0,0.3)",
+        "shadow-3": "2px solid #0f62fe",
+        "shadow-4": "1px solid #ffffff",
+        "shadow-5": "2px solid #161616"
+      },
       spacing: {
-        "space-1": "0.16px",
-        "space-2": "0.32px",
-        "space-3": "1px",
-        "space-4": "2px",
-        "space-5": "4px",
-        "space-6": "8px",
-        "space-7": "12px",
-        "space-8": "14px",
-        "space-9": "16px",
-        "space-10": "20px"
+        "space-1": "2px",
+        "space-2": "4px",
+        "space-3": "8px",
+        "space-4": "12px",
+        "space-5": "16px",
+        "space-6": "24px",
+        "space-7": "32px",
+        "space-8": "40px",
+        "space-9": "48px",
+        "space-10": "64px"
       }
     }
   }

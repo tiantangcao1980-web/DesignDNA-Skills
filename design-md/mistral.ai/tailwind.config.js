@@ -16,39 +16,50 @@ module.exports = {
         "warm-ivory": "#fffaeb",
         cream: "#fff0c2",
         "pure-white": "#ffffff",
-        "mistral-black": "#1f1f1f"
+        "mistral-black": "#1f1f1f",
+        "accent-orange": "hsl(17, 96%, 52%)",
+        "black-tint": "hsl(0, 0%, 24%)",
+        "input-border": "hsl(240, 5.9%, 90%)",
+        "white-overlay": "oklab(1, 0, 0 / 0.088–0.1)"
       },
       fontFamily: {
         sans: [
-          "Cream",
+          "Arial",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Primary",
-          "system-ui",
-          "sans-serif"
-        ],
-        "display-3": [
-          "Navigation",
-          "system-ui",
-          "sans-serif"
-        ],
-        "display-4": [
-          "Photography",
+          "ui-sans-serif",
           "system-ui",
           "sans-serif"
         ]
       },
-      fontSize: {},
+      fontSize: {
+        hero: "82px",
+        "section-heading": "56px",
+        large: "48px",
+        "sub-heading": "32px",
+        "card-title": "30px",
+        "feature-title": "24px",
+        body: "16px",
+        button: "16px",
+        caption: "14px"
+      },
       borderRadius: {},
-      boxShadow: {},
+      boxShadow: {
+        "shadow-1": "rgba(127, 99, 21, ...)"
+      },
       spacing: {
-        "space-1": "2.05px",
-        "space-2": "8px",
-        "space-3": "12px",
-        "space-4": "80px",
-        "space-5": "82px"
+        "space-1": "2px",
+        "space-2": "4px",
+        "space-3": "8px",
+        "space-4": "10px",
+        "space-5": "12px",
+        "space-6": "16px",
+        "space-7": "20px",
+        "space-8": "24px",
+        "space-9": "32px",
+        "space-10": "40px"
       }
     }
   }

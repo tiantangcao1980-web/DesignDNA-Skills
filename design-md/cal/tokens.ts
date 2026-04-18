@@ -12,35 +12,64 @@ export const tokens = {
     "default-link": "#0000ee",
     "light-gray": "#f5f5f5",
     "mid-gray": "#898989",
-    "pure-black": "#000000"
+    "pure-black": "#000000",
+    "border-gray": "rgba(34, 42, 53, 0.08–0.10)"
   },
   "typography": {
     "families": [
-      "designed by Mark Davis",
-      "Charcoal",
-      "Midnight",
-      "White"
+      "Cal Sans",
+      "Body",
+      "Inter",
+      "Inter Placeholder"
     ],
     "sizes": {
       "hero": "64px",
-      "display": "36px"
+      "section-heading": "48px",
+      "feature-heading": "24px",
+      "sub-heading": "20px",
+      "sub-heading-alt": "20px",
+      "card-title": "16px",
+      "caption": "12px",
+      "body": "18px",
+      "label": "16px",
+      "micro": "12px",
+      "code": "14px"
     },
     "weights": [
       300,
+      400,
       500,
       600
     ]
   },
   "spacing": {
-    "space-1": "0.2px",
-    "space-2": "4px",
-    "space-3": "10px",
-    "space-4": "12px",
-    "space-5": "48px",
-    "space-6": "80px"
+    "space-1": "2px",
+    "space-2": "3px",
+    "space-3": "4px",
+    "space-4": "6px",
+    "space-5": "8px",
+    "space-6": "12px",
+    "space-7": "16px",
+    "space-8": "20px",
+    "space-9": "24px",
+    "space-10": "28px"
   },
   "radius": {},
-  "shadows": {}
+  "shadows": {
+    "shadow-1": "rgba(0,0,0,0.16) 0px 1px 1.9px 0px inset",
+    "shadow-2": "rgba(19,19,22,0.7) 0px 1px 5px -4px, rgba(34,42,53,0.08) 0px 0px 0px 1px, rgba(34,42,53,0.05) 0px 4px 8px",
+    "shadow-3": "rgba(36,36,36,0.7) 0px 1px 5px -4px, rgba(36,36,36,0.05) 0px 4px 8px",
+    "shadow-4": "rgba(255,255,255,0.15) 0px 2px 0px inset",
+    "shadow-5": "rgb(255,255,255) 0px 2px 0px inset",
+    "shadow-6": "rgba(34,42,53,0.05) 0px 4px 8px"
+  },
+  "dials": {
+    "formality": 6,
+    "motion": 3,
+    "density": 4,
+    "warmth": 6,
+    "contrast": 5
+  }
 } as const;
 
 export type DesignTokens = typeof tokens;

@@ -1,45 +1,47 @@
 ---
 name: material-components-ios
-description: ⚠️ DEPRECATED / ARCHIVED. Material Components for iOS (MDC-iOS) was Google's Material Design for UIKit but was archived on 2025-12-11. Do NOT use for new iOS projects. Use SwiftUI + Apple HIG instead (see `apple-hig` skill). This skill documents the archived library for existing-project maintenance only.
+description: Material Components for iOS (MDC-iOS) — Google's Material Design library for UIKit. Archived 2025-12 but still usable for existing projects. Covers installation, component reference, theming, and migration guidance to SwiftUI/Apple HIG for new projects.
 ---
 
-# Material Components for iOS (MDC-iOS) — ⚠️ ARCHIVED
+# Material Components for iOS (MDC-iOS)
 
 > **Source**: [material-components/material-components-ios](https://github.com/material-components/material-components-ios) · ~5k ⭐
-> **Status**: 🔴 **ARCHIVED 2025-12-11**
-> **Last version**: 124.x (2023 era)
-> **Successor**: SwiftUI + Apple HIG — see `apple-hig` skill
+> **Status**: 🟡 Archived on 2025-12-11 — repo is read-only, but the library still works on supported iOS versions
+> **Last version**: 124.x
+> **Suggested path for new projects**: SwiftUI + Apple HIG (see `apple-hig` skill)
 
-## ⚠️ DO NOT USE for new projects
+## Status context
 
-Google officially ended support for this library on **2025-12-11**. The GitHub repo is archived (read-only). There will be no future updates, bug fixes, or iOS compatibility patches.
+Google archived this repository on **2025-12-11**. "Archived" on GitHub means the code is read-only — you can still install it via CocoaPods / Swift Package Manager, existing apps continue to work, but no new features or bug fixes are being shipped.
 
-**For new iOS projects**:
-- ✅ Use **SwiftUI** + Apple HIG for iOS-native look and feel
-- ✅ If you truly need Material on iOS (cross-platform brand consistency), consider **Flutter** + Material instead
+For projects **already using MDC-iOS**, this is not an emergency. Pin the version, plan a gradual migration on your own schedule.
+
+For **new iOS projects**, prefer one of:
+- **SwiftUI** + Apple HIG — the Apple-native path (see `apple-hig` skill)
+- **Flutter** + Material — if you want Material on iOS for brand consistency with Android (see `flutter-material` skill)
 
 ## Why did Google archive it?
 
-- UIKit was on its way out (Apple has been pushing SwiftUI for years)
-- Material Design on iOS never felt native — iOS users prefer HIG aesthetics
-- Maintenance cost was high for low adoption
+- UIKit is being gradually superseded by SwiftUI
+- Material Design on iOS always sat uncomfortably next to HIG
 - Google's resources shifted to Compose Multiplatform for cross-platform native
 
-## If you're on an existing MDC-iOS project
+## Install (existing projects)
 
-You have these options:
+```ruby
+# Podfile
+pod 'MaterialComponents', '~> 124.0'
+```
 
-### Option A: Stay on MDC-iOS (short-term)
+Or Swift Package Manager — add `https://github.com/material-components/material-components-ios` at a pinned tag.
 
-- The archived code still works on iOS versions it supported
-- **Risk**: iOS 19+ may introduce API changes that break the library
-- Pin the version in Podfile:
-  ```ruby
-  pod 'MaterialComponents', '~> 124.0'
-  ```
-- Plan migration within 12-18 months
+## Options for ongoing projects
 
-### Option B: Migrate to SwiftUI (recommended)
+### Option A: Stay on MDC-iOS
+
+The archived code still works on the iOS versions it supported. Pin the version, monitor the iOS-version support matrix as Apple releases new SDKs, and plan migration on your own cadence.
+
+### Option B: Migrate to SwiftUI (the long-term winner)
 
 For each MDC component, map to SwiftUI:
 
@@ -58,15 +60,11 @@ For each MDC component, map to SwiftUI:
 
 If SwiftUI isn't feasible, use stock UIKit (`UIButton`, `UITextField`, `UIAlertController`) and apply custom styling for Material look. Search for community libraries that fill the gap (e.g., `MaterialShowcase`).
 
-## Archived component reference (for existing-project maintenance)
+## Component reference
 
-### Components that were in MDC-iOS
+MDC-iOS provides: buttons, app bars, text fields, navigation drawer, tabs, cards, chips, dialogs, bottom sheets, snackbars, sliders, switches, progress views, activity indicators, collection view cells, floating action button, typography, colors, shape, motion.
 
-Buttons, app bars, text fields, navigation drawer, tabs, cards, chips, dialogs, bottom sheets, snackbars, sliders, switches, progress views, activity indicators, collection view cells, floating action button, typography, colors, shape, motion.
-
-### Archived docs
-
-Still accessible at https://github.com/material-components/material-components-ios (read-only). Use for reference only.
+Docs accessible at https://github.com/material-components/material-components-ios (read-only).
 
 ## Migration example: MDCButton → SwiftUI
 
@@ -115,22 +113,20 @@ struct MaterialPrimaryButton: View {
 }
 ```
 
-## BANNED (for new projects)
+## Guidance
 
-- ❌ NEVER start a new iOS project with `MaterialComponents` — use SwiftUI + Apple HIG
-- ❌ NEVER use `MDCButton`, `MDCCard`, `MDCAppBar`, etc. in new code — build with SwiftUI / UIKit
-- ❌ NEVER assume iOS versions beyond the archive date will remain compatible — no fixes coming
-- ❌ NEVER pull via CocoaPods `latest` — pin to a known-good version if staying on the library
+- Prefer **SwiftUI + Apple HIG** for new projects — it's the long-term direction.
+- If continuing MDC-iOS: pin the version, track iOS-version support, and migrate pragmatically rather than all-at-once.
+- Don't assume future iOS SDK changes will be fixed upstream — plan fallbacks.
 
-## For existing projects — Pre-flight checklist
+## Pre-flight checklist (existing projects)
 
 ```
-- [ ] MDC-iOS version pinned in Podfile
-- [ ] Migration plan documented (SwiftUI preferred)
-- [ ] Migration deadline agreed (recommend < 18 months from 2025-12)
-- [ ] Tested on latest iOS version you support
-- [ ] No new MDC-iOS code being added
-- [ ] Components progressively replaced with SwiftUI or custom UIKit
+- [ ] MDC-iOS version pinned in Podfile / SPM
+- [ ] Migration plan documented (SwiftUI recommended as target)
+- [ ] Tested on the latest iOS version you support
+- [ ] New screens use SwiftUI where practical
+- [ ] Shared tokens (colors, typography) defined in one place for easier future swap
 ```
 
 ## See also

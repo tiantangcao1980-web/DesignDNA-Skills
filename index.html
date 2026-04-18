@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DesignDNA Gallery — 58 Brand Design Systems</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -192,8 +193,15 @@
             z-index: 10;
         }
         
-        .card:hover .card-actions {
+        .card:hover .card-actions,
+        .card:focus-within .card-actions {
             opacity: 1;
+        }
+
+        @media (max-width: 768px), (hover: none), (pointer: coarse) {
+            .card-actions {
+                opacity: 1;
+            }
         }
         
         .card-actions button {
@@ -516,7 +524,7 @@
             </div>
             <div class="modal-body">
                 <div class="modal-loading" id="modal-loading">Loading…</div>
-                <iframe id="modal-iframe" src="" sandbox="allow-same-origin allow-scripts" title="Preview"></iframe>
+                <iframe id="modal-iframe" src="" sandbox="allow-scripts" title="Preview"></iframe>
             </div>
         </div>
     </div>
@@ -554,7 +562,7 @@
 
             const iframe = document.createElement('iframe');
             iframe.dataset.src = `${PREVIEW_BASE}/${brand}/preview.html`;
-            iframe.sandbox = 'allow-same-origin allow-scripts';
+            iframe.sandbox = 'allow-scripts';
             iframe.title = brand;
             iframe.addEventListener('load', () => preview.classList.add('loaded'), {
                 once: true
@@ -568,7 +576,9 @@
             actions.className = 'card-actions';
 
             const fullscreenBtn = document.createElement('button');
+            fullscreenBtn.type = 'button';
             fullscreenBtn.title = 'Fullscreen preview';
+            fullscreenBtn.setAttribute('aria-label', `Open ${brand} preview in modal`);
             fullscreenBtn.innerHTML = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
     <polyline points="1,6 1,1 6,1"/><polyline points="10,1 15,1 15,6"/>
     <polyline points="15,10 15,15 10,15"/><polyline points="6,15 1,15 1,10"/>

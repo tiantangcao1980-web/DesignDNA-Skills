@@ -3,6 +3,9 @@ name: mui-x
 description: MUI X — enterprise React components for MUI (v9, active, MIT + Pro/Premium tiers). DataGrid (most capable React table), Charts, DatePicker Pro (range, multi-input), TreeView. Pair with `mui-material` skill. Community tier covers 80% of needs; Pro unlocks column pinning, row grouping, Excel export; Premium adds aggregation, clipboard, row reordering.
 ---
 
+{% raw %}
+
+
 # MUI X — Enterprise React Components
 
 > **Source**: [mui/mui-x](https://github.com/mui/mui-x) · ~6k ⭐ · v9.0 · 🟢 active 2026
@@ -207,3 +210,5 @@ If community tier is enough, start free. Pro from $180/dev/year.
 ## 10. Dial fit
 
 formality: 7-8 · motion: 4 · density: 7 · warmth: 4 · contrast: 6
+
+{% endraw %}

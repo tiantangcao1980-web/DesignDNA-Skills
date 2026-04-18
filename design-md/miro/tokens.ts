@@ -20,25 +20,46 @@ export const tokens = {
     "success": "#00b473",
     "slate": "#555a6a",
     "input-placeholder": "#a5a8b5",
-    "border": "#c7cad5"
+    "border": "#c7cad5",
+    "ring": "rgb(224, 226, 232)"
   },
   "typography": {
     "families": [
-      "White",
-      "Coral",
-      "Rose",
-      "Teal"
+      "Roobert PRO Medium",
+      "blwf",
+      "Display Variants",
+      "Roobert PRO SemiBold"
     ],
-    "sizes": {},
-    "weights": []
+    "sizes": {
+      "hero": "56px",
+      "section-heading": "48px",
+      "card-title": "24px",
+      "sub-heading": "22px",
+      "feature": "18px",
+      "body": "18px",
+      "button": "17.5px",
+      "caption": "14px",
+      "small": "12px",
+      "micro-uppercase": "10.5px"
+    },
+    "weights": [
+      400,
+      600,
+      700
+    ]
   },
   "spacing": {
     "space-1": "24px"
   },
-  "radius": {
-    "radius-1": "8px"
-  },
-  "shadows": {}
+  "radius": {},
+  "shadows": {},
+  "dials": {
+    "formality": 5,
+    "motion": 6,
+    "density": 5,
+    "warmth": 7,
+    "contrast": 6
+  }
 } as const;
 
 export type DesignTokens = typeof tokens;

@@ -19,32 +19,55 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          "Display",
+          "rb-freigeist-neue",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Code",
+          "ui-sans-serif",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "Navigation",
+          "basier-square",
           "system-ui",
           "sans-serif"
         ],
         "display-4": [
-          "Manifesto",
+          "Code",
           "system-ui",
           "sans-serif"
         ]
       },
-      fontSize: {},
+      fontSize: {
+        display: "128px",
+        hero: "72px",
+        "section-heading": "48px",
+        "sub-heading": "30px",
+        "sub-heading-sans": "38.4px",
+        "feature-title": "18px",
+        body: "20px",
+        caption: "14px",
+        small: "12px",
+        code: "14px"
+      },
       borderRadius: {},
-      boxShadow: {},
+      boxShadow: {
+        "shadow-1": "1px solid #202020",
+        "shadow-2": "1px solid #ea2804",
+        "shadow-3": "1px solid #202020"
+      },
       spacing: {
-        "space-1": "6px",
-        "space-2": "72px"
+        "space-1": "2px",
+        "space-2": "4px",
+        "space-3": "6px",
+        "space-4": "8px",
+        "space-5": "10px",
+        "space-6": "12px",
+        "space-7": "16px",
+        "space-8": "24px",
+        "space-9": "32px",
+        "space-10": "48px"
       }
     }
   }

@@ -11,41 +11,59 @@ module.exports = {
         "chip-gray": "#efefef",
         "body-gray": "#4b4b4b",
         "muted-gray": "#afafaf",
+        "shadow-light": "rgba(0, 0, 0, 0.12)",
+        "shadow-medium": "rgba(0, 0, 0, 0.16)",
+        "button-press": "rgba(0, 0, 0, 0.08)",
         "default-link-blue": "#0000ee"
       },
       fontFamily: {
         sans: [
-          "Navigation",
+          "UberMove",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Hero",
+          "UberMoveText",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "Headings",
-          "system-ui",
-          "sans-serif"
-        ],
-        "display-4": [
-          "Footer",
+          "Helvetica Neue",
           "system-ui",
           "sans-serif"
         ]
       },
-      fontSize: {},
+      fontSize: {
+        hero: "52px",
+        "section-heading": "36px",
+        "card-title": "32px",
+        "sub-heading": "24px",
+        small: "20px",
+        large: "18px",
+        body: "16px",
+        caption: "14px",
+        micro: "12px"
+      },
       borderRadius: {
         "radius-1": "999px",
         "radius-2": "8px"
       },
-      boxShadow: {},
+      boxShadow: {
+        "shadow-1": "rgba(0, 0, 0, 0.12)",
+        "shadow-2": "rgba(0, 0, 0, 0.16)",
+        "shadow-3": "rgba(0, 0, 0, 0.08)"
+      },
       spacing: {
-        "space-1": "10px",
-        "space-2": "14px",
-        "space-3": "32px",
-        "space-4": "96px"
+        "space-1": "4px",
+        "space-2": "6px",
+        "space-3": "8px",
+        "space-4": "10px",
+        "space-5": "12px",
+        "space-6": "14px",
+        "space-7": "16px",
+        "space-8": "18px",
+        "space-9": "20px",
+        "space-10": "24px"
       }
     }
   }

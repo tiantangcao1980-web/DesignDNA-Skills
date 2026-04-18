@@ -16,45 +16,68 @@ module.exports = {
         "pure-white": "#ffffff",
         "light-gray": "#e5e7eb",
         "code-yellow": "#dcdcaa",
-        "input-border": "#cfcfdb"
+        "glass-white": "rgba(255, 255, 255, 0.18)",
+        "glass-dark": "rgba(54, 22, 107, 0.14)",
+        "input-border": "#cfcfdb",
+        "ambient-glow": "rgba(22, 15, 36, 0.9)",
+        "button-hover": "rgba(0, 0, 0, 0.18)",
+        "card-shadow": "rgba(0, 0, 0, 0.1)"
       },
       fontFamily: {
         sans: [
-          "Coral",
+          "Dammit Sans",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Pink",
+          "Primary UI",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "Display",
+          "Rubik",
           "system-ui",
           "sans-serif"
         ],
         "display-4": [
-          "Primary UI",
+          "Segoe UI",
           "system-ui",
           "sans-serif"
         ]
       },
-      fontSize: {},
+      fontSize: {
+        hero: "88px",
+        display: "60px",
+        "section-heading": "30px",
+        "sub-heading": "27px",
+        "card-title": "24px",
+        "feature-title": "20px",
+        body: "16px",
+        label: "15px",
+        button: "14px",
+        caption: "14px",
+        code: "16px"
+      },
       borderRadius: {
         "radius-1": "13px",
         "radius-2": "12px",
         "radius-3": "8px",
         "radius-4": "6px"
       },
-      boxShadow: {},
+      boxShadow: {
+        "card-shadow": "rgba(0, 0, 0, 0.1"
+      },
       spacing: {
-        "space-1": "0.2px",
+        "space-1": "2px",
         "space-2": "2rem",
-        "space-3": "4rem",
-        "space-4": "8px",
-        "space-5": "12px",
-        "space-6": "64px"
+        "space-3": "4px",
+        "space-4": "4rem",
+        "space-5": "5px",
+        "space-6": "6px",
+        "space-7": "8px",
+        "space-8": "12px",
+        "space-9": "16px",
+        "space-10": "24px"
       }
     }
   }

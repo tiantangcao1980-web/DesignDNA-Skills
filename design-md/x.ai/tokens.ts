@@ -4,39 +4,56 @@ export const tokens = {
   "version": "1.0.0",
   "$schema": "https://designdna.dev/schemas/tokens-v1.json",
   "colors": {
-    "pure-dark-theme": "#1f2228",
     "pure-white": "#ffffff",
-    "color-1": "#000000"
+    "dark-background": "#1f2228",
+    "white-muted": "rgba(255, 255, 255, 0.5)",
+    "white-subtle": "rgba(255, 255, 255, 0.2)",
+    "ring-blue": "rgb(59, 130, 246)",
+    "surface-elevated": "rgba(255, 255, 255, 0.05)",
+    "surface-hover": "rgba(255, 255, 255, 0.08)",
+    "border-default": "rgba(255, 255, 255, 0.1)",
+    "text-secondary": "rgba(255, 255, 255, 0.7)",
+    "text-quaternary": "rgba(255, 255, 255, 0.3)"
   },
   "typography": {
     "families": [
-      "in uppercase with tracked-out le",
-      "GeistMono 14px weight 400",
-      "universalSans 16px weight 400",
-      "GeistMono 12px uppercase"
+      "GeistMono",
+      "SFMono-Regular",
+      "universalSans",
+      "universalSans Fallback"
     ],
-    "sizes": {},
+    "sizes": {
+      "hero": "320px",
+      "section-heading": "30px",
+      "body": "16px",
+      "button": "14px",
+      "caption": "14px",
+      "small": "12px"
+    },
     "weights": [
       300,
       400
     ]
   },
   "spacing": {
-    "space-1": "1px",
-    "space-2": "1.4px",
-    "space-3": "4px",
-    "space-4": "8px",
-    "space-5": "12px",
-    "space-6": "22px",
-    "space-7": "48px",
-    "space-8": "96px"
+    "space-1": "4px",
+    "space-2": "8px",
+    "space-3": "24px",
+    "space-4": "48px",
+    "space-5": "96px"
   },
   "radius": {
     "radius-1": "0px"
   },
   "shadows": {
-    "shadow-1": "s anywhere on the site. Instead, depth is communicated through three mechanisms: (1) opacity-based borders that brighten on interaction, creating a sense of elements",
-    "shadow-2": "s -- xAI has zero shadow elevation"
+    "shadow-1": "s anywhere on the site. Instead, depth is communicated through three mechanisms: (1) opacity-based borders that brighten on interaction, creating a sense of elements"
+  },
+  "dials": {
+    "formality": 10,
+    "motion": 2,
+    "density": 2,
+    "warmth": 2,
+    "contrast": 10
   }
 } as const;
 

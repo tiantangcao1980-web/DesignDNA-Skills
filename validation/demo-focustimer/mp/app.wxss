@@ -1,0 +1,35 @@
+/* FocusTimer global styles — tokens from PROJECT-DESIGN.md (stripe × linear.app) */
+/* Dials: formality=9 motion=5 density=4 warmth=5 contrast=7 */
+
+page {
+  /* Brand tokens (from design-md/stripe/variables.css) */
+  --color-brand:          #533afd;
+  --color-brand-hover:    #4434d4;
+  --color-navy:           #061b31;
+  --color-surface:        #ffffff;
+  --color-surface-soft:   #f6f9fc;
+  --color-text:           #0a2540;
+  --color-text-mid:       #425466;
+  --color-text-mute:      #8898aa;
+  --color-border:         #e6ebf1;
+
+  /* Vant Weapp theme overrides — map to our tokens */
+  --button-primary-background-color: #533afd;
+  --button-primary-border-color:     #533afd;
+  --nav-bar-background-color:        #ffffff;
+  --nav-bar-title-text-color:        #0a2540;
+  --cell-background-color:           #ffffff;
+  --cell-border-color:               #e6ebf1;
+  --cell-text-color:                 #0a2540;
+  --cell-value-color:                #425466;
+
+  background-color: var(--color-surface-soft);
+  color: var(--color-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", sans-serif;
+}
+
+/* Spacing scale — tokens used as rpx to respect MP responsive */
+.m-4 { margin: 16rpx; }
+.m-5 { margin: 32rpx; }
+.p-4 { padding: 32rpx; }
+.p-5 { padding: 48rpx; }

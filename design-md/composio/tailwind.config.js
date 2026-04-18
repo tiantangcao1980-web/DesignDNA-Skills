@@ -13,41 +13,69 @@ module.exports = {
         charcoal: "#2c2c2c",
         "pure-white": "#ffffff",
         "muted-smoke": "#444444",
+        "ghost-white": "rgba(255, 255, 255, 0.6)",
+        "whisper-white": "rgba(255, 255, 255, 0.5)",
+        "phantom-white": "rgba(255, 255, 255, 0.2)",
+        "border-mist-12": "rgba(255, 255, 255, 0.12)",
+        "border-mist-10": "rgba(255, 255, 255, 0.10)",
+        "border-mist-08": "rgba(255, 255, 255, 0.08)",
+        "border-mist-06": "rgba(255, 255, 255, 0.06)",
+        "border-mist-04": "rgba(255, 255, 255, 0.04)",
         "light-border": "#e0e0e0"
       },
       fontFamily: {
         sans: [
-          "Charcoal",
+          "abcDiatype",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Primary",
+          "abcDiatype Fallback",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "Monospace",
+          "JetBrains Mono",
           "system-ui",
           "sans-serif"
         ],
         "display-4": [
-          "Navigation",
+          "JetBrains Mono Fallback",
           "system-ui",
           "sans-serif"
         ]
       },
-      fontSize: {},
+      fontSize: {
+        hero: "64px",
+        "section-heading": "48px",
+        large: "40px",
+        "sub-heading": "28px",
+        "card-title": "24px",
+        label: "20px",
+        body: "18px",
+        caption: "14px",
+        "tag-overline": "12px",
+        micro: "12px",
+        small: "14px",
+        "code-overline": "14px",
+        "code-micro": "11px",
+        "code-nano": "10px"
+      },
       borderRadius: {},
-      boxShadow: {},
+      boxShadow: {
+        "shadow-1": "0px 8px 32px"
+      },
       spacing: {
-        "space-1": "0.28px",
-        "space-2": "8px",
-        "space-3": "10px",
-        "space-4": "12px",
-        "space-5": "32px",
-        "space-6": "40px",
-        "space-7": "120px"
+        "space-1": "2px",
+        "space-2": "4px",
+        "space-3": "6px",
+        "space-4": "8px",
+        "space-5": "10px",
+        "space-6": "12px",
+        "space-7": "14px",
+        "space-8": "16px",
+        "space-9": "18px",
+        "space-10": "20px"
       }
     }
   }

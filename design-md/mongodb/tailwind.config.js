@@ -17,40 +17,68 @@ module.exports = {
         "silver-teal": "#b8c4c2",
         "light-input": "#e8edeb",
         "pure-white": "#ffffff",
-        black: "#000000"
+        black: "#000000",
+        "forest-shadow": "rgba(0, 30, 43, 0.12)",
+        "standard-shadow": "rgba(0, 0, 0, 0.15)",
+        "subtle-shadow": "rgba(0, 0, 0, 0.1)"
       },
       fontFamily: {
         sans: [
-          "Black",
-          "system-ui",
-          "sans-serif"
-        ],
-        "display-2": [
           "Display Serif",
           "system-ui",
           "sans-serif"
         ],
+        "display-2": [
+          "MongoDB Value Serif",
+          "system-ui",
+          "sans-serif"
+        ],
         "display-3": [
-          "Fallbacks",
+          "Euclid Circular A",
+          "system-ui",
+          "sans-serif"
+        ],
+        "display-4": [
+          "Source Code Pro",
           "system-ui",
           "sans-serif"
         ]
       },
       fontSize: {
-        large: "24px",
-        hero: "48px"
+        hero: "96px",
+        display: "64px",
+        "section-heading": "36px",
+        "sub-heading": "24px",
+        body: "20px",
+        "nav-ui": "16px",
+        button: "13.5px",
+        caption: "14px",
+        small: "11px",
+        "code-heading": "40px",
+        label: "14px",
+        "code-micro": "9px"
       },
       borderRadius: {
         "radius-1": "100px",
         "radius-2": "4px",
         "radius-3": "16px"
       },
-      boxShadow: {},
+      boxShadow: {
+        "forest-shadow": "rgba(0, 30, 43, 0.12",
+        "standard-shadow": "rgba(0, 0, 0, 0.15",
+        "subtle-shadow": "rgba(0, 0, 0, 0.1"
+      },
       spacing: {
-        "space-1": "1px",
-        "space-2": "2px",
-        "space-3": "12px",
-        "space-4": "80px"
+        "space-1": "4px",
+        "space-2": "7px",
+        "space-3": "8px",
+        "space-4": "10px",
+        "space-5": "12px",
+        "space-6": "14px",
+        "space-7": "15px",
+        "space-8": "16px",
+        "space-9": "18px",
+        "space-10": "20px"
       }
     }
   }

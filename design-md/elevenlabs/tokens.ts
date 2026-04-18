@@ -12,17 +12,36 @@ export const tokens = {
     "warm-gray": "#777169",
     "near-white": "#f6f6f6",
     "grid-cyan": "#7fffff",
-    "border-light": "#e5e5e5"
+    "ring-blue": "rgb(147 197 253 / 0.5)",
+    "border-light": "#e5e5e5",
+    "border-subtle": "rgba(0, 0, 0, 0.05)",
+    "inset-border": "rgba(0, 0, 0, 0.075)",
+    "inset-dark": "rgba(0, 0, 0, 0.1)",
+    "outline-ring": "rgba(0, 0, 0, 0.06)",
+    "soft-elevation": "rgba(0, 0, 0, 0.04)",
+    "card-shadow": "rgba(0, 0, 0, 0.4)",
+    "warm-shadow": "rgba(78, 50, 23, 0.04)",
+    "edge-shadow": "rgba(0, 0, 0, 0.08)"
   },
   "typography": {
     "families": [
-      "WaldenburgFH 14px weight 700",
-      "Black",
-      "Display",
-      "Monospace"
+      "Waldenburg",
+      "Waldenburg Fallback",
+      "Display Bold",
+      "WaldenburgFH"
     ],
     "sizes": {
-      "large": "18px"
+      "hero": "48px",
+      "section-heading": "36px",
+      "card-heading": "32px",
+      "body": "20px",
+      "nav-ui": "15px",
+      "button": "15px",
+      "caption": "14px",
+      "small": "13px",
+      "code": "13px",
+      "micro": "12px",
+      "tiny": "10px"
     },
     "weights": [
       300,
@@ -32,20 +51,34 @@ export const tokens = {
     ]
   },
   "spacing": {
-    "space-1": "0.14px",
-    "space-2": "0.16px",
-    "space-3": "0.18px",
-    "space-4": "0.7px",
-    "space-5": "0.96px",
-    "space-6": "12px",
-    "space-7": "30px"
+    "space-1": "3px",
+    "space-2": "4px",
+    "space-3": "8px",
+    "space-4": "9px",
+    "space-5": "10px",
+    "space-6": "11px",
+    "space-7": "12px",
+    "space-8": "16px",
+    "space-9": "18px",
+    "space-10": "20px"
   },
   "radius": {
     "radius-1": "9999px",
     "radius-2": "30px",
     "radius-3": "16px"
   },
-  "shadows": {}
+  "shadows": {
+    "card-shadow": "rgba(0,0,0,0.4",
+    "warm-shadow": "rgba(78,50,23,0.04",
+    "edge-shadow": "rgba(0,0,0,0.08"
+  },
+  "dials": {
+    "formality": 6,
+    "motion": 8,
+    "density": 5,
+    "warmth": 3,
+    "contrast": 9
+  }
 } as const;
 
 export type DesignTokens = typeof tokens;

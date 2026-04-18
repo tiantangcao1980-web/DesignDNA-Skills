@@ -3,6 +3,9 @@ name: ant-design
 description: Ant Design (antd) React component library skill — Alibaba's flagship enterprise React UI (93k stars, v5.x, active). The de-facto standard for B2B admin/dashboard in China and widely used globally. Covers 60+ components with Form / Table / ProComponents patterns, CSS-in-JS theming, dark mode, and v4 → v5 migration notes.
 ---
 
+{% raw %}
+
+
 # Ant Design (antd) — React Enterprise UI
 
 > **Source**: [ant-design/ant-design](https://github.com/ant-design/ant-design) · 93k ⭐ · v5.x · 🟢 active 2026
@@ -273,3 +276,5 @@ import { ConfigProvider, theme } from 'antd';
 ## 10. Dial fit
 
 formality: 8-9 · motion: 3-4 · density: 6-7 · warmth: 4-5 · contrast: 6-7
+
+{% endraw %}

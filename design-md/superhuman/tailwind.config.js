@@ -14,37 +14,46 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          "Product UI",
+          "Super Sans VF",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Hover",
-          "system-ui",
-          "sans-serif"
-        ],
-        "display-3": [
-          "Mobile",
-          "system-ui",
-          "sans-serif"
-        ],
-        "display-4": [
-          "Scale",
+          "Segoe UI",
           "system-ui",
           "sans-serif"
         ]
       },
       fontSize: {
-        display: "48px"
+        hero: "64px",
+        display: "48px",
+        "section-heading": "48px",
+        "feature-title": "28px",
+        large: "26px",
+        "card-heading": "22px",
+        body: "20px",
+        button: "16px",
+        "nav-link": "16px",
+        caption: "14px",
+        label: "12px"
       },
       borderRadius: {},
-      boxShadow: {},
+      boxShadow: {
+        "shadow-1": "1px solid #dcd7d3",
+        "shadow-2": "1px solid #292827",
+        "shadow-3": "rgba(255, 255, 255, 0.2)"
+      },
       spacing: {
-        "space-1": "0.63px",
-        "space-2": "1.32px",
-        "space-3": "8px",
-        "space-4": "16px",
-        "space-5": "48px"
+        "space-1": "2px",
+        "space-2": "4px",
+        "space-3": "6px",
+        "space-4": "8px",
+        "space-5": "12px",
+        "space-6": "16px",
+        "space-7": "18px",
+        "space-8": "20px",
+        "space-9": "24px",
+        "space-10": "28px"
       }
     }
   }

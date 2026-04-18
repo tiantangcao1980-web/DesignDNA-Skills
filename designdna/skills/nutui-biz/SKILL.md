@@ -3,6 +3,9 @@ name: nutui-biz
 description: NutUI Biz business components skill — e-commerce domain components for NutUI React (address, SKU, coupon, invoice, order list). ⚠️ MAINTENANCE MODE — last major release 2023-03, minor fixes through 2025-01. Still usable but not actively developed. For new projects, copy components out as starting points rather than npm-depending on them.
 ---
 
+{% raw %}
+
+
 # NutUI Biz — E-commerce Business Components (React)
 
 > **Source**: [jdf2e/nutui-biz](https://github.com/jdf2e/nutui-biz) · 67 stars · 2025-01 last commit
@@ -255,3 +258,5 @@ Most nutui-biz components can be rebuilt with 1-3 NutUI base components:
 | `AddressList` | `<CellGroup>` of `<Cell>` with swipe actions |
 
 For the complex ones (`Sku`, `Address`), either copy source or build fresh.
+
+{% endraw %}

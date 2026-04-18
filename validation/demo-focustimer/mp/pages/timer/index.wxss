@@ -1,0 +1,113 @@
+.page {
+  min-height: 100vh;
+  padding-bottom: 200rpx;
+}
+
+.header {
+  padding: 64rpx 48rpx 32rpx;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 22rpx;
+  letter-spacing: 4rpx;
+  color: var(--color-brand);
+  text-transform: uppercase;
+  margin-bottom: 16rpx;
+  font-family: "JetBrains Mono", "SF Mono", monospace;
+}
+
+.task {
+  font-size: 34rpx;
+  color: var(--color-text-mid);
+  font-weight: 500;
+}
+
+/* Timer ring — use SVG-ish circular progress */
+.timer {
+  display: flex;
+  justify-content: center;
+  padding: 48rpx 0 64rpx;
+}
+
+.ring {
+  width: 440rpx;
+  height: 440rpx;
+  border-radius: 50%;
+  background: conic-gradient(
+    from -90deg,
+    var(--color-brand) 0deg,
+    var(--color-brand) 288deg,
+    var(--color-border) 288deg,
+    var(--color-border) 360deg
+  );
+  padding: 32rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.ring::before {
+  content: '';
+  position: absolute;
+  inset: 32rpx;
+  border-radius: 50%;
+  background: var(--color-surface);
+}
+
+.ring-inner {
+  position: absolute;
+  inset: 64rpx;
+  border-radius: 50%;
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.time {
+  font-family: "JetBrains Mono", "SF Mono", monospace;
+  font-size: 100rpx;
+  font-weight: 400;
+  color: var(--color-navy);
+  letter-spacing: -2rpx;
+}
+
+.label {
+  font-size: 22rpx;
+  color: var(--color-text-mute);
+  letter-spacing: 4rpx;
+  text-transform: uppercase;
+  margin-top: 8rpx;
+}
+
+.active-value {
+  color: var(--color-brand) !important;
+}
+
+/* Fixed bottom action bar with safe-area */
+.action-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-surface);
+  border-top: 2rpx solid var(--color-border);
+  padding: 24rpx 48rpx;
+  padding-bottom: calc(24rpx + env(safe-area-inset-bottom));
+  display: flex;
+  gap: 24rpx;
+  z-index: 10;
+}
+
+.btn {
+  flex: 1;
+  height: 88rpx;
+  font-size: 30rpx !important;
+}
+
+.btn-filled {
+  background: var(--color-brand) !important;
+  color: #fff !important;
+}

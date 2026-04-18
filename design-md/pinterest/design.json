@@ -19,6 +19,7 @@
     "pressed-blue": "#617bff",
     "sand-gray": "#e5e5e0",
     "warm-light": "#e0e0d9",
+    "warm-wash": "hsla(60, 20%, 98%, 0.5)",
     "fog": "#f6f6f3",
     "border-disabled": "#c8c8c1",
     "hover-gray": "#bcbcb3",
@@ -27,29 +28,39 @@
   },
   "typography": {
     "families": [
-      "Black",
-      "White",
-      "Primary"
+      "Pin Sans",
+      "Segoe UI"
     ],
     "sizes": {
-      "large": "28px",
-      "hero": "40px"
+      "hero": "70px",
+      "section-heading": "28px",
+      "body": "16px",
+      "caption": "14px",
+      "button": "12px"
     },
     "weights": [
       400,
-      600
+      500,
+      600,
+      700
     ]
   },
   "spacing": {
-    "space-1": "6px",
-    "space-2": "16px"
+    "space-1": "4px",
+    "space-2": "6px",
+    "space-3": "7px",
+    "space-4": "8px",
+    "space-5": "10px",
+    "space-6": "11px",
+    "space-7": "12px",
+    "space-8": "16px",
+    "space-9": "18px",
+    "space-10": "20px"
   },
   "radius": {
     "radius-1": "16px"
   },
-  "shadows": {
-    "shadow-1": "on most cards"
-  },
+  "shadows": {},
   "dials": {
     "formality": 4,
     "motion": 4,

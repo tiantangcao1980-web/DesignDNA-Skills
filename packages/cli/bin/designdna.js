@@ -30,11 +30,15 @@ const [, , rawCommand, ...rawArgs] = process.argv;
 // Normalize flags into { _: [...], flags: {...} }
 function parseArgs(argv) {
   const out = { _: [], flags: {} };
-  for (const arg of argv) {
+  for (let i = 0; i < argv.length; i++) {
+    const arg = argv[i];
     if (arg.startsWith('--')) {
       const eqIdx = arg.indexOf('=');
       if (eqIdx >= 0) {
         out.flags[arg.slice(2, eqIdx)] = arg.slice(eqIdx + 1);
+      } else if (argv[i + 1] && !argv[i + 1].startsWith('-')) {
+        out.flags[arg.slice(2)] = argv[i + 1];
+        i++;
       } else {
         out.flags[arg.slice(2)] = true;
       }

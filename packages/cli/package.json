@@ -44,6 +44,8 @@
   },
   "scripts": {
     "test": "node --test src/__tests__/*.test.js",
-    "start": "node bin/designdna.js"
+    "start": "node bin/designdna.js",
+    "regen:brands": "node scripts/generate-all-variants.js",
+    "check:brands": "node scripts/generate-all-variants.js --check"
   }
 }

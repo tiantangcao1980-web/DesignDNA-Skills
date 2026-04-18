@@ -11,35 +11,59 @@ module.exports = {
         "hover-blue": "#578bfa",
         "link-blue": "#0667d0",
         "muted-blue": "#5b616e",
-        "dark-card": "#282b31"
+        "dark-card": "#282b31",
+        "light-surface": "rgba(247, 247, 247, 0.88)"
       },
       fontFamily: {
         sans: [
-          "Display",
+          "CoinbaseDisplay",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Body",
+          "CoinbaseSans",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "Icons",
+          "Body",
+          "system-ui",
+          "sans-serif"
+        ],
+        "display-4": [
+          "CoinbaseText",
           "system-ui",
           "sans-serif"
         ]
       },
       fontSize: {
-        large: "24px",
-        xl: "40px"
+        hero: "80px",
+        display: "64px",
+        "section-heading": "36px",
+        "card-title": "32px",
+        "feature-title": "18px",
+        body: "16px",
+        button: "16px",
+        caption: "14px",
+        small: "13px"
       },
       borderRadius: {
         "radius-1": "56px",
         "radius-2": "8px"
       },
       boxShadow: {},
-      spacing: {}
+      spacing: {
+        "space-1": "3px",
+        "space-2": "4px",
+        "space-3": "5px",
+        "space-4": "6px",
+        "space-5": "8px",
+        "space-6": "10px",
+        "space-7": "12px",
+        "space-8": "15px",
+        "space-9": "16px",
+        "space-10": "20px"
+      }
     }
   }
 };

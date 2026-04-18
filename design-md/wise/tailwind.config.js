@@ -12,6 +12,7 @@ module.exports = {
         "positive-green": "#054d28",
         "danger-red": "#d03238",
         "warning-yellow": "#ffd11a",
+        "background-cyan": "rgba(56, 200, 255, 0.10)",
         "bright-orange": "#ffc091",
         "warm-dark": "#454745",
         gray: "#868685",
@@ -19,28 +20,58 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          "Gray",
+          "Wise Sans",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Display",
+          "Inter",
+          "system-ui",
+          "sans-serif"
+        ],
+        "display-3": [
+          "calt",
+          "system-ui",
+          "sans-serif"
+        ],
+        "display-4": [
+          "Helvetica",
           "system-ui",
           "sans-serif"
         ]
       },
       fontSize: {
-        small: "30px",
-        large: "30px"
+        display: "126px",
+        hero: "96px",
+        "section-heading": "64px",
+        "sub-heading": "40px",
+        "alt-heading": "78px",
+        "card-title": "26px",
+        "feature-title": "22px",
+        body: "18px",
+        button: "18px",
+        caption: "14px",
+        small: "12px"
       },
       borderRadius: {
         "radius-1": "9999px",
         "radius-2": "16px"
       },
-      boxShadow: {},
+      boxShadow: {
+        "shadow-1": "rgba(14,15,12,0.12) 0px 0px 0px 1px",
+        "shadow-2": "rgb(134,134,133) 0px 0px 0px 1px inset"
+      },
       spacing: {
-        "space-1": "5px",
-        "space-2": "8px"
+        "space-1": "2px",
+        "space-2": "3px",
+        "space-3": "4px",
+        "space-4": "5px",
+        "space-5": "8px",
+        "space-6": "10px",
+        "space-7": "11px",
+        "space-8": "12px",
+        "space-9": "16px",
+        "space-10": "18px"
       }
     }
   }

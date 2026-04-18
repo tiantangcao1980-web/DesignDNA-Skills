@@ -20,27 +20,38 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          "White",
+          "waldenburgNormal",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Silver",
+          "waldenburgNormal Fallback",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "Charcoal",
+          "IBM Plex Mono",
           "system-ui",
           "sans-serif"
         ],
         "display-4": [
-          "Footer",
+          "ibmPlexMono Fallback",
           "system-ui",
           "sans-serif"
         ]
       },
-      fontSize: {},
+      fontSize: {
+        hero: "112px",
+        "section-heading": "48px",
+        large: "38px",
+        "heading-medium": "32px",
+        small: "24px",
+        subheading: "20px",
+        body: "18px",
+        caption: "13px",
+        label: "11px",
+        "code-micro": "12px"
+      },
       borderRadius: {
         "radius-1": "99999px",
         "radius-2": "5px",
@@ -48,15 +59,13 @@ module.exports = {
         "radius-4": "12px",
         "radius-5": "3px"
       },
-      boxShadow: {
-        "shadow-1": "s -- ring shadows (0 0 0 Npx) or border-based containment only"
-      },
+      boxShadow: {},
       spacing: {
-        "space-1": "0.32px",
-        "space-2": "2px",
-        "space-3": "2.88px",
+        "space-1": "2px",
+        "space-2": "4px",
+        "space-3": "6px",
         "space-4": "8px",
-        "space-5": "13px",
+        "space-5": "12px",
         "space-6": "16px",
         "space-7": "24px",
         "space-8": "32px",

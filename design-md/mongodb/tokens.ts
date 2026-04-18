@@ -17,36 +17,69 @@ export const tokens = {
     "silver-teal": "#b8c4c2",
     "light-input": "#e8edeb",
     "pure-white": "#ffffff",
-    "black": "#000000"
+    "black": "#000000",
+    "forest-shadow": "rgba(0, 30, 43, 0.12)",
+    "standard-shadow": "rgba(0, 0, 0, 0.15)",
+    "subtle-shadow": "rgba(0, 0, 0, 0.1)"
   },
   "typography": {
     "families": [
-      "Black",
       "Display Serif",
-      "Fallbacks"
+      "MongoDB Value Serif",
+      "Euclid Circular A",
+      "Source Code Pro"
     ],
     "sizes": {
-      "large": "24px",
-      "hero": "48px"
+      "hero": "96px",
+      "display": "64px",
+      "section-heading": "36px",
+      "sub-heading": "24px",
+      "body": "20px",
+      "nav-ui": "16px",
+      "button": "13.5px",
+      "caption": "14px",
+      "small": "11px",
+      "code-heading": "40px",
+      "label": "14px",
+      "code-micro": "9px"
     },
     "weights": [
       300,
       400,
-      500
+      500,
+      600,
+      700
     ]
   },
   "spacing": {
-    "space-1": "1px",
-    "space-2": "2px",
-    "space-3": "12px",
-    "space-4": "80px"
+    "space-1": "4px",
+    "space-2": "7px",
+    "space-3": "8px",
+    "space-4": "10px",
+    "space-5": "12px",
+    "space-6": "14px",
+    "space-7": "15px",
+    "space-8": "16px",
+    "space-9": "18px",
+    "space-10": "20px"
   },
   "radius": {
     "radius-1": "100px",
     "radius-2": "4px",
     "radius-3": "16px"
   },
-  "shadows": {}
+  "shadows": {
+    "forest-shadow": "rgba(0, 30, 43, 0.12",
+    "standard-shadow": "rgba(0, 0, 0, 0.15",
+    "subtle-shadow": "rgba(0, 0, 0, 0.1"
+  },
+  "dials": {
+    "formality": 7,
+    "motion": 3,
+    "density": 6,
+    "warmth": 5,
+    "contrast": 6
+  }
 } as const;
 
 export type DesignTokens = typeof tokens;

@@ -18,20 +18,31 @@ export const tokens = {
     "gray-200": "#e5e5e5",
     "gray-100": "#f5f5f5",
     "gray-50": "#fafafa",
-    "text-primary": "#ededed",
-    "text-secondary": "#a0a0a0",
-    "card-background": "#141414"
+    "border-subtle": "rgba(0, 0, 0, 0.05)",
+    "border-medium": "rgba(0, 0, 0, 0.08)",
+    "card-shadow": "rgba(0, 0, 0, 0.03)",
+    "button-shadow": "rgba(0, 0, 0, 0.06)"
   },
   "typography": {
     "families": [
-      "Inter 15px weight 500",
-      "Primary",
-      "Monospace",
-      "Background"
+      "Inter",
+      "Inter Fallback",
+      "Geist Mono",
+      "Geist Mono Fallback"
     ],
     "sizes": {
-      "large": "24px",
-      "hero": "64px"
+      "hero": "64px",
+      "section-heading": "40px",
+      "sub-heading": "24px",
+      "card-title": "20px",
+      "card-title-light": "20px",
+      "body": "18px",
+      "button": "15px",
+      "link": "14px",
+      "caption": "14px",
+      "label": "13px",
+      "small": "13px",
+      "mono": "12px"
     },
     "weights": [
       400,
@@ -40,16 +51,16 @@ export const tokens = {
     ]
   },
   "spacing": {
-    "space-1": "0.2px",
-    "space-2": "0.8px",
-    "space-3": "1px",
-    "space-4": "1.28px",
-    "space-5": "4.5px",
-    "space-6": "5px",
-    "space-7": "8px",
-    "space-8": "13px",
-    "space-9": "24px",
-    "space-10": "32px"
+    "space-1": "2px",
+    "space-2": "4px",
+    "space-3": "5px",
+    "space-4": "6px",
+    "space-5": "7px",
+    "space-6": "8px",
+    "space-7": "10px",
+    "space-8": "12px",
+    "space-9": "16px",
+    "space-10": "24px"
   },
   "radius": {
     "radius-1": "9999px",
@@ -57,7 +68,17 @@ export const tokens = {
     "radius-3": "16px",
     "radius-4": "24px"
   },
-  "shadows": {}
+  "shadows": {
+    "card-shadow": "rgba(0,0,0,0.03",
+    "button-shadow": "rgba(0,0,0,0.06"
+  },
+  "dials": {
+    "formality": 7,
+    "motion": 3,
+    "density": 5,
+    "warmth": 5,
+    "contrast": 6
+  }
 } as const;
 
 export type DesignTokens = typeof tokens;

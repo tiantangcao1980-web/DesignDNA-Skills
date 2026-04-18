@@ -19,23 +19,36 @@
   },
   "typography": {
     "families": [
-      "White",
-      "Silver",
-      "Charcoal",
-      "Footer"
+      "waldenburgNormal",
+      "waldenburgNormal Fallback",
+      "IBM Plex Mono",
+      "ibmPlexMono Fallback"
     ],
-    "sizes": {},
+    "sizes": {
+      "hero": "112px",
+      "section-heading": "48px",
+      "large": "38px",
+      "heading-medium": "32px",
+      "small": "24px",
+      "subheading": "20px",
+      "body": "18px",
+      "caption": "13px",
+      "label": "11px",
+      "code-micro": "12px"
+    },
     "weights": [
       400,
+      425,
+      500,
       600
     ]
   },
   "spacing": {
-    "space-1": "0.32px",
-    "space-2": "2px",
-    "space-3": "2.88px",
+    "space-1": "2px",
+    "space-2": "4px",
+    "space-3": "6px",
     "space-4": "8px",
-    "space-5": "13px",
+    "space-5": "12px",
     "space-6": "16px",
     "space-7": "24px",
     "space-8": "32px",
@@ -49,9 +62,7 @@
     "radius-4": "12px",
     "radius-5": "3px"
   },
-  "shadows": {
-    "shadow-1": "s -- ring shadows (0 0 0 Npx) or border-based containment only"
-  },
+  "shadows": {},
   "dials": {
     "formality": 7,
     "motion": 4,

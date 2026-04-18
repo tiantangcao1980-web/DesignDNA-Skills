@@ -29,39 +29,52 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          "Silver",
+          "Inter",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Pewter",
+          "JetBrains Mono",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "Charcoal",
+          "System Fallback",
           "system-ui",
           "sans-serif"
         ],
         "display-4": [
-          "Primary",
+          "Segoe UI",
           "system-ui",
           "sans-serif"
         ]
       },
       fontSize: {
-        hero: "64px"
+        hero: "64px",
+        "section-heading": "48px",
+        "sub-heading": "20px",
+        body: "18px",
+        caption: "14px",
+        small: "12px"
       },
       borderRadius: {},
-      boxShadow: {},
+      boxShadow: {
+        "shadow-1": "rgba(0,0,0,0.08) 0px 3px 6px",
+        "shadow-2": "rgba(0,0,0,0.07) 0px 2px 4px",
+        "shadow-3": "rgba(0,0,0,0.1) 0px 10px 20px",
+        "shadow-4": "rgba(0,0,0,0.05) 0px 3px 6px"
+      },
       spacing: {
-        "space-1": "0.25px",
-        "space-2": "1.6px",
-        "space-3": "3px",
-        "space-4": "24px",
-        "space-5": "32px",
-        "space-6": "64px",
-        "space-7": "96px"
+        "space-1": "2px",
+        "space-2": "4px",
+        "space-3": "8px",
+        "space-4": "12px",
+        "space-5": "16px",
+        "space-6": "24px",
+        "space-7": "32px",
+        "space-8": "40px",
+        "space-9": "48px",
+        "space-10": "64px"
       }
     }
   }

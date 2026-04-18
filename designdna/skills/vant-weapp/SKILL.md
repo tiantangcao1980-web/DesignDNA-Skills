@@ -3,6 +3,9 @@ name: vant-weapp
 description: Vant Weapp — Youzan's native WeChat MiniProgram component library (18.4k stars, v1.11+, active 2026). The most popular native MP library with 50+ mobile-optimized components. Use for WeChat-only MiniPrograms — for multi-vendor use Taro + NutUI instead.
 ---
 
+{% raw %}
+
+
 # Vant Weapp — WeChat MiniProgram Native
 
 > **Source**: [youzan/vant-weapp](https://github.com/youzan/vant-weapp) · 18.4k ⭐ · v1.11.7 · 🟢 active 2026-02
@@ -215,3 +218,5 @@ See [components/by-platform/miniprogram.md](../../components/by-platform/minipro
 ## 9. Dial fit
 
 formality: 5 · motion: 4 · density: 6 · warmth: 6 · contrast: 5
+
+{% endraw %}

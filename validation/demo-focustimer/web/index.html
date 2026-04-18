@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FocusTimer — A calmer way to work</title>
+  <meta name="description" content="FocusTimer is a minimalist productivity timer built on proven Pomodoro technique. Crafted with Stripe-inspired design language." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+  <style>
+    /* ═══════════════════════════════════════════════════════════
+       Tokens derived from PROJECT-DESIGN.md (stripe × linear.app)
+       Dials: formality=9 motion=5 density=4 warmth=5 contrast=7
+    ═══════════════════════════════════════════════════════════ */
+    :root {
+      --color-brand:        #533afd;  /* stripe-purple */
+      --color-brand-hover:  #4434d4;
+      --color-navy:         #061b31;  /* deep-navy */
+      --color-ruby:         #ea2261;
+      --color-surface:      #ffffff;
+      --color-surface-soft: #f6f9fc;
+      --color-text:         #0a2540;
+      --color-text-mid:     #425466;
+      --color-text-mute:    #8898aa;
+      --color-border:       #e6ebf1;
+
+      --font-sans: 'Inter', -apple-system, system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+
+      --space-1: 4px;  --space-2: 8px;  --space-3: 12px;
+      --space-4: 16px; --space-5: 24px; --space-6: 32px;
+      --space-7: 48px; --space-8: 64px; --space-9: 96px;
+
+      --radius: 8px;
+      --radius-lg: 16px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--color-surface);
+      color: var(--color-text);
+      line-height: 1.5;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Navigation */
+    nav {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: var(--space-5) var(--space-7);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-weight: 500;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .logo-mark {
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background: conic-gradient(from 180deg, var(--color-brand), var(--color-ruby), var(--color-brand));
+      animation: spin 12s linear infinite;  /* Motion=5 */
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .nav-links {
+      display: flex;
+      gap: var(--space-7);
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      color: var(--color-text-mid);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 400;
+    }
+    .nav-links a:hover { color: var(--color-brand); }
+    .cta {
+      background: var(--color-brand);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .cta:hover { background: var(--color-brand-hover); }
+
+    /* Hero — asymmetric (dial: density 4, formality 9) */
+    .hero {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: var(--space-9) var(--space-7) var(--space-8);
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: var(--space-8);
+      align-items: center;
+    }
+    .hero-text h1 {
+      font-size: 72px;
+      font-weight: 300;  /* Stripe signature: weight 300 */
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      color: var(--color-navy);
+      margin-bottom: var(--space-5);
+    }
+    .hero-text h1 .accent {
+      background: linear-gradient(135deg, var(--color-brand), var(--color-ruby));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero-text p {
+      font-size: 20px;
+      color: var(--color-text-mid);
+      max-width: 480px;
+      line-height: 1.55;
+      margin-bottom: var(--space-6);
+    }
+    .hero-actions {
+      display: flex;
+      gap: var(--space-3);
+    }
+    .btn-primary, .btn-secondary {
+      padding: 12px 24px;
+      border-radius: var(--radius);
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    .btn-primary {
+      background: var(--color-brand);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: var(--color-brand-hover);
+      box-shadow: 0 20px 40px -15px rgba(83, 58, 253, 0.35);
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      color: var(--color-brand);
+      border: 1px solid var(--color-border);
+    }
+    .btn-secondary:hover { border-color: var(--color-brand); }
+
+    /* Animated timer visual */
+    .hero-visual {
+      position: relative;
+      aspect-ratio: 1;
+    }
+    .timer-ring {
+      width: 100%; aspect-ratio: 1;
+      border-radius: 50%;
+      background: conic-gradient(
+        from -90deg,
+        var(--color-brand) 0deg,
+        var(--color-brand) var(--angle, 240deg),
+        var(--color-border) var(--angle, 240deg),
+        var(--color-border) 360deg
+      );
+      padding: 18px;
+      position: relative;
+      animation: ring-progress 8s ease-in-out infinite;
+    }
+    @keyframes ring-progress {
+      0%   { --angle: 0deg; }
+      100% { --angle: 360deg; }
+    }
+    .timer-ring::before {
+      content: '';
+      position: absolute;
+      inset: 18px;
+      border-radius: 50%;
+      background: var(--color-surface);
+    }
+    .timer-inner {
+      position: absolute;
+      inset: 36px;
+      border-radius: 50%;
+      background: var(--color-surface);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      box-shadow: inset 0 0 40px rgba(83, 58, 253, 0.04);
+    }
+    .timer-number {
+      font-family: var(--font-mono);
+      font-size: clamp(48px, 8vw, 96px);
+      font-weight: 400;
+      color: var(--color-navy);
+      letter-spacing: -0.03em;
+      font-variant-numeric: tabular-nums;
+      animation: countdown 8s steps(25) infinite;
+    }
+    @keyframes countdown {
+      from { content: "25:00"; }
+      to { content: "00:00"; }
+    }
+    .timer-number::before { content: attr(data-time); }
+    .timer-label {
+      font-size: 13px;
+      color: var(--color-text-mute);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: var(--space-2);
+    }
+
+    /* Features — 2-column (breaks 3-card cliche) */
+    .features {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: var(--space-9) var(--space-7);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8);
+    }
+    .feature {
+      padding: var(--space-7) 0;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fade-up 0.8s ease-out forwards;
+    }
+    .feature:nth-child(2) { animation-delay: 0.15s; }
+    @keyframes fade-up {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .feature-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--color-brand);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: var(--space-3);
+    }
+    .feature h3 {
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--color-navy);
+      margin-bottom: var(--space-3);
+    }
+    .feature p {
+      font-size: 17px;
+      color: var(--color-text-mid);
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--color-border);
+      background: var(--color-surface-soft);
+      margin-top: var(--space-8);
+    }
+    footer .inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: var(--space-7);
+      display: flex;
+      justify-content: space-between;
+      color: var(--color-text-mute);
+      font-size: 13px;
+    }
+    footer code {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--color-brand);
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: var(--space-7) var(--space-5) var(--space-6);
+      }
+      .hero-text h1 { font-size: 48px; }
+      .features { grid-template-columns: 1fr; gap: var(--space-6); padding: var(--space-6) var(--space-5); }
+      .nav-links li:not(:last-child) { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <span class="logo-mark"></span>
+      <span>FocusTimer</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Product</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#" class="cta">Get started</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>A calmer way<br/>to get <span class="accent">deep work</span> done.</h1>
+      <p>FocusTimer pairs the proven Pomodoro technique with a calm, distraction-free interface. No ads, no gamification, no nudges. Just focused minutes.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn-primary">Start 25 minutes →</a>
+        <a href="#" class="btn-secondary">Read the method</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="timer-ring">
+        <div class="timer-inner">
+          <div class="timer-number" id="timer-display">25:00</div>
+          <div class="timer-label">Focus</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <div class="feature-eyebrow">Method 01</div>
+      <h3>Proven rhythm. Unhurried.</h3>
+      <p>25 minutes of focus, 5 minutes of rest — repeat four times, then a longer break. The Pomodoro rhythm has helped people ship thoughtful work since 1987. FocusTimer keeps the rhythm and strips everything else.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-eyebrow">Method 02</div>
+      <h3>One decision per session.</h3>
+      <p>Every start prompts you to name the single most important thing for this block. Finish or don't — but when you sit down, you know what you're working on.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="inner">
+      <span>Built with <code>npx designdna craft --brand=stripe --blend=linear.app</code></span>
+      <span>Dials: formality 9 · motion 5 · density 4 · warmth 5 · contrast 7</span>
+    </div>
+  </footer>
+
+  <script>
+    // Live countdown for demo
+    (() => {
+      const display = document.getElementById('timer-display');
+      let total = 25 * 60;
+      const tick = () => {
+        const m = String(Math.floor(total / 60)).padStart(2, '0');
+        const s = String(total % 60).padStart(2, '0');
+        display.textContent = `${m}:${s}`;
+        total = total > 0 ? total - 1 : 25 * 60;
+      };
+      setInterval(tick, 1000);
+    })();
+  </script>
+</body>
+</html>

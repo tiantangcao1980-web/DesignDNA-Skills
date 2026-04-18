@@ -22,35 +22,52 @@ module.exports = {
         "warning-active": "#995f06",
         "text-muted": "#6e6e73",
         "text-secondary": "#424245",
-        background: "#f8f7f7"
+        "border-warm": "rgba(15, 0, 0, 0.12)"
       },
       fontFamily: {
         sans: [
-          "Berkeley Mono",
+          "Universal",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Universal",
+          "Berkeley Mono",
+          "system-ui",
+          "sans-serif"
+        ],
+        "display-3": [
+          "IBM Plex Mono",
           "system-ui",
           "sans-serif"
         ]
       },
       fontSize: {
         body: "16px",
-        caption: "14px"
+        caption: "14px",
+        h1: "38px",
+        h2: "16px"
       },
       borderRadius: {
         "radius-1": "4px",
         "radius-2": "6px"
       },
-      boxShadow: {},
+      boxShadow: {
+        "shadow-1": "1px solid rgba(15, 0, 0, 0.12)",
+        "shadow-2": "2px solid #9a9898",
+        "shadow-3": "1px solid #646262",
+        "shadow-4": "rgba(15, 0, 0, 0.12)"
+      },
       spacing: {
-        "space-1": "4px",
-        "space-2": "6px",
+        "space-1": "2px",
+        "space-2": "4px",
         "space-3": "8px",
-        "space-4": "20px",
-        "space-5": "96px"
+        "space-4": "12px",
+        "space-5": "16px",
+        "space-6": "20px",
+        "space-7": "24px",
+        "space-8": "32px",
+        "space-9": "40px",
+        "space-10": "48px"
       }
     }
   }

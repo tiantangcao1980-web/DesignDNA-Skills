@@ -7,6 +7,7 @@ module.exports = {
         "kraken-purple": "#7132f5",
         "purple-dark": "#5741d8",
         "purple-deep": "#5b1ecf",
+        "purple-subtle": "rgba(133, 91, 251, 0.16)",
         "near-black": "#101114",
         "cool-gray": "#686b82",
         "silver-blue": "#9497a9",
@@ -17,32 +18,56 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          "White",
+          "Kraken-Brand",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Green",
+          "IBM Plex Sans",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "Display",
+          "Kraken-Product",
+          "system-ui",
+          "sans-serif"
+        ],
+        "display-4": [
+          "Helvetica Neue",
           "system-ui",
           "sans-serif"
         ]
       },
-      fontSize: {},
+      fontSize: {
+        hero: "48px",
+        "section-heading": "36px",
+        "sub-heading": "28px",
+        "feature-title": "22px",
+        body: "16px",
+        button: "16px",
+        caption: "14px",
+        small: "12px",
+        micro: "7px"
+      },
       borderRadius: {
         "radius-1": "12px",
-        "radius-2": "10px",
-        "radius-3": "3px"
+        "radius-2": "10px"
       },
-      boxShadow: {},
+      boxShadow: {
+        "shadow-1": "rgba(0,0,0,0.03) 0px 4px 24px",
+        "shadow-2": "rgba(16,24,40,0.04) 0px 1px 4px"
+      },
       spacing: {
-        "space-1": "1px",
-        "space-2": "8px",
-        "space-3": "13px"
+        "space-1": "2px",
+        "space-2": "3px",
+        "space-3": "4px",
+        "space-4": "5px",
+        "space-5": "6px",
+        "space-6": "8px",
+        "space-7": "10px",
+        "space-8": "12px",
+        "space-9": "13px",
+        "space-10": "15px"
       }
     }
   }

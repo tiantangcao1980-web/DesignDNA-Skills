@@ -3,6 +3,9 @@ name: chakra-ui
 description: Chakra UI v3 — accessible React component library rebuilt on Panda CSS for zero-runtime styles (40k stars, active 2026). v3 is a breaking rewrite from v2 with new API (Field vs FormControl, style props via recipe). Covers install, v2 vs v3 differences, component patterns, and theme customization.
 ---
 
+{% raw %}
+
+
 # Chakra UI v3 — React with Zero-Runtime Styles
 
 > **Source**: [chakra-ui/chakra-ui](https://github.com/chakra-ui/chakra-ui) · 40k ⭐ · v3.x · 🟢 active 2026
@@ -249,3 +252,5 @@ import { ThemeProvider } from 'next-themes';
 ## 11. Dial fit
 
 formality: 6 · motion: 4 · density: 5 · warmth: 5 · contrast: 6
+
+{% endraw %}

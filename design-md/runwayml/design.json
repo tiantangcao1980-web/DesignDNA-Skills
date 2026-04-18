@@ -23,12 +23,21 @@
   },
   "typography": {
     "families": [
-      "switching",
-      "zero shadows",
-      "commitment",
-      "Charcoal"
+      "Universal",
+      "abcNormal",
+      "abcNormal Fallback"
     ],
-    "sizes": {},
+    "sizes": {
+      "hero": "48px",
+      "section-heading": "40px",
+      "sub-heading": "36px",
+      "card-title": "24px",
+      "feature-title": "20px",
+      "body": "16px",
+      "caption": "14px",
+      "small": "13px",
+      "micro-tag": "11px"
+    },
     "weights": [
       400,
       450,
@@ -37,15 +46,21 @@
     ]
   },
   "spacing": {
-    "space-1": "0.35px",
-    "space-2": "0.9px",
-    "space-3": "1.2px",
-    "space-4": "14px",
-    "space-5": "24px",
-    "space-6": "78px"
+    "space-1": "4px",
+    "space-2": "6px",
+    "space-3": "8px",
+    "space-4": "12px",
+    "space-5": "16px",
+    "space-6": "20px",
+    "space-7": "24px",
+    "space-8": "28px",
+    "space-9": "32px",
+    "space-10": "48px"
   },
   "radius": {},
-  "shadows": {},
+  "shadows": {
+    "shadow-1": "1px solid #27272a"
+  },
   "dials": {
     "formality": 6,
     "motion": 9,

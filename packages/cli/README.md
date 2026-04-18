@@ -95,6 +95,22 @@ npx designdna install --ide=claude-code
 | `DESIGNDNA_DEBUG` | Print stack traces on error |
 | `NO_COLOR` | Disable ANSI colors |
 
+## Contributor maintenance
+
+When DESIGN.md files or parser/generator logic changes, keep the checked-in
+brand artifacts synchronized:
+
+```bash
+npm run regen:brands   # rewrite design.json / CSS / Tailwind / TS for all brands
+npm run check:brands   # fail if any generated artifact is stale
+```
+
+The repository CI also runs:
+
+- `node --test packages/cli/src/__tests__/*.test.js`
+- `npm run check:brands`
+- GitHub Pages parity build via `ghcr.io/actions/jekyll-build-pages:v1.0.13`
+
 ## License
 
 MIT &mdash; part of the [DesignDNA-Skills](https://github.com/tiantangcao1980-web/DesignDNA-Skills) project.

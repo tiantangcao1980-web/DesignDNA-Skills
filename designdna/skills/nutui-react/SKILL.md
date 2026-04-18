@@ -3,6 +3,9 @@ name: nutui-react
 description: NutUI React v3 component library skill — JD's mobile-first React component library (1.2k stars, active). Covers 70+ components across basics, forms, feedback, layout, e-commerce. Works with plain React, Next.js, and Taro + React. Includes installation, component reference, theme tokens, on-demand imports, and Taro integration patterns.
 ---
 
+{% raw %}
+
+
 # NutUI React — JD Mobile React Library
 
 > **Source**: [jdf2e/nutui-react](https://github.com/jdf2e/nutui-react) · 1.2k stars · 2026-04 active · v3.0.18
@@ -386,3 +389,5 @@ import '@nutui/nutui-react-taro/dist/style.css';
 - Use babel-plugin-import to avoid pulling all component styles
 - Import icons individually: `import { Star } from '@nutui/icons-react'` (not `import * as Icons`)
 - In production Taro builds, set `mini.optimizeMainPackage: { enable: true }` in config/prod.ts
+
+{% endraw %}

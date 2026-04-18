@@ -20,37 +20,49 @@ module.exports = {
         "mid-gray": "#8e8e93",
         "light-gray": "#5f5f5f",
         "pure-white": "#ffffff",
+        "glass-white": "hsla(0, 0%, 100%, 0.4)",
         "border-light": "#f2f3f5",
         "border-gray": "#e5e7eb",
         "success-background": "#e8ffea",
-        background: "#f0f0f0",
-        text: "#333333"
+        standard: "rgba(0, 0, 0, 0.08)",
+        "brand-purple": "rgba(44, 30, 116, 0.16)",
+        "brand-purple-offset": "rgba(44, 30, 116, 0.11)",
+        "card-elevation": "rgba(36, 36, 36, 0.08)"
       },
       fontFamily: {
         sans: [
-          "DM Sans serves as the primary UI",
+          "Primary UI",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Dark",
+          "DM Sans",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "Charcoal",
+          "Helvetica Neue",
           "system-ui",
           "sans-serif"
         ],
         "display-4": [
-          "Standard",
+          "Outfit",
           "system-ui",
           "sans-serif"
         ]
       },
       fontSize: {
-        large: "22px",
-        hero: "80px"
+        hero: "80px",
+        "section-heading": "31px",
+        "section-heading-alt": "32px",
+        "card-title": "28px",
+        "sub-heading": "24px",
+        label: "18px",
+        body: "20px",
+        navlink: "14px",
+        small: "13px",
+        caption: "13px",
+        micro: "10px"
       },
       borderRadius: {
         "radius-1": "8px",
@@ -58,13 +70,24 @@ module.exports = {
         "radius-3": "20px",
         "radius-4": "13px"
       },
-      boxShadow: {},
+      boxShadow: {
+        "shadow-1": "rgba(0, 0, 0, 0.08) 0px 4px 6px",
+        "shadow-2": "rgba(0, 0, 0, 0.08) 0px 0px 22.576px",
+        "shadow-3": "rgba(44, 30, 116, 0.16) 0px 0px 15px",
+        "shadow-4": "rgba(44, 30, 116, 0.11) 6.5px 2px 17.5px",
+        "shadow-5": "rgba(36, 36, 36, 0.08) 0px 12px 16px -4px"
+      },
       spacing: {
-        "space-1": "11px",
-        "space-2": "16px",
-        "space-3": "40px",
-        "space-4": "64px",
-        "space-5": "80px"
+        "space-1": "2px",
+        "space-2": "4px",
+        "space-3": "6px",
+        "space-4": "8px",
+        "space-5": "10px",
+        "space-6": "11px",
+        "space-7": "14px",
+        "space-8": "16px",
+        "space-9": "24px",
+        "space-10": "32px"
       }
     }
   }

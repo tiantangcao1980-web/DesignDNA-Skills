@@ -4,47 +4,67 @@ export const tokens = {
   "version": "1.0.0",
   "$schema": "https://designdna.dev/schemas/tokens-v1.json",
   "colors": {
-    "warm-neutral-border-palette": "#eceae4",
     "cream": "#f7f4ed",
     "charcoal": "#1c1c1c",
     "off-white": "#fcfbf8",
     "muted-gray": "#5f5f5d",
-    "ring-blue": "#3b82f6"
+    "light-cream": "#eceae4",
+    "ring-blue": "#3b82f6",
+    "focus-shadow": "rgba(0, 0, 0, 0.1)",
+    "button-inset": "rgba(255, 255, 255, 0.2)"
   },
   "typography": {
     "families": [
-      "is the system",
-      "carries the brand personality",
-      "with humanist warmth and editori",
-      "Cream"
+      "Camera Plain Variable",
+      "ui-sans-serif",
+      "Weight range",
+      "Feature"
     ],
     "sizes": {
-      "hero": "60px"
+      "hero": "60px",
+      "display": "60px",
+      "section-heading": "48px",
+      "sub-heading": "36px",
+      "card-title": "20px",
+      "body": "18px",
+      "button": "16px",
+      "small": "14px",
+      "link": "16px",
+      "caption": "14px"
     },
     "weights": [
       400,
       480,
-      600,
-      700
+      600
     ]
   },
   "spacing": {
-    "space-1": "0.9px",
-    "space-2": "1px",
-    "space-3": "1.2px",
-    "space-4": "1.5px",
-    "space-5": "8px",
-    "space-6": "24px",
-    "space-7": "80px",
-    "space-8": "96px",
-    "space-9": "128px"
+    "space-1": "8px",
+    "space-2": "10px",
+    "space-3": "12px",
+    "space-4": "16px",
+    "space-5": "24px",
+    "space-6": "32px",
+    "space-7": "40px",
+    "space-8": "56px",
+    "space-9": "80px",
+    "space-10": "96px"
   },
   "radius": {
     "radius-1": "6px",
     "radius-2": "9999px",
     "radius-3": "12px"
   },
-  "shadows": {}
+  "shadows": {
+    "shadow-1": "rgba(255,255,255,0.2) 0px 0.5px 0px 0px inset, rgba(0,0,0,0.2) 0px 0px 0px 0.5px inset, rgba(0,0,0,0.05) 0px 1px 2px 0px"
+  },
+  "dials": {
+    "formality": 4,
+    "motion": 7,
+    "density": 5,
+    "warmth": 7,
+    "contrast": 6
+  }
 } as const;
 
 export type DesignTokens = typeof tokens;

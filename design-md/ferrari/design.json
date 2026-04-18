@@ -12,6 +12,7 @@
     "absolute-black": "#000000",
     "dark-surface": "#303030",
     "light-gray-surface": "#d2d2d2",
+    "overlay-dark": "hsla(0, 0%, 7%, 0.8)",
     "near-black": "#181818",
     "dark-gray": "#666666",
     "mid-gray": "#8f8f8f",
@@ -23,36 +24,50 @@
   },
   "typography": {
     "families": [
-      "handles captions and utility tex",
-      "with compact proportions and med",
-      "for headings",
-      "for captions"
+      "FerrariSans",
+      "Body-Font"
     ],
     "sizes": {
-      "caption": "13px"
+      "caption": "13px",
+      "section-title": "26px",
+      "card-heading": "24px",
+      "subheading": "18px",
+      "ui-heading": "16px",
+      "body": "16px",
+      "button": "16px",
+      "small": "14.4px",
+      "nav-link": "13px",
+      "label": "12px",
+      "cookie-text": "45px"
     },
     "weights": [
+      400,
       500,
-      600
+      600,
+      700
     ]
   },
   "spacing": {
-    "space-1": "1px",
-    "space-2": "1.28px",
-    "space-3": "12px",
-    "space-4": "16px",
-    "space-5": "20px",
-    "space-6": "25px",
-    "space-7": "40px",
-    "space-8": "44px",
-    "space-9": "80px"
+    "space-1": "2px",
+    "space-2": "4px",
+    "space-3": "5px",
+    "space-4": "6px",
+    "space-5": "8px",
+    "space-6": "9px",
+    "space-7": "10px",
+    "space-8": "11.2px",
+    "space-9": "12px",
+    "space-10": "13px"
   },
   "radius": {
     "radius-1": "2px",
     "radius-2": "8px"
   },
   "shadows": {
-    "shadow-1": "s to cards or content containers — depth comes from surface color contrast and photography"
+    "shadow-1": "rgb(153, 153, 153) 1px 1px 1px 0px",
+    "shadow-2": "hsla(0, 0%, 7%, 0.8)",
+    "shadow-3": "1px solid #CCCCCC",
+    "shadow-4": "rgb(153, 153, 153) 1px 1px 1px 0px"
   },
   "dials": {
     "formality": 9,

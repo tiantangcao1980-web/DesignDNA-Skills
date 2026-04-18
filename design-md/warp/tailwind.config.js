@@ -9,42 +9,68 @@ module.exports = {
         "stone-gray": "#868584",
         "ash-gray": "#afaeac",
         "purple-tint-gray": "#666469",
+        "frosted-veil": "rgba(255, 255, 255, 0.04)",
+        "mist-border": "rgba(226, 226, 226, 0.35)",
+        "translucent-parchment": "rgba(250, 249, 246, 0.9)",
         "dark-charcoal": "#454545"
       },
       fontFamily: {
         sans: [
-          "Medium",
+          "Matter Regular",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Square",
+          "Matter Regular Placeholder",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "Monospace Display",
+          "Medium",
           "system-ui",
           "sans-serif"
         ],
         "display-4": [
-          "Ghost",
+          "Matter Medium",
           "system-ui",
           "sans-serif"
         ]
       },
       fontSize: {
-        display: "56px"
+        hero: "80px",
+        display: "56px",
+        "section-heading": "48px",
+        "feature-heading": "40px",
+        large: "36px",
+        "sub-heading": "32px",
+        body: "24px",
+        "card-title": "22px",
+        navui: "16px",
+        button: "16px",
+        caption: "14px",
+        small: "12px",
+        micro: "11px",
+        "code-ui": "16px",
+        "ui-supplement": "16px"
       },
       borderRadius: {},
-      boxShadow: {},
+      boxShadow: {
+        "shadow-1": "rgba(255, 255, 255, 0.04)",
+        "shadow-2": "rgba(226, 226, 226, 0.35) 1px",
+        "shadow-3": "rgba(0, 0, 0, 0.2) 0px 5px 15px",
+        "shadow-4": "rgba(255, 255, 255, 0.04)"
+      },
       spacing: {
-        "space-1": "0.4px",
-        "space-2": "1.4px",
-        "space-3": "2.4px",
-        "space-4": "8px",
-        "space-5": "16px",
-        "space-6": "80px"
+        "space-1": "4px",
+        "space-2": "5px",
+        "space-3": "8px",
+        "space-4": "10px",
+        "space-5": "12px",
+        "space-6": "14px",
+        "space-7": "15px",
+        "space-8": "16px",
+        "space-9": "18px",
+        "space-10": "24px"
       }
     }
   }

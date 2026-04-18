@@ -14,35 +14,55 @@ module.exports = {
         "console-purple": "#7928ca",
         "console-pink": "#eb367f",
         "link-blue": "#0072f5",
+        "focus-blue": "hsla(212, 100%, 48%, 1)",
+        "ring-blue": "rgba(147, 197, 253, 0.5)",
         "gray-600": "#4d4d4d",
         "gray-500": "#666666",
         "gray-400": "#808080",
         "gray-100": "#ebebeb",
         "gray-50": "#fafafa",
+        "overlay-backdrop": "hsla(0, 0%, 98%, 1)",
+        "selection-text": "hsla(0, 0%, 95%, 1)",
         "badge-blue-bg": "#ebf5ff",
-        "badge-blue-text": "#0068d6"
+        "badge-blue-text": "#0068d6",
+        "border-shadow": "rgba(0, 0, 0, 0.08)",
+        "subtle-elevation": "rgba(0, 0, 0, 0.04)",
+        "ring-border": "rgb(235, 235, 235)"
       },
       fontFamily: {
         sans: [
-          "Selection Text",
+          "Geist",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Primary",
+          "Arial",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "Monospace",
+          "Geist Mono",
+          "system-ui",
+          "sans-serif"
+        ],
+        "display-4": [
+          "SFMono-Regular",
           "system-ui",
           "sans-serif"
         ]
       },
       fontSize: {
-        large: "64px",
-        xl: "100px",
-        display: "48px"
+        hero: "48px",
+        "section-heading": "40px",
+        large: "32px",
+        "sub-heading": "32px",
+        "card-title": "24px",
+        "card-title-light": "24px",
+        body: "20px",
+        button: "14px",
+        small: "14px",
+        caption: "12px",
+        "micro-badge": "7px"
       },
       borderRadius: {
         "radius-1": "6px",
@@ -50,14 +70,20 @@ module.exports = {
         "radius-3": "64px",
         "radius-4": "8px"
       },
-      boxShadow: {},
+      boxShadow: {
+        "border-shadow": "rgba(0, 0, 0, 0.08"
+      },
       spacing: {
-        "space-1": "0.96px",
-        "space-2": "2.4px",
-        "space-3": "8px",
-        "space-4": "12px",
-        "space-5": "16px",
-        "space-6": "80px"
+        "space-1": "2px",
+        "space-2": "3px",
+        "space-3": "4px",
+        "space-4": "5px",
+        "space-5": "6px",
+        "space-6": "8px",
+        "space-7": "10px",
+        "space-8": "12px",
+        "space-9": "14px",
+        "space-10": "16px"
       }
     }
   }

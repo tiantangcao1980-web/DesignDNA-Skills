@@ -14,29 +14,55 @@ export const tokens = {
   },
   "typography": {
     "families": [
-      "Product UI",
-      "Hover",
-      "Mobile",
-      "Scale"
+      "Super Sans VF",
+      "Segoe UI"
     ],
     "sizes": {
-      "display": "48px"
+      "hero": "64px",
+      "display": "48px",
+      "section-heading": "48px",
+      "feature-title": "28px",
+      "large": "26px",
+      "card-heading": "22px",
+      "body": "20px",
+      "button": "16px",
+      "nav-link": "16px",
+      "caption": "14px",
+      "label": "12px"
     },
     "weights": [
       460,
+      500,
       540,
+      600,
       700
     ]
   },
   "spacing": {
-    "space-1": "0.63px",
-    "space-2": "1.32px",
-    "space-3": "8px",
-    "space-4": "16px",
-    "space-5": "48px"
+    "space-1": "2px",
+    "space-2": "4px",
+    "space-3": "6px",
+    "space-4": "8px",
+    "space-5": "12px",
+    "space-6": "16px",
+    "space-7": "18px",
+    "space-8": "20px",
+    "space-9": "24px",
+    "space-10": "28px"
   },
   "radius": {},
-  "shadows": {}
+  "shadows": {
+    "shadow-1": "1px solid #dcd7d3",
+    "shadow-2": "1px solid #292827",
+    "shadow-3": "rgba(255, 255, 255, 0.2)"
+  },
+  "dials": {
+    "formality": 8,
+    "motion": 6,
+    "density": 5,
+    "warmth": 4,
+    "contrast": 8
+  }
 } as const;
 
 export type DesignTokens = typeof tokens;

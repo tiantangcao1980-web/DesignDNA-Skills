@@ -10,6 +10,7 @@ import { toJson } from '../generators/json.js';
 import { toCss } from '../generators/css.js';
 import { toTailwind } from '../generators/tailwind.js';
 import { toTypeScript } from '../generators/typescript.js';
+import { DIALS } from '../data/dials.js';
 import { c, logSuccess, logError, logStep, logBanner, logInfo } from '../utils/log.js';
 
 const FORMAT_ORDER = ['md', 'json', 'css', 'tailwind', 'ts'];
@@ -53,7 +54,7 @@ export async function runAdd({ brand, flags = {} } = {}) {
   await mkdir(outDir, { recursive: true });
 
   // Parse tokens once — reused across format generators.
-  const tokens = parseDesignMd(md, { brand });
+  const tokens = parseDesignMd(md, { brand, dials: DIALS[brand] });
   const tokenSummary = summarizeTokens(tokens);
 
   // Always copy DESIGN.md — it's the skill agents read.

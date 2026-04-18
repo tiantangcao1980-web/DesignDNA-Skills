@@ -11,26 +11,57 @@ export const tokens = {
     "hover-blue": "#578bfa",
     "link-blue": "#0667d0",
     "muted-blue": "#5b616e",
-    "dark-card": "#282b31"
+    "dark-card": "#282b31",
+    "light-surface": "rgba(247, 247, 247, 0.88)"
   },
   "typography": {
     "families": [
-      "Display",
+      "CoinbaseDisplay",
+      "CoinbaseSans",
       "Body",
-      "Icons"
+      "CoinbaseText"
     ],
     "sizes": {
-      "large": "24px",
-      "xl": "40px"
+      "hero": "80px",
+      "display": "64px",
+      "section-heading": "36px",
+      "card-title": "32px",
+      "feature-title": "18px",
+      "body": "16px",
+      "button": "16px",
+      "caption": "14px",
+      "small": "13px"
     },
-    "weights": []
+    "weights": [
+      400,
+      600,
+      700
+    ]
   },
-  "spacing": {},
+  "spacing": {
+    "space-1": "3px",
+    "space-2": "4px",
+    "space-3": "5px",
+    "space-4": "6px",
+    "space-5": "8px",
+    "space-6": "10px",
+    "space-7": "12px",
+    "space-8": "15px",
+    "space-9": "16px",
+    "space-10": "20px"
+  },
   "radius": {
     "radius-1": "56px",
     "radius-2": "8px"
   },
-  "shadows": {}
+  "shadows": {},
+  "dials": {
+    "formality": 8,
+    "motion": 3,
+    "density": 5,
+    "warmth": 4,
+    "contrast": 7
+  }
 } as const;
 
 export type DesignTokens = typeof tokens;

@@ -24,6 +24,9 @@ triggers:
   - font selection
 ---
 
+{% raw %}
+
+
 # DesignDNA — AI Design System Skill
 
 ## ⚠ Scope Boundary Declaration — Read First
@@ -1240,16 +1243,15 @@ npm i @radix-ui/themes                # or ant-design, etc.
 >
 > **Load these files first when the user asks for a tech-stack recommendation** — they supersede any stale data in the tables below. The tables here are narrative guidance; the `components/` folder is the source of truth.
 >
-> **⚠️ Key 2026 audit findings (tell the user about these):**
-> - Google's `material-components-ios` is **archived** (2025-12). Use SwiftUI + Apple HIG for new iOS.
-> - `material-components-flutter` is **archived** (folded into Flutter SDK). Use `package:flutter/material`.
-> - `material-web` (Lit-based) is in **maintenance mode** — no active development.
-> - `@fluentui/react` v8 is **maintenance only** — use `@fluentui/react-components` v9 for new React projects.
-> - **iView Weapp**, **Wuss Weapp**, **TouchWX** are all **5-8 years dormant** — do not use for new MiniProgram projects. Use **Vant Weapp** or **TDesign MiniProgram**.
-> - **NutUI Bingo** (marketing gamification) is **3+ years dormant** — build custom with GSAP/Lottie instead.
-> - **Remax** (React → MiniProgram) **stopped in 2022** — use **Taro** instead.
-> - **Bootstrap v4** is security-only — upgrade to **v5.3**.
-> - **Chakra v2** still deployed but superseded by **v3** (Panda CSS).
+> **2026 audit — platform guidance:**
+> - For **new iOS** projects prefer SwiftUI + Apple HIG. `material-components-ios` is archived but still usable for existing projects (migrate on your cadence).
+> - For **new Flutter** projects use the SDK-bundled `package:flutter/material`. The standalone `material-components-flutter` has been consolidated into the SDK.
+> - `material-web` (Lit) is in maintenance mode — safe for existing projects, evaluate alternatives (MUI / Shoelace) for greenfield.
+> - For **new React + Microsoft** work use `@fluentui/react-components` v9, not the v8 Fabric branch.
+> - For **WeChat MiniProgram** native use **Vant Weapp** or **TDesign MiniProgram**. Older iView Weapp / Wuss Weapp / TouchWX have been dormant 5-8 years.
+> - For **multi-MP vendor** use **Taro + NutUI**. Remax stopped in 2022.
+> - **Bootstrap v4** is security-only — v5.3 is the current version.
+> - **Chakra v2** is still widely deployed; v3 (Panda CSS) is the modern path.
 
 > **Scope**: This section recommends tech stacks from a **design expression** perspective — "which library best expresses this design intent?" For framework architecture, state management, build tools, and implementation patterns, defer to `frontend-patterns`, `web-development`, and `coding-standards` skills.
 >
@@ -4471,3 +4473,5 @@ The ONLY exception:
   → Then update DESIGN.md to match, making the code the new truth.
   → This is a DESIGN SYSTEM EVOLUTION, follow 15.2 workflow.
 ```
+
+{% endraw %}

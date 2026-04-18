@@ -3,6 +3,9 @@ name: arco-design-vue
 description: Arco Design Vue — ByteDance's Vue 3 enterprise component library (4k stars, active). Paired Vue sibling of Arco Design React. Used extensively inside ByteDance products (Lark, Feishu) — polished, commercial visual aesthetics. 60+ components, tree-shakeable, TypeScript-friendly.
 ---
 
+{% raw %}
+
+
 # Arco Design Vue — ByteDance Vue 3 UI
 
 > **Source**: [arco-design/arco-design-vue](https://github.com/arco-design/arco-design-vue) · 4k ⭐ · v2.57+ · 🟢 active 2026
@@ -206,3 +209,5 @@ import { ConfigProvider } from '@arco-design/web-vue';
 ## 8. Dial fit
 
 formality: 7-8 · motion: 4 · density: 6 · warmth: 4 · contrast: 6
+
+{% endraw %}

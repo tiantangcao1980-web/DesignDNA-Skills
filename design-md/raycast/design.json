@@ -6,9 +6,11 @@
     "near-black-blue": "#07080a",
     "pure-white": "#ffffff",
     "raycast-red": "#ff6363",
-    "raycast-blue": "#55b3ff",
-    "raycast-green": "#5fc992",
-    "raycast-yellow": "#ffbc33",
+    "raycast-blue": "hsl(202, 100%, 67%)",
+    "raycast-green": "hsl(151, 59%, 59%)",
+    "raycast-yellow": "hsl(43, 100%, 60%)",
+    "blue-transparent": "hsla(202, 100%, 67%, 0.15)",
+    "red-transparent": "hsla(0, 100%, 69%, 0.15)",
     "surface-100": "#101111",
     "key-start": "#121212",
     "key-end": "#0d0d0d",
@@ -20,15 +22,17 @@
     "medium-gray": "#9c9c9d",
     "dim-gray": "#6a6b6c",
     "dark-gray": "#434345",
-    "border": "#252829",
-    "dark-border": "#2f3031"
+    "border": "hsl(195, 5%, 15%)",
+    "dark-border": "#2f3031",
+    "error-red": "hsl(0, 100%, 69%)",
+    "warm-glow": "rgba(215, 201, 175, 0.05)"
   },
   "typography": {
     "families": [
-      "Silver",
-      "Border",
-      "Primary",
-      "System"
+      "Inter",
+      "Inter Fallback",
+      "System",
+      "SF Pro Text"
     ],
     "sizes": {
       "hero": "64px",
@@ -36,25 +40,42 @@
       "large": "18px",
       "body": "16px",
       "caption": "14px",
-      "small": "12px"
+      "small": "12px",
+      "section-heading": "24px",
+      "card-heading": "22px",
+      "sub-heading": "20px",
+      "button": "16px",
+      "nav-link": "16px",
+      "code": "14px"
     },
     "weights": [
+      400,
       500,
       600
     ]
   },
   "spacing": {
-    "space-1": "0.2px",
-    "space-2": "8px",
-    "space-3": "16px",
-    "space-4": "44px",
-    "space-5": "80px"
+    "space-1": "2px",
+    "space-2": "3px",
+    "space-3": "4px",
+    "space-4": "8px",
+    "space-5": "10px",
+    "space-6": "12px",
+    "space-7": "16px",
+    "space-8": "20px",
+    "space-9": "24px",
+    "space-10": "32px"
   },
   "radius": {
     "radius-1": "4px"
   },
   "shadows": {
-    "shadow-1": "s with inset highlights that simulate physical depth, as if cards and buttons are actual pressed or raised glass elements on a dark desk. Combined with Raycast Red ("
+    "shadow-1": "rgba(0, 0, 0, 0.28) 0px 1.189px 2.377px",
+    "shadow-2": "rgb(27, 28, 30) 0px 0px 0px 1px",
+    "shadow-3": "rgb(7, 8, 10) 0px 0px 0px 1px inset",
+    "shadow-4": "rgba(255, 255, 255, 0.05) 0px 1px 0px 0px inset",
+    "shadow-5": "rgba(255, 255, 255, 0.25) 0px 0px 0px 1px",
+    "shadow-6": "rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset"
   },
   "dials": {
     "formality": 7,

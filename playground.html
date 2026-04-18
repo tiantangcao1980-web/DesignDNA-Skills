@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>DesignDNA Playground — Interactive Brand Design Systems</title>
   <meta name="description" content="Explore 58 world-class brand design systems. Copy DESIGN.md, tokens, CSS, Tailwind configs, or generate AI prompts." />
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -888,6 +889,26 @@
 
   <div class="toast" id="toast">Copied to clipboard</div>
 
-  <script type="module" src="./playground/playground.js"></script>
+  <script>
+    (function () {
+      const suffix = window.location.search || '';
+
+      function loadScript(src, next) {
+        const script = document.createElement('script');
+        script.src = src;
+        script.onload = () => next && next();
+        script.onerror = () => next && next();
+        document.body.appendChild(script);
+      }
+
+      const startPlayground = () => loadScript(`./playground/playground.js${suffix}`);
+
+      if (window.location.protocol === 'file:') {
+        loadScript('./playground/catalog-data.js', startPlayground);
+      } else {
+        startPlayground();
+      }
+    })();
+  </script>
 </body>
 </html>

@@ -1,0 +1,43 @@
+name: Quality
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quality-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run CLI test suite
+        run: node --test packages/cli/src/__tests__/*.test.js
+
+      - name: Verify generated brand artifacts
+        working-directory: packages/cli
+        run: npm run check:brands
+
+      - name: Verify GitHub Pages build
+        run: |
+          docker run --rm --entrypoint sh \
+            -e PAGES_REPO_NWO="${GITHUB_REPOSITORY}" \
+            -e GITHUB_REPOSITORY="${GITHUB_REPOSITORY}" \
+            -v "${GITHUB_WORKSPACE}:/github/workspace" \
+            -w /github/workspace \
+            ghcr.io/actions/jekyll-build-pages:v1.0.13 \
+            -c 'jekyll build --source /github/workspace --destination /github/workspace/_site'

@@ -19,48 +19,66 @@ module.exports = {
         edit: "#c0a8dd",
         "surface-100": "#f7f7f4",
         "surface-300": "#ebeae5",
-        "surface-500": "#e1e0db"
+        "surface-500": "#e1e0db",
+        "border-primary": "oklab(0.263084 -0.00230259 0.0124794 / 0.1)",
+        "border-medium": "oklab(0.263084 -0.00230259 0.0124794 / 0.2)",
+        "border-strong": "rgba(38, 37, 30, 0.55)",
+        "card-shadow": "rgba(0, 0, 0, 0.14)",
+        "ambient-shadow": "rgba(0, 0, 0, 0.02)"
       },
       fontFamily: {
         sans: [
-          "Gold",
+          "CursorGothic",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Error",
+          "CursorGothic Fallback",
           "system-ui",
           "sans-serif"
         ],
         "display-3": [
-          "Success",
+          "jjannon",
           "system-ui",
           "sans-serif"
         ],
         "display-4": [
-          "Thinking",
+          "Iowan Old Style",
           "system-ui",
           "sans-serif"
         ]
       },
       fontSize: {
-        hero: "72px"
+        hero: "72px",
+        "section-heading": "36px",
+        "sub-heading": "26px",
+        small: "22px",
+        body: "19.2px",
+        button: "14px",
+        caption: "14px",
+        "system-heading": "20px",
+        "system-micro": "11px",
+        "lato-heading": "16px",
+        "lato-micro": "12px"
       },
       borderRadius: {
         "radius-1": "8px"
       },
-      boxShadow: {},
+      boxShadow: {
+        "card-shadow": "rgba(0,0,0,0.14",
+        "ambient-shadow": "rgba(0,0,0,0.02"
+      },
       spacing: {
-        "space-1": "0.11px",
-        "space-2": "2.16px",
+        "space-1": "2px",
+        "space-2": "2.5px",
         "space-3": "3px",
-        "space-4": "6px",
-        "space-5": "8px",
-        "space-6": "10px",
-        "space-7": "14px",
-        "space-8": "72px",
-        "space-9": "80px",
-        "space-10": "120px"
+        "space-4": "4px",
+        "space-5": "5px",
+        "space-6": "6px",
+        "space-7": "8px",
+        "space-8": "10px",
+        "space-9": "12px",
+        "space-10": "14px"
       }
     }
   }

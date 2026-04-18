@@ -26,38 +26,60 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          "Parchment",
-          "system-ui",
-          "sans-serif"
-        ],
-        "display-2": [
-          "Ivory",
-          "system-ui",
-          "sans-serif"
-        ],
-        "display-3": [
           "Headline",
           "system-ui",
           "sans-serif"
         ],
+        "display-2": [
+          "Anthropic Serif",
+          "system-ui",
+          "sans-serif"
+        ],
+        "display-3": [
+          "Georgia",
+          "system-ui",
+          "sans-serif"
+        ],
         "display-4": [
-          "Code",
+          "Anthropic Sans",
           "system-ui",
           "sans-serif"
         ]
       },
-      fontSize: {},
+      fontSize: {
+        hero: "64px",
+        "section-heading": "52px",
+        large: "36.8px",
+        "sub-heading": "32px",
+        small: "25.6px",
+        "feature-title": "20.8px",
+        body: "17px",
+        caption: "14px",
+        label: "12px",
+        overline: "10px",
+        micro: "9.6px",
+        code: "15px"
+      },
       borderRadius: {},
-      boxShadow: {},
+      boxShadow: {
+        "shadow-1": "1px solid #f0eee6",
+        "shadow-2": "1px solid #30302e",
+        "shadow-3": "0px 0px 0px 1px",
+        "shadow-4": "rgba(0,0,0,0.05) 0px 4px 24px",
+        "shadow-5": "inset 0px 0px 0px 1px",
+        "shadow-6": "0px 0px 0px 1px"
+      },
       spacing: {
-        "space-1": "0.12px",
-        "space-2": "1.6px",
-        "space-3": "8px",
-        "space-4": "9.6px",
-        "space-5": "12px",
-        "space-6": "16px",
-        "space-7": "32px",
-        "space-8": "120px"
+        "space-1": "3px",
+        "space-2": "4px",
+        "space-3": "6px",
+        "space-4": "8px",
+        "space-5": "10px",
+        "space-6": "12px",
+        "space-7": "16px",
+        "space-8": "20px",
+        "space-9": "24px",
+        "space-10": "30px"
       }
     }
   }

@@ -20,36 +20,65 @@ export const tokens = {
     "border-gray": "#4d4d4d",
     "light-border": "#7c7c7c",
     "light-surface": "#eeeeee",
-    "spotify-green-border": "#1db954"
+    "spotify-green-border": "#1db954",
+    "heavy": "rgba(0, 0, 0, 0.5)",
+    "medium": "rgba(0, 0, 0, 0.3)",
+    "inset-border": "rgb(18, 18, 18)"
   },
   "typography": {
     "families": [
-      "White",
-      "Silver",
-      "Light",
-      "Separator"
+      "Title",
+      "SpotifyMixUITitle",
+      "CircularSp-Arab",
+      "SpotifyMixUI"
     ],
     "sizes": {
-      "large": "100px"
+      "section-title": "24px",
+      "feature-heading": "18px",
+      "body": "16px",
+      "button": "14px",
+      "nav-link-bold": "14px",
+      "nav-link": "14px",
+      "caption": "14px",
+      "small": "12px",
+      "badge": "10.5px",
+      "micro": "10px"
     },
     "weights": [
       400,
+      600,
       700
     ]
   },
   "spacing": {
-    "space-1": "1.4px",
-    "space-2": "4px",
-    "space-3": "8px",
-    "space-4": "12px",
-    "space-5": "14px"
+    "space-1": "2px",
+    "space-2": "3px",
+    "space-3": "4px",
+    "space-4": "5px",
+    "space-5": "6px",
+    "space-6": "8px",
+    "space-7": "10px",
+    "space-8": "12px",
+    "space-9": "14px",
+    "space-10": "15px"
   },
   "radius": {
     "radius-1": "9999px",
     "radius-2": "500px",
     "radius-3": "6px"
   },
-  "shadows": {}
+  "shadows": {
+    "shadow-1": "rgba(0,0,0,0.5) 0px 8px 24px",
+    "shadow-2": "rgba(0,0,0,0.3) 0px 8px 8px",
+    "shadow-3": "rgb(18,18,18) 0px 1px 0px, rgb(124,124,124) 0px 0px 0px 1px inset"
+  },
+  "dials": {
+    "formality": 4,
+    "motion": 7,
+    "density": 6,
+    "warmth": 6,
+    "contrast": 9
+  }
 } as const;
 
 export type DesignTokens = typeof tokens;

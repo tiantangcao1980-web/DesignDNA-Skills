@@ -3,6 +3,9 @@ name: element-plus
 description: Element Plus — Vue 3 flagship desktop component library from Eleme/Ele.me (26k stars, active). Chinese-localized, mature, most-used Vue 3 B2B admin library in China. Covers 60+ components with full Vue 3 Composition API, theme tokens, and SFC-optimized imports.
 ---
 
+{% raw %}
+
+
 # Element Plus — Vue 3 Desktop
 
 > **Source**: [element-plus/element-plus](https://github.com/element-plus/element-plus) · 26k ⭐ · v2.9+ · 🟢 active 2026
@@ -211,3 +214,5 @@ formality: 7 · motion: 3 · density: 6 · warmth: 5 · contrast: 5
 
 - **soybean-admin** / **Vue Element Admin** — popular admin scaffolds built on Element Plus
 - Alternative in same niche: Ant Design Vue (see skill), Naive UI, TDesign Vue Next, Arco Design Vue
+
+{% endraw %}

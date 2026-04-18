@@ -8,33 +8,63 @@ module.exports = {
         "brand-orange": "#fc4c02",
         "dark-blue": "#010120",
         "soft-lavender": "#bdbbff",
+        "black-40": "#00000066",
         "pure-white": "#ffffff",
+        "glass-light": "rgba(255, 255, 255, 0.12)",
+        "glass-dark": "rgba(0, 0, 0, 0.08)",
         "pure-black": "#000000"
       },
       fontFamily: {
         sans: [
-          "Primary",
+          "The Future",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Navigation",
+          "Arial",
+          "system-ui",
+          "sans-serif"
+        ],
+        "display-3": [
+          "PP Neue Montreal Mono",
+          "system-ui",
+          "sans-serif"
+        ],
+        "display-4": [
+          "Georgia",
           "system-ui",
           "sans-serif"
         ]
       },
-      fontSize: {},
+      fontSize: {
+        hero: "64px",
+        "section-heading": "40px",
+        "sub-heading": "28px",
+        "feature-title": "22px",
+        body: "18px",
+        caption: "14px",
+        label: "16px",
+        small: "11px",
+        mono: "10px"
+      },
       borderRadius: {},
-      boxShadow: {},
+      boxShadow: {
+        "shadow-1": "1px solid rgba(0,0,0,0.08)",
+        "shadow-2": "rgba(255,255,255,0.12)",
+        "shadow-3": "rgba(1, 1, 32, 0.1) 0px 4px 10px",
+        "shadow-4": "rgba(1, 1, 32, 0.1)"
+      },
       spacing: {
-        "space-1": "0.055px",
-        "space-2": "0.16px",
-        "space-3": "0.8px",
-        "space-4": "1.92px",
-        "space-5": "2px",
-        "space-6": "32px",
-        "space-7": "48px",
-        "space-8": "120px"
+        "space-1": "2px",
+        "space-2": "4px",
+        "space-3": "8px",
+        "space-4": "10px",
+        "space-5": "12px",
+        "space-6": "16px",
+        "space-7": "20px",
+        "space-8": "24px",
+        "space-9": "32px",
+        "space-10": "44px"
       }
     }
   }

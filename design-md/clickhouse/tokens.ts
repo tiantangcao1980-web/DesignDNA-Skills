@@ -22,29 +22,60 @@ export const tokens = {
   },
   "typography": {
     "families": [
-      "Charcoal",
-      "Silver",
-      "Primary",
-      "Secondary Display"
+      "Inter",
+      "Secondary Display",
+      "Basier",
+      "Arial"
     ],
-    "sizes": {},
+    "sizes": {
+      "display": "96px",
+      "hero": "72px",
+      "feature-heading": "36px",
+      "sub-heading": "24px",
+      "feature-title": "20px",
+      "body": "18px",
+      "caption": "14px",
+      "label": "14px",
+      "code": "16px",
+      "small": "12px",
+      "micro": "11.2px"
+    },
     "weights": [
+      400,
+      500,
       600,
       700,
       900
     ]
   },
   "spacing": {
-    "space-1": "1px",
-    "space-2": "1.4px",
-    "space-3": "4px",
-    "space-4": "12px",
-    "space-5": "64px"
+    "space-1": "2px",
+    "space-2": "6px",
+    "space-3": "7px",
+    "space-4": "8px",
+    "space-5": "10px",
+    "space-6": "12px",
+    "space-7": "16px",
+    "space-8": "20px",
+    "space-9": "24px",
+    "space-10": "25px"
   },
   "radius": {
     "radius-1": "4px"
   },
-  "shadows": {}
+  "shadows": {
+    "shadow-1": "1px solid rgba(65,65,65,0.8)",
+    "shadow-2": "0px 1px 3px rgba(0,0,0,0.1)",
+    "shadow-3": "0px 10px 15px -3px rgba(0,0,0,0.1)",
+    "shadow-4": "0px 4px 25px rgba(0,0,0,0.14) inset"
+  },
+  "dials": {
+    "formality": 8,
+    "motion": 3,
+    "density": 7,
+    "warmth": 4,
+    "contrast": 7
+  }
 } as const;
 
 export type DesignTokens = typeof tokens;

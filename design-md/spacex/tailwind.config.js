@@ -5,30 +5,53 @@ module.exports = {
     extend: {
       colors: {
         "space-black": "#000000",
-        "spectral-white": "#f0f0fa"
+        "spectral-white": "#f0f0fa",
+        "ghost-surface": "rgba(240, 240, 250, 0.1)",
+        "ghost-border": "rgba(240, 240, 250, 0.35)",
+        "dark-overlay": "rgba(0, 0, 0, 0.5)"
       },
       fontFamily: {
         sans: [
-          "with DIN heritage",
+          "D-DIN-Bold",
           "system-ui",
           "sans-serif"
         ],
         "display-2": [
-          "Display",
+          "D-DIN",
+          "system-ui",
+          "sans-serif"
+        ],
+        "display-3": [
+          "Arial",
           "system-ui",
           "sans-serif"
         ]
       },
-      fontSize: {},
+      fontSize: {
+        hero: "48px",
+        body: "16px",
+        "nav-link-bold": "13px",
+        "nav-link": "12px",
+        caption: "13px",
+        micro: "10px"
+      },
       borderRadius: {
         "radius-1": "32px"
       },
-      boxShadow: {},
+      boxShadow: {
+        "shadow-1": "rgba(0, 0, 0, 0.5)",
+        "shadow-2": "rgba(240, 240, 250, 0.1)"
+      },
       spacing: {
-        "space-1": "0.96px",
-        "space-2": "1px",
-        "space-3": "1.17px",
-        "space-4": "18px"
+        "space-1": "3px",
+        "space-2": "5px",
+        "space-3": "8px",
+        "space-4": "12px",
+        "space-5": "15px",
+        "space-6": "18px",
+        "space-7": "20px",
+        "space-8": "24px",
+        "space-9": "30px"
       }
     }
   }

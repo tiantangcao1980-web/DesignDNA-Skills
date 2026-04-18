@@ -14,12 +14,50 @@ import { resolveSkillRoot } from '../utils/paths.js';
 import { c, logBanner, logSuccess, logError, logInfo } from '../utils/log.js';
 
 const STACKS = {
-  'taro-react': ['taro', 'nutui-react', 'nutui-icons'],
-  'taro-vue':   ['taro', 'nutui-vue', 'nutui-icons'],
-  'uniapp':     ['nutui-uniapp', 'nutui-icons'],
-  'react':      ['nutui-react', 'nutui-icons'],
-  'vue':        ['nutui-vue', 'nutui-icons'],
+  // Taro + NutUI stacks
+  'taro-react':  ['taro', 'nutui-react', 'nutui-icons'],
+  'taro-vue':    ['taro', 'nutui-vue', 'nutui-icons'],
+  'uniapp':      ['uniapp', 'nutui-uniapp', 'nutui-icons'],
   'legacy-taro': ['taro', 'taro-ui'],
+
+  // React ecosystems
+  'react-enterprise': ['ant-design', 'ant-design-pro', 'antv'],
+  'react-modern':     ['shadcn-ui', 'radix-ui', 'tailwindcss'],
+  'react-material':   ['mui-material', 'mui-x'],
+  'react-mobile':     ['nutui-react', 'nutui-icons', 'ant-design-mobile'],
+  'react-ai-chat':    ['ant-design-x', 'shadcn-ui'],
+
+  // Vue ecosystems
+  'vue-enterprise':   ['ant-design-vue', 'antv'],
+  'vue-modern':       ['naive-ui', 'tailwindcss'],
+  'vue-element':      ['element-plus', 'antv'],
+  'vue-mobile':       ['nutui-vue', 'nutui-icons'],
+
+  // TDesign multi-platform
+  'tdesign-stack':      ['tdesign-vue-next', 'tdesign-react', 'tdesign-mobile'],
+  'tdesign-full':       ['tdesign-vue-next', 'tdesign-react', 'tdesign-miniprogram', 'tdesign-mobile', 'tdesign-flutter', 'tdesign-chat'],
+
+  // Microsoft
+  'microsoft':   ['fluent-ui'],
+
+  // Flutter
+  'flutter':     ['flutter-material', 'tdesign-flutter'],
+
+  // Android / iOS native
+  'android-native': ['material-components-android'],
+  'ios-native':     ['apple-hig'],
+
+  // Web marketing / animation
+  'video':         ['remotion', 'react-bits', 'tailwindcss'],
+  'creative':      ['react-bits', 'shadcn-ui', 'tailwindcss'],
+
+  // MiniProgram native
+  'miniprogram-wechat':    ['vant-weapp', 'tdesign-miniprogram'],
+  'miniprogram-multi':     ['taro', 'nutui-react', 'nutui-icons'],
+
+  // Legacy shortcuts
+  'react':       ['nutui-react', 'nutui-icons'],
+  'vue':         ['nutui-vue', 'nutui-icons'],
 };
 
 const IDE_TARGETS = {

@@ -19,7 +19,7 @@ export function printHelp() {
   console.log(`    ${c.cyan('preview')} ${c.dim('<brand>')}     Open brand's preview catalog in browser`);
   console.log(`    ${c.cyan('install')}              Install the DesignDNA skill into your AI IDE`);
   console.log(`    ${c.cyan('resources')}            Browse the 2026 component library catalog`);
-  console.log(`    ${c.cyan('skills')}               Browse/install Taro + NutUI sub-skills`);
+  console.log(`    ${c.cyan('skills')}               Browse/install 47 library sub-skills + preset stacks`);
   console.log(`    ${c.cyan('version')}              Print version`);
   console.log(`    ${c.cyan('help')}                 Show this help`);
   console.log('');
@@ -35,6 +35,9 @@ export function printHelp() {
   console.log('');
   console.log(`    ${c.dim('# Install skill into Cursor')}`);
   console.log(`    $ npx designdna install --ide=cursor`);
+  console.log('');
+  console.log(`    ${c.dim('# Full install into Codex skill directory')}`);
+  console.log(`    $ npx designdna install --ide=codex-full`);
   console.log('');
   console.log(`    ${c.dim('# Craft a PROJECT-DESIGN.md with Apple baseline + your tweaks')}`);
   console.log(`    $ npx designdna craft --brand=apple --motion=6 --density=4 --name="My App"`);

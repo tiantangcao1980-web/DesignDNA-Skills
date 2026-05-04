@@ -1,6 +1,6 @@
 # Tencent Ecosystem — Component Libraries
 
-> Last audit: 2026-04. Health: `active` = last commit < 6 months, `maintenance` = 6-24 months, `deprecated` = 2+ years or archived.
+> Last audit: 2026-05. Health: `active` = last commit < 6 months, `maintenance` = 6-24 months, `deprecated` = 2+ years or archived.
 
 ## Summary
 
@@ -11,14 +11,14 @@ Tencent's component library strategy converges on **TDesign** as the cross-platf
 | Library | Platform | Stars | Last commit | Latest ver | Health | NPM |
 |---|---|---|---|---|---|---|
 | [tdesign](https://github.com/Tencent/tdesign) | Design system meta-repo | 3.8k | 2026-04 | — | active | — |
-| [tdesign-vue-next](https://github.com/Tencent/tdesign-vue-next) | Vue 3 (desktop) | 2.1k | 2026-04 | 1.19.x | active | `tdesign-vue-next` |
+| [tdesign-vue-next](https://github.com/Tencent/tdesign-vue-next) | Vue 3 (desktop) | 2.1k | 2026-05 | 1.19.2 | active | `tdesign-vue-next` |
 | [tdesign-vue](https://github.com/Tencent/tdesign-vue) | Vue 2 (desktop) | 1.0k | 2026-04 | latest | active | `tdesign-vue` |
-| [tdesign-react](https://github.com/Tencent/tdesign-react) | React 16-18 (desktop) | 943 | 2026-04 | latest | active | `tdesign-react` |
-| [tdesign-mobile-vue](https://github.com/Tencent/tdesign-mobile-vue) | Vue 3 (mobile H5) | 410 | 2026-04 | latest | active | `tdesign-mobile-vue` |
-| [tdesign-mobile-react](https://github.com/Tencent/tdesign-mobile-react) | React (mobile H5) | 96 | 2026-04 | latest | active (emerging) | `tdesign-mobile-react` |
-| [tdesign-miniprogram](https://github.com/Tencent/tdesign-miniprogram) | WeChat MiniProgram | 1.6k | 2026-04 | latest | active | `tdesign-miniprogram` |
+| [tdesign-react](https://github.com/Tencent/tdesign-react) | React desktop | 943 | 2026-05 | 1.16.9 | active | `tdesign-react` |
+| [tdesign-mobile-vue](https://github.com/Tencent/tdesign-mobile-vue) | Vue 3 (mobile H5) | 410 | 2026-05 | 1.13.2 | active | `tdesign-mobile-vue` |
+| [tdesign-mobile-react](https://github.com/Tencent/tdesign-mobile-react) | React (mobile H5) | 96 | 2026-05 | 0.22.0 | active (emerging) | `tdesign-mobile-react` |
+| [tdesign-miniprogram](https://github.com/Tencent/tdesign-miniprogram) | WeChat MiniProgram | 1.6k | 2026-05 | 1.14.0 | active | `tdesign-miniprogram` |
 | [tdesign-flutter](https://github.com/Tencent/tdesign-flutter) | Flutter | 1.1k | 2026-04 | latest | active | pub.dev: `tdesign_flutter` |
-| [tdesign-vue-next-chat](https://github.com/Tencent/tdesign-vue-next/tree/develop/packages/tdesign-vue-next-chat) | Vue 3 AI Chat (new since 2025-04) | (monorepo) | 2026-04 | independent | active | `@tdesign-vue-next/chat` |
+| [tdesign-vue-next-chat](https://github.com/Tencent/tdesign-vue-next/tree/develop/packages/tdesign-vue-next-chat) | Vue 3 AI Chat | (monorepo) | 2026-05 | 0.5.2 | active | `@tdesign-vue-next/chat` |
 | [WeUI](https://github.com/Tencent/weui) | CSS (WeChat H5) | 27.4k | 2026-03 | 2.x | maintenance | `weui` |
 | [weui-wxss](https://github.com/Tencent/weui-wxss) | WXSS (MiniProgram) | 15.3k | 2026-03 | 2.x | maintenance | — |
 
@@ -30,6 +30,7 @@ Tencent's component library strategy converges on **TDesign** as the cross-platf
 | Vue 3 dashboard | https://tdesign.tencent.com/starter/vue-next/dashboard/base |
 | React dashboard | https://tdesign.tencent.com/starter/react/dashboard/base |
 | MiniProgram overview | https://tdesign.tencent.com/miniprogram/overview |
+| MiniProgram retail starter | https://github.com/Tencent/tdesign-miniprogram-starter-retail |
 
 ## Official documentation
 
@@ -63,11 +64,13 @@ Tencent's component library strategy converges on **TDesign** as the cross-platf
 
 ## AI Chat specialization
 
-[`tdesign-vue-next-chat`](https://github.com/Tencent/tdesign-vue-next/tree/develop/packages/tdesign-vue-next-chat) (released 2025-04) is Tencent's official answer to AI/LLM conversation UI. Features:
+[`tdesign-vue-next-chat`](https://github.com/Tencent/tdesign-vue-next/tree/develop/packages/tdesign-vue-next-chat) is Tencent's official answer to AI/LLM conversation UI. Features:
 - Streaming message rendering
 - Markdown + code block support
 - Tool-call bubble rendering
 - Typing indicators, scroll-anchor management
+- Custom SSE protocol mapping
+- AG-UI protocol support for run lifecycle, thinking, tool calls, and state events
 
 Use for: AI copilots, customer service bots, LLM playground interfaces.
 

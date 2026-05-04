@@ -60,7 +60,7 @@ export async function runResources({ positional = [], flags = {} } = {}) {
 
 async function showIndex(root) {
   logBanner();
-  console.log(`  ${c.bold('Component Library Catalog')} ${c.dim('(2026-04 audit)')}\n`);
+  console.log(`  ${c.bold('Component Library Catalog')} ${c.dim('(2026-05 audit)')}\n`);
 
   const ecoDir = join(root, 'by-ecosystem');
   const platDir = join(root, 'by-platform');
@@ -113,7 +113,7 @@ async function printJsonIndex(root, flags) {
   const ecos = await safeListMd(join(root, 'by-ecosystem'));
   const plats = await safeListMd(join(root, 'by-platform'));
   const out = {
-    auditDate: '2026-04',
+    auditDate: '2026-05',
     ecosystems: ecos,
     platforms: plats,
     deprecatedListUrl: 'components/DEPRECATED.md',

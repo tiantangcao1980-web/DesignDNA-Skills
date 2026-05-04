@@ -1,10 +1,10 @@
 # Alibaba Ecosystem — Component Libraries
 
-> Last audit: 2026-04. Health: `active` / `maintenance` / `deprecated`.
+> Last audit: 2026-05. Health: `active` / `maintenance` / `deprecated`.
 
 ## Summary
 
-Alibaba's frontend ecosystem centers on **Ant Design** as the de-facto Chinese B2B admin/dashboard standard (93k stars). The full matrix covers core components, scenario components (Pro, X for AI, Charts/AntV), application framework (Umi), form engine (Formily), docs generator (Dumi), and hooks utilities (ahooks). DingTalk Standard is a **Figma spec + design tokens only** — no standalone component library — and in practice enterprise integrators wrap `antd` to meet DingTalk visual guidelines.
+Alibaba's frontend ecosystem centers on **Ant Design** as the de-facto Chinese B2B admin/dashboard standard (97k+ stars). The full matrix covers core components, scenario components (Pro, X for AI, Charts/AntV), application framework (Umi), form engine (Formily), docs generator (Dumi), and hooks utilities (ahooks). DingTalk Standard is a **Figma spec + design tokens only** — no standalone component library — and in practice enterprise integrators wrap `antd` to meet DingTalk visual guidelines.
 
 ## Roster
 
@@ -12,7 +12,7 @@ Alibaba's frontend ecosystem centers on **Ant Design** as the de-facto Chinese B
 
 | Library | Platform | Stars | Last commit | Latest ver | Health | NPM |
 |---|---|---|---|---|---|---|
-| [ant-design](https://github.com/ant-design/ant-design) | React 18/19 (desktop) | 93k | 2026 active | 5.22+ | active | `antd` |
+| [ant-design](https://github.com/ant-design/ant-design) | React 18/19 (desktop) | 97k+ | 2026 active | 6.3.7 | active | `antd` |
 | [ant-design-vue](https://github.com/vueComponent/ant-design-vue) | Vue 3 (desktop, community) | 20k | 2026 active | 4.x | active | `ant-design-vue` |
 | [ant-design-mobile](https://github.com/ant-design/ant-design-mobile) | React (mobile H5) | 11k | 2026 active | 5.x | active | `antd-mobile` |
 
@@ -22,7 +22,7 @@ Alibaba's frontend ecosystem centers on **Ant Design** as the de-facto Chinese B
 |---|---|---|---|---|
 | [ant-design-pro](https://github.com/ant-design/ant-design-pro) | Admin scaffold (React + Umi) | 37k | active | `@ant-design/pro-components` |
 | [pro-components](https://github.com/ant-design/pro-components) | High-level business components | 4k | active | `@ant-design/pro-components` |
-| [ant-design/x](https://github.com/ant-design/x) | **AI / LLM conversation UI** (1.x) | 3k+ | active (new) | `@ant-design/x` |
+| [ant-design/x](https://github.com/ant-design/x) | **AI / LLM conversation UI** (2.x, antd 6 peer) | 3k+ | active | `@ant-design/x` |
 | [pro-chat](https://github.com/ant-design/pro-chat) | AI chat component | 1k | active | `@ant-design/pro-chat` |
 | [ant-design-charts](https://github.com/ant-design/ant-design-charts) | Data-viz components (React) | 2k | active | `@ant-design/charts` |
 | [ant-design-web3](https://github.com/ant-design/ant-design-web3) | Web3 / wallet UI | 1k | active | `@ant-design/web3` |
@@ -79,10 +79,18 @@ When you're on Vue, pick based on visual and team context:
 
 | Criterion | Ant Design | TDesign |
 |---|---|---|
-| Community reach | Huge (93k) | Medium (7 repos × 1-3k) |
+| Community reach | Huge (97k+) | Medium (7 repos × 1-3k) |
 | Ecosystem depth | Pro / X / Charts / Umi / Formily | Flutter + MiniProgram + Mobile React/Vue — multi-runtime parity |
 | Visual feel | Dense, established B2B | Cleaner, more modern, more whitespace |
 | Best for | Existing antd teams, overseas community | Tencent-integrated products, multi-platform consistency |
+
+## Ant Design v6 notes
+
+- Requires React >= 18.
+- Uses CSS variables by default and no longer supports IE.
+- `@ant-design/icons` must be upgraded to v6 when used with `antd@6`.
+- Prefer token/component-token APIs and semantic `classNames` / `styles` slots over internal DOM selectors.
+- Use `@ant-design/cli` for exact prop, token, semantic slot, and migration checks across v4/v5/v6 snapshots.
 
 ## Dial fit
 

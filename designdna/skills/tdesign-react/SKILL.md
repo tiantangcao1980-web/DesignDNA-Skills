@@ -1,6 +1,6 @@
 ---
 name: tdesign-react
-description: TDesign React desktop component library skill — Tencent's React 16-18 enterprise library (943 stars, active). Covers 60+ desktop components for B2B admin/dashboard. Includes installation, component catalog, theme customization via CSS variables, and Next.js SSR setup.
+description: TDesign React desktop component library skill — Tencent's React enterprise library (v1.16.x, active). Covers 60+ desktop components for B2B admin/dashboard. Includes installation, component catalog, theme customization via CSS variables, Starter templates, and Next.js setup.
 ---
 
 {% raw %}
@@ -8,14 +8,15 @@ description: TDesign React desktop component library skill — Tencent's React 1
 
 # TDesign React — React Desktop Component Library
 
-> **Source**: [Tencent/tdesign-react](https://github.com/Tencent/tdesign-react) · 943 ⭐ · 🟢 active 2026-04
+> **Source**: [Tencent/tdesign-react](https://github.com/Tencent/tdesign-react) · v1.16.9 · 🟢 active 2026-05
 > **Docs**: https://tdesign.tencent.com/react/overview
 
 ## 1. When to use
 
-- **React 16-18 desktop** admin / dashboard
+- **React 16.13+ desktop** admin / dashboard
 - Tencent-ecosystem products
 - Projects that also use TDesign on mobile/MiniProgram/Flutter (design parity)
+- Teams choosing TDesign Starter over Ant Design Pro for a Tencent-aligned admin shell
 
 ## 2. Install
 
@@ -148,6 +149,12 @@ import enUS from 'tdesign-react/es/locale/en_US';
 </ConfigProvider>
 ```
 
+Use the TDesign React Starter before writing a dashboard shell from scratch:
+
+```text
+https://tdesign.tencent.com/starter/react/dashboard/base
+```
+
 ## 6. BANNED
 
 - ❌ NEVER use React 15 or earlier — TDesign React requires React 16+
@@ -155,6 +162,7 @@ import enUS from 'tdesign-react/es/locale/en_US';
 - ❌ NEVER mix TDesign React with Ant Design or MUI — pick one
 - ❌ NEVER call imperative APIs (`Dialog.confirm`, `MessagePlugin.success`) from render bodies — only from handlers or effects
 - ❌ NEVER use default Tencent-blue if the brand isn't Tencent — override `--td-brand-color`
+- ❌ NEVER override only the base brand token — keep hover/focus/active/disabled state tokens coherent
 - ❌ NEVER forget `rowKey` on `<Table>` — React needs stable keys
 
 ## 7. Pre-flight checklist
@@ -164,10 +172,12 @@ import enUS from 'tdesign-react/es/locale/en_US';
 - [ ] tdesign-react installed
 - [ ] CSS imported once at app root
 - [ ] Brand color overridden if not Tencent-blue
+- [ ] Brand state tokens are coherent across hover/focus/active/disabled
 - [ ] <Form> uses form instance + FormItem with name + rules
 - [ ] <Table> has rowKey prop
 - [ ] Imperative APIs used from handlers only
 - [ ] For Next.js: CSS imported in layout.tsx
+- [ ] TDesign React Starter checked before building the shell manually
 ```
 
 ## 8. Dial fit

@@ -1,6 +1,6 @@
 # Component Library Skills — Master Index
 
-> **46 library skills** packaging major component libraries, frameworks, and design specs as AI-loadable `SKILL.md` files with YAML frontmatter + 9-section structure + BANNED patterns + Pre-flight checklists.
+> **47 library skills** packaging major component libraries, frameworks, design specs, and AI visual asset workflows as AI-loadable `SKILL.md` files with YAML frontmatter + 9-section structure + BANNED patterns + Pre-flight checklists.
 >
 > Following [taste-skill](https://github.com/Leonxlnx/taste-skill) conventions.
 
@@ -9,6 +9,15 @@
 - 🟢 **active** — commits within last 6 months
 - 🟡 **maintenance** — 6 months to ~3 years since last meaningful commit, or officially archived with a same-team successor
 - 🔴 **deprecated** — ~3+ years dormant with no migration path
+
+## Compatibility quick rules
+
+- Keep **one primary UI library per runtime**. Example: do not treat Ant Design and MUI as equal first-class UI systems in the same React surface.
+- `shadcn/ui` already implies **Radix + Tailwind**. Pair them intentionally; do not load another full visual system beside them unless you are comparing.
+- WeChat MiniProgram native stacks should choose **either** `vant-weapp` **or** `tdesign-miniprogram` for production work.
+- Flutter apps should usually choose **either** `flutter-material` **or** `tdesign-flutter` as the main component language.
+- `apple-hig` is a **design spec**, not a component package. Pair it with a native implementation path; do not treat it like an npm library.
+- Preset stacks ending up with multiple frameworks or sibling UI systems are **reference bundles** for agent context, not "install all as project dependencies" advice.
 
 ---
 
@@ -30,7 +39,7 @@
 
 | Skill | Platform | Health | Stars |
 |---|---|---|---|
-| [ant-design](./ant-design/SKILL.md) | React desktop | 🟢 | 93k |
+| [ant-design](./ant-design/SKILL.md) | React desktop | 🟢 | 97k+ |
 | [ant-design-vue](./ant-design-vue/SKILL.md) | Vue 3 desktop | 🟢 | 20k |
 | [ant-design-mobile](./ant-design-mobile/SKILL.md) | React mobile H5 | 🟢 | 11k |
 | [ant-design-pro](./ant-design-pro/SKILL.md) | React admin scaffold + pro | 🟢 | 37k |
@@ -109,6 +118,12 @@
 | [remotion](./remotion/SKILL.md) | React → video rendering | 🟢 |
 | [react-bits](./react-bits/SKILL.md) | Animated React components | 🟢 |
 
+## AI Media (1)
+
+| Skill | Purpose | Health |
+|---|---|---|
+| [gpt-image-2](./gpt-image-2/SKILL.md) | OpenAI image generation/editing workflow | 🟢 |
+
 ---
 
 ## How to install
@@ -136,8 +151,11 @@ npx designdna skills install-stack tdesign-stack      # TDesign vue-next + react
 npx designdna skills install-stack microsoft          # Fluent UI v9
 npx designdna skills install-stack flutter            # Flutter Material + TDesign Flutter
 npx designdna skills install-stack video              # Remotion + React Bits + Tailwind
+npx designdna skills install-stack ai-visual          # GPT Image 2 asset generation workflow
 npx designdna skills install-stack miniprogram-wechat # vant-weapp + tdesign-miniprogram
 ```
+
+Note: `react-enterprise` is a reference bundle. Ant Design core is v6-first for new work, while ProComponents may support a narrower antd peer range; check npm peer dependencies before installing project packages.
 
 ### Show skill content
 
@@ -148,7 +166,7 @@ npx designdna skills show <name>
 ### Browse all
 
 ```bash
-npx designdna skills                # List all 46 with descriptions
+npx designdna skills                # List all 47 with descriptions
 npx designdna skills list --json    # Machine-readable
 ```
 

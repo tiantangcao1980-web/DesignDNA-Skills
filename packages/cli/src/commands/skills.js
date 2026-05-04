@@ -4,8 +4,8 @@
 //   (none)                      show the skills index
 //   list                        list all sub-skills (also supports --json)
 //   show <name>                 print a skill's SKILL.md to stdout
-//   install <name>              copy skill to ~/.claude/skills/ (or --ide=cursor|codex)
-//   install-stack <stack>       install a preset combination (taro-react|taro-vue|uniapp|react|vue)
+//   install <name>              copy skill into an AI IDE target (Claude/Cursor/Windsurf/Codex)
+//   install-stack <stack>       install a preset combination of compatible skills
 
 import { readFile, writeFile, readdir, mkdir, stat } from 'node:fs/promises';
 import { resolve, join, dirname } from 'node:path';
@@ -50,6 +50,7 @@ const STACKS = {
   // Web marketing / animation
   'video':         ['remotion', 'react-bits', 'tailwindcss'],
   'creative':      ['react-bits', 'shadcn-ui', 'tailwindcss'],
+  'ai-visual':     ['gpt-image-2'],
 
   // MiniProgram native
   'miniprogram-wechat':    ['vant-weapp', 'tdesign-miniprogram'],
@@ -63,8 +64,19 @@ const STACKS = {
 const IDE_TARGETS = {
   'claude-code': (name) => join(homedir(), '.claude', 'skills', name, 'SKILL.md'),
   'cursor':      () => join(process.cwd(), '.cursorrules'),
+  'windsurf':    () => join(process.cwd(), '.windsurfrules'),
   'codex':       () => join(process.cwd(), 'AGENTS.md'),
+  'codex-full':  (name) => join(homedir(), '.codex', 'skills', name, 'SKILL.md'),
   'generic':     (name) => join(process.cwd(), `.${name}-skill.md`),
+};
+
+const STACK_WARNINGS = {
+  'react-enterprise': 'Ant Design v6 is the default for new core antd work, but ProComponents may lag the latest antd major. Check peer ranges before installing dependencies.',
+  'react-mobile': 'This stack bundles NutUI React and Ant Design Mobile as reference alternatives. Pick one primary mobile UI library per app.',
+  'tdesign-stack': 'This is a cross-runtime reference bundle (Vue + React + mobile). Use it for ecosystem context, not as one single-app dependency set.',
+  'tdesign-full': 'This is the full TDesign family bundle across runtimes. Load it only when you want whole-ecosystem context.',
+  'flutter': 'Flutter Material and TDesign Flutter are alternative visual systems. Choose one as the primary design language for any single app.',
+  'miniprogram-wechat': 'Vant Weapp and TDesign MiniProgram are alternative WeChat-native UI libraries. Install one unless you are intentionally comparing both.',
 };
 
 export async function runSkills({ positional = [], flags = {} } = {}) {
@@ -116,6 +128,9 @@ export async function runSkills({ positional = [], flags = {} } = {}) {
     }
     console.log('');
     logSuccess(`${list.length} skills installed`);
+    if (STACK_WARNINGS[stack]) {
+      logInfo(STACK_WARNINGS[stack]);
+    }
     return;
   }
 
@@ -212,12 +227,12 @@ async function installSkill(root, name, flags, silent = false) {
 
   await mkdir(dirname(target), { recursive: true });
 
-  if (ide === 'cursor' || ide === 'codex') {
-    // Append mode — don't overwrite existing file
+  if (ide === 'cursor' || ide === 'windsurf' || ide === 'codex') {
+    // Append mode — keep one embedded copy per skill and update in place.
     let existing = '';
     try { existing = await readFile(target, 'utf8'); } catch {}
-    const separator = existing && !existing.endsWith('\n') ? '\n\n' : '\n';
-    await writeFile(target, existing + separator + `<!-- designdna skill: ${name} -->\n` + content);
+    const normalized = upsertEmbeddedSkill(existing, name, content);
+    await writeFile(target, normalized);
     if (!silent) logSuccess(`Appended ${c.bold(name)} to ${target}`);
     return;
   }
@@ -229,4 +244,18 @@ async function installSkill(root, name, flags, silent = false) {
   } else {
     console.log(`  ${c.green('✓')} ${name}`);
   }
+}
+
+function upsertEmbeddedSkill(existing, name, content) {
+  const marker = `<!-- designdna skill: ${name} -->`;
+  const escapedMarker = escapeRegex(marker);
+  const legacyBlock = new RegExp(`${escapedMarker}[\\s\\S]*?(?=(?:\\n<!-- designdna skill: )|\\s*$)`, 'g');
+  const cleaned = existing.replace(legacyBlock, '').trimEnd();
+  const separator = cleaned ? '\n\n' : '';
+  const block = `${marker}\n${content.trimEnd()}\n<!-- /designdna skill: ${name} -->\n`;
+  return `${cleaned}${separator}${block}`;
+}
+
+function escapeRegex(text) {
+  return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }

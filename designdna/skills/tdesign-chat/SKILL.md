@@ -1,13 +1,13 @@
 ---
 name: tdesign-chat
-description: TDesign Vue Next Chat — Tencent's official AI/LLM conversation UI component package for Vue 3 (part of tdesign-vue-next monorepo, new since 2025-04, active). Covers streaming message rendering, Markdown + code-block support, tool-call bubbles, typing indicators, and AI copilot interface patterns.
+description: TDesign Vue Next Chat — Tencent's official AI/LLM conversation UI component package for Vue 3 (part of tdesign-vue-next monorepo, active v0.5.x). Covers Chatbot/Chat primitives, streaming message rendering, Markdown + code-block support, AG-UI or custom SSE service protocols, tool-call/thinking UI, and AI copilot interface patterns.
 ---
 
 # TDesign Chat — Vue 3 AI Conversation UI
 
 > **Source**: [Tencent/tdesign-vue-next/packages/tdesign-vue-next-chat](https://github.com/Tencent/tdesign-vue-next/tree/develop/packages/tdesign-vue-next-chat)
 > **NPM**: `@tdesign-vue-next/chat`
-> **Health**: 🟢 active (released 2025-04, continuing updates through 2026-04)
+> **Health**: 🟢 active (v0.5.x, continuing updates through 2026-05)
 
 ## 1. When to use
 
@@ -24,8 +24,52 @@ npm install tdesign-vue-next
 ```
 
 ```ts
-import { Chat } from '@tdesign-vue-next/chat';
+import TDesignChat from '@tdesign-vue-next/chat';
 import '@tdesign-vue-next/chat/es/style/index.css';
+```
+
+### Register globally
+
+```ts
+import { createApp } from 'vue';
+import App from './app.vue';
+import TDesign from 'tdesign-vue-next';
+import TDesignChat from '@tdesign-vue-next/chat';
+import 'tdesign-vue-next/es/style/index.css';
+import '@tdesign-vue-next/chat/es/style/index.css';
+
+createApp(App).use(TDesign).use(TDesignChat).mount('#app');
+```
+
+### On-demand import
+
+```ts
+import {
+  ChatList as TChatList,
+  ChatActionBar as TChatActionBar,
+  ChatMarkdown as TChatMarkdown,
+} from '@tdesign-vue-next/chat';
+```
+
+### Auto import
+
+Use `@tdesign-vue-next/auto-import-resolver` for the chat package:
+
+```bash
+npm install -D @tdesign-vue-next/auto-import-resolver unplugin-vue-components unplugin-auto-import
+```
+
+```ts
+import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
+import { TDesignResolver } from '@tdesign-vue-next/auto-import-resolver';
+
+export default {
+  plugins: [
+    AutoImport({ resolvers: [TDesignResolver({ library: 'chat' })] }),
+    Components({ resolvers: [TDesignResolver({ library: 'chat' })] }),
+  ],
+};
 ```
 
 ## 3. Primary component: `<t-chat>`
@@ -140,7 +184,50 @@ messages.value[last].toolCall = {
 </template>
 ```
 
-## 6. Customization
+## 6. Service protocols
+
+TDesign Chat supports two backend AI Agent response modes:
+
+### Custom SSE protocol
+
+Use this when your existing backend already streams plain SSE chunks.
+
+```ts
+const chatServiceConfig = {
+  endpoint: '/api/chat',
+  onMessage: (chunk: any) => {
+    const { type, content } = chunk.data;
+    if (type === 'text') return { type: 'markdown', data: content };
+    if (type === 'think') {
+      return { type: 'thinking', data: { title: 'Thinking', text: content } };
+    }
+    return null;
+  },
+};
+```
+
+### AG-UI protocol
+
+Use AG-UI when the agent needs standardized run lifecycle events, text deltas, thinking events, tool calls, state updates, and multi-step task rendering.
+
+```ts
+const chatServiceConfig = {
+  endpoint: '/api/agui/chat',
+  protocol: 'agui',
+  stream: true,
+};
+```
+
+Decision guide:
+
+| Scenario | Protocol |
+|---|---|
+| Existing service, fastest integration | Custom SSE |
+| Complex agent with tools/state | AG-UI |
+| Multi-tool or long-running tasks | AG-UI |
+| Simple FAQ chatbot | Custom SSE |
+
+## 7. Customization
 
 ### Slot-based message rendering
 
@@ -156,7 +243,7 @@ messages.value[last].toolCall = {
 
 Uses same CSS variables as `tdesign-vue-next` core. Override `--td-brand-color` etc.
 
-## 7. BANNED
+## 8. BANNED
 
 - ❌ NEVER forget to set `status: 'streaming'` during streaming — no typing indicator otherwise
 - ❌ NEVER mutate `messages[i].content` with reassignment every frame — that causes flicker. Append with `+=` instead
@@ -164,14 +251,19 @@ Uses same CSS variables as `tdesign-vue-next` core. Override `--td-brand-color` 
 - ❌ NEVER render untrusted Markdown without sanitization — XSS risk. `<t-chat>` uses safe rendering, but custom slot rendering needs DOMPurify
 - ❌ NEVER use this component for non-AI chat (user-to-user) — use generic `Comment` or build custom. This is LLM-optimized
 - ❌ NEVER stream without proper backpressure — chunks < 50ms apart can lock the render thread
+- ❌ NEVER hand-roll a parallel protocol if AG-UI already represents your tool calls and lifecycle events
+- ❌ NEVER forget `@tdesign-vue-next/chat/es/style/index.css`
+- ❌ NEVER assume latest v0.5.x has feature parity with older 0.4.x i18n behavior — verify multilingual requirements before upgrading
 
-## 8. Pre-flight checklist
+## 9. Pre-flight checklist
 
 ```
 - [ ] Vue 3 project with tdesign-vue-next installed
 - [ ] @tdesign-vue-next/chat installed
+- [ ] Chat styles imported once at app root
 - [ ] Messages array follows ChatMessage interface
 - [ ] Streaming sets status: 'streaming' → 'finished'
+- [ ] Backend protocol chosen: custom SSE or AG-UI
 - [ ] Long code blocks have language hint for syntax highlighting
 - [ ] Tool calls use toolCall object (not inline text)
 - [ ] Error handling for network drops (set status: 'error')
@@ -179,7 +271,7 @@ Uses same CSS variables as `tdesign-vue-next` core. Override `--td-brand-color` 
 - [ ] Mobile viewport tested (chat should be fullscreen on narrow widths)
 ```
 
-## 9. Alternatives
+## 10. Alternatives
 
 Similar AI chat libraries:
 
@@ -187,6 +279,6 @@ Similar AI chat libraries:
 - **ProChat** (`@ant-design/pro-chat`) — Alternative React chat component
 - Build custom with `react-markdown` + `@hookform/resolvers` if you need full control
 
-## 10. Dial fit
+## 11. Dial fit
 
 formality: 6 · motion: 5 · density: 4 · warmth: 5 · contrast: 6

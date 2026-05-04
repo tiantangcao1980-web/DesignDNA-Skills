@@ -1,6 +1,6 @@
 # Component Library Index
 
-> Last audit: **2026-04**. This is the curated master index of component libraries surveyed for DesignDNA-Skills. Libraries marked `deprecated` (2+ years no update or archived) are intentionally excluded from the skill's tech-stack matrix.
+> Last audit: **2026-05**. This is the curated master index of component libraries surveyed for DesignDNA-Skills. Libraries marked `deprecated` (2+ years no update or archived) are intentionally excluded from the skill's tech-stack matrix.
 
 ## Navigation
 
@@ -35,6 +35,7 @@
 | Microsoft Teams / M365 plugins | 🟢 `@fluentui/react-components` v9 | — |
 | Enterprise content / marketing site | 🟢 Bootstrap v5.3 | 🟢 Tailwind + shadcn/ui |
 | AI / LLM conversation UI | 🟢 Ant Design X | 🟢 tdesign-vue-next-chat |
+| AI visual asset generation | 🟢 GPT Image 2 workflow | Curated real assets when provenance matters |
 | Complex DataGrid / Charts / DatePicker | 🟢 MUI X | AG Grid / Handsontable |
 | Form engine (dynamic / low-code) | 🟢 Formily | React Hook Form |
 | E-commerce (CN-style, business components) | 🟢 NutUI + NutUI Biz | Vant + custom |
@@ -48,7 +49,7 @@
 | Ecosystem | Flagships |
 |---|---|
 | Tencent (TDesign + WeUI) | tdesign-vue-next, tdesign-react, tdesign-miniprogram, tdesign-mobile-vue, tdesign-flutter |
-| Alibaba (Ant Design family) | antd, ant-design-vue, antd-mobile, Pro Components, Ant Design X, AntV, Formily, Umi |
+| Alibaba (Ant Design family) | antd v6, ant-design-vue, antd-mobile, Pro Components, Ant Design X v2, AntV, Formily, Umi |
 | JD (Taro + NutUI) | Taro 3.6, NutUI Vue 3, NutUI React, nutui-uniapp |
 | MUI (React carrier of Material) | material-ui v7, base-ui, mui-x |
 | Google Material (platform) | material-components-android (active); Flutter SDK Material (bundled) |

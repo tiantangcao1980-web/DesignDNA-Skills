@@ -50,6 +50,22 @@ export function resolveSkillRoot() {
   return candidates[0];
 }
 
+export function resolveRepoRoot() {
+  if (process.env.DESIGNDNA_REPO_ROOT) {
+    return process.env.DESIGNDNA_REPO_ROOT;
+  }
+  const candidates = [
+    resolve(here, '..', '..', '..', '..'),
+    resolve(here, '..', '..'),
+  ];
+  for (const c of candidates) {
+    if (existsSync(join(c, 'designdna')) && existsSync(join(c, 'design-md'))) {
+      return c;
+    }
+  }
+  return candidates[0];
+}
+
 export function cwd() {
   return process.cwd();
 }

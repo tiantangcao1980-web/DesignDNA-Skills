@@ -104,14 +104,23 @@ npx designdna skills list
 npx designdna skills install-stack taro-react      # Taro + NutUI React + Icons
 npx designdna skills install-stack taro-vue        # Taro + NutUI Vue + Icons
 npx designdna skills install-stack uniapp          # nutui-uniapp + Icons
+npx designdna skills install-stack ai-visual       # GPT Image 2 asset workflow
 npx designdna skills install-stack react           # NutUI React + Icons
 npx designdna skills install-stack vue             # NutUI Vue + Icons
 
 # Install a single skill
 npx designdna skills install nutui-react
+npx designdna skills install gpt-image-2
 ```
 
 These sub-skills teach an AI agent the **how** (installation, component usage, theme tokens, BANNED patterns, pre-flight) for each library. Combine with the brand DNAs in `design-md/` for full "what + how" coverage.
+
+Compatibility guardrails:
+- Treat each runtime as having **one primary UI library** unless you are explicitly comparing alternatives.
+- Some `install-stack` presets are **reference bundles**, not "use all of these in one app" instructions.
+- For WeChat MiniProgram native UI, `vant-weapp` and `tdesign-miniprogram` are alternatives.
+- For Flutter, `flutter-material` and `tdesign-flutter` are alternatives unless you have a very deliberate mixed-language design system.
+- For generated visual assets, load `gpt-image-2` only when the task needs custom generation or editing; curated real assets still come first when realism/provenance matters.
 
 See [skills/INDEX.md](./skills/INDEX.md) for the full skill catalog.
 
@@ -1182,14 +1191,16 @@ Fallback stacks MUST include system fonts:
 **Rule C4 — Illustration Strategy (Never Leave Blank)**
 ```
 For EVERY section that needs an illustration or image, specify:
-  1. Source: which resource to use (unDraw, Unsplash, Storyset, etc.)
+  1. Source: which resource to use (Pexels, Huaban, GPT Image 2, unDraw, Storyset, etc.)
   2. Search terms: exact keywords to find the right asset
-  3. Format: SVG for illustrations, WebP for photos
+  3. Format: SVG for illustrations, WebP/JPEG/PNG for images
   4. Fallback: CSS gradient or pattern if image fails to load
 
 Example in DESIGN.md:
   "Empty state illustration: unDraw 'no_data' in brand primary color #3b82f6"
-  "Hero image: Unsplash search 'minimal workspace laptop' → WebP 1920x1080"
+  "Hero image: Pexels search 'minimal workspace laptop' → WebP 1920x1080"
+  "Localized campaign asset: Huaban search '科技 蓝色 UI 背景' → JPG/PNG, verify asset license"
+  "Generated product hero: GPT Image 2 prompt in skills/gpt-image-2 → WebP 1536x1024, no embedded body text"
   "User avatars: UI Faces API or DiceBear generative avatars"
   
 For programmatic avatar generation (no network needed):
@@ -1235,7 +1246,7 @@ npm i @radix-ui/themes                # or ant-design, etc.
 
 ## Part 10: Design-Driven Tech Stack Catalog & Recommendation
 
-> **📦 Fresh catalog (2026-04 audit):** The authoritative, regularly-updated inventory of 70+ component libraries lives in **[`designdna/components/`](./components/)** with health indicators (🟢 active / 🟡 maintenance / 🔴 deprecated), GitHub stars, last-commit dates, and migration paths:
+> **📦 Fresh catalog (2026-05 audit):** The authoritative, regularly-updated inventory of 70+ component libraries lives in **[`designdna/components/`](./components/)** with health indicators (🟢 active / 🟡 maintenance / 🔴 deprecated), GitHub stars, last-commit dates, and migration paths:
 > - Master index: [components/INDEX.md](./components/INDEX.md)
 > - By ecosystem: [tencent](./components/by-ecosystem/tencent.md) · [alibaba](./components/by-ecosystem/alibaba.md) · [jd](./components/by-ecosystem/jd.md) · [google-material](./components/by-ecosystem/google-material.md) · [modern-web](./components/by-ecosystem/modern-web.md) · [miniprogram-native](./components/by-ecosystem/miniprogram-native.md)
 > - By platform: [web](./components/by-platform/web.md) · [mobile](./components/by-platform/mobile.md) · [miniprogram](./components/by-platform/miniprogram.md) · [cross-platform](./components/by-platform/cross-platform.md) · [desktop](./components/by-platform/desktop.md)
@@ -1267,8 +1278,8 @@ npm i @radix-ui/themes                # or ant-design, etc.
 
 | Framework | Meta-Framework | Component Library Options | Best For |
 |-----------|---------------|--------------------------|----------|
-| **React** | — | Radix, shadcn/ui, Ant Design, Mantine, Chakra, NextUI, MUI | Interactive SPAs, complex state |
-| **Next.js** | React SSR/SSG/RSC | shadcn/ui (recommended), Ant Design, Mantine | Full-stack web apps, SEO-critical |
+| **React** | — | Radix, shadcn/ui, Ant Design v6, Ant Design X, TDesign React, Mantine, Chakra, MUI | Interactive SPAs, complex state |
+| **Next.js** | React SSR/SSG/RSC | shadcn/ui (recommended), Ant Design v6, TDesign React, Mantine | Full-stack web apps, SEO-critical |
 | **Remix** | React SSR | shadcn/ui, Mantine, Chakra | Data-heavy apps, nested routing |
 | **Gatsby** | React SSG | MUI, Chakra, Theme UI | Content sites, blogs, marketing |
 
@@ -1279,7 +1290,8 @@ npm i @radix-ui/themes                # or ant-design, etc.
 | shadcn/ui | shadcn-ui/ui | Tailwind | Copy-paste, full control, best DX | 80k+ |
 | Radix UI Primitives | radix-ui/primitives | Unstyled | Accessibility-first headless | 16k+ |
 | Radix Themes | radix-ui/themes | Built-in | Pre-styled Radix | 5k+ |
-| Ant Design | ant-design/ant-design | CSS-in-JS/Less | Enterprise CN, data-dense | 93k+ |
+| Ant Design | ant-design/ant-design | CSS variables / token API | Enterprise CN, data-dense | 97k+ |
+| Ant Design X | ant-design/x | antd tokens | React AI chat / copilot UI | 3k+ |
 | MUI (Material UI) | mui/material-ui | Emotion/Styled | Material Design, largest component set | 95k+ |
 | Mantine | mantinedev/mantine | CSS Modules | 100+ hooks, batteries-included | 27k+ |
 | Chakra UI | chakra-ui/chakra-ui | Emotion | Accessible, great theming API | 38k+ |
@@ -1305,7 +1317,8 @@ npm i @radix-ui/themes                # or ant-design, etc.
 | Library | GitHub | Styling | Strength | Stars |
 |---------|--------|---------|----------|-------|
 | Element Plus | element-plus/element-plus | SCSS | Most popular CN Vue3, forms | 25k+ |
-| TDesign Vue Next | Tencent/tdesign-vue-next | Less/CSS | Tencent design, bilingual | 3k+ |
+| TDesign Vue Next | Tencent/tdesign-vue-next | Less/CSS variables | Tencent design, bilingual, Starter templates | 2.1k+ |
+| TDesign Chat | Tencent/tdesign-vue-next chat | CSS variables | Vue 3 AI chat with custom SSE / AG-UI | monorepo |
 | Naive UI | tusen-ai/naive-ui | CSS-in-JS | TypeScript-first, 90+ components | 16k+ |
 | Vuetify | vuetifyjs/vuetify | SASS | Material Design Vue, complete | 40k+ |
 | PrimeVue | primefaces/primevue | CSS | 90+ components, enterprise | 10k+ |
@@ -1691,6 +1704,11 @@ This is the complete workflow that combines design resources, DESIGN.md, and tec
 ### Phase 2: Asset Preparation
 
 ```
+0. Inspiration research: extract principles, never clone assets
+   - Sources: Dribbble, Awwwards, Page Flows, Muzli, ZCOOL, Alibaba UED
+   - Extract: grid, density, image treatment, component rhythm, motion intent
+   - Convert the useful parts into DESIGN.md tokens/rules before implementation
+   
 1. Icons: Import from chosen icon library (npm installed, offline)
    - List ALL icons needed by name: <Search />, <Settings />, <User />, etc.
    - NEVER use placeholder text for icons
@@ -1700,12 +1718,24 @@ This is the complete workflow that combines design resources, DESIGN.md, and tec
    - Customize SVG colors to match DESIGN.md palette
    - Store locally in /public/illustrations/ or /src/assets/
    
-3. Images: Source from Unsplash/Pexels
-   - Download hero images, optimize to WebP
-   - Generate responsive srcset versions
-   - Store in /public/images/
+3. Images & videos: Follow the source ladder
+   - Tier 1: use Pexels + Huaban first
+   - Tier 2: use Unsplash / Pixabay / Coverr / Mixkit only if Tier 1 cannot satisfy the brief
+   - Tier 3: use specialized sources only for domain-specific needs (FoodiesFeed, Hippopx, UI Faces, etc.)
+   - Use Pexels as the default source for stock photos and background videos
+   - Use Huaban for Chinese-market inspiration, localized materials, and downloadable image/video assets
+   - Optimize still images to WebP and videos to MP4/WebM
+   - Generate responsive srcset versions for still images
+   - Store images in /public/images/ and videos in /public/videos/
    
-4. Avatars: Use DiceBear for programmatic generation
+4. AI-generated assets: Use GPT Image 2 only when curated sources cannot satisfy the brief
+   - Load skills/gpt-image-2/SKILL.md
+   - Draft with quality=low at the target aspect ratio
+   - Finalize with quality=medium/high and WebP/JPEG/PNG based on destination
+   - Never request transparent backgrounds with gpt-image-2
+   - Store prompt/provenance notes next to the generated asset
+   
+5. Avatars: Use DiceBear for programmatic generation
    - No network dependency, consistent across reloads
 ```
 

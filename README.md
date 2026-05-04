@@ -98,7 +98,8 @@ Not a reference library. A **bias-correction layer**.
 | Brand design systems | 58 markdown files | 58 × 5 formats (MD, JSON, CSS, Tailwind, TS) |
 | Universal design rules | &mdash; | 10 meta-patterns extracted across all brands |
 | Consistency enforcement | &mdash; | 5 C-Rules preventing design drift |
-| Resource library | &mdash; | Icons, images, components, fonts, animations |
+| Resource library | &mdash; | Icons, images, AI image generation, components, fonts, animations |
+| Library skills | &mdash; | 47 installable skills including Ant Design v6, TDesign, and GPT Image 2 |
 | Design archetypes | &mdash; | 10 ready-to-use reference patterns |
 | Multi-IDE support | GitHub only | Claude Code, Cursor, Windsurf, Codex, Stitch |
 | CLI installation | &mdash; | `npx designdna add <brand>` |

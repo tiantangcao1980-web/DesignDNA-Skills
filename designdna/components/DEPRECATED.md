@@ -1,6 +1,6 @@
 # Deprecated & Legacy Component Libraries
 
-> Last audit: **2026-04**. Health threshold: ~3+ years dormant OR explicitly archived with no migration path. Libraries that are officially archived but consolidated into a successor (e.g., `material-components-flutter` folding into Flutter SDK) are **not** flagged deprecated — they're documented in the successor's skill file.
+> Last audit: **2026-05**. Health threshold: ~3+ years dormant OR explicitly archived with no migration path. Libraries that are officially archived but consolidated into a successor (e.g., `material-components-flutter` folding into Flutter SDK) are **not** flagged deprecated — they're documented in the successor's skill file.
 >
 > **For new projects**: don't start on anything in this file. **For existing projects**: the "Migrate to" column shows the recommended successor.
 
@@ -34,7 +34,7 @@ These are NOT deprecated — either archived with a clear successor from the sam
 | MWC (old `@material/*` Web Components) | Archived | material-web (Lit-based, maintenance) |
 | Vant Vue 2 | Legacy | Vant 4 (Vue 3) |
 | Element UI (Vue 2) | Legacy | Element Plus (Vue 3) |
-| Ant Design v4 | End-of-maintenance | Ant Design v5+ |
+| Ant Design v4 | End-of-maintenance | Ant Design v6 for new work; latest v5 only as an intermediate migration step |
 | NutUI Bingo | Low activity since 2023 | Source-reference or build custom with GSAP/Lottie |
 | Ant Design Landing | No update since 2023, still functional | Build marketing pages with Tailwind + shadcn |
 

@@ -1,6 +1,6 @@
 ---
 name: tdesign-vue-next
-description: TDesign Vue 3 desktop component library skill — Tencent's flagship Vue 3 enterprise library (2.1k stars, active, v1.19.x). Covers 60+ desktop components for B2B admin/dashboard. Includes installation with on-demand imports, component catalog, theme customization via CSS variables, and Tencent-ecosystem integration patterns.
+description: TDesign Vue 3 desktop component library skill — Tencent's flagship Vue 3 enterprise library (2.1k stars, active, v1.19.x). Covers 60+ desktop components for B2B admin/dashboard. Includes installation with on-demand imports, component catalog, TDesign design tokens/CSS variables, Starter templates, dark mode, and Tencent-ecosystem integration patterns.
 ---
 
 {% raw %}
@@ -8,7 +8,7 @@ description: TDesign Vue 3 desktop component library skill — Tencent's flagshi
 
 # TDesign Vue Next — Vue 3 Desktop Component Library
 
-> **Source**: [Tencent/tdesign-vue-next](https://github.com/Tencent/tdesign-vue-next) · 2.1k ⭐ · v1.19.x · 🟢 active 2026-04
+> **Source**: [Tencent/tdesign-vue-next](https://github.com/Tencent/tdesign-vue-next) · 2.1k ⭐ · v1.19.2 · 🟢 active 2026-05
 > **Docs**: https://tdesign.tencent.com/vue-next/overview
 
 ## 1. When to use
@@ -16,6 +16,7 @@ description: TDesign Vue 3 desktop component library skill — Tencent's flagshi
 - **Vue 3 desktop** admin / dashboard / B2B apps
 - Tencent-ecosystem products or Tencent Cloud integrations
 - Need **multi-platform design parity** (TDesign covers Vue/React/Mobile/MiniProgram/Flutter with identical visual DNA)
+- Want official Starter dashboard templates before building from scratch
 
 ## 2. Install
 
@@ -38,7 +39,7 @@ createApp(App).use(TDesign).mount('#app');
 ```ts
 // vite.config.ts
 import Components from 'unplugin-vue-components/vite';
-import { TDesignResolver } from 'unplugin-vue-components/resolvers';
+import { TDesignResolver } from '@tdesign-vue-next/auto-import-resolver';
 
 export default {
   plugins: [
@@ -47,6 +48,10 @@ export default {
     }),
   ],
 };
+```
+
+```bash
+npm install -D @tdesign-vue-next/auto-import-resolver unplugin-vue-components
 ```
 
 ## 3. Component catalog (60+)
@@ -153,6 +158,17 @@ DialogPlugin.confirm({
 
 ```css
 :root {
+  --td-brand-color-1: #f2f3ff;
+  --td-brand-color-2: #d9e1ff;
+  --td-brand-color-3: #b5c7ff;
+  --td-brand-color-4: #8eabff;
+  --td-brand-color-5: #618dff;
+  --td-brand-color-6: #366ef4;
+  --td-brand-color-7: #0052d9;
+  --td-brand-color-8: #003cab;
+  --td-brand-color-9: #002a7c;
+  --td-brand-color-10: #001a57;
+
   --td-brand-color: #0052d9;              /* 主色 */
   --td-brand-color-hover: #366ef4;
   --td-brand-color-focus: #d9e1ff;
@@ -173,6 +189,13 @@ DialogPlugin.confirm({
 
 Dark mode: add `theme-mode="dark"` attribute on `<html>` or use TDesign's `ConfigProvider`.
 
+### Token operating model
+
+- Override semantic variables (`--td-brand-color`, `--td-text-color-primary`, `--td-bg-color-page`) before component internals.
+- Keep the 10-step brand scale if you replace Tencent blue; derive hover/focus/active/disabled from that scale.
+- Use TDesign Starter when you need validated dashboard composition instead of inventing shell, menu, route, and table patterns manually.
+- TDesign's value is cross-runtime consistency: if the same product also ships MiniProgram/H5/React, map the same brand scale and semantic tokens in every runtime.
+
 ## 6. BANNED
 
 - ❌ NEVER use `tdesign-vue` (v2) in a Vue 3 project — use `tdesign-vue-next`
@@ -180,6 +203,7 @@ Dark mode: add `theme-mode="dark"` attribute on `<html>` or use TDesign's `Confi
 - ❌ NEVER style over components with high-specificity selectors — override CSS variables instead
 - ❌ NEVER mix TDesign with Element Plus / Ant Design Vue — pick one
 - ❌ NEVER use the default blue `#0052d9` if the project is not Tencent-branded — override `--td-brand-color`
+- ❌ NEVER override only `--td-brand-color` and leave hover/focus/active states inconsistent — update the semantic state tokens too
 - ❌ NEVER skip `<t-form-item name="field">` + `:rules` — form validation depends on name binding
 - ❌ NEVER call `MessagePlugin` / `DialogPlugin` from render functions — only from event handlers
 
@@ -190,10 +214,12 @@ Dark mode: add `theme-mode="dark"` attribute on `<html>` or use TDesign's `Confi
 - [ ] Package: tdesign-vue-next installed
 - [ ] On-demand imports configured (unplugin-vue-components + TDesignResolver)
 - [ ] CSS variables overridden for brand color (if not Tencent-blue)
+- [ ] Brand hover/focus/active/disabled tokens are derived from the same scale
 - [ ] Forms use <t-form-item name=... :rules=...>
 - [ ] Imperative plugins (MessagePlugin, DialogPlugin, NotificationPlugin) called from handlers only
 - [ ] Locale configured via ConfigProvider (default is zh-CN)
 - [ ] Dark mode strategy chosen (theme-mode attr or dynamic)
+- [ ] Starter templates checked before building a dashboard shell from scratch
 ```
 
 ## 8. Dial fit

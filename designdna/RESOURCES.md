@@ -24,6 +24,8 @@
 | **Google Material Icons** | https://fonts.google.com/icons | SVG, Web Font, npm | `npm i @material-design-icons/svg` | Material Design projects, Android apps |
 | **Remix Icon** | https://remixicon.com/ | SVG, Web Font, npm | `npm i remixicon` | Chinese-friendly, business apps (2500+) |
 | **Bootstrap Icons** | https://icons.getbootstrap.com/ | SVG, Web Font, npm | `npm i bootstrap-icons` | Bootstrap projects, traditional web |
+| **Iconfont** | https://www.iconfont.cn/ | SVG, icon font, Symbol, project sets | Download/project CDN | Alibaba/CN enterprise icon projects, custom team icon libraries |
+| **TDesign Icons** | https://github.com/Tencent/tdesign-icons | SVG, Vue, React, MiniProgram-aligned | `tdesign-icons-*` packages | Tencent/TDesign cross-platform apps |
 
 ### 1.3 Animated Icons
 
@@ -55,18 +57,27 @@ Mini Program          → TDesign Icons or custom SVG
 Flutter               → Material Icons or Phosphor Flutter
 React Native          → Expo Vector Icons (bundled)
 Desktop (Electron)    → Lucide or Tabler
+Ant Design            → @ant-design/icons + Iconfont for custom enterprise sets
+TDesign               → TDesign Icons first, Iconfont only for product-specific additions
 ```
 
 ---
 
 ## 2. Image & Photography Resources
 
+> **Source priority for design projects**
+> Tier 1: **Pexels** + **Huaban** first.
+> Tier 2: **Unsplash / Pixabay / Coverr / Mixkit** when Tier 1 cannot satisfy the brief.
+> Tier 3: specialized sources such as **FoodiesFeed / Hippopx / UI Faces / YSJF** only when the domain clearly calls for them.
+> Always verify the license on the specific asset page before shipping.
+
 ### 2.1 General Purpose
 
 | Resource | URL | License | API | Best For |
 |----------|-----|---------|-----|----------|
 | **Unsplash** | https://unsplash.com/ | Free commercial use | REST API available | Hero images, backgrounds, lifestyle |
-| **Pexels** | https://www.pexels.com/zh-cn/ | Free commercial use | REST API available | General photography, diverse styles |
+| **Pexels** | https://www.pexels.com/ | Free commercial use | REST API available | Default source for project photos, lifestyle shots, and stock video stills |
+| **Huaban** | https://huaban.com/ | Varies by asset; check item page | No public API | Chinese-market references, downloadable materials, moodboards |
 | **Pixabay** | https://pixabay.com/ | Free commercial use | REST API available | Illustrations + photos + vectors |
 | **StockSnap** | https://stocksnap.io/ | CC0 Public Domain | No API | High-quality editorial photography |
 
@@ -85,6 +96,7 @@ Desktop (Electron)    → Lucide or Tabler
 | Resource | URL | License | Best For |
 |----------|-----|---------|----------|
 | **Pexels Videos** | https://www.pexels.com/videos/ | Free commercial use | Background videos, hero sections |
+| **Huaban Videos / Materials** | https://huaban.com/ | Varies by asset; check item page | Localized campaign videos, motion references, downloadable CN-market materials |
 | **Coverr** | https://coverr.co/ | Free commercial use | Website background loops |
 | **Mixkit** | https://mixkit.co/ | Free commercial use | Promotional videos, motion backgrounds |
 
@@ -93,15 +105,24 @@ Desktop (Electron)    → Lucide or Tabler
 ```
 Use Case                → Recommended Source     → Format
 ────────────────────────────────────────────────────────
-Hero/Banner             → Unsplash, Pexels       → WebP/AVIF, 1920px wide
-Card thumbnails         → Unsplash, Pixabay      → WebP, 400-800px wide
+Hero/Banner             → Tier 1: Pexels, Huaban → WebP/AVIF, 1920px wide
+Card thumbnails         → Tier 1: Pexels, Huaban → WebP, 400-800px wide
 Avatar placeholders     → UI Faces               → WebP, 64-128px
-Food/Restaurant app     → FoodiesFeed            → WebP, various
-Nature/Travel app       → Hippopx, Unsplash      → WebP/AVIF
+Food/Restaurant app     → Tier 3: FoodiesFeed    → WebP, various
+Nature/Travel app       → Tier 2: Unsplash, Tier 3: Hippopx → WebP/AVIF
 Product illustration    → Undraw (SVG)           → SVG (inline, color-customizable)
-Background video        → Coverr, Mixkit         → MP4/WebM, 1080p
+Background video        → Tier 1: Pexels Videos, Huaban → MP4/WebM, 1080p
+CN marketing material   → Tier 1: Huaban         → JPG/PNG/PSD/MOV as available
 Loading animation       → LottieFiles            → JSON (Lottie)
 ```
+
+### 2.4 AI Image Generation
+
+| Resource | Model / API | Best For | Notes |
+|----------|-------------|----------|-------|
+| **OpenAI GPT Image 2** | `gpt-image-2` via Image API / Responses API | Custom hero images, visual exploration, high-fidelity edits, DesignDNA-guided campaign assets | See [`skills/gpt-image-2`](./skills/gpt-image-2/SKILL.md); no transparent backgrounds; draft with low quality, finalize with medium/high |
+
+Use AI-generated images when curated assets cannot express the brief. Still run the normal image checks: crop safety, text legibility, accessibility role, file format, compression, and provenance notes.
 
 ---
 
@@ -119,7 +140,31 @@ Loading animation       → LottieFiles            → JSON (Lottie)
 
 ---
 
-## 4. Color & Palette Resources
+## 4. Design Inspiration & Pattern Research
+
+Use these as visual research inputs, not as assets to copy. Extract principles: layout rhythm, density, interaction timing, image treatment, content hierarchy, and motion language.
+
+| Resource | URL | Best For | Guardrail |
+|----------|-----|----------|-----------|
+| **Dribbble** | https://dribbble.com/ | Visual style exploration, component moodboards | Treat as inspiration; validate usability before adopting |
+| **Awwwards** | https://www.awwwards.com/ | High-polish marketing, motion, editorial art direction | Avoid copying site-specific layouts or brand assets |
+| **Page Flows** | https://pageflows.com/ | Real product flows, onboarding, checkout, settings | Use to learn interaction sequencing |
+| **Muzli** | https://muz.li/ | Daily design trend scanning | Filter trends through the project's DESIGN.md |
+| **ZCOOL** | https://www.zcool.com.cn/ | Chinese-market visual language and campaign aesthetics | Verify rights before using any asset |
+| **Alibaba UED** | https://www.aliued.com/ | Enterprise/product design thinking in Alibaba ecosystem | Use as pattern rationale, not visual cloning |
+
+Research workflow:
+
+```
+1. Collect 3-5 references that match the product type.
+2. Extract reusable decisions: grid, density, imagery, type scale, icon style, motion.
+3. Map those decisions into DESIGN.md tokens and component rules.
+4. Reject anything that conflicts with accessibility, project brand DNA, or component-library constraints.
+```
+
+---
+
+## 5. Color & Palette Resources
 
 | Resource | URL | Features | Best For |
 |----------|-----|----------|----------|
@@ -151,18 +196,18 @@ Color consistency checklist:
 
 ---
 
-## 5. Component Library & UI Framework
+## 6. Component Library & UI Framework
 
-> **Last audit: 2026-04**. Health legend: 🟢 active · 🟡 maintenance · 🔴 deprecated.
+> **Last audit: 2026-05**. Health legend: 🟢 active · 🟡 maintenance · 🔴 deprecated.
 > For the full breakdown with GitHub stars, commit dates, migration paths, and per-ecosystem analysis, see **[components/](./components/)**:
 > [INDEX](./components/INDEX.md) · [tencent](./components/by-ecosystem/tencent.md) · [alibaba](./components/by-ecosystem/alibaba.md) · [jd](./components/by-ecosystem/jd.md) · [google-material](./components/by-ecosystem/google-material.md) · [modern-web](./components/by-ecosystem/modern-web.md) · [miniprogram-native](./components/by-ecosystem/miniprogram-native.md) · [deprecated](./components/DEPRECATED.md)
 
-### 5.1 React Ecosystem (Web)
+### 6.1 React Ecosystem (Web)
 
 | Library | NPM | Style | Health | Best For |
 |---------|-----|-------|--------|----------|
-| **Ant Design** | `antd` | Enterprise-dense | 🟢 | B2B admin / dashboard, largest React ecosystem (93k ⭐) |
-| **Ant Design X** | `@ant-design/x` | AI conversation | 🟢 | AI / LLM chat UI |
+| **Ant Design** | `antd` | Enterprise-dense | 🟢 | B2B admin / dashboard, largest React ecosystem (97k+ ⭐, v6.x) |
+| **Ant Design X** | `@ant-design/x` | AI conversation | 🟢 | AI / LLM chat UI (v2.x, antd 6 peer) |
 | **MUI material-ui** | `@mui/material` | Material Design | 🟢 | Material feel, Figma kits, v7 (98k ⭐) |
 | **MUI X** | `@mui/x-*` | DataGrid / Charts / DatePicker | 🟢 | Heavy enterprise components, v9 |
 | **MUI Base UI** | `@base-ui-components/react` | Headless primitives | 🟢 | Alternative to Radix, v1.1 stable |
@@ -177,7 +222,7 @@ Color consistency checklist:
 | **antd-mobile** | `antd-mobile` | Mobile H5 | 🟢 | React mobile web |
 | ~~`@fluentui/react` v8 (Fabric)~~ | — | — | 🟡 | Maintenance only — use v9 |
 
-### 5.2 Vue 3 Ecosystem (Web)
+### 6.2 Vue 3 Ecosystem (Web)
 
 | Library | NPM | Style | Health | Best For |
 |---------|-----|-------|--------|----------|
@@ -185,13 +230,13 @@ Color consistency checklist:
 | **Element Plus** | `element-plus` | CN-localized | 🟢 | CN B2B admin, docs-friendly |
 | **Naive UI** | `naive-ui` | TS-first | 🟢 | Modern Vue 3 apps, Evan You endorsed |
 | **TDesign Vue Next** | `tdesign-vue-next` | Tencent | 🟢 | Multi-platform parity with TDesign React |
-| **TDesign Vue Next Chat** | `@tdesign-vue-next/chat` | AI chat | 🟢 | Streaming LLM conversation UI (new 2025) |
+| **TDesign Vue Next Chat** | `@tdesign-vue-next/chat` | AI chat | 🟢 | Streaming LLM conversation UI with custom SSE / AG-UI support |
 | **Vuetify** | `vuetify` | Material Design | 🟢 | Material flavor |
 | **Quasar** | `quasar` | Multi-output | 🟢 | SPA/SSR/PWA/App from one codebase |
 | **PrimeVue** | `primevue` | Themeable enterprise | 🟢 | Large Vue enterprise |
 | **Arco Design Vue** | `@arco-design/web-vue` | ByteDance | 🟢 | Byte ecosystem, commercial visual |
 
-### 5.3 CSS Framework
+### 6.3 CSS Framework
 
 | Library | NPM | Health | Best For |
 |---------|-----|--------|----------|
@@ -200,7 +245,7 @@ Color consistency checklist:
 | **UnoCSS** | `unocss` | 🟢 | On-demand atomic CSS (Vue/Nuxt) |
 | ~~Bootstrap v4~~ | — | 🔴 | Security-only — upgrade to v5 |
 
-### 5.4 Mobile (Native + H5)
+### 6.4 Mobile (Native + H5)
 
 | Library | Platform | Health | Best For |
 |---------|----------|--------|----------|
@@ -221,7 +266,7 @@ Color consistency checklist:
 | ~~material-components-flutter~~ | Flutter | 🔴 | Archived 2023-11 — use SDK built-in |
 | ~~NutUI React Native~~ | RN | 🟡 | Too early (v0.0.8) |
 
-### 5.5 Mini Program
+### 6.5 Mini Program
 
 **Native WeChat** (no compilation layer):
 
@@ -247,7 +292,7 @@ Color consistency checklist:
 | ~~Taro UI~~ | Taro 2/3 | 🟡 | Lags Taro 4.x support |
 | ~~Remax~~ | WeChat via React | 🔴 | Stopped 2022 — use Taro |
 
-### 5.6 Desktop Application
+### 6.6 Desktop Application
 
 | Shell | UI layer | Health | Best For |
 |-------|----------|--------|----------|
@@ -259,7 +304,7 @@ Color consistency checklist:
 | **.NET MAUI** | XAML | 🟢 | Cross-platform Microsoft ecosystem |
 | **Flutter desktop** | Flutter material | 🟢 | Windows / macOS / Linux from Flutter |
 
-### 5.7 AI / LLM Conversation UI
+### 6.7 AI / LLM Conversation UI
 
 | Library | Framework | Health |
 |---------|-----------|--------|
@@ -267,7 +312,7 @@ Color consistency checklist:
 | **TDesign Vue Next Chat** | Vue 3 | 🟢 |
 | **ProChat** | React | 🟢 |
 
-### 5.8 Form Engines
+### 6.8 Form Engines
 
 | Library | Framework | Health |
 |---------|-----------|--------|
@@ -275,7 +320,7 @@ Color consistency checklist:
 | **React Hook Form** | React | 🟢 |
 | **VeeValidate** | Vue 3 | 🟢 |
 
-### 5.9 Data Viz
+### 6.9 Data Viz
 
 | Library | Framework | Health |
 |---------|-----------|--------|
@@ -287,7 +332,7 @@ Color consistency checklist:
 
 ---
 
-## 6. Typography / Font Resources
+## 7. Typography / Font Resources
 
 | Resource | URL | License | Best For |
 |----------|-----|---------|----------|
@@ -320,7 +365,7 @@ Install via Fontsource (offline, no CDN dependency):
 
 ---
 
-## 7. Animation & Motion Resources
+## 8. Animation & Motion Resources
 
 | Resource | URL | Type | Best For |
 |----------|-----|------|----------|
@@ -334,7 +379,7 @@ Install via Fontsource (offline, no CDN dependency):
 
 ---
 
-## 8. Design Token & Theming Tools
+## 9. Design Token & Theming Tools
 
 | Resource | URL | Purpose |
 |----------|-----|---------|
@@ -346,7 +391,7 @@ Install via Fontsource (offline, no CDN dependency):
 
 ---
 
-## 9. Accessibility & Quality Assurance
+## 10. Accessibility & Quality Assurance
 
 | Resource | URL | Purpose |
 |----------|-----|---------|
@@ -358,7 +403,7 @@ Install via Fontsource (offline, no CDN dependency):
 
 ---
 
-## 10. AI-Driven UI & Layout Verification
+## 11. AI-Driven UI & Layout Verification
 
 | Resource | URL | Purpose | Install |
 |----------|-----|---------|---------|

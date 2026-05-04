@@ -1,20 +1,20 @@
 # Web Component Libraries (by platform)
 
-> Quick picks for Web / desktop-browser projects. Last audit: 2026-04.
+> Quick picks for Web / desktop-browser projects. Last audit: 2026-05.
 
 ## React
 
 | Library | Style | Npm | Health | Best for |
 |---|---|---|---|---|
-| Ant Design | Styled, dense | `antd` | 🟢 | Global / overseas admin, huge community |
-| TDesign React | Styled, modern | `tdesign-react` | 🟢 | Chinese B2B, multi-platform parity with TDesign Vue |
+| Ant Design v6 | Styled, dense, CSS variables | `antd` | 🟢 | Global / overseas admin, huge community |
+| TDesign React | Styled, modern, CSS variables | `tdesign-react` | 🟢 | Chinese B2B, multi-platform parity with TDesign Vue |
 | MUI material-ui | Material M2/M3 | `@mui/material` | 🟢 | Material Design aesthetic, enterprise features via MUI X |
 | MUI Base UI | Headless | `@base-ui-components/react` | 🟢 | Build your own design system, a11y-correct |
 | Radix Primitives | Headless | `@radix-ui/react-*` | 🟢 | shadcn/ui's foundation; pair with Tailwind |
 | Radix Themes | Styled | `@radix-ui/themes` | 🟢 | Ship fast with beautiful defaults + 12-step scales |
 | Chakra UI v3 | Panda CSS | `@chakra-ui/react` | 🟢 | Modern DX, zero runtime, designer-friendly |
 | Fluent UI v9 | Microsoft | `@fluentui/react-components` | 🟢 | Teams / M365 / Copilot visual alignment |
-| Ant Design X | AI chat | `@ant-design/x` | 🟢 | LLM conversational UI |
+| Ant Design X v2 | AI chat | `@ant-design/x` | 🟢 | React LLM conversational UI (antd 6 peer) |
 | MUI X | Advanced data | `@mui/x-data-grid`, `@mui/x-charts` | 🟢 | Enterprise DataGrid, Charts, DatePicker |
 
 ## Vue 3
@@ -25,6 +25,7 @@
 | Element Plus | Neutral CN | `element-plus` | 🟢 | Chinese B2B admin, localized docs |
 | Naive UI | TS-first modern | `naive-ui` | 🟢 | Strong types, flexible theming |
 | TDesign Vue Next | Tencent | `tdesign-vue-next` | 🟢 | Tencent ecosystem, multi-platform parity |
+| TDesign Chat | AI chat | `@tdesign-vue-next/chat` | 🟢 | Vue 3 LLM UI with custom SSE / AG-UI support |
 | Vuetify | Material | `vuetify` | 🟢 | Material Design for Vue |
 | Quasar | Cross-platform | `quasar` | 🟢 | One codebase → SPA/SSR/PWA/App/MiniProgram |
 | Arco Design Vue | ByteDance | `@arco-design/web-vue` | 🟢 | ByteDance ecosystem, business-oriented |
@@ -47,7 +48,8 @@
 
 ## Anti-pattern warnings
 
-- ❌ Do not start new React projects on Ant Design v4 (upgrade to v5)
+- ❌ Do not start new React projects on Ant Design v4/v5 unless pinned (upgrade to v6 for new work)
+- ❌ Do not mix Ant Design and TDesign in the same runtime surface; choose one primary enterprise system
 - ❌ Do not start new projects on Fluent UI v8 / Fabric (use v9)
 - ❌ Do not start new projects on Bootstrap v4 (security-only)
 - ⚠️ Chakra v2 → v3 migration is non-trivial; evaluate before starting

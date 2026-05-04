@@ -1,6 +1,6 @@
 ---
 name: ant-design-x
-description: Ant Design X — Alibaba's React AI/LLM conversation UI library (3k+ stars, active since 2025). Purpose-built for AI copilot / chatbot interfaces with streaming, message bubbles, sender input, suggestions, prompts, and thought processes. The React equivalent of TDesign Chat.
+description: Ant Design X — Alibaba's React AI/LLM conversation UI library (active v2.x). Purpose-built for AI copilot / chatbot interfaces with streaming, message bubbles, sender input, suggestions, prompts, and thought processes. The React equivalent of TDesign Chat.
 ---
 
 {% raw %}
@@ -8,7 +8,7 @@ description: Ant Design X — Alibaba's React AI/LLM conversation UI library (3k
 
 # Ant Design X — React AI Conversation UI
 
-> **Source**: [ant-design/x](https://github.com/ant-design/x) · 3k+ ⭐ · 🟢 active (2025-present)
+> **Source**: [ant-design/x](https://github.com/ant-design/x) · 🟢 active (v2.x)
 > **NPM**: `@ant-design/x`
 > **Docs**: https://x.ant.design/
 
@@ -22,7 +22,7 @@ description: Ant Design X — Alibaba's React AI/LLM conversation UI library (3k
 
 ```bash
 npm install @ant-design/x
-# Peer: antd 5+, react 18+
+# Peer: antd ^6.1.1, react 18+
 ```
 
 ```tsx
@@ -182,7 +182,7 @@ import { ThoughtChain } from '@ant-design/x';
 ## 6. Pre-flight checklist
 
 ```
-- [ ] antd v5+ and @ant-design/x installed
+- [ ] antd v6+ and @ant-design/x installed
 - [ ] Wrap <App> / <ConfigProvider> around root (uses antd theme)
 - [ ] Use Bubble for messages (not custom divs)
 - [ ] Use Sender for input (not Input)

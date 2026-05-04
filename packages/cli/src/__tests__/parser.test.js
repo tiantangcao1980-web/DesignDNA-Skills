@@ -3,8 +3,11 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { resolve } from 'node:path';
 import { parseDesignMd } from '../utils/parser.js';
+
+const repoRoot = resolve(fileURLToPath(import.meta.url), '..', '..', '..', '..', '..');
 
 test('parseDesignMd extracts colors from a bold-labeled list', () => {
   const md = `
@@ -69,7 +72,7 @@ test('parseDesignMd handles empty input without crashing', () => {
 });
 
 test('parseDesignMd keeps nested typography subsections instead of falling back to the whole doc', () => {
-  const md = readFileSync(resolve(process.cwd(), 'design-md/notion/DESIGN.md'), 'utf8');
+  const md = readFileSync(resolve(repoRoot, 'design-md/notion/DESIGN.md'), 'utf8');
   const tokens = parseDesignMd(md, { brand: 'notion' });
 
   assert.ok(tokens.typography.families.includes('NotionInter'));
@@ -80,7 +83,7 @@ test('parseDesignMd keeps nested typography subsections instead of falling back 
 });
 
 test('parseDesignMd extracts structured font families from real brand docs', () => {
-  const md = readFileSync(resolve(process.cwd(), 'design-md/stripe/DESIGN.md'), 'utf8');
+  const md = readFileSync(resolve(repoRoot, 'design-md/stripe/DESIGN.md'), 'utf8');
   const tokens = parseDesignMd(md, { brand: 'stripe' });
 
   assert.ok(tokens.typography.families.includes('sohne-var'));
@@ -92,7 +95,7 @@ test('parseDesignMd extracts structured font families from real brand docs', () 
 });
 
 test('parseDesignMd extracts rgba colors and typography table metadata', () => {
-  const md = readFileSync(resolve(process.cwd(), 'design-md/spacex/DESIGN.md'), 'utf8');
+  const md = readFileSync(resolve(repoRoot, 'design-md/spacex/DESIGN.md'), 'utf8');
   const tokens = parseDesignMd(md, { brand: 'spacex' });
 
   assert.equal(tokens.colors['ghost-surface'], 'rgba(240, 240, 250, 0.1)');

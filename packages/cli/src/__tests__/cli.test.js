@@ -5,12 +5,14 @@ import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
+import { fileURLToPath } from 'node:url';
 
 const execFileAsync = promisify(execFile);
+const repoRoot = resolve(fileURLToPath(import.meta.url), '..', '..', '..', '..', '..');
+const cli = resolve(repoRoot, 'packages/cli/bin/designdna.js');
 
 test('CLI accepts space-separated long flag values', async () => {
   const outDir = mkdtempSync(join(tmpdir(), 'designdna-cli-'));
-  const cli = resolve(process.cwd(), 'packages/cli/bin/designdna.js');
 
   await execFileAsync(process.execPath, [
     cli,
@@ -21,7 +23,7 @@ test('CLI accepts space-separated long flag values', async () => {
     '--out',
     outDir,
   ], {
-    cwd: process.cwd(),
+    cwd: repoRoot,
   });
 
   assert.ok(existsSync(join(outDir, 'DESIGN.md')));

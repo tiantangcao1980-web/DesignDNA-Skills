@@ -1,11 +1,11 @@
 # MiniProgram — Native Component Libraries (WeChat)
 
-> Last audit: 2026-04. This file covers **native WeChat MiniProgram component libraries** (no Taro/UniApp compilation layer).
+> Last audit: 2026-05. This file covers **native WeChat MiniProgram component libraries** (no Taro/UniApp compilation layer).
 
 ## TL;DR
 
-- **Only one library is safe to choose in 2026: Vant Weapp** (Youzan).
-- Tencent's `tdesign-miniprogram` is equally recommended — see the [Tencent ecosystem file](./tencent.md).
+- **Two libraries are safe first choices in 2026: Vant Weapp and TDesign MiniProgram**.
+- Choose `tdesign-miniprogram` when Tencent ecosystem alignment, cross-platform TDesign parity, or the official retail starter matters.
 - Every other popular MiniProgram UI library is either deprecated or barely maintained.
 
 ## Roster
@@ -13,7 +13,7 @@
 | Library | Stars | Last commit | Latest ver | Health | Recommendation |
 |---|---|---|---|---|---|
 | [Vant Weapp (youzan)](https://github.com/youzan/vant-weapp) | 18.4k | 2026-02 | v1.11.7 | **active** | ⭐⭐⭐⭐⭐ First choice |
-| [tdesign-miniprogram (Tencent)](https://github.com/Tencent/tdesign-miniprogram) | 1.6k | 2026-04 | latest | **active** | ⭐⭐⭐⭐⭐ First choice (see tencent.md) |
+| [tdesign-miniprogram (Tencent)](https://github.com/Tencent/tdesign-miniprogram) | 1.6k | 2026-05 | 1.14.0 | **active** | ⭐⭐⭐⭐⭐ First choice (see tencent.md) |
 | [Wux Weapp](https://github.com/wux-weapp/wux-weapp) | 5.1k | 2024-04 | v3.11.3 | **maintenance** | ⭐⭐⭐ Alternate if Vant lacks a needed component |
 | [iView Weapp (TalkingData)](https://github.com/TalkingData/iview-weapp) | 6.6k | 2020-09 | v2.0.0 (2018-07) | **deprecated** | ❌ 5+ years dormant, do not use |
 | [Wuss Weapp](https://github.com/phonycode/wuss-weapp) | 355 | 2020-05 | — | **deprecated** | ❌ ~6 years dormant |

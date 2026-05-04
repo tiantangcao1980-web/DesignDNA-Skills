@@ -41,7 +41,8 @@ yarn create umi myapp --ant-design-pro
 
 ```bash
 npm install @ant-design/pro-components
-# Peer deps: antd 5+, react 18+
+# Check the current peer range before pairing with antd major versions.
+# As of pro-components 2.8.x: antd ^4.24.15 || ^5.11.2, react >=17.
 ```
 
 ```tsx
@@ -189,12 +190,14 @@ import { UserOutlined, TeamOutlined } from '@ant-design/icons';
 - ❌ NEVER mix `Form` (antd plain) and `ProForm` in the same file — pick one per form
 - ❌ NEVER skip `valueEnum` — it gives you filter + render + status color for free
 - ❌ NEVER start a new project on `@ant-design/pro-components` v1 — use v2+
+- ❌ NEVER force `antd@6` into ProComponents until the current peer range explicitly supports it
 - ❌ NEVER ignore Umi-specific features if you scaffolded from ant-design-pro — use Umi's max routing / model / request
 
 ## 7. Pre-flight checklist
 
 ```
-- [ ] antd v5+ and @ant-design/pro-components v2+ installed
+- [ ] @ant-design/pro-components v2+ installed
+- [ ] antd major version matches the current pro-components peer range
 - [ ] Using ProLayout for admin chrome (if full scaffold)
 - [ ] ProTable columns typed: ProColumns<YourType>[]
 - [ ] ProTable has request() returning { data, total, success }

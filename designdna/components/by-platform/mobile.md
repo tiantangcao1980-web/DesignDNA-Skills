@@ -1,6 +1,6 @@
 # Mobile Component Libraries (by platform)
 
-> Quick picks for mobile H5, React Native, Flutter, iOS, Android. Last audit: 2026-04.
+> Quick picks for mobile H5, React Native, Flutter, iOS, Android. Last audit: 2026-05.
 
 ## Mobile Web / H5
 
@@ -8,8 +8,8 @@
 |---|---|---|---|---|
 | Vant | Vue 3 | `vant` | 🟢 | Chinese-style mobile H5, e-commerce |
 | Ant Design Mobile | React | `antd-mobile` | 🟢 | Mobile H5, adjacent to antd visual |
-| TDesign Mobile Vue | Vue 3 | `tdesign-mobile-vue` | 🟢 | Tencent ecosystem |
-| TDesign Mobile React | React | `tdesign-mobile-react` | 🟢 (emerging) | Tencent ecosystem (React side) |
+| TDesign Mobile Vue | Vue 3 | `tdesign-mobile-vue` | 🟢 | Tencent ecosystem, cross-platform token parity |
+| TDesign Mobile React | React | `tdesign-mobile-react` | 🟢 (emerging) | Tencent ecosystem (React side), cross-platform token parity |
 | NutUI (Vue 3) | Vue 3 | `@nutui/nutui` | 🟢 | JD-style, e-commerce business components |
 | NutUI React | React | `@nutui/nutui-react` | 🟢 | JD-style (React), Taro-compatible |
 

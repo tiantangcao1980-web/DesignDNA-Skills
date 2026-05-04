@@ -80,10 +80,23 @@ Install the DesignDNA skill into your AI IDE.
 | Cursor | `cursor` | `./.cursorrules` |
 | Windsurf | `windsurf` | `./.windsurfrules` |
 | Codex / OpenAI | `codex` | `./AGENTS.md` |
+| Codex / OpenAI (full repo skill) | `codex-full` | `~/.codex/skills/designdna/` |
 | Generic | `generic` | `./rules.md` |
 
 ```bash
 npx designdna install --ide=claude-code
+npx designdna install --ide=codex-full
+```
+
+### `skills`
+
+Browse or install library-specific skills, including Ant Design v6, TDesign, and GPT Image 2 workflows.
+
+```bash
+npx designdna skills list
+npx designdna skills install ant-design
+npx designdna skills install tdesign-chat --ide=codex
+npx designdna skills install-stack ai-visual
 ```
 
 ## Environment variables

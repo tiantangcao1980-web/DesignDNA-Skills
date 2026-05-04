@@ -1,6 +1,6 @@
 # Desktop — Component Libraries
 
-> Last audit: 2026-04. For desktop apps (Tauri, Electron) and web-based admin dashboards.
+> Last audit: 2026-05. For desktop apps (Tauri, Electron) and web-based admin dashboards.
 
 ## Desktop shells
 
@@ -17,7 +17,7 @@ Use whatever web UI library fits — the shell is just the container. The same d
 
 | Scenario | Pick |
 |---|---|
-| Enterprise-heavy desktop admin | Ant Design / TDesign React |
+| Enterprise-heavy desktop admin | Ant Design v6 / TDesign React |
 | Modern productivity app | Radix Themes / Chakra v3 |
 | Microsoft-ecosystem integration | Fluent UI v9 |
 | Material Design feel | MUI material-ui |
@@ -35,7 +35,7 @@ Use whatever web UI library fits — the shell is just the container. The same d
 
 ## Admin dashboard starters
 
-- [Ant Design Pro](https://github.com/ant-design/ant-design-pro) 🟢 — React + Umi scaffold
+- [Ant Design Pro](https://github.com/ant-design/ant-design-pro) 🟢 — React + Umi scaffold; align with antd v6 for new work
 - [TDesign Starter (Vue/React)](https://tdesign.tencent.com/starter) 🟢 — TDesign dashboard templates
 - [Vue Element Admin](https://github.com/PanJiaChen/vue-element-admin) 🟡 — Vue 2 legacy (avoid for new)
 - [Vben Admin](https://github.com/vbenjs/vue-vben-admin) 🟢 — Vue 3 + Ant Design Vue

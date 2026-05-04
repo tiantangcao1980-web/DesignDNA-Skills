@@ -1,11 +1,11 @@
 ---
 name: tdesign-miniprogram
-description: TDesign WeChat MiniProgram component library skill — Tencent's official native WeChat MP component library (1.6k stars, active). Covers 60+ components matching TDesign's cross-platform visual DNA. Includes install via npm or direct import, component catalog, theme tokens, and WeChat Developer Tools integration.
+description: TDesign WeChat MiniProgram component library skill — Tencent's official native WeChat MP component library (v1.14.x, active). Covers 60+ components matching TDesign's cross-platform visual DNA. Includes npm install, component catalog, theme tokens, retail starter template, and WeChat Developer Tools integration.
 ---
 
 # TDesign MiniProgram — WeChat MiniProgram Library
 
-> **Source**: [Tencent/tdesign-miniprogram](https://github.com/Tencent/tdesign-miniprogram) · 1.6k ⭐ · 🟢 active 2026-04
+> **Source**: [Tencent/tdesign-miniprogram](https://github.com/Tencent/tdesign-miniprogram) · v1.14.0 · 1.6k ⭐ · 🟢 active 2026-05
 > **Docs**: https://tdesign.tencent.com/miniprogram/overview
 
 ## 1. When to use
@@ -24,9 +24,9 @@ npm install tdesign-miniprogram
 
 Then in WeChat DevTools: **Tools → Build npm**. Configure `app.json` styles.
 
-### Manual (if npm is blocked)
+### Manual fallback (only if npm is blocked)
 
-Clone [tdesign-miniprogram](https://github.com/Tencent/tdesign-miniprogram) source and copy `src/` into your project's `miniprogram_npm/tdesign-miniprogram/`.
+Prefer npm. Only copy source manually when your MiniProgram pipeline cannot use npm packages.
 
 ### Register components
 
@@ -129,6 +129,14 @@ page {
 }
 ```
 
+### Starter
+
+For retail/e-commerce MiniProgram shells, inspect Tencent's official starter before building layout and store flows manually:
+
+```text
+https://github.com/Tencent/tdesign-miniprogram-starter-retail
+```
+
 ## 6. BANNED
 
 - ❌ NEVER use HTML tags (`<div>`) — WXML uses `<view>`, `<text>`, `<image>`
@@ -138,6 +146,7 @@ page {
 - ❌ NEVER use `px` for layout — use `rpx` for consistent sizing (750rpx = screen width)
 - ❌ NEVER call imperative APIs (`Toast`, `Dialog`) without the matching element in WXML
 - ❌ NEVER forget `context: this` on imperative calls in pages
+- ❌ NEVER copy source manually when npm + Build npm works — it makes upgrades harder
 
 ## 7. Pre-flight checklist
 
@@ -148,6 +157,7 @@ page {
 - [ ] Using rpx (not px) for responsive layout
 - [ ] Toast / Dialog elements included in WXML where used
 - [ ] CSS variables overridden in app.wxss if not Tencent-blue
+- [ ] Official retail starter checked for e-commerce / store flows
 - [ ] Tested in WeChat Developer Tools and on-device
 ```
 

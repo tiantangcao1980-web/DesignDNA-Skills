@@ -110,18 +110,24 @@ cp rules.md /path/to/your/project/
 **Icons** — 10+ icon libraries with npm offline installation:
 - Lucide, Heroicons, Tabler, Phosphor, Google Material, Remix, Feather
 - Lottie Files for animated icons, Iconify as universal aggregator
+- Iconfont and TDesign Icons for CN enterprise and Tencent-aligned projects
 
-**Images & Illustrations** — 15+ free sources:
-- Unsplash, Pexels, Pixabay, StockSnap, FoodiesFeed, Hippopx
+**Images & Illustrations** — curated photo, video, and illustration sources:
+- Tier 1: Pexels (photos/videos) and Huaban (CN-friendly inspiration/materials; check asset license)
+- Tier 2: Unsplash, Pixabay, Coverr, Mixkit
+- Tier 3: StockSnap, FoodiesFeed, Hippopx, and other specialized sources
+- AI generation: GPT Image 2 workflow for custom hero assets, edits, and DesignDNA-guided visual exploration
 - unDraw, Humaaans, Storyset, Open Doodles (SVG illustrations)
 - DiceBear for programmatic avatar generation (offline)
 
 **Color Systems** — 8 palette tools:
 - ColorHub, Coolors, Realtime Colors, Happy Hues, Radix Colors, Open Color
 
+**Inspiration & Pattern Research** — Dribbble, Awwwards, Page Flows, Muzli, ZCOOL, Alibaba UED with explicit "extract principles, don't copy assets" guardrails
+
 **Component Libraries** — 20+ libraries mapped by platform:
-- React: Radix UI, shadcn/ui, Ant Design, Semi Design, Mantine, NextUI
-- Vue: TDesign, Element Plus, Naive UI, Vuetify, PrimeVue
+- React: Radix UI, shadcn/ui, Ant Design v6, Ant Design X, TDesign React, Semi Design, Mantine
+- Vue: TDesign Vue Next, TDesign Chat, Element Plus, Naive UI, Vuetify, PrimeVue
 - Mobile: React Native Paper, Expo, Vant, NutUI
 - Mini Program: TDesign Mini, Vant Weapp, WeUI
 - Desktop: Electron/Tauri with React/Vue

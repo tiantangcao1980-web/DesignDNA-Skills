@@ -2,6 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { resolve, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import { parseDesignMd } from '../utils/parser.js';
 import { toJson } from '../generators/json.js';
@@ -10,7 +11,8 @@ import { toTailwind } from '../generators/tailwind.js';
 import { toTypeScript } from '../generators/typescript.js';
 import { DIALS } from '../data/dials.js';
 
-const BRAND_ROOT = resolve(process.cwd(), 'design-md');
+const repoRoot = resolve(fileURLToPath(import.meta.url), '..', '..', '..', '..', '..');
+const BRAND_ROOT = resolve(repoRoot, 'design-md');
 const SUSPICIOUS_FONT_NAMES = new Set([
   'teal',
   'green',

@@ -1,13 +1,13 @@
 ---
 name: tdesign-mobile
-description: TDesign Mobile component libraries for Vue 3 and React — Tencent's mobile H5 component libraries (tdesign-mobile-vue 410⭐ + tdesign-mobile-react 96⭐, both active). Covers mobile-optimized components (Tabbar, NavBar, ActionSheet, SwipeCell, etc.) with responsive sizing and iOS/Android-adaptive styling.
+description: TDesign Mobile component libraries for Vue 3 and React — Tencent's mobile H5 component libraries (tdesign-mobile-vue v1.13.x + tdesign-mobile-react v0.22.x, active). Covers mobile-optimized components (Tabbar, NavBar, ActionSheet, SwipeCell, etc.) with responsive sizing, safe-area behavior, and TDesign token parity.
 ---
 
 # TDesign Mobile — Vue 3 & React Mobile H5
 
 > **Sources**:
-> - [Tencent/tdesign-mobile-vue](https://github.com/Tencent/tdesign-mobile-vue) · 410 ⭐ · 🟢 active (mature)
-> - [Tencent/tdesign-mobile-react](https://github.com/Tencent/tdesign-mobile-react) · 96 ⭐ · 🟢 active (emerging)
+> - [Tencent/tdesign-mobile-vue](https://github.com/Tencent/tdesign-mobile-vue) · v1.13.2 · 🟢 active (mature)
+> - [Tencent/tdesign-mobile-react](https://github.com/Tencent/tdesign-mobile-react) · v0.22.0 · 🟢 active (emerging)
 >
 > **Docs**:
 > - https://tdesign.tencent.com/mobile-vue/overview
@@ -18,6 +18,7 @@ description: TDesign Mobile component libraries for Vue 3 and React — Tencent'
 - **Mobile web / H5** (not MiniProgram — use `tdesign-miniprogram` for that)
 - Vue 3 or React project targeting mobile browsers
 - Want cross-platform design parity with TDesign Desktop
+- Need mobile UI that shares brand tokens with a TDesign desktop or MiniProgram product
 
 ## 2. Install
 
@@ -155,6 +156,12 @@ import { Button } from 'tdesign-mobile-react';
 }
 ```
 
+Keep mobile tokens aligned with desktop TDesign:
+
+- Map the same `--td-brand-color-*` scale where the package exposes it.
+- Preserve state tokens for hover/active/disabled even when mobile has fewer hover interactions.
+- Use `env(safe-area-inset-bottom)` for fixed bottom UI and test on devices with a home indicator.
+
 ## 6. BANNED
 
 - ❌ NEVER use the desktop `tdesign-vue-next` for mobile — layouts don't adapt to narrow screens. Use `tdesign-mobile-vue`.
@@ -164,6 +171,7 @@ import { Button } from 'tdesign-mobile-react';
 - ❌ NEVER nest `<Swiper>` inside a scroll container without `touch-action` config
 - ❌ NEVER use React mobile + Vue mobile in the same project
 - ❌ NEVER style components with high-specificity selectors — override CSS variables
+- ❌ NEVER reuse desktop density unchanged on mobile — adjust hit targets, spacing, and safe areas
 
 ## 7. Pre-flight checklist
 
@@ -174,6 +182,7 @@ import { Button } from 'tdesign-mobile-react';
 - [ ] Using mobile variants (not desktop)
 - [ ] Tested on physical device at common widths (375px, 390px, 414px)
 - [ ] Brand color overridden if not Tencent-blue
+- [ ] Token scale is aligned with desktop / MiniProgram TDesign if this is a cross-platform product
 - [ ] Tabbar items have fixed icons (not dynamic emoji)
 - [ ] Pull-to-refresh / infinite-scroll tested on real touch
 ```

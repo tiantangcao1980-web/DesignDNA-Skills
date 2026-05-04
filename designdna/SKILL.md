@@ -126,11 +126,57 @@ See [skills/INDEX.md](./skills/INDEX.md) for the full skill catalog.
 
 ---
 
+## Open-Source Skill Lessons
+
+DesignDNA incorporates operational lessons from two adjacent skill projects:
+
+- [Huashu Design](https://github.com/alchaincyf/huashu-design): fact-first workflow, core asset protocol, 5-10-2-8 asset selection, direction-advisor fallback, five-dimensional critique, visual verification.
+- [Taste Skill](https://github.com/Leonxlnx/taste-skill): single-responsibility skills, dials, anti-slop bans, image-generation reference skills, image-to-code sequencing.
+
+Use these lessons as process patterns, not vendored content. Huashu Design's public repository has a personal-use license; do not copy its assets, scripts, demos, BGM, references, or prompt text into commercial or organizational workflows without authorization. The distilled DesignDNA interpretation lives in [`OPEN-SOURCE-LEARNINGS.md`](./OPEN-SOURCE-LEARNINGS.md).
+
+### Fact-first rule
+
+If a task names a modern product, company, library, version, public figure, event, release, or current design system, verify current facts before making design or implementation claims. This applies especially to package versions, peer dependencies, product launch assets, official logos, product screenshots, and brand guidelines.
+
+### Core asset protocol
+
+For named brand/product work, recognizable assets outrank abstract vibe. Prioritize:
+
+1. Logo
+2. Product render/photo for physical products
+3. UI screenshots for digital products
+4. Color values
+5. Fonts
+6. Mood keywords
+
+Freeze collected assets into `brand-spec.md` or equivalent notes with source URLs, capture date, local paths, resolution, and usage role. Do not substitute generic SVG silhouettes, fake screenshots, or generated lookalikes when official assets are needed.
+
+### Image-first rule
+
+For visual-risk website, campaign, hero, landing-page, or redesign work, use an image-first loop when generation is available and helpful:
+
+1. Generate or collect clear references.
+2. Analyze layout, type, spacing, color, imagery, and component rhythm.
+3. Convert findings into DESIGN.md tokens and component rules.
+4. Implement from the extracted system.
+
+Prefer one clear section/detail reference over a compressed multi-section board. Do not crop an old generated board as the main source for a new section; generate a fresh section-specific reference if detail fidelity matters.
+
+---
+
 ## Pre-flight Checklist (MANDATORY)
 
 **Before emitting any UI code, self-audit with this checklist. Print each item as `[x]` (passed) or `[ ]` (failed) in your output reasoning.**
 
 This is a bias-correction checklist inspired by [taste-skill](https://github.com/Leonxlnx/taste-skill). LLMs have strong statistical priors toward generic patterns — these rules fight the mean.
+
+### Facts & Assets
+- [ ] Current facts verified when the task names a modern product/company/library/version
+- [ ] Existing DESIGN.md, brand guidelines, screenshots, UI kit, or codebase checked before inventing visuals
+- [ ] For brand-specific work: logo/product/UI assets prioritized before colors/fonts
+- [ ] Important non-logo hero assets pass the 5-10-2-8 gate or are explicitly marked as placeholders
+- [ ] Generated images have prompt/provenance notes and are not presented as official assets
 
 ### Typography
 - [ ] No Inter unless the brand DNA specifies it
@@ -1708,17 +1754,26 @@ This is the complete workflow that combines design resources, DESIGN.md, and tec
    - Sources: Dribbble, Awwwards, Page Flows, Muzli, ZCOOL, Alibaba UED
    - Extract: grid, density, image treatment, component rhythm, motion intent
    - Convert the useful parts into DESIGN.md tokens/rules before implementation
+
+1. Core asset protocol for named brands/products
+   - Verify current product/company facts before collecting assets
+   - Ask/search/download/verify/freeze assets into brand-spec.md or equivalent notes
+   - Priority: logo → product render/photo → UI screenshot → colors → fonts → mood words
+   - For important non-logo visuals, use the 5-10-2-8 gate:
+     5 source/search passes → 10 candidates → keep 2 → each should score 8/10+
+   - Score by resolution, provenance, brand fit, composition consistency, narrative usefulness
+   - If no asset reaches 8/10, ask for assets, use an honest placeholder, or generate with references
    
-1. Icons: Import from chosen icon library (npm installed, offline)
+2. Icons: Import from chosen icon library (npm installed, offline)
    - List ALL icons needed by name: <Search />, <Settings />, <User />, etc.
    - NEVER use placeholder text for icons
    
-2. Illustrations: Source from unDraw/Storyset
+3. Illustrations: Source from unDraw/Storyset
    - Download SVGs for: empty states, error pages, onboarding, features
    - Customize SVG colors to match DESIGN.md palette
    - Store locally in /public/illustrations/ or /src/assets/
    
-3. Images & videos: Follow the source ladder
+4. Images & videos: Follow the source ladder
    - Tier 1: use Pexels + Huaban first
    - Tier 2: use Unsplash / Pixabay / Coverr / Mixkit only if Tier 1 cannot satisfy the brief
    - Tier 3: use specialized sources only for domain-specific needs (FoodiesFeed, Hippopx, UI Faces, etc.)
@@ -1728,14 +1783,15 @@ This is the complete workflow that combines design resources, DESIGN.md, and tec
    - Generate responsive srcset versions for still images
    - Store images in /public/images/ and videos in /public/videos/
    
-4. AI-generated assets: Use GPT Image 2 only when curated sources cannot satisfy the brief
+5. AI-generated assets: Use GPT Image 2 only when curated sources cannot satisfy the brief
    - Load skills/gpt-image-2/SKILL.md
+   - For visual-risk work, generate clear section/detail references before implementation
    - Draft with quality=low at the target aspect ratio
    - Finalize with quality=medium/high and WebP/JPEG/PNG based on destination
    - Never request transparent backgrounds with gpt-image-2
    - Store prompt/provenance notes next to the generated asset
    
-5. Avatars: Use DiceBear for programmatic generation
+6. Avatars: Use DiceBear for programmatic generation
    - No network dependency, consistent across reloads
 ```
 

@@ -22,6 +22,17 @@ When generating ANY UI, follow these design rules extracted from 58 top brands (
 2. **If no DESIGN.md exists**, identify the closest design archetype and generate a DESIGN.md before writing UI code.
 3. **Never write generic AI-looking UI** — every interface must have a distinctive aesthetic direction.
 
+## Open-Source Process Guardrails
+
+DesignDNA incorporates public methodology lessons from Taste Skill and Huashu Design. Use the process, not copied assets/prompts.
+
+- **Fact-first**: verify current facts when a task names a modern product, company, library, version, person, event, or release.
+- **Core assets first**: for named brand/product work, prioritize logo, product render/photo, UI screenshots, then colors and fonts.
+- **Freeze sources**: record asset source URLs, local paths, capture date, resolution, and usage role in `brand-spec.md` or equivalent notes.
+- **5-10-2-8 gate**: for important non-logo visuals, search across multiple passes, collect around 10 candidates, keep the best 2, and ship only assets that score 8/10+.
+- **Image-first when visual risk is high**: generate or collect clear references, analyze them, then implement from extracted design tokens.
+- **Five-lens review**: philosophy alignment, visual hierarchy, craft quality, functionality, originality.
+
 ## The 10 Universal Design Rules
 
 These rules were present across ALL 58 world-class design systems analyzed:

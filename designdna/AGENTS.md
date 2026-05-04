@@ -29,6 +29,16 @@ DESIGN.md is a concept from Google Stitch — a plain-text design system documen
 3. **If DESIGN.md does not exist**: Ask the user which aesthetic direction to follow. If they don't specify, identify the closest archetype from the table below and generate a DESIGN.md first.
 4. **Never produce generic AI-looking UI** — every interface must have a distinctive, intentional aesthetic direction.
 
+## Open-Source Process Addendum
+
+DesignDNA borrows process lessons from Taste Skill and Huashu Design without vendoring their assets or prompts.
+
+- **Fact-first**: when a task names a modern product, company, library, version, public figure, event, or release, verify current facts before designing around it.
+- **Core assets first**: for named brands/products, prioritize logo → product image/render → UI screenshot → colors → fonts. Freeze sources and local paths into `brand-spec.md` or equivalent notes.
+- **5-10-2-8 asset gate**: for important non-logo images, search across multiple passes, collect around 10 candidates, keep the best 2, and ship only 8/10+ assets.
+- **Image-first for visual-risk work**: for high-polish hero, campaign, landing-page, or redesign tasks, generate/collect clear references, analyze them, then implement from extracted tokens.
+- **Review with five lenses**: philosophy alignment, visual hierarchy, craft quality, functionality, originality. Report Keep / Fix / Quick Wins.
+
 ## Design Archetypes (from 58-brand analysis)
 
 | Project Type | Archetype | Reference Brands | Key Characteristics |

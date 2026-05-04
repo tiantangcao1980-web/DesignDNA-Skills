@@ -2,7 +2,7 @@
 
 > **47 library skills** packaging major component libraries, frameworks, design specs, and AI visual asset workflows as AI-loadable `SKILL.md` files with YAML frontmatter + 9-section structure + BANNED patterns + Pre-flight checklists.
 >
-> Following [taste-skill](https://github.com/Leonxlnx/taste-skill) conventions.
+> Following [taste-skill](https://github.com/Leonxlnx/taste-skill) conventions, with additional workflow lessons distilled from [huashu-design](https://github.com/alchaincyf/huashu-design). See [`../OPEN-SOURCE-LEARNINGS.md`](../OPEN-SOURCE-LEARNINGS.md).
 
 ## Health legend
 

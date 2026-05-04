@@ -21,6 +21,28 @@ description: OpenAI GPT Image 2 skill for production visual asset generation and
 
 Prefer real product/place/person imagery when the user needs to inspect a real thing. Use `gpt-image-2` for concept art, campaign assets, generic product scenes, abstract editorial visuals, empty states, illustrative hero images, and moodboard exploration.
 
+### Image-first workflow
+
+For visually important web, mobile, campaign, or redesign tasks, use generated references before coding:
+
+1. Generate clear reference images first.
+2. Analyze composition, typography, spacing, palette, imagery, and component rhythm.
+3. Convert the analysis into `DESIGN.md` tokens and component rules.
+4. Implement from the extracted system.
+
+Prefer one clear image per section/detail area over one compressed board. If a section needs more detail, generate a fresh section-specific image instead of cropping an old board.
+
+### Asset quality gate
+
+When a generated image is standing in for a major hero, product scene, or campaign asset, apply the DesignDNA 5-10-2-8 gate:
+
+- Explore across roughly 5 prompt/source passes when the asset matters.
+- Collect around 10 candidates when practical.
+- Keep the best 2.
+- Final candidates should score 8/10+ for resolution, provenance notes, brand fit, composition consistency, and narrative usefulness.
+
+If no candidate reaches 8/10, use an honest placeholder or ask for stronger references. Do not ship weak generated art just because it exists.
+
 ## 2. API choice
 
 | Need | Use | Why |
@@ -167,6 +189,8 @@ Leave open space on the left third for HTML headline overlay.
 ```
 - [ ] API chosen: Image API for single/batch, Responses API for iterative chat
 - [ ] Prompt includes role, brand DNA, composition, forbidden patterns, and delivery target
+- [ ] For visual-risk work, generated references are analyzed before implementation
+- [ ] Major hero/product/campaign assets pass the 5-10-2-8 gate or are explicitly placeholders
 - [ ] Size satisfies gpt-image-2 constraints
 - [ ] quality is low for draft or medium/high for final
 - [ ] output_format chosen by destination

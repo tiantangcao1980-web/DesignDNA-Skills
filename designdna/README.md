@@ -125,6 +125,8 @@ cp rules.md /path/to/your/project/
 
 **Inspiration & Pattern Research** — Dribbble, Awwwards, Page Flows, Muzli, ZCOOL, Alibaba UED with explicit "extract principles, don't copy assets" guardrails
 
+**Open-Source Skill References** — Huashu Design and Taste Skill distilled into [`OPEN-SOURCE-LEARNINGS.md`](./OPEN-SOURCE-LEARNINGS.md): fact-first assets, image-first references, dials, anti-slop, single-responsibility skills, and five-dimensional critique
+
 **Component Libraries** — 20+ libraries mapped by platform:
 - React: Radix UI, shadcn/ui, Ant Design v6, Ant Design X, TDesign React, Semi Design, Mantine
 - Vue: TDesign Vue Next, TDesign Chat, Element Plus, Naive UI, Vuetify, PrimeVue

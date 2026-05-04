@@ -162,6 +162,17 @@ Research workflow:
 4. Reject anything that conflicts with accessibility, project brand DNA, or component-library constraints.
 ```
 
+### 4.1 Open-Source Skill References
+
+Use these projects as methodology references for AI design-skill behavior. Do not copy proprietary assets, demos, scripts, or prompt text without checking the source license.
+
+| Project | URL | What To Borrow | Guardrail |
+|----------|-----|----------------|-----------|
+| **Huashu Design** | https://github.com/alchaincyf/huashu-design | Fact-first workflow, core asset protocol, 5-10-2-8 asset gate, direction-advisor fallback, five-dimensional critique, Playwright/video verification mindset | Personal-use license; DesignDNA studies public methods only and does not vendor its assets/scripts/reference docs |
+| **Taste Skill** | https://github.com/Leonxlnx/taste-skill | Single-responsibility skill topology, dials, anti-slop bans, image-generation reference skills, image-to-code workflow | MIT; attribute when adapting patterns |
+
+Distilled DesignDNA notes: [`OPEN-SOURCE-LEARNINGS.md`](./OPEN-SOURCE-LEARNINGS.md)
+
 ---
 
 ## 5. Color & Palette Resources

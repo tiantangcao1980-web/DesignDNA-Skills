@@ -83,6 +83,7 @@ async function showIndex(root) {
   console.log(`    ${c.cyan('designdna resources list --json')}  ${c.dim('— machine-readable catalog')}`);
   console.log('');
   console.log(`  ${c.dim('Full browsable index:')} designdna/components/INDEX.md`);
+  console.log(`  ${c.dim('Open-source skill learnings:')} designdna/OPEN-SOURCE-LEARNINGS.md`);
   console.log('');
 }
 
@@ -118,6 +119,7 @@ async function printJsonIndex(root, flags) {
     platforms: plats,
     deprecatedListUrl: 'components/DEPRECATED.md',
     indexUrl: 'components/INDEX.md',
+    openSourceLearningsUrl: 'designdna/OPEN-SOURCE-LEARNINGS.md',
   };
   console.log(JSON.stringify(out, null, 2));
 }
